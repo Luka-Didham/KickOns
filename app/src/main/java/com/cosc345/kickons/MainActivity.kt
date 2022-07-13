@@ -40,13 +40,15 @@ class MainActivity : AppCompatActivity() {
 
         var clicked = 0
         val len = cardList.size
-        var cardListShuffled = cardList.shuffled()
+        val cardListShuffled = cardList.shuffled()
+
         btnScreen.setOnClickListener {
             if(clicked<len) {
                 changeCard(cardListShuffled.get(clicked).cardType, randomPlayer(cardListShuffled.get(clicked).challenge))
                 clicked++
             }else {
                 clicked = 0
+                changeCard(cardListShuffled.get(clicked).cardType, randomPlayer(cardListShuffled.get(clicked).challenge))
             }
         }
 
@@ -69,6 +71,16 @@ class MainActivity : AppCompatActivity() {
     1 = powerup card
     2 = law card
     3 = handicap card
+     */
+    /**
+     * Changes card
+     *
+     * @param v The current view in the app
+     * @param p The player that was clicked
+     *
+     * @see com.cosc345.kickons.Player
+     * @see com.cosc345.kickons.AddPlayerAdapter
+     * @see com.cosc345.kickons.PlayerViewHolder
      */
     private fun changeCard(cardType:Int, prompt:String){
         view.setBackgroundResource(getBackGround(cardType))
@@ -93,6 +105,12 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    /**
+     * Returns background of cards based on card type
+     *
+     * @param x
+     * @returns id of background
+     */
     private fun getBackGround(x: Int): Int{
         when(x){
             0 -> return R.drawable.standard
@@ -111,7 +129,16 @@ class MainActivity : AppCompatActivity() {
         }
         return m
     }
-
+    /**
+     * Takes a prompt as an input
+     *
+     * @param v The current view in the app
+     * @param p The player that was clicked
+     *
+     * @see com.cosc345.kickons.Player
+     * @see com.cosc345.kickons.AddPlayerAdapter
+     * @see com.cosc345.kickons.PlayerViewHolder
+     */
     fun randomPlayer(prompt: String): String{
         val sList = playerList.shuffled()
         var newPrompt = prompt.lowercase()

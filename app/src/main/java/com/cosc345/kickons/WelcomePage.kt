@@ -29,26 +29,6 @@ class WelcomePage : AppCompatActivity() {
         val btnOnline = findViewById<Button>(R.id.btnOnline)
 
         analytics = Firebase.analytics
-        /*val db = Firebase.firestore
-
-        db.collection("Decks")
-            .get()
-            .addOnSuccessListener { result ->
-                val deckIdList = mutableListOf<String>()
-                val decks = mutableListOf<DeckItem>()
-                for (document in result) {
-                    Log.d("TAG", "${document.id} => ${document.data}")
-                    deckIdList.add(document.id)
-                    val d = DeckItem(null,document.data["name"].toString())
-                    decks.add(d)
-                }
-                val deckSets: Array<MutableList<out Any>> = arrayOf(deckIdList, decks)
-            }
-            .addOnFailureListener { exception ->
-                Log.w("TAG", "Error getting documents.", exception)
-            }*/
-
-
 
         //SHOWCASE MODE
         PopulateDecks(applicationContext).clearDeck()
