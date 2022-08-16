@@ -1,0 +1,39 @@
+@startuml ERD
+
+skinparam Style StrictUML
+skinparam Linetype ortho 
+skinparam Monochrome true 
+skinparam NodeSep 70
+skinparam RankSep 70
+
+'Entities
+
+'<---------- Player? User? Optional Entity? --------------->
+entity Player {
+	* Player_ID VARCHAR(50)
+	__
+	* Name VARCHAR(45)
+    * Decks Deck[0..n]
+}
+
+entity Deck {
+	* Deck_ID VARCHAR(50)
+	__
+	* Deck_Name VARCHAR(45)
+	* Cards Card[20..n]
+}
+
+entity Card {
+	* Card_ID VARCHAR(50)
+	__
+	* Target VARCHAR(45)
+	* Type VARCHAR(45)
+	  Action VARCHAR(45)
+	  Penalty VARCHAR (45)
+}
+
+'Relationships
+Player		||--|{			Deck
+Deck		||--|{			Card
+
+@enduml
