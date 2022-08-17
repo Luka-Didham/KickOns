@@ -25,6 +25,31 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
 
+  Instrumental_Tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Grant execute permission for gradlew
+        # working-directory: ./FolderName  #Uncomment me - if your gradle file is inside a folder
+        run: chmod +x gradlew
+      - name: Instrumentation Tests
+        # working-directory: ./FolderName  #Uncomment me - if your gradle file is inside a folder
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 28
+          script: ./gradlew connectedAndroidTest
+
+    Unit_Tests:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - name: Grant execute permission for gradlew
+          # working-directory: ./FolderName  #Uncomment me - if your gradle file is inside a folder
+          run: chmod +x gradlew
+        - name: Unit tests
+          # working-directory: ./FolderName  #Uncomment me - if your gradle file is inside a folder
+          run: ./gradlew test
+
   Generate_Docs:
     runs-on: ubuntu-latest
     steps:
