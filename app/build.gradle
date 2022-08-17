@@ -1,8 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.dokka'
 }
-apply plugin: 'org.jetbrains.dokka'
 
 android {
     compileSdk 32
@@ -34,7 +34,6 @@ android {
 
 dependencies {
 
-    dokkaHtmlPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.7.10")
     apply plugin : "kotlin-android"
     apply plugin : "kotlin-android-extensions"
     implementation 'androidx.core:core-ktx:1.7.0'
