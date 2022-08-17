@@ -1,0 +1,7 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:com.example.colorchanging////PointingToDeclaration/app/com.example.colorchanging/index.html
+$dokka.location:com.example.colorchanging/MainActivity///PointingToDeclaration/app/com.example.colorchanging/-main-activity/index.html
+$dokka.location:com.example.colorchanging/MainActivity/MainActivity/#/PointingToDeclaration/app/com.example.colorchanging/-main-activity/-main-activity.html
+com.example.colorchanging
+
