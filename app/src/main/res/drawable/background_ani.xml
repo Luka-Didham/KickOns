@@ -4,16 +4,16 @@
         android:drawable="@drawable/ani_design"
         android:duration="0"/>
     <item
-        android:drawable="@drawable/ani_design1"
+        android:drawable="@drawable/handicap_card"
         android:duration="4000"/>
     <item
-        android:drawable="@drawable/ani_design2"
+        android:drawable="@drawable/powerup_card"
         android:duration="4000"/>
     <item
-        android:drawable="@drawable/ani_design3"
+        android:drawable="@drawable/normal_card"
         android:duration="4000"/>
 
     <item
-        android:drawable="@drawable/ani_design4"
+        android:drawable="@drawable/law_card"
         android:duration="4000"/>
 </animation-list>
