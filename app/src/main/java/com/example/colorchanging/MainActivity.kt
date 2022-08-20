@@ -1,3 +1,4 @@
+
 package com.example.colorchanging
 
 import android.graphics.drawable.Animatable
@@ -13,13 +14,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-            btnColorChange.setOnClickListener {
-                val lL = findViewById<LinearLayout>(R.id.layout)
-                val ani = lL.background as AnimationDrawable
-                ani.setEnterFadeDuration(4000)
-                ani.setExitFadeDuration(2000)
-                ani.start()
-            }
+        btnColorChange.setOnClickListener {
+            Screen
+            val ani = lL.background as AnimationDrawable
+            ani.start()
+            ani.stop()
+        }
 
     }
 }

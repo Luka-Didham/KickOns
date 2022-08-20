@@ -7,7 +7,7 @@
     tools:context=".MainActivity"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@drawable/background_manager_ani"
+    android:background="@drawable/standard"
     android:id="@+id/layout"
     >
 
