@@ -7,7 +7,7 @@
     tools:context=".MainActivity"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@drawable/background_ani"
+    android:background="@drawable/background_manager_ani"
     android:id="@+id/layout"
     >
 
@@ -17,7 +17,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:background="?android:attr/selectableItemBackground"
-        android:text="If Luka loves Thicc coding assignments, take 5 penailities"
+        android:text="Akshay loves men. If you are akshay take a long cold shower"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="bold"

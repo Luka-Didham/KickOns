@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animation-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:drawable="@drawable/ani_design"
+        android:drawable="@drawable/ani_blank"
         android:duration="0"/>
     <item
-        android:drawable="@drawable/handicap_card"
+        android:drawable="@drawable/ani_handicap"
         android:duration="4000"/>
     <item
-        android:drawable="@drawable/powerup_card"
+        android:drawable="@drawable/ani_standard"
         android:duration="4000"/>
     <item
-        android:drawable="@drawable/normal_card"
+        android:drawable="@drawable/ani_powerup"
         android:duration="4000"/>
 
     <item
-        android:drawable="@drawable/law_card"
+        android:drawable="@drawable/ani_design4"
         android:duration="4000"/>
 </animation-list>
