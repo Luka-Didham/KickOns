@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:id="@+id/background_powerup"
+        android:angle="45"
+        android:endColor="#0022FF"
+        android:centerColor="#1CB5A8"
+        android:startColor="#51288A"/>
+</shape>
