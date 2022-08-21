@@ -3,6 +3,7 @@ $dokka.linkExtension:html
 $dokka.location:com.example.colorchanging////PointingToDeclaration/app/com.example.colorchanging/index.html
 $dokka.location:com.example.colorchanging/MainActivity///PointingToDeclaration/app/com.example.colorchanging/-main-activity/index.html
 $dokka.location:com.example.colorchanging/MainActivity/MainActivity/#/PointingToDeclaration/app/com.example.colorchanging/-main-activity/-main-activity.html
+$dokka.location:com.example.colorchanging/MainActivity/changeCard/#kotlin.Int/PointingToDeclaration/app/com.example.colorchanging/-main-activity/change-card.html
 $dokka.location:com.example.colorchanging/SplashScreenActivity///PointingToDeclaration/app/com.example.colorchanging/-splash-screen-activity/index.html
 $dokka.location:com.example.colorchanging/SplashScreenActivity/SplashScreenActivity/#/PointingToDeclaration/app/com.example.colorchanging/-splash-screen-activity/-splash-screen-activity.html
 com.example.colorchanging
