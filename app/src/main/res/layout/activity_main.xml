@@ -1,29 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
     android:gravity="center"
     android:background="@drawable/standard"
-    android:id="@+id/layout"
     >
 
-
     <Button
-        android:id="@+id/btnColorChange"
+        android:id="@+id/btnScreen"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="731dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:background="?android:attr/selectableItemBackground"
+        android:fontFamily="@font/fonts"
+        android:padding="25sp"
         android:text="Akshay loves men. If you are akshay take a long cold shower"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
-        android:textStyle="bold"
-        android:padding="25sp"
-        android:fontFamily="@font/fonts"
-        />
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/img_handicap"
+        android:layout_width="354dp"
+        android:layout_height="104dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="75dp"
+        app:srcCompat="@drawable/handicap_title"
+        android:visibility="invisible"/>
+
+    <ImageView
+        android:id="@+id/img_powerup"
+        android:layout_width="354dp"
+        android:layout_height="104dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="75dp"
+        app:srcCompat="@drawable/powerup_title"
+        android:visibility="invisible"/>
+
+    <ImageView
+        android:id="@+id/img_law"
+        android:layout_width="354dp"
+        android:layout_height="104dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="75dp"
+        app:srcCompat="@drawable/law_title"
+        android:visibility="invisible"/>
 
 
-</LinearLayout>
+</RelativeLayout>
