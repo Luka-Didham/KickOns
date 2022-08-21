@@ -1,4 +1,5 @@
 package com.example.colorchanging
+import android.content.Intent
 import android.graphics.Color.red
 import android.graphics.drawable.Animatable
 import android.graphics.drawable.AnimationDrawable
@@ -14,6 +15,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
+
+    private var createCard: CardCreation? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -23,6 +27,11 @@ class MainActivity : AppCompatActivity() {
             if (clicked>4)clicked=1
                 changeCard(clicked)
             }
+
+        btnCreateCard.setOnClickListener {
+            val intent = Intent(this, CardCreation::class.java)
+            startActivity(intent)
+        }
         }
     /*
     1 = strandard card

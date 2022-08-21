@@ -24,6 +24,17 @@
             android:name=".MainActivity"
             android:exported="true">
         </activity>
+
+        <activity
+            android:name=".CardCreation"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.EDIT" />
+
+                <category android:name="android.intent.category.ALTERNATIVE" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
