@@ -1,6 +1,13 @@
 $dokka.format:html-v1
 $dokka.linkExtension:html
 $dokka.location:com.example.colorchanging////PointingToDeclaration/app/com.example.colorchanging/index.html
+$dokka.location:com.example.colorchanging/CardCreation///PointingToDeclaration/app/com.example.colorchanging/-card-creation/index.html
+$dokka.location:com.example.colorchanging/CardCreation/CardCreation/#/PointingToDeclaration/app/com.example.colorchanging/-card-creation/-card-creation.html
+$dokka.location:com.example.colorchanging/CardItem///PointingToDeclaration/app/com.example.colorchanging/-card-item/index.html
+$dokka.location:com.example.colorchanging/CardItem/CardItem/#kotlin.Int#kotlin.String#kotlin.String/PointingToDeclaration/app/com.example.colorchanging/-card-item/-card-item.html
+$dokka.location:com.example.colorchanging/CardItem/getCardType/#/PointingToDeclaration/app/com.example.colorchanging/-card-item/get-card-type.html
+$dokka.location:com.example.colorchanging/CardItem/getChallenge/#/PointingToDeclaration/app/com.example.colorchanging/-card-item/get-challenge.html
+$dokka.location:com.example.colorchanging/CardItem/getName/#/PointingToDeclaration/app/com.example.colorchanging/-card-item/get-name.html
 $dokka.location:com.example.colorchanging/MainActivity///PointingToDeclaration/app/com.example.colorchanging/-main-activity/index.html
 $dokka.location:com.example.colorchanging/MainActivity/MainActivity/#/PointingToDeclaration/app/com.example.colorchanging/-main-activity/-main-activity.html
 $dokka.location:com.example.colorchanging/MainActivity/changeCard/#kotlin.Int/PointingToDeclaration/app/com.example.colorchanging/-main-activity/change-card.html
