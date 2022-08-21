@@ -17,35 +17,53 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val screenView = findViewById<RelativeLayout>(R.id.layout)
         var clicked = 1
         btnScreen.setOnClickListener {
             clicked += 1
-            if (clicked>4){
-                clicked = 1
-                img_powerup.visibility = View.INVISIBLE
-                screenView.background = resources.getDrawable(R.drawable.standard,theme)
-                btnScreen.text = "normal mode: Akshay loves men. If you are akshay take a long cold shower"
-            }
-            if(clicked==2) {
-                btnScreen.text = "handicap mode: Akshay loves men. If you are akshay take a long cold shower"
-                screenView.background = resources.getDrawable(R.drawable.handicap, theme)
-                img_handicap.visibility = View.VISIBLE
-            }
-            if(clicked==3) {
-                img_handicap.visibility = View.INVISIBLE
-                btnScreen.text = "law mode: Akshay loves men. If you are akshay take a long cold shower"
-                screenView.background = resources.getDrawable(R.drawable.law, theme)
-                img_law.visibility = View.VISIBLE
-            }
-            if(clicked==4) {
-                img_law.visibility = View.INVISIBLE
-                btnScreen.text = "powerup: Akshay loves men. If you are akshay take a long cold shower"
-                screenView.background = resources.getDrawable(R.drawable.powerup, theme)
-                img_powerup.visibility = View.VISIBLE
-            }
-
+            if (clicked>4)clicked=1
+                changeCard(clicked)
             }
         }
+    /*
+    1 = strandard card
+    2 = powerup card
+    3 = law card
+    4 = handicap card
+     */
+    fun changeCard(cardType:Int){
+        val screenView = findViewById<RelativeLayout>(R.id.layout)
+        //standard card
+        if (cardType==1){
+            img_powerup.visibility = View.INVISIBLE
+            img_handicap.visibility = View.INVISIBLE
+            img_law.visibility = View.INVISIBLE
+            screenView.background = resources.getDrawable(R.drawable.standard,theme)
+            btnScreen.text = "normal mode: Akshay loves men. If you are akshay take a long cold shower"
+        }
+        //powerup card
+        if(cardType==2) {
+            img_powerup.visibility = View.VISIBLE
+            img_handicap.visibility = View.INVISIBLE
+            img_law.visibility = View.INVISIBLE
+            btnScreen.text = "powerup mode: Akshay loves men. If you are akshay take a long cold shower"
+            screenView.background = resources.getDrawable(R.drawable.powerup, theme)
+        }
+        //law card
+        if(cardType==3) {
+            img_powerup.visibility = View.INVISIBLE
+            img_handicap.visibility = View.INVISIBLE
+            img_law.visibility = View.VISIBLE
+            btnScreen.text = "law mode: Akshay loves men. If you are akshay take a long cold shower"
+            screenView.background = resources.getDrawable(R.drawable.law, theme)
+        }
+        //handicap card
+        if(cardType==4) {
+            img_powerup.visibility = View.INVISIBLE
+            img_handicap.visibility = View.VISIBLE
+            img_law.visibility = View.INVISIBLE
+            btnScreen.text = "handicap mode: Akshay loves men. If you are akshay take a long cold shower"
+            screenView.background = resources.getDrawable(R.drawable.handicap, theme)
+        }
+    }
 
     }
