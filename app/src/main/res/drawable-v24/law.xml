@@ -2,8 +2,8 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <gradient
         android:id="@+id/background_powerup"
-        android:angle="45"
-        android:endColor="#0022FF"
-        android:centerColor="#1CB5A8"
-        android:startColor="#51288A"/>
+        android:angle="90"
+        android:endColor="#9CE30613"
+        android:centerColor="#D0F14698"
+        android:startColor="#2FB56060"/>
 </shape>

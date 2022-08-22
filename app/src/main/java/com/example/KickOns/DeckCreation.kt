@@ -1,4 +1,4 @@
-package com.example.colorchanging
+package com.example.KickOns
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

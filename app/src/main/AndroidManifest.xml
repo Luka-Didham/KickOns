@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.colorchanging">
+    package="com.example.KickOns">
 
     <application
         android:allowBackup="true"
@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ColorChanging">
         <activity
-            android:name=".SplashScreenActivity"
+            android:name="com.example.KickOns.SplashScreenActivity"
             android:theme="@style/Theme.ColorChanging"
             android:exported="true">
 
@@ -21,12 +21,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.KickOns.MainActivity"
             android:exported="true">
         </activity>
 
         <activity
-            android:name=".CardCreation"
+            android:name="com.example.KickOns.CardCreation"
             android:exported="true">
 
             <intent-filter>

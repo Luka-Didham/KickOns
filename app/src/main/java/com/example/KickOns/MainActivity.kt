@@ -1,15 +1,9 @@
-package com.example.colorchanging
+package com.example.KickOns
 import android.content.Intent
-import android.graphics.Color.red
-import android.graphics.drawable.Animatable
-import android.graphics.drawable.AnimationDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.view.animation.Animation
-import android.widget.LinearLayout
 import android.widget.RelativeLayout
-import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.*
 
 
