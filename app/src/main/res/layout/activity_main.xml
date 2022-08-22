@@ -14,7 +14,7 @@
     <Button
         android:id="@+id/btnScreen"
         android:layout_width="fill_parent"
-        android:layout_height="731dp"
+        android:layout_height="fill_parent"
         android:layout_centerInParent="true"
         android:layout_marginStart="1dp"
         android:layout_marginTop="2dp"
@@ -29,8 +29,8 @@
 
     <Button
         android:id="@+id/btnCreateCard"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_width="300sp"
+        android:layout_height="50sp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
@@ -38,46 +38,36 @@
         android:layout_marginEnd="56dp"
         android:layout_marginBottom="25dp"
         android:fontFamily="@font/fonts"
-        android:textStyle="bold"
         android:text="Create a Card"
         android:textSize="18sp"
-        />
+        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/img_handicap"
-        android:layout_width="354dp"
-        android:layout_height="104dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:layout_width="354sp"
+        android:layout_height="104sp"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="37dp"
+        android:layout_marginTop="20sp"
         android:visibility="invisible"
         app:srcCompat="@drawable/handicap_title" />
 
     <ImageView
         android:id="@+id/img_powerup"
-        android:layout_width="354dp"
-        android:layout_height="104dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:layout_width="354sp"
+        android:layout_height="104sp"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="19dp"
-        android:layout_marginTop="39dp"
+        android:layout_marginTop="20sp"
         android:visibility="invisible"
         app:srcCompat="@drawable/powerup_title" />
 
     <ImageView
         android:id="@+id/img_law"
-        android:layout_width="354dp"
-        android:layout_height="104dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:layout_width="354sp"
+        android:layout_height="104sp"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="17dp"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="20sp"
         android:visibility="invisible"
-        app:srcCompat="@drawable/law_title" />
+        app:srcCompat="@drawable/law2" />
 
 
 </RelativeLayout>

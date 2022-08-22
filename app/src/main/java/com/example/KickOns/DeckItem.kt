@@ -1,4 +1,4 @@
-package com.example.colorchanging
+package com.example.KickOns
 
 class DeckItem (
     val deckID: Int,
