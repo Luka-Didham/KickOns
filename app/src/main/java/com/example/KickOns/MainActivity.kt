@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.RelativeLayout
+import com.example.KickOns.R
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -12,6 +13,7 @@ import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
+    private var createDeck: DeckCreation? = null
     private var createCard: CardCreation? = null
 //    private lateinit var db : CardDB
 
@@ -33,6 +35,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, CardCreation::class.java)
             startActivity(intent)
         }
+
+        btnCreateDeck.setOnClickListener {
+            val intent = Intent(this, DeckCreation::class.java)
+            startActivity(intent)
+        }
+
         }
     /*
     1 = strandard card
