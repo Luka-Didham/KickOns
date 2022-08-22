@@ -77,6 +77,7 @@ class MainActivity : AppCompatActivity() {
             btnScreen.text = "handicap mode: Akshay loves men. If you are akshay take a long cold shower"
             screenView.background = resources.getDrawable(R.drawable.handicap, theme)
         }
+
     }
 
     }
