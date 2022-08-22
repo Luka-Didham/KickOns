@@ -1,7 +1,7 @@
 package com.example.colorchanging
 
 class DeckItem (
-    val deckID: Int,
-    val name: String,
-    val cards: Collection<CardItem>
+    var deckID: Int,
+    var name: String,
+    var cards: Collection<CardItem>
 )
