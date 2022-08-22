@@ -27,8 +27,11 @@ class CardCreation : AppCompatActivity() {
         val cardTypes = resources.getStringArray(R.array.CardTypes)
         val spinner = findViewById<Spinner>(R.id.spinCardType) as Spinner
         val text = findViewById<EditText>(R.id.editText) as EditText
+
         btnEnter.setOnClickListener {
+            //TODO `add error checking
             save(spinner.selectedItemPosition.toInt(),text.text.toString())
+            text.text.clear()
         }
 
         btnBackFromCreateCard.setOnClickListener {
