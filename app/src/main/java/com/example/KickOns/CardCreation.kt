@@ -8,23 +8,35 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.card_creation.*
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class CardCreation : AppCompatActivity() {
 
     private var backToMain: MainActivity? = null
+    private lateinit var db : CardDB
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        db = CardDB.getDatabase(this)
+        val cardDao = db.cardDAO()
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.card_creation)
 
         val cardTypes = resources.getStringArray(R.array.CardTypes)
+        val spinner = findViewById<Spinner>(R.id.spinCardType) as Spinner
+        val text = findViewById<EditText>(R.id.editText) as EditText
+        btnEnter.setOnClickListener {
+            save(spinner.selectedItemPosition.toInt(),text.text.toString())
+        }
 
         btnBackFromCreateCard.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
-        val spinner = findViewById<Spinner>(R.id.spinCardType)
+
         if (spinner != null) {
             val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, cardTypes)
             spinner.adapter = adapter
@@ -54,10 +66,18 @@ class CardCreation : AppCompatActivity() {
                 }
             }
 
-
-
         }
 
+    }
+
+    private fun save(id: Int, text: String){
+        if(text != null && id != null){
+            val c = CardItem(null,id,text)
+            GlobalScope.launch {
+                db.cardDAO().addCard(c)
+            }
+
+        }
     }
 
     private fun changeCard(cardType: Int) {
@@ -80,4 +100,5 @@ class CardCreation : AppCompatActivity() {
             screenView.background = resources.getDrawable(R.drawable.handicap, theme)
         }
     }
+
 }

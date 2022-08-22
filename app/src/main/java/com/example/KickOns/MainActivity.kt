@@ -5,15 +5,22 @@ import android.os.Bundle
 import android.view.View
 import android.widget.RelativeLayout
 import kotlinx.android.synthetic.main.activity_main.*
-
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 
 class MainActivity : AppCompatActivity() {
 
     private var createCard: CardCreation? = null
+//    private lateinit var db : CardDB
 
     override fun onCreate(savedInstanceState: Bundle?) {
+//        db = CardDB.getDatabase(this)
+//        val cardDao = db.cardDAO()
+
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
         var clicked = 1
         btnScreen.setOnClickListener {
@@ -33,8 +40,11 @@ class MainActivity : AppCompatActivity() {
     3 = law card
     4 = handicap card
      */
+
+
     fun changeCard(cardType:Int){
         val screenView = findViewById<RelativeLayout>(R.id.layout)
+
         //standard card
         if (cardType==1){
             img_powerup.visibility = View.INVISIBLE
