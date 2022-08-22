@@ -1,8 +1,10 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     ext.jacocoVersion = '0.8.7'
+    ext.room_version = '2.4.3'
     dependencies {
         classpath "org.jacoco:org.jacoco.core:$jacocoVersion"
+
     }
 }
 
