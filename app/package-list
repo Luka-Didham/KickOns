@@ -21,7 +21,7 @@ $dokka.location:com.example.KickOns/DeckCreation/DeckCreation/#/PointingToDeclar
 $dokka.location:com.example.KickOns/DeckItem///PointingToDeclaration/app/com.example.KickOns/-deck-item/index.html
 $dokka.location:com.example.KickOns/DeckItem/DeckItem/#kotlin.Int#kotlin.String#kotlin.collections.Collection[com.example.KickOns.CardItem]/PointingToDeclaration/app/com.example.KickOns/-deck-item/-deck-item.html
 $dokka.location:com.example.KickOns/DeckItem/getCards/#/PointingToDeclaration/app/com.example.KickOns/-deck-item/get-cards.html
-$dokka.location:com.example.KickOns/DeckItem/getDeckID/#/PointingToDeclaration/app/com.example.KickOns/-deck-item/get-deck-i-d.html
+$dokka.location:com.example.KickOns/DeckItem/getId/#/PointingToDeclaration/app/com.example.KickOns/-deck-item/get-id.html
 $dokka.location:com.example.KickOns/DeckItem/getName/#/PointingToDeclaration/app/com.example.KickOns/-deck-item/get-name.html
 $dokka.location:com.example.KickOns/MainActivity///PointingToDeclaration/app/com.example.KickOns/-main-activity/index.html
 $dokka.location:com.example.KickOns/MainActivity/MainActivity/#/PointingToDeclaration/app/com.example.KickOns/-main-activity/-main-activity.html
