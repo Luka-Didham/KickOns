@@ -1,15 +1,15 @@
 package com.example.KickOns
 
 import android.os.Bundle
-import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 
-class AddPlayer : AppCompatActivity() {
+class WelcomePage : AppCompatActivity() {
+
     private var backToMain: MainActivity? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.add_player)
+        setContentView(R.layout.welcome_page)
     }
 }

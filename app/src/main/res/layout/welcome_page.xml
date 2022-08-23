@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FBD34C"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:context=".MainActivity"
+            tools:layout_editor_absoluteX="-72dp"
+            tools:layout_editor_absoluteY="-64dp">
+
+        </RelativeLayout>
+
+    <TextView
+        android:id="@+id/t2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#723CD3"
+        android:fontFamily="@font/fonts"
+        android:text="Welcome to"
+        android:textAlignment="center"
+        android:textColor="#FBD34C"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:padding="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:background="#723CD3"
+        android:fontFamily="@font/fonts"
+        android:text="PLAY"
+        android:textAlignment="center"
+        android:textColor="#FBD34C"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t2" />
+
+    <Button
+        android:id="@+id/options"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#723CD3"
+        android:fontFamily="@font/fonts"
+        android:text="OPTIONS"
+        android:textAlignment="center"
+        android:textColor="#FBD34C"
+        android:textSize="30dp"
+        android:layout_marginTop="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/play" />
+
+    <Button
+        android:id="@+id/help"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#723CD3"
+        android:fontFamily="@font/fonts"
+        android:text="HELP"
+        android:textAlignment="center"
+        android:textColor="#FBD34C"
+        android:textSize="30dp"
+        android:layout_marginTop="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/options" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="300sp"
+        android:layout_height="300sp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/logo_circle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t2">
+    </ImageView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
