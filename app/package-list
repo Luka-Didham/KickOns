@@ -11,6 +11,7 @@ $dokka.location:com.example.KickOns/CardDB.Companion/getDatabase/#android.conten
 $dokka.location:com.example.KickOns/CardDB///PointingToDeclaration/app/com.example.KickOns/-card-d-b/index.html
 $dokka.location:com.example.KickOns/CardDB/CardDB/#/PointingToDeclaration/app/com.example.KickOns/-card-d-b/-card-d-b.html
 $dokka.location:com.example.KickOns/CardDB/cardDAO/#/PointingToDeclaration/app/com.example.KickOns/-card-d-b/card-d-a-o.html
+$dokka.location:com.example.KickOns/CardDB/deckDAO/#/PointingToDeclaration/app/com.example.KickOns/-card-d-b/deck-d-a-o.html
 $dokka.location:com.example.KickOns/CardItem///PointingToDeclaration/app/com.example.KickOns/-card-item/index.html
 $dokka.location:com.example.KickOns/CardItem/CardItem/#kotlin.Int?#kotlin.Int#kotlin.String/PointingToDeclaration/app/com.example.KickOns/-card-item/-card-item.html
 $dokka.location:com.example.KickOns/CardItem/getCardType/#/PointingToDeclaration/app/com.example.KickOns/-card-item/get-card-type.html
@@ -18,11 +19,17 @@ $dokka.location:com.example.KickOns/CardItem/getChallenge/#/PointingToDeclaratio
 $dokka.location:com.example.KickOns/CardItem/getId/#/PointingToDeclaration/app/com.example.KickOns/-card-item/get-id.html
 $dokka.location:com.example.KickOns/DeckCreation///PointingToDeclaration/app/com.example.KickOns/-deck-creation/index.html
 $dokka.location:com.example.KickOns/DeckCreation/DeckCreation/#/PointingToDeclaration/app/com.example.KickOns/-deck-creation/-deck-creation.html
+$dokka.location:com.example.KickOns/DeckDAO///PointingToDeclaration/app/com.example.KickOns/-deck-d-a-o/index.html
+$dokka.location:com.example.KickOns/DeckDAO/addDeck/#com.example.KickOns.DeckItem/PointingToDeclaration/app/com.example.KickOns/-deck-d-a-o/add-deck.html
+$dokka.location:com.example.KickOns/DeckDAO/getAll/#/PointingToDeclaration/app/com.example.KickOns/-deck-d-a-o/get-all.html
 $dokka.location:com.example.KickOns/DeckItem///PointingToDeclaration/app/com.example.KickOns/-deck-item/index.html
-$dokka.location:com.example.KickOns/DeckItem/DeckItem/#kotlin.Int#kotlin.String#kotlin.collections.Collection[com.example.KickOns.CardItem]/PointingToDeclaration/app/com.example.KickOns/-deck-item/-deck-item.html
-$dokka.location:com.example.KickOns/DeckItem/getCards/#/PointingToDeclaration/app/com.example.KickOns/-deck-item/get-cards.html
+$dokka.location:com.example.KickOns/DeckItem/DeckItem/#kotlin.Int?#kotlin.String/PointingToDeclaration/app/com.example.KickOns/-deck-item/-deck-item.html
 $dokka.location:com.example.KickOns/DeckItem/getId/#/PointingToDeclaration/app/com.example.KickOns/-deck-item/get-id.html
 $dokka.location:com.example.KickOns/DeckItem/getName/#/PointingToDeclaration/app/com.example.KickOns/-deck-item/get-name.html
+$dokka.location:com.example.KickOns/DeckWithCards///PointingToDeclaration/app/com.example.KickOns/-deck-with-cards/index.html
+$dokka.location:com.example.KickOns/DeckWithCards/DeckWithCards/#com.example.KickOns.DeckItem#kotlin.collections.List[com.example.KickOns.CardItem]/PointingToDeclaration/app/com.example.KickOns/-deck-with-cards/-deck-with-cards.html
+$dokka.location:com.example.KickOns/DeckWithCards/getCards/#/PointingToDeclaration/app/com.example.KickOns/-deck-with-cards/get-cards.html
+$dokka.location:com.example.KickOns/DeckWithCards/getDeck/#/PointingToDeclaration/app/com.example.KickOns/-deck-with-cards/get-deck.html
 $dokka.location:com.example.KickOns/MainActivity///PointingToDeclaration/app/com.example.KickOns/-main-activity/index.html
 $dokka.location:com.example.KickOns/MainActivity/MainActivity/#/PointingToDeclaration/app/com.example.KickOns/-main-activity/-main-activity.html
 $dokka.location:com.example.KickOns/MainActivity/changeCard/#kotlin.Int/PointingToDeclaration/app/com.example.KickOns/-main-activity/change-card.html
