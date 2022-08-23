@@ -15,7 +15,7 @@ class WelcomePage : AppCompatActivity() {
         setContentView(R.layout.welcome_page)
 
         btnPlay.setOnClickListener {
-            val intent = Intent(this, AddPlayer::class.java)
+            val intent = Intent(this, DeckCreation::class.java)
             startActivity(intent)
         }
 

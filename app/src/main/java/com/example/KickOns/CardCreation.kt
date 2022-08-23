@@ -19,7 +19,7 @@ class CardCreation : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         db = CardDB.getDatabase(this)
         val cardDao = db.cardDAO()
-        val deck_id: Int? = intent.extras?.getInt("deck_id")
+        val deck_id: Long? = intent.extras?.getLong("deck_id")
         super.onCreate(savedInstanceState)
 
 
@@ -32,7 +32,7 @@ class CardCreation : AppCompatActivity(){
 
         btnEnter.setOnClickListener {
             //TODO `add error checking
-            save(spinner.selectedItemPosition.toInt(),text.text.toString(),deck_id)
+            save(spinner.selectedItemPosition.toInt(),text.text.toString(),deck_id?.toInt())
             text.text.clear()
         }
 

@@ -7,6 +7,7 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.deck_creation.*
 import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 
 class DeckCreation() : AppCompatActivity() {
@@ -31,23 +32,24 @@ class DeckCreation() : AppCompatActivity() {
 
         btnSaveDeck.setOnClickListener {
             val d = DeckItem(null,text.text.toString())
-            save(d)
+            var id: Long? = null
             val intent = Intent(this, CardCreation()::class.java)
-            val a = d.id
-            intent.putExtra("deck_id",d.id)
-//          INSERT CODE FOR SAVING DECK INSTANCE AND NAME HERE
-    //Get Deck name from view and create new deck instance
-    //Save Deck instance
 
-            startActivity(intent)
+            //Saves and returns id
+            GlobalScope.launch {
+                val cid = async { db.deckDAO().addDeck(d) }
+                intent.putExtra("deck_id",cid.await())
+                startActivity(intent)
+            }
         }
 
     }
 //TODO("Add exception handling if the Deck is not saved")
-    private fun save(deck: DeckItem){
+    private fun save(deck: DeckItem): Long? {
+        var a : Long? = null
         GlobalScope.launch {
-            db.deckDAO().addDeck(deck)
+            a = db.deckDAO().addDeck(deck)
         }
-
+    return a
     }
 }
