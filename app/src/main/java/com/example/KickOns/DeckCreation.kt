@@ -33,6 +33,7 @@ class DeckCreation() : AppCompatActivity() {
             val d = DeckItem(null,text.text.toString())
             save(d)
             val intent = Intent(this, CardCreation()::class.java)
+            val a = d.id
             intent.putExtra("deck_id",d.id)
 //          INSERT CODE FOR SAVING DECK INSTANCE AND NAME HERE
     //Get Deck name from view and create new deck instance
