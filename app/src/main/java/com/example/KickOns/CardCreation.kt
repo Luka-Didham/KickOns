@@ -93,19 +93,23 @@ class CardCreation : AppCompatActivity(){
         val screenView = findViewById<ConstraintLayout>(R.id.make_card)
         //standard card
         if (cardType == 0) {
+            editCardDetails.hint = "[Player], howl at the moon 3 times with [player2] or take a penalty"
             screenView.background = resources.getDrawable(R.drawable.standard, theme)
 
         }
         //power-up card
         if (cardType == 1) {
+            editCardDetails.hint = "[Player], if any player makes eye contact with you, they take a penalty."
             screenView.background = resources.getDrawable(R.drawable.powerup, theme)
         }
         //law card
         if (cardType == 2) {
+            editCardDetails.hint = "[Everyone], take a penalty every time someone says 'uhmm'"
             screenView.background = resources.getDrawable(R.drawable.law, theme)
         }
         //handicap card
         if (cardType == 3) {
+            editCardDetails.hint = "[Player], you now have to play the next 12 rounds on all fours."
             screenView.background = resources.getDrawable(R.drawable.handicap, theme)
         }
     }
