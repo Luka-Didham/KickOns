@@ -16,16 +16,14 @@
             android:layout_width="240dp"
             android:layout_height="wrap_content"
             android:background="@android:drawable/btn_dropdown"
-            android:textAlignment="center"
-
             android:spinnerMode="dropdown"
+            android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/editCardDetails"
+            android:id="@+id/editStandardCardDetails"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="[Player], howl at the moon 3 times with [player2] or take a penalty"
@@ -33,6 +31,55 @@
             android:textColor="#FFFFFF"
             android:fontFamily="@font/fonts"
             android:textSize="25sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <EditText
+            android:id="@+id/editPowerUpCardDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="[Player], if any player makes eye contact with you, they take a penalty."
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/fonts"
+            android:textSize="25sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <EditText
+            android:id="@+id/editLawCardDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="[Everyone], take a penalty every time someone says 'uhmm'"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/fonts"
+            android:textSize="25sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <EditText
+            android:id="@+id/editHandicapCardDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="[Player], you now have to play the next 12 rounds on all fours."
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/fonts"
+            android:textSize="25sp"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -57,14 +104,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/fonts"
-            android:textStyle="bold"
             android:text="Enter"
             android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="75sp"
             app:layout_constraintBottom_toTopOf="@+id/btnBackFromCreateCard"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editCardDetails"
             />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -31,11 +31,11 @@ class CardCreation() : AppCompatActivity(){
 
         val cardTypes = resources.getStringArray(R.array.CardTypes)
         val spinner = findViewById<Spinner>(R.id.spinCardType) as Spinner
-        val text = findViewById<EditText>(R.id.editCardDetails) as EditText
+
 
         btnEnter.setOnClickListener {
             //TODO `add error checking
-            save(spinner.selectedItemPosition.toInt(),text.text.toString())
+            save(spinner.selectedItemPosition.toInt(), text.text.toString())
             text.text.clear()
         }
 
@@ -96,19 +96,35 @@ class CardCreation() : AppCompatActivity(){
         val screenView = findViewById<ConstraintLayout>(R.id.make_card)
         //standard card
         if (cardType == 0) {
+            editStandardCardDetails.visibility = View.VISIBLE
+            editPowerUpCardDetails.visibility = View.INVISIBLE
+            editLawCardDetails.visibility = View.INVISIBLE
+            editHandicapCardDetails.visibility = View.INVISIBLE
             screenView.background = resources.getDrawable(R.drawable.standard, theme)
 
         }
         //power-up card
         if (cardType == 1) {
+            editStandardCardDetails.visibility = View.INVISIBLE
+            editPowerUpCardDetails.visibility = View.VISIBLE
+            editLawCardDetails.visibility = View.INVISIBLE
+            editHandicapCardDetails.visibility = View.INVISIBLE
             screenView.background = resources.getDrawable(R.drawable.powerup, theme)
         }
         //law card
         if (cardType == 2) {
+            editStandardCardDetails.visibility = View.INVISIBLE
+            editPowerUpCardDetails.visibility = View.INVISIBLE
+            editLawCardDetails.visibility = View.VISIBLE
+            editHandicapCardDetails.visibility = View.INVISIBLE
             screenView.background = resources.getDrawable(R.drawable.law, theme)
         }
         //handicap card
         if (cardType == 3) {
+            editStandardCardDetails.visibility = View.INVISIBLE
+            editPowerUpCardDetails.visibility = View.INVISIBLE
+            editLawCardDetails.visibility = View.INVISIBLE
+            editHandicapCardDetails.visibility = View.VISIBLE
             screenView.background = resources.getDrawable(R.drawable.handicap, theme)
         }
     }
