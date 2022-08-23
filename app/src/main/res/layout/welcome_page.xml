@@ -20,8 +20,8 @@
 
     <TextView
         android:id="@+id/t2"
-        android:layout_width="412dp"
-        android:layout_height="82dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="#723CD3"
         android:fontFamily="@font/fonts"
         android:text="Welcome to"
