@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnCreateDeck.setOnClickListener {
-            val intent = Intent(this, DeckCreation::class.java)
+            val intent = Intent(this, DeckCreation()::class.java)
             startActivity(intent)
         }
 

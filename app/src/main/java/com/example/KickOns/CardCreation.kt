@@ -2,31 +2,28 @@ package com.example.KickOns
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Parcel
-import android.os.Parcelable
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.card_creation.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import android.util.Log
-import android.view.KeyEvent
 
-class CardCreation() : AppCompatActivity(){
+class CardCreation : AppCompatActivity(){
 
     private var backToMain: MainActivity? = null
     private lateinit var db : CardDB
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         db = CardDB.getDatabase(this)
         val cardDao = db.cardDAO()
-
+        val name: Int? = intent.extras?.getInt("deck_id")
         super.onCreate(savedInstanceState)
+
+
+
         setContentView(R.layout.card_creation)
 
         val cardTypes = resources.getStringArray(R.array.CardTypes)
