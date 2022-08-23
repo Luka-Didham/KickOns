@@ -39,5 +39,7 @@ $dokka.location:com.example.KickOns/MainActivity/MainActivity/#/PointingToDeclar
 $dokka.location:com.example.KickOns/MainActivity/changeCard/#kotlin.Int/PointingToDeclaration/app/com.example.KickOns/-main-activity/change-card.html
 $dokka.location:com.example.KickOns/SplashScreenActivity///PointingToDeclaration/app/com.example.KickOns/-splash-screen-activity/index.html
 $dokka.location:com.example.KickOns/SplashScreenActivity/SplashScreenActivity/#/PointingToDeclaration/app/com.example.KickOns/-splash-screen-activity/-splash-screen-activity.html
+$dokka.location:com.example.KickOns/WelcomePage///PointingToDeclaration/app/com.example.KickOns/-welcome-page/index.html
+$dokka.location:com.example.KickOns/WelcomePage/WelcomePage/#/PointingToDeclaration/app/com.example.KickOns/-welcome-page/-welcome-page.html
 com.example.KickOns
 
