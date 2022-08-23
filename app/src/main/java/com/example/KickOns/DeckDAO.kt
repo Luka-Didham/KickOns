@@ -7,8 +7,11 @@ interface DeckDAO {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun addDeck(deck: DeckItem)
 
-    @Transaction
     @Query("SELECT * FROM deck_table")
-    fun getAll(): List<DeckItem>
+    fun getAll(): List<DeckWithCards>
+
+    @Query("SELECT * FROM deck_table where ID = :deck_id")
+    fun getById(deck_id: Int): List<DeckWithCards>
+
 
 }

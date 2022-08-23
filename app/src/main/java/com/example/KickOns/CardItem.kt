@@ -8,5 +8,6 @@ data class CardItem (
     @PrimaryKey(autoGenerate = true)
     val id: Int?,
     val cardType: Int,
-    val challenge: String
+    val challenge: String,
+    val deckId: Int?
 )

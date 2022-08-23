@@ -2,6 +2,8 @@ package com.example.KickOns
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Parcel
+import android.os.Parcelable
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -10,11 +12,14 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.card_creation.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import android.util.Log
+import android.view.KeyEvent
 
-class CardCreation() : AppCompatActivity() {
+class CardCreation() : AppCompatActivity(){
 
     private var backToMain: MainActivity? = null
     private lateinit var db : CardDB
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -73,9 +78,13 @@ class CardCreation() : AppCompatActivity() {
 
     }
 
+
     private fun save(id: Int, text: String){
+
         if(text != null && id != null){
-            val c = CardItem(null,id,text)
+
+
+            val c = CardItem(null,id,text,0)
             GlobalScope.launch {
                 db.cardDAO().addCard(c)
             }
@@ -103,5 +112,4 @@ class CardCreation() : AppCompatActivity() {
             screenView.background = resources.getDrawable(R.drawable.handicap, theme)
         }
     }
-
 }

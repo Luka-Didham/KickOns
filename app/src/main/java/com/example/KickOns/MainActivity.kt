@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
             }
 
         btnCreateCard.setOnClickListener {
-            val intent = Intent(this, CardCreation::class.java)
+            val intent = Intent(this, CardCreation()::class.java)
             startActivity(intent)
         }
 
