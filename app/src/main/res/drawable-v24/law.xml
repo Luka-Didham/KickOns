@@ -3,7 +3,7 @@
     <gradient
         android:id="@+id/background_powerup"
         android:angle="90"
-        android:endColor="#9CE30613"
-        android:centerColor="#D0F14698"
-        android:startColor="#2FB56060"/>
+        android:endColor="#E82020"
+        android:centerColor="#D3253A"
+        android:startColor="#54FFFFFF"/>
 </shape>

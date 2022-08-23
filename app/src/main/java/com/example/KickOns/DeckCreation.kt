@@ -47,5 +47,6 @@ class DeckCreation : AppCompatActivity() {
         GlobalScope.launch {
             db.deckDAO().addDeck(deck)
         }
+
     }
 }
