@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.card_creation.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-class CardCreation : AppCompatActivity() {
+class CardCreation() : AppCompatActivity() {
 
     private var backToMain: MainActivity? = null
     private lateinit var db : CardDB
