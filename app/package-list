@@ -1,6 +1,8 @@
 $dokka.format:html-v1
 $dokka.linkExtension:html
 $dokka.location:com.example.KickOns////PointingToDeclaration/app/com.example.KickOns/index.html
+$dokka.location:com.example.KickOns/AddPlayer///PointingToDeclaration/app/com.example.KickOns/-add-player/index.html
+$dokka.location:com.example.KickOns/AddPlayer/AddPlayer/#/PointingToDeclaration/app/com.example.KickOns/-add-player/-add-player.html
 $dokka.location:com.example.KickOns/CardCreation///PointingToDeclaration/app/com.example.KickOns/-card-creation/index.html
 $dokka.location:com.example.KickOns/CardCreation/CardCreation/#/PointingToDeclaration/app/com.example.KickOns/-card-creation/-card-creation.html
 $dokka.location:com.example.KickOns/CardDAO///PointingToDeclaration/app/com.example.KickOns/-card-d-a-o/index.html
