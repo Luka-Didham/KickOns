@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">ColorChanging</string>
+    <string name="app_name">KickOns</string>
+    <string name="selected_item">Selected item:</string>
+
+    <string-array name="CardTypes">
+        <item>Challenge</item>
+        <item>Power-Up</item>
+        <item>Law</item>
+        <item>Handicap</item>
+    </string-array>
 </resources>
