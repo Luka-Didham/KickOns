@@ -30,11 +30,11 @@ class CardCreation : AppCompatActivity(){
         val spinner = findViewById<Spinner>(R.id.spinCardType) as Spinner
 
 
-        btnEnter.setOnClickListener {
-            //TODO `add error checking
-            save(spinner.selectedItemPosition.toInt(), text.text.toString())
-            text.text.clear()
-        }
+//        btnEnter.setOnClickListener {
+//            //TODO `add error checking
+//            save(spinner.selectedItemPosition.toInt(), text.text.toString())
+//            text.text.clear()
+//        }
 
         btnBackFromCreateCard.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)

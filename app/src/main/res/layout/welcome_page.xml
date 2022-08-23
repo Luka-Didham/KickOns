@@ -36,7 +36,7 @@
 
 
     <Button
-        android:id="@+id/play"
+        android:id="@+id/btnPlay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="250dp"
@@ -63,7 +63,7 @@
         android:layout_marginTop="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/play" />
+        app:layout_constraintTop_toBottomOf="@+id/btnPlay" />
 
     <Button
         android:id="@+id/help"
