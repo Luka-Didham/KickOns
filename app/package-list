@@ -30,6 +30,8 @@ $dokka.location:com.example.KickOns/DeckItem///PointingToDeclaration/app/com.ex
 $dokka.location:com.example.KickOns/DeckItem/DeckItem/#kotlin.Int?#kotlin.String/PointingToDeclaration/app/com.example.KickOns/-deck-item/-deck-item.html
 $dokka.location:com.example.KickOns/DeckItem/getId/#/PointingToDeclaration/app/com.example.KickOns/-deck-item/get-id.html
 $dokka.location:com.example.KickOns/DeckItem/getName/#/PointingToDeclaration/app/com.example.KickOns/-deck-item/get-name.html
+$dokka.location:com.example.KickOns/DeckPicker///PointingToDeclaration/app/com.example.KickOns/-deck-picker/index.html
+$dokka.location:com.example.KickOns/DeckPicker/DeckPicker/#/PointingToDeclaration/app/com.example.KickOns/-deck-picker/-deck-picker.html
 $dokka.location:com.example.KickOns/DeckWithCards///PointingToDeclaration/app/com.example.KickOns/-deck-with-cards/index.html
 $dokka.location:com.example.KickOns/DeckWithCards/DeckWithCards/#com.example.KickOns.DeckItem#kotlin.collections.List[com.example.KickOns.CardItem]/PointingToDeclaration/app/com.example.KickOns/-deck-with-cards/-deck-with-cards.html
 $dokka.location:com.example.KickOns/DeckWithCards/getCards/#/PointingToDeclaration/app/com.example.KickOns/-deck-with-cards/get-cards.html
