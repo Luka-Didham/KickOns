@@ -7,7 +7,7 @@ import kotlinx.android.synthetic.main.welcome_page.*
 
 class WelcomePage : AppCompatActivity() {
 
-    private var playAddPlayer: MainActivity? = null
+    private var pickDeck: DeckPicker? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -15,7 +15,7 @@ class WelcomePage : AppCompatActivity() {
         setContentView(R.layout.welcome_page)
 
         btnPlay.setOnClickListener {
-            val intent = Intent(this, DeckCreation::class.java)
+            val intent = Intent(this, DeckPicker::class.java)
             startActivity(intent)
         }
 
