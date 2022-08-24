@@ -12,4 +12,6 @@ interface CardDAO {
     @Query("SELECT * FROM card_table")
     fun getAll(): List<CardItem>
 
+    @Query("SELECT * FROM card_table WHERE deckId =:deck_id")
+    suspend fun getByDeckId(deck_id:Int): List<CardItem>
 }

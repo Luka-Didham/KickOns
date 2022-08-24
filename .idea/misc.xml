@@ -4,9 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Aquired/COSC345/app/src/main/res/drawable/shape.xml" value="0.188" />
+        <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/activity_main.xml" value="0.12228260869565218" />
         <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/activity_splash_screen.xml" value="0.18072916666666666" />
+        <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/add_player.xml" value="0.2078125" />
         <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/card_creation.xml" value="0.1" />
+        <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/card_item.xml" value="0.18697916666666667" />
         <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/card_row.xml" value="0.1" />
+        <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/card_view.xml" value="0.18697916666666667" />
+        <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/deck_cards.xml" value="0.18802083333333333" />
+        <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/deck_creation.xml" value="0.2078125" />
         <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/deck_item.xml" value="0.1" />
         <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/deck_picker.xml" value="0.1" />
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/drawable-v24/ani_design2.xml" value="0.22" />
