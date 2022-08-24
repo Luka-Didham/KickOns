@@ -13,7 +13,7 @@
         android:id="@+id/tvChooseDeck"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="25dp"
+        android:padding="15dp"
         android:background="#723CD3"
         android:text="Choose a Deck!"
         android:fontFamily="@font/fonts"
@@ -26,7 +26,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnCreateDeck"
+        android:id="@+id/btnCreateDeckFromChoose"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -42,12 +42,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <Button
+        android:id="@+id/btnPlayFromChooseDeck"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="25dp"
+        android:fontFamily="@font/fonts"
+        android:text="Play with Default Deck"
+        android:textColor="#FBD34C"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btnCreateDeckFromChoose"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="550dp"
-        android:layout_marginTop="92dp"
+        android:layout_height="0sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnPlayFromChooseDeck"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvChooseDeck" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvChooseDeck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

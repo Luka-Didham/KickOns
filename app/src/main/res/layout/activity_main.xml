@@ -43,7 +43,7 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/btnCreateDeck"
+        android:id="@+id/btnCreateDeckFromMain"
         android:layout_width="300sp"
         android:layout_height="50sp"
         android:layout_above="@+id/btnCreateCard"

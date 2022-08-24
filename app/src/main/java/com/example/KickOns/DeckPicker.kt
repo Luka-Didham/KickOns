@@ -15,7 +15,7 @@ import kotlinx.coroutines.*
 
 class DeckPicker() : AppCompatActivity(), DeckClickListener {
 
-    private var backToMain: MainActivity? = null
+    private var playWithDefaultDeck: AddPlayer? = null
     private var confirmName: CardCreation? = null
     private lateinit var db: CardDB
     private lateinit var binding: DeckPickerBinding
@@ -40,8 +40,13 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener {
             }
         }
 
-        btnCreateDeck.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+        btnCreateDeckFromChoose.setOnClickListener {
+            val intent = Intent(this, DeckCreation::class.java)
+            startActivity(intent)
+        }
+
+        btnPlayFromChooseDeck.setOnClickListener {
+            val intent = Intent(this, AddPlayer::class.java)
             startActivity(intent)
         }
 

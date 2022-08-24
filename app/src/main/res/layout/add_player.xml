@@ -3,115 +3,129 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <RelativeLayout
-        android:id="@+id/layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#FBD34C"
-        android:gravity="center"
-        android:orientation="vertical"
-        tools:context=".MainActivity"
-        tools:layout_editor_absoluteX="-72dp"
-        tools:layout_editor_absoluteY="-64dp">
-
-    </RelativeLayout>
+    android:layout_height="match_parent"
+    android:background="#FBD34C"
+    android:id="@+id/setNumPlayers"
+    >
 
     <TextView
-        android:id="@+id/t2"
+        android:id="@+id/tvChoosePlayersHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Choose Your Fighter!"
         android:fontFamily="@font/fonts"
         android:textAlignment="center"
         android:textColor="#FBD34C"
-        android:textSize="30sp"
+        android:textSize="35sp"
         android:textStyle="bold"
         android:background="#723CD3"
+        android:padding="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvChoosePlayerBlurb"
         android:layout_width="253dp"
+        android:layout_marginTop="40sp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="17dp"
-        android:layout_marginTop="40dp"
         android:fontFamily="@font/fonts"
         android:text="How many people are playing?"
         android:textColor="#8B38DB"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/t2" />
+        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayersHeader"
+        />
 
     <Button
+        android:id="@+id/btnStartFromChoosePlayers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:layout_marginRight="25dp"
         android:fontFamily="@font/fonts"
         android:text="START!"
-        android:textSize="15sp"
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
-        android:layout_marginBottom="25dp"
-        android:layout_marginRight="15dp"
-        app:layout_constraintBottom_toBottomOf="@+id/layout"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+<!--    <Button-->
+<!--        android:id="@+id/button3"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginLeft="25dp"-->
+<!--        android:layout_marginBottom="25dp"-->
+<!--        android:fontFamily="@font/fonts"-->
+<!--        android:text="BACK"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textColor="#E2F6DF13"-->
+<!--        android:textSize="15sp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        />-->
 
     <Spinner
-        android:id="@+id/spinCardType"
+        android:id="@+id/spinNumPlayers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40sp"
         android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown"
         android:textAlignment="center"
-        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/t2" />
+        app:layout_constraintStart_toEndOf="@+id/tvChoosePlayerBlurb"
+        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayersHeader"
+        />
 
     <EditText
         android:id="@+id/editPlayer1"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="85dp"
+        android:layout_marginTop="80sp"
         android:background="#723CD3"
         android:fontFamily="@font/fonts"
         android:hint="Player 1"
         android:textAlignment="center"
         android:textColor="#FBD34C"
         android:textSize="30dp"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayerBlurb"
+        />
 
     <EditText
         android:id="@+id/editPlayer2"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:background="#723CD3"
         android:fontFamily="@font/fonts"
-        android:text="Player 2"
+        android:hint="Player 2"
         android:textAlignment="center"
         android:textColor="#FBD34C"
         android:textSize="30dp"
         android:layout_marginTop="18dp"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editPlayer1" />
 
     <EditText
         android:id="@+id/editPlayer3"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:background="#723CD3"
         android:fontFamily="@font/fonts"
-        android:text="Player 3"
+        android:hint="Player 3"
         android:textAlignment="center"
         android:textColor="#FBD34C"
         android:textSize="30dp"
+        android:visibility="invisible"
         android:layout_marginTop="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -119,45 +133,48 @@
 
     <EditText
         android:id="@+id/editPlayer4"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:background="#723CD3"
         android:fontFamily="@font/fonts"
-        android:text="Player 4"
+        android:hint="Player 4"
         android:layout_marginTop="18dp"
         android:textAlignment="center"
         android:textColor="#FBD34C"
         android:textSize="30dp"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editPlayer3" />
 
     <EditText
         android:id="@+id/editPlayer5"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:background="#723CD3"
         android:fontFamily="@font/fonts"
-        android:text="Player 5"
+        android:hint="Player 5"
         android:layout_marginTop="18dp"
         android:textAlignment="center"
         android:textColor="#FBD34C"
         android:textSize="30dp"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editPlayer4" />
 
     <EditText
         android:id="@+id/editPlayer6"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:background="#723CD3"
         android:fontFamily="@font/fonts"
-        android:text="Player 6"
+        android:hint="Player 6"
         android:layout_marginTop="18dp"
         android:textAlignment="center"
         android:textColor="#FBD34C"
         android:textSize="30dp"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editPlayer5" />

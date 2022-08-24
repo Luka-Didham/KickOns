@@ -36,20 +36,19 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        btnCreateDeck.setOnClickListener {
+        btnCreateDeckFromMain.setOnClickListener {
             val intent = Intent(this, DeckCreation()::class.java)
             startActivity(intent)
         }
 
         }
+
     /*
     1 = strandard card
     2 = powerup card
     3 = law card
     4 = handicap card
      */
-
-
     fun changeCard(cardType:Int){
         val screenView = findViewById<RelativeLayout>(R.id.layout)
 
