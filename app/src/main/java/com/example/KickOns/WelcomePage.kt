@@ -7,7 +7,7 @@ import kotlinx.android.synthetic.main.welcome_page.*
 
 class WelcomePage : AppCompatActivity() {
 
-    private var playAddPlayer: MainActivity? = null
+    private var pickDeck: DeckPicker? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
