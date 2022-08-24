@@ -48,6 +48,17 @@
         </activity>
 
         <activity
+            android:name="com.example.KickOns.DeckPicker"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.EDIT" />
+
+                <category android:name="android.intent.category.ALTERNATIVE" />
+            </intent-filter>
+        </activity>
+
+        <activity
             android:name="com.example.KickOns.AddPlayer"
             android:exported="true">
 

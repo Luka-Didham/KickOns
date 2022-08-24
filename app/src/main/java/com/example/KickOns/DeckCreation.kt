@@ -13,8 +13,8 @@ import kotlinx.coroutines.launch
 class DeckCreation() : AppCompatActivity() {
 
     private var backToMain: MainActivity? = null
-    private var confirmName : CardCreation? = null
-    private lateinit var db : CardDB
+    private var confirmName: CardCreation? = null
+    private lateinit var db: CardDB
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,25 +31,16 @@ class DeckCreation() : AppCompatActivity() {
         }
 
         btnSaveDeck.setOnClickListener {
-            val d = DeckItem(null,text.text.toString())
-            var id: Long? = null
+            val d = DeckItem(null, text.text.toString())
             val intent = Intent(this, CardCreation()::class.java)
 
-            //Saves and returns id
+            //Saves and sends deck Id to card add screen
             GlobalScope.launch {
-                val cid = async { db.deckDAO().addDeck(d) }
-                intent.putExtra("deck_id",cid.await())
+                val deckId = async { db.deckDAO().addDeck(d) }
+                intent.putExtra("deck_id", deckId.await())
                 startActivity(intent)
             }
         }
 
-    }
-//TODO("Add exception handling if the Deck is not saved")
-    private fun save(deck: DeckItem): Long? {
-        var a : Long? = null
-        GlobalScope.launch {
-            a = db.deckDAO().addDeck(deck)
-        }
-    return a
     }
 }
