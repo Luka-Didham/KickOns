@@ -86,7 +86,7 @@
         android:id="@+id/editPlayer1"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80sp"
+        android:layout_marginTop="55sp"
         android:background="#723CD3"
         android:fontFamily="@font/fonts"
         android:hint="Player 1"
@@ -94,6 +94,7 @@
         android:textColor="#FBD34C"
         android:textSize="30dp"
         android:visibility="visible"
+        android:padding="3sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayerBlurb"
@@ -111,6 +112,7 @@
         android:textSize="30dp"
         android:layout_marginTop="18dp"
         android:visibility="invisible"
+        android:padding="3sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editPlayer1" />
@@ -127,6 +129,7 @@
         android:textSize="30dp"
         android:visibility="invisible"
         android:layout_marginTop="18dp"
+        android:padding="3sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editPlayer2" />
@@ -143,6 +146,7 @@
         android:textColor="#FBD34C"
         android:textSize="30dp"
         android:visibility="invisible"
+        android:padding="3sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editPlayer3" />
@@ -159,6 +163,7 @@
         android:textColor="#FBD34C"
         android:textSize="30dp"
         android:visibility="invisible"
+        android:padding="3sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editPlayer4" />
@@ -175,6 +180,7 @@
         android:textColor="#FBD34C"
         android:textSize="30dp"
         android:visibility="invisible"
+        android:padding="3sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editPlayer5" />

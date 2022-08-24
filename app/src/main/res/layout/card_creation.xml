@@ -6,7 +6,6 @@
     android:id="@+id/make_card"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="50dp"
     android:background="@drawable/standard"
     android:layout_gravity="center"
     >
@@ -18,9 +17,11 @@
             android:background="@android:drawable/btn_dropdown"
             android:spinnerMode="dropdown"
             android:textAlignment="center"
+            android:layout_marginTop="50dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
         <EditText
             android:id="@+id/editCardDetails"
@@ -32,6 +33,7 @@
             android:fontFamily="@font/fonts"
             android:textSize="25sp"
             android:visibility="visible"
+            android:layout_margin="50sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -39,29 +41,34 @@
             />
 
         <Button
-            android:id="@+id/btnBackFromCreateCard"
+            android:id="@+id/btnEnter"
             android:layout_width="240dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/fonts"
+            android:text="Save Card"
+            android:textSize="20sp"
             android:textStyle="bold"
-            android:text="Back to Main"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="#FBD34C"
+            android:layout_marginBottom="25sp"
+            app:layout_constraintBottom_toTopOf="@+id/btnBackFromCreateCard"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             />
 
         <Button
-            android:id="@+id/btnEnter"
-            android:layout_width="wrap_content"
+            android:id="@+id/btnBackFromCreateCard"
+            android:layout_width="240dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/fonts"
-            android:text="Enter"
-            android:textSize="18sp"
+            android:text="Back to Main"
+            android:textColor="#FBD34C"
+            android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/btnBackFromCreateCard"
+            android:layout_marginBottom="40sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editCardDetails" />
+            />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
