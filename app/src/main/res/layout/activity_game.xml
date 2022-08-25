@@ -5,17 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="10dp">
-    <Button
-        android:id="@+id/btnCrd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="356dp"
-        android:layout_height="568dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:clickable="true"
         app:cardElevation="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +35,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:padding="15dp"
-                android:text="TextVTextViewTextViewTex tViewTextVi ewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewiew"
+                android:text = "Game is starting soon, press next to begin"
                 android:textSize="21dp" />
 
 
@@ -49,4 +43,21 @@
 
 
     </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        app:layout_constraintEnd_toEndOf="@+id/cardView"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    <Button
+        android:id="@+id/btnExit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/cardView" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

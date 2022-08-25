@@ -34,13 +34,18 @@ class Game : AppCompatActivity() {
         var click = 0
         val len = cardList.size
 
-        btnCrd.setOnClickListener{
+        btnNext.setOnClickListener{
             if (click < len){
                 challenge.text = cardList.get(click).challenge
                 click ++;
             } else {
                 click = 0;
             }
+        }
+
+        btnExit.setOnClickListener {
+            val intent = Intent(this, DeckPicker::class.java)
+            startActivity(intent)
         }
 
     }
