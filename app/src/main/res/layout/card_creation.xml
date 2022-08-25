@@ -10,18 +10,60 @@
     android:layout_gravity="center"
     >
 
-        <Spinner
-            android:id="@+id/spinCardType"
-            android:layout_width="240dp"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/btn_dropdown"
-            android:spinnerMode="dropdown"
-            android:textAlignment="center"
-            android:layout_marginTop="50dp"
+        <ImageView
+            android:id="@+id/ivCardTypeHandicap"
+            android:layout_width="250sp"
+            android:layout_height="89sp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/handicap_title"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivCardTypeLaw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/law2"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivCardTypePowerUp"
+            android:layout_width="250sp"
+            android:layout_height="91sp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/powerup_title"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnPrevCardType"
+            android:layout_width="50sp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/btn_shape_triangle"
+            android:rotation="-45"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnNextCardType"
+            android:layout_width="50sp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/btn_shape_triangle"
+            android:rotation="135"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/editCardDetails"
@@ -71,6 +113,5 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

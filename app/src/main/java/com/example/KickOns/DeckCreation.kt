@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 
 class DeckCreation() : AppCompatActivity() {
 
-    private var backToMain: MainActivity? = null
+    private var backToMain: DeckPicker? = null
     private var confirmName: CardCreation? = null
     private lateinit var db: CardDB
 
