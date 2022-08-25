@@ -49,7 +49,7 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener {
     }
 
     override fun onClick(deck: DeckItem) {
-       val intent = Intent(this, Game::class.java)
+       val intent = Intent(this, MainActivity::class.java)
         GlobalScope.launch{
             //Querry db and wait for response
             getCards(deck.id)
