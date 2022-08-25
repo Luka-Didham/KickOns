@@ -23,7 +23,7 @@ class AddPlayer : AppCompatActivity() {
         val numPlayers = resources.getStringArray(R.array.numPlayers)
 
         btnStartFromChoosePlayers.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, DeckPicker::class.java)
             startActivity(intent)
         }
 
