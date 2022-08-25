@@ -41,11 +41,6 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener {
             startActivity(intent)
         }
 
-        btnPlayFromChooseDeck.setOnClickListener {
-            val intent = Intent(this, AddPlayer::class.java)
-            startActivity(intent)
-        }
-
     }
 
     override fun onClick(deck: DeckItem) {
