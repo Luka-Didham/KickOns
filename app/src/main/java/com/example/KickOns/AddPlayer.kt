@@ -19,7 +19,17 @@ class AddPlayer : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.add_player)
+        var players = ArrayList<String>()
+        var editText = textInputEditText
+        var MAX_PLAYERS = 30
 
+        btnAddPlayer.setOnClickListener{
+            if(players.size<MAX_PLAYERS) {
+                players.add(editText.toString())
+                editText.setText("")
+
+            }
+        }
         btnStartFromChoosePlayers.setOnClickListener{
             val intent = Intent(this, DeckPicker()::class.java)
             startActivity(intent)

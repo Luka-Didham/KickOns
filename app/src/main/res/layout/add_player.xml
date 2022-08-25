@@ -9,7 +9,7 @@
 
 
     <Button
-        android:id="@+id/btnStartFromChoosePlayers50"
+        android:id="@+id/btnPlayer26"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="5sp"
@@ -21,8 +21,8 @@
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
         android:textSize="10sp"
-        app:layout_constraintStart_toEndOf="@+id/btnPlayer28"
-        app:layout_constraintTop_toBottomOf="@+id/btnPlayer26" />
+        app:layout_constraintStart_toEndOf="@+id/btnPlayer25"
+        app:layout_constraintTop_toBottomOf="@+id/btnPlayer23" />
 
     <Button
         android:id="@+id/btnAddPlayer"
@@ -171,7 +171,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btnPlayer16" />
 
     <Button
-        android:id="@+id/btnPlayer25"
+        android:id="@+id/btnPlayer22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="5sp"
@@ -183,6 +183,20 @@
         android:textSize="10sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnPlayer19" />
+
+    <Button
+        android:id="@+id/btnPlayer25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:text="Lukaluk"
+        android:textAlignment="center"
+        android:textColor="#E2F6DF13"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPlayer22" />
 
     <Button
         android:id="@+id/btnPlayer28"
@@ -199,20 +213,6 @@
         app:layout_constraintTop_toBottomOf="@+id/btnPlayer25" />
 
     <Button
-        android:id="@+id/btnStartFromChoosePlayers51"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="5sp"
-        android:background="@drawable/deckitembackground"
-        android:fontFamily="@font/fonts"
-        android:text="Lukaluk"
-        android:textAlignment="center"
-        android:textColor="#E2F6DF13"
-        android:textSize="10sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnPlayer28" />
-
-    <Button
         android:id="@+id/btnPlayer29"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -225,8 +225,8 @@
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
         android:textSize="10sp"
-        app:layout_constraintStart_toEndOf="@+id/btnStartFromChoosePlayers51"
-        app:layout_constraintTop_toBottomOf="@+id/btnStartFromChoosePlayers50" />
+        app:layout_constraintStart_toEndOf="@+id/btnPlayer28"
+        app:layout_constraintTop_toBottomOf="@+id/btnPlayer26" />
 
     <Button
         android:id="@+id/btnPlayer30"
@@ -242,10 +242,10 @@
         android:textColor="#E2F6DF13"
         android:textSize="10sp"
         app:layout_constraintStart_toEndOf="@+id/btnPlayer29"
-        app:layout_constraintTop_toBottomOf="@+id/btnStartFromChoosePlayers49" />
+        app:layout_constraintTop_toBottomOf="@+id/btnPlayer27" />
 
     <Button
-        android:id="@+id/btnStartFromChoosePlayers49"
+        android:id="@+id/btnPlayer27"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="5sp"
@@ -257,11 +257,11 @@
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
         android:textSize="10sp"
-        app:layout_constraintStart_toEndOf="@+id/btnStartFromChoosePlayers50"
-        app:layout_constraintTop_toBottomOf="@+id/btnPlayer27" />
+        app:layout_constraintStart_toEndOf="@+id/btnPlayer26"
+        app:layout_constraintTop_toBottomOf="@+id/btnPlayer24" />
 
     <Button
-        android:id="@+id/btnPlayer26"
+        android:id="@+id/btnPlayer23"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="5sp"
@@ -272,11 +272,11 @@
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
         android:textSize="10sp"
-        app:layout_constraintStart_toEndOf="@+id/btnPlayer25"
+        app:layout_constraintStart_toEndOf="@+id/btnPlayer22"
         app:layout_constraintTop_toBottomOf="@+id/btnPlayer20" />
 
     <Button
-        android:id="@+id/btnPlayer27"
+        android:id="@+id/btnPlayer24"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="5sp"
@@ -287,7 +287,7 @@
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
         android:textSize="10sp"
-        app:layout_constraintStart_toEndOf="@+id/btnPlayer26"
+        app:layout_constraintStart_toEndOf="@+id/btnPlayer23"
         app:layout_constraintTop_toBottomOf="@+id/btnPlayer21" />
 
     <Button
