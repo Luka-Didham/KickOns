@@ -27,7 +27,7 @@ class DeckCreation() : AppCompatActivity() {
         val deckDesc = findViewById<EditText>(R.id.editDeckName) as EditText
 
         btnBackFromCreateDeck.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, DeckPicker::class.java)
             startActivity(intent)
         }
 
