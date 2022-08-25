@@ -34,13 +34,13 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        btnCreateCard.setOnClickListener {
-            val intent = Intent(this, CardCreation()::class.java)
+        btnPlayerSelection.setOnClickListener {
+            val intent = Intent(this, AddPlayer()::class.java)
             startActivity(intent)
         }
 
-        btnCreateDeckFromMain.setOnClickListener {
-            val intent = Intent(this, DeckCreation()::class.java)
+        btnDeckSelection.setOnClickListener {
+            val intent = Intent(this, DeckPicker()::class.java)
             startActivity(intent)
         }
 
