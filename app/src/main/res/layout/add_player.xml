@@ -2,24 +2,419 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/setNumPlayers"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FBD34C"
-    android:id="@+id/setNumPlayers"
-    >
+    android:background="#FBD34C">
+
+    <EditText
+        android:id="@+id/editPlayer1"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:hint="Player 1"
+        android:padding="3sp"
+        android:textAlignment="center"
+        android:textColor="#FBD34C"
+        android:textSize="20dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayerBlurb" />
+
+    <EditText
+        android:id="@+id/editPlayer2"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="104dp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:hint="Player 1"
+        android:padding="3sp"
+        android:textAlignment="center"
+        android:textColor="#FBD34C"
+        android:textSize="20dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayerBlurb" />
+
+    <EditText
+        android:id="@+id/editPlayer3"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="144dp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:hint="Player 1"
+        android:padding="3sp"
+        android:textAlignment="center"
+        android:textColor="#FBD34C"
+        android:textSize="20dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayerBlurb" />
+
+    <EditText
+        android:id="@+id/editPlayer4"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="232dp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:hint="Player 1"
+        android:padding="3sp"
+        android:textAlignment="center"
+        android:textColor="#FBD34C"
+        android:textSize="20dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayerBlurb" />
+
+    <EditText
+        android:id="@+id/editPlayer5"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="188dp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:hint="Player 1"
+        android:padding="3sp"
+        android:textAlignment="center"
+        android:textColor="#FBD34C"
+        android:textSize="20dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayerBlurb" />
+
+    <EditText
+        android:id="@+id/editPlayer6"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="232dp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:hint="Player 1"
+        android:padding="3sp"
+        android:textAlignment="center"
+        android:textColor="#FBD34C"
+        android:textSize="20dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayerBlurb" />
+
+    <EditText
+        android:id="@+id/editPlayer20"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:hint="Player 1"
+        android:padding="3sp"
+        android:textAlignment="center"
+        android:textColor="#FBD34C"
+        android:textSize="20dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayerBlurb" />
+
+    <EditText
+        android:id="@+id/editPlayer33"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:hint="Player 1"
+        android:padding="3sp"
+        android:textAlignment="center"
+        android:textColor="#FBD34C"
+        android:textSize="20dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayerBlurb" />
+
+    <EditText
+        android:id="@+id/editPlayer29"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="144dp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:hint="Player 1"
+        android:padding="3sp"
+        android:textAlignment="center"
+        android:textColor="#FBD34C"
+        android:textSize="20dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayerBlurb" />
+
+    <EditText
+        android:id="@+id/editPlayer36"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="104dp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:hint="Player 1"
+        android:padding="3sp"
+        android:textAlignment="center"
+        android:textColor="#FBD34C"
+        android:textSize="20dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayerBlurb" />
+
+    <EditText
+        android:id="@+id/editPlayer37"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="232dp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:hint="Player 1"
+        android:padding="3sp"
+        android:textAlignment="center"
+        android:textColor="#FBD34C"
+        android:textSize="20dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayerBlurb" />
+
+    <EditText
+        android:id="@+id/editPlayer39"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:hint="Player 1"
+        android:padding="3sp"
+        android:textAlignment="center"
+        android:textColor="#FBD34C"
+        android:textSize="20dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayerBlurb" />
+
+    <EditText
+        android:id="@+id/editPlayer35"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="272dp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:hint="Player 1"
+        android:padding="3sp"
+        android:textAlignment="center"
+        android:textColor="#FBD34C"
+        android:textSize="20dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayerBlurb" />
+
+    <EditText
+        android:id="@+id/editPlayer30"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="232dp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:hint="Player 1"
+        android:padding="3sp"
+        android:textAlignment="center"
+        android:textColor="#FBD34C"
+        android:textSize="20dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayerBlurb" />
+
+    <EditText
+        android:id="@+id/editPlayer38"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="356dp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:hint="Player 1"
+        android:padding="3sp"
+        android:textAlignment="center"
+        android:textColor="#FBD34C"
+        android:textSize="20dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayerBlurb" />
+
+    <EditText
+        android:id="@+id/editPlayer31"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="188dp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:hint="Player 1"
+        android:padding="3sp"
+        android:textAlignment="center"
+        android:textColor="#FBD34C"
+        android:textSize="20dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayerBlurb" />
+
+    <EditText
+        android:id="@+id/editPlayer32"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:hint="Player 1"
+        android:padding="3sp"
+        android:textAlignment="center"
+        android:textColor="#FBD34C"
+        android:textSize="20dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayerBlurb" />
+
+    <EditText
+        android:id="@+id/editPlayer34"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="312dp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:hint="Player 1"
+        android:padding="3sp"
+        android:textAlignment="center"
+        android:textColor="#FBD34C"
+        android:textSize="20dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayerBlurb" />
+
+    <EditText
+        android:id="@+id/editPlayer26"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="356dp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:hint="Player 1"
+        android:padding="3sp"
+        android:textAlignment="center"
+        android:textColor="#FBD34C"
+        android:textSize="20dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayerBlurb" />
+
+    <EditText
+        android:id="@+id/editPlayer25"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:hint="Player 1"
+        android:padding="3sp"
+        android:textAlignment="center"
+        android:textColor="#FBD34C"
+        android:textSize="20dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayerBlurb" />
+
+    <EditText
+        android:id="@+id/editPlayer28"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="272dp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:hint="Player 1"
+        android:padding="3sp"
+        android:textAlignment="center"
+        android:textColor="#FBD34C"
+        android:textSize="20dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayerBlurb" />
+
+    <EditText
+        android:id="@+id/editPlayer27"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="312dp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:hint="Player 1"
+        android:padding="3sp"
+        android:textAlignment="center"
+        android:textColor="#FBD34C"
+        android:textSize="20dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayerBlurb" />
 
     <TextView
         android:id="@+id/tvChoosePlayersHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Choose Your Fighter!"
+        android:background="#723CD3"
         android:fontFamily="@font/fonts"
+        android:padding="15dp"
+        android:text="Choose Your Fighter!"
         android:textAlignment="center"
         android:textColor="#FBD34C"
         android:textSize="35sp"
         android:textStyle="bold"
-        android:background="#723CD3"
-        android:padding="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,47 +422,46 @@
     <TextView
         android:id="@+id/tvChoosePlayerBlurb"
         android:layout_width="253dp"
-        android:layout_marginTop="40sp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="17dp"
+        android:layout_marginTop="40sp"
         android:fontFamily="@font/fonts"
         android:text="How many people are playing?"
         android:textColor="#8B38DB"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayersHeader"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayersHeader" />
+
+    <!--    <Button-->
+    <!--        android:id="@+id/button3"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginLeft="25dp"-->
+    <!--        android:layout_marginBottom="25dp"-->
+    <!--        android:fontFamily="@font/fonts"-->
+    <!--        android:text="BACK"-->
+    <!--        android:textAlignment="center"-->
+    <!--        android:textColor="#E2F6DF13"-->
+    <!--        android:textSize="15sp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        />-->
 
     <Button
         android:id="@+id/btnStartFromChoosePlayers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
-        android:layout_marginRight="25dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/deckitembackground"
         android:fontFamily="@font/fonts"
         android:text="START!"
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
-
-<!--    <Button-->
-<!--        android:id="@+id/button3"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginLeft="25dp"-->
-<!--        android:layout_marginBottom="25dp"-->
-<!--        android:fontFamily="@font/fonts"-->
-<!--        android:text="BACK"-->
-<!--        android:textAlignment="center"-->
-<!--        android:textColor="#E2F6DF13"-->
-<!--        android:textSize="15sp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        />-->
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Spinner
         android:id="@+id/spinNumPlayers"
@@ -79,110 +473,8 @@
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvChoosePlayerBlurb"
-        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayersHeader"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayersHeader"/>
 
-    <EditText
-        android:id="@+id/editPlayer1"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="55sp"
-        android:background="#723CD3"
-        android:fontFamily="@font/fonts"
-        android:hint="Player 1"
-        android:textAlignment="center"
-        android:textColor="#FBD34C"
-        android:textSize="30dp"
-        android:visibility="visible"
-        android:padding="3sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayerBlurb"
-        />
 
-    <EditText
-        android:id="@+id/editPlayer2"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:background="#723CD3"
-        android:fontFamily="@font/fonts"
-        android:hint="Player 2"
-        android:textAlignment="center"
-        android:textColor="#FBD34C"
-        android:textSize="30dp"
-        android:layout_marginTop="18dp"
-        android:visibility="invisible"
-        android:padding="3sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editPlayer1" />
-
-    <EditText
-        android:id="@+id/editPlayer3"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:background="#723CD3"
-        android:fontFamily="@font/fonts"
-        android:hint="Player 3"
-        android:textAlignment="center"
-        android:textColor="#FBD34C"
-        android:textSize="30dp"
-        android:visibility="invisible"
-        android:layout_marginTop="18dp"
-        android:padding="3sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editPlayer2" />
-
-    <EditText
-        android:id="@+id/editPlayer4"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:background="#723CD3"
-        android:fontFamily="@font/fonts"
-        android:hint="Player 4"
-        android:layout_marginTop="18dp"
-        android:textAlignment="center"
-        android:textColor="#FBD34C"
-        android:textSize="30dp"
-        android:visibility="invisible"
-        android:padding="3sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editPlayer3" />
-
-    <EditText
-        android:id="@+id/editPlayer5"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:background="#723CD3"
-        android:fontFamily="@font/fonts"
-        android:hint="Player 5"
-        android:layout_marginTop="18dp"
-        android:textAlignment="center"
-        android:textColor="#FBD34C"
-        android:textSize="30dp"
-        android:visibility="invisible"
-        android:padding="3sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editPlayer4" />
-
-    <EditText
-        android:id="@+id/editPlayer6"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:background="#723CD3"
-        android:fontFamily="@font/fonts"
-        android:hint="Player 6"
-        android:layout_marginTop="18dp"
-        android:textAlignment="center"
-        android:textColor="#FBD34C"
-        android:textSize="30dp"
-        android:visibility="invisible"
-        android:padding="3sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editPlayer5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

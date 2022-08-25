@@ -23,6 +23,7 @@
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/drawable/ani_normal.xml" value="0.196" />
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/drawable/background_ani.xml" value="0.3675" />
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/drawable/background_manager_ani.xml" value="0.3305" />
+        <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/drawable/deckitem.xml" value="0.195" />
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/drawable/handicap.xml" value="0.155" />
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/drawable/handicap_card.xml" value="0.155" />
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1865" />
@@ -33,6 +34,7 @@
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/layout/activity_powerup.xml" value="0.26927083333333335" />
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/layout/activity_splash_screen.xml" value="0.18" />
+        <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/layout/add_player.xml" value="0.33" />
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/layout/card_creation.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/layout/card_item.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/layout/card_row.xml" value="0.18802083333333333" />

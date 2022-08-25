@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="10dp">
+    android:padding="10dp"
+    android:background="#FBD34C">
 
     <androidx.cardview.widget.CardView
+        style="?android:attr/borderlessButtonStyle"
         android:id="@+id/cardView"
         android:layout_width="349dp"
         android:layout_height="83dp"
@@ -14,11 +16,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:cardElevation="10dp"
         android:clickable="true"
-        tools:layout_editor_absoluteY="53dp">
+        tools:layout_editor_absoluteY="53dp"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@drawable/deckitembackground">
 
         <ImageView
             android:id="@+id/imageView2"
@@ -26,7 +30,8 @@
             android:layout_width="67dp"
             android:layout_height="70dp"
             android:layout_gravity="center"
-            app:srcCompat="@drawable/shape" />
+            app:srcCompat="@drawable/logo_simple"
+            />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -41,7 +46,8 @@
                     android:layout_weight="1"
                     android:textFontWeight="900"
                     android:padding="5dp"
-                    android:text="TextView" />
+                    android:text="TextView"
+                    />
 
                 <TextView
                     android:id="@+id/deck_sub"
@@ -49,7 +55,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:padding="5dp"
-                    android:text="TextView" />
+                    android:text="TextView"
+                    />
             </LinearLayout>
 
         </LinearLayout>
