@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 
 class DeckCreation() : AppCompatActivity() {
 
-    private var backToMain: MainActivity? = null
+    private var backToMain: DeckPicker? = null
     private var confirmName: CardCreation? = null
     private lateinit var db: CardDB
 
@@ -27,7 +27,7 @@ class DeckCreation() : AppCompatActivity() {
         val deckDesc = findViewById<EditText>(R.id.editDeckName) as EditText
 
         btnBackFromCreateDeck.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, DeckPicker::class.java)
             startActivity(intent)
         }
 
