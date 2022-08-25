@@ -24,6 +24,7 @@ class AddPlayer : AppCompatActivity() {
         var players = ArrayList<Button>()
         var editText = textInputEditText
         var MAX_PLAYERS = 30
+        var positionCount = 1
 
         btnAddPlayer.setOnClickListener{
             var text = editText.getText().toString()
@@ -42,15 +43,15 @@ class AddPlayer : AppCompatActivity() {
                     btn.visibility = View.VISIBLE
                     btn.setOnClickListener {
                         if (players.contains(btn)) {
-                            btn.visibility = View.INVISIBLE
-                            btn.setText("")
                             players.remove(btn)
+                            btn.visibility = View.INVISIBLE
                         }
                     }
                 }else{
                     editText.hint = "Max 30 players"
                 }
-            }
+
+        }
         }
         btnStartFromChoosePlayers.setOnClickListener{
             if(players.size>1) {
@@ -63,6 +64,5 @@ class AddPlayer : AppCompatActivity() {
 
 
 
-    }
+    }}
 
-}
