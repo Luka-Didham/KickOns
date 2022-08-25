@@ -8,23 +8,22 @@
     android:background="#FBD34C"
     >
 
+
     <TextView
-        android:id="@+id/tvCreateDeckTitle"
+        android:id="@+id/tvChooseDeck"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="50sp"
+        android:padding="15dp"
+        android:background="#723CD3"
+        android:text="Create a Deck!"
         android:fontFamily="@font/fonts"
-        android:text="Create Deck"
-        android:textColor="#000000"
         android:textAlignment="center"
+        android:textColor="#FBD34C"
         android:textSize="35sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/editDeckName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.052" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editDeckName"
@@ -33,15 +32,15 @@
         android:layout_margin="50sp"
         android:fontFamily="@font/fonts"
         android:hint="Deck Name"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/black"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.62"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.263" />
+        app:layout_constraintVertical_bias="0.124" />
 
     <EditText
         android:id="@+id/editDeckDescription"
@@ -50,15 +49,14 @@
         android:layout_margin="50sp"
         android:fontFamily="@font/fonts"
         android:hint="deck description"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.448" />
+        app:layout_constraintVertical_bias="0.326" />
 
     <Button
         android:id="@+id/btnSaveDeck"
@@ -66,7 +64,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/fonts"
         android:text="SAVE DECK"
-        android:textColor="#FFFF"
+        android:textColor="#FBD34C"
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginBottom="25sp"
@@ -81,7 +79,7 @@
         android:layout_marginBottom="28dp"
         android:fontFamily="@font/fonts"
         android:text="deck selection"
-        android:textColor="#FFFF"
+        android:textColor="#FBD34C"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
