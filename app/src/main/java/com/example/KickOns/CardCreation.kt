@@ -19,7 +19,7 @@ class CardCreation : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         db = CardDB.getDatabase(this)
         val cardDao = db.cardDAO()
-        val name: Int? = intent.extras?.getInt("deck_id")
+        val deck_id: Long? = intent.extras?.getLong("deck_id")
         super.onCreate(savedInstanceState)
 
 
@@ -28,13 +28,13 @@ class CardCreation : AppCompatActivity(){
 
         val cardTypes = resources.getStringArray(R.array.CardTypes)
         val spinner = findViewById<Spinner>(R.id.spinCardType) as Spinner
+        val text = findViewById<EditText>(R.id.editCardDetails) as EditText
 
-
-//        btnEnter.setOnClickListener {
-//            //TODO `add error checking
-//            save(spinner.selectedItemPosition.toInt(), text.text.toString())
-//            text.text.clear()
-//        }
+        btnEnter.setOnClickListener {
+            //TODO `add error checking
+            save(spinner.selectedItemPosition.toInt(),text.text.toString(),deck_id?.toInt())
+            text.text.clear()
+        }
 
         btnBackFromCreateCard.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -76,12 +76,12 @@ class CardCreation : AppCompatActivity(){
     }
 
 
-    private fun save(id: Int, text: String){
+    private fun save(id: Int, text: String, deck_id:Int?){
 
         if(text != null && id != null){
 
 
-            val c = CardItem(null,id,text,0)
+            val c = CardItem(null,id,text,deck_id)
             GlobalScope.launch {
                 db.cardDAO().addCard(c)
             }
@@ -93,35 +93,23 @@ class CardCreation : AppCompatActivity(){
         val screenView = findViewById<ConstraintLayout>(R.id.make_card)
         //standard card
         if (cardType == 0) {
-            editStandardCardDetails.visibility = View.VISIBLE
-            editPowerUpCardDetails.visibility = View.INVISIBLE
-            editLawCardDetails.visibility = View.INVISIBLE
-            editHandicapCardDetails.visibility = View.INVISIBLE
+            editCardDetails.hint = "[Player], howl at the moon 3 times with [player2] or take a penalty"
             screenView.background = resources.getDrawable(R.drawable.standard, theme)
 
         }
         //power-up card
         if (cardType == 1) {
-            editStandardCardDetails.visibility = View.INVISIBLE
-            editPowerUpCardDetails.visibility = View.VISIBLE
-            editLawCardDetails.visibility = View.INVISIBLE
-            editHandicapCardDetails.visibility = View.INVISIBLE
+            editCardDetails.hint = "[Player], if any player makes eye contact with you, they take a penalty."
             screenView.background = resources.getDrawable(R.drawable.powerup, theme)
         }
         //law card
         if (cardType == 2) {
-            editStandardCardDetails.visibility = View.INVISIBLE
-            editPowerUpCardDetails.visibility = View.INVISIBLE
-            editLawCardDetails.visibility = View.VISIBLE
-            editHandicapCardDetails.visibility = View.INVISIBLE
+            editCardDetails.hint = "[Everyone], take a penalty every time someone says 'uhmm'"
             screenView.background = resources.getDrawable(R.drawable.law, theme)
         }
         //handicap card
         if (cardType == 3) {
-            editStandardCardDetails.visibility = View.INVISIBLE
-            editPowerUpCardDetails.visibility = View.INVISIBLE
-            editLawCardDetails.visibility = View.INVISIBLE
-            editHandicapCardDetails.visibility = View.VISIBLE
+            editCardDetails.hint = "[Player], you now have to play the next 12 rounds on all fours."
             screenView.background = resources.getDrawable(R.drawable.handicap, theme)
         }
     }

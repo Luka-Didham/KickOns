@@ -5,9 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/make_deck"
-    android:padding="50dp"
     android:background="@drawable/standard"
-    android:layout_gravity="center"
     >
 
     <TextView
@@ -19,6 +17,7 @@
         android:textAlignment="center"
         android:textSize="30sp"
         android:textStyle="bold"
+        android:layout_margin="50sp"
         app:layout_constraintBottom_toTopOf="@+id/editDeckName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,6 +32,7 @@
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:layout_margin="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,16 +40,17 @@
 
     <Button
         android:id="@+id/btnSaveDeck"
-        android:layout_width="wrap_content"
+        android:layout_width="240sp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/fonts"
-        android:textStyle="bold"
         android:text="SAVE DECK"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="#FBD34C"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnBackFromCreateDeck"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editDeckName" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnBackFromCreateDeck"
@@ -57,11 +58,13 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/fonts"
         android:text="BACK TO MAIN"
-        android:textSize="18sp"
+        android:textColor="#FBD34C"
+        android:textSize="20sp"
         android:textStyle="bold"
+        android:layout_marginBottom="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSaveDeck" />
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,33 +3,22 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <RelativeLayout
-            android:id="@+id/layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#FBD34C"
-            android:gravity="center"
-            android:orientation="vertical"
-            tools:context=".MainActivity"
-            tools:layout_editor_absoluteX="-72dp"
-            tools:layout_editor_absoluteY="-64dp">
-
-        </RelativeLayout>
+        android:layout_height="match_parent"
+        android:background="#FBD34C"
+    >
 
     <TextView
-        android:id="@+id/t2"
+        android:id="@+id/tvWelcome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#723CD3"
         android:fontFamily="@font/fonts"
+        android:padding="15dp"
         android:text="Welcome to"
         android:textAlignment="center"
         android:textColor="#FBD34C"
-        android:textSize="40sp"
+        android:textSize="35sp"
         android:textStyle="bold"
-        android:padding="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -39,7 +28,6 @@
         android:id="@+id/btnPlay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
         android:background="#723CD3"
         android:fontFamily="@font/fonts"
         android:text="PLAY"
@@ -48,10 +36,10 @@
         android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/t2" />
+        app:layout_constraintTop_toBottomOf="@+id/ivLogo" />
 
     <Button
-        android:id="@+id/options"
+        android:id="@+id/btnOptions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#723CD3"
@@ -66,7 +54,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btnPlay" />
 
     <Button
-        android:id="@+id/help"
+        android:id="@+id/btnHelp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#723CD3"
@@ -78,17 +66,17 @@
         android:layout_marginTop="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/options" />
+        app:layout_constraintTop_toBottomOf="@+id/btnOptions" />
 
     <ImageView
-        android:id="@+id/logo"
+        android:id="@+id/ivLogo"
         android:layout_width="300sp"
         android:layout_height="300sp"
         android:layout_centerInParent="true"
         android:src="@drawable/logo_circle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/t2">
-    </ImageView>
+        app:layout_constraintTop_toBottomOf="@+id/tvWelcome"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

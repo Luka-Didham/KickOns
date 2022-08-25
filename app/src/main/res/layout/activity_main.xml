@@ -29,23 +29,25 @@
 
     <Button
         android:id="@+id/btnCreateCard"
-        android:layout_width="300sp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="56dp"
         android:layout_marginEnd="56dp"
-        android:layout_marginBottom="25dp"
+        android:layout_marginBottom="40sp"
         android:fontFamily="@font/fonts"
         android:text="Create a Card"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textColor="#FBD34C"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:padding="5sp"/>
 
     <Button
-        android:id="@+id/btnCreateDeck"
-        android:layout_width="300sp"
-        android:layout_height="50sp"
+        android:id="@+id/btnCreateDeckFromMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_above="@+id/btnCreateCard"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
@@ -54,8 +56,10 @@
         android:layout_marginBottom="25dp"
         android:fontFamily="@font/fonts"
         android:text="Create a Deck"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textColor="#FBD34C"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:padding="5sp"/>
 
     <ImageView
         android:id="@+id/img_handicap"
