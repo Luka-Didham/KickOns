@@ -7,6 +7,180 @@
     android:layout_height="match_parent"
     android:background="#FBD34C">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/setNumPlayers"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FBD34C"
+        tools:layout_editor_absoluteX="-12dp"
+        tools:layout_editor_absoluteY="61dp">
+
+
+        <TextView
+            android:id="@+id/tvChoosePlayersHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#723CD3"
+            android:fontFamily="@font/fonts"
+            android:padding="15dp"
+            android:text="ADD PLAYERS!"
+            android:textAlignment="center"
+            android:textColor="#FBD34C"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnStartFromChoosePlayers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5sp"
+            android:background="@drawable/deckitembackground"
+            android:fontFamily="@font/fonts"
+            android:text="START!"
+            android:textAlignment="center"
+            android:textColor="#E2F6DF13"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnAddPlayer" />
+
+        <Button
+            android:id="@+id/btnStartFromChoosePlayers3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5sp"
+            android:background="@drawable/deckitembackground"
+            android:fontFamily="@font/fonts"
+            android:text="Lukaluk"
+            android:textAlignment="center"
+            android:textColor="#E2F6DF13"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="141dp" />
+
+        <Button
+            android:id="@+id/btnStartFromChoosePlayers6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="68dp"
+            android:layout_marginEnd="5sp"
+            android:background="@drawable/deckitembackground"
+            android:fontFamily="@font/fonts"
+            android:text="lukaluk"
+            android:textAlignment="center"
+            android:textColor="#E2F6DF13"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/btnStartFromChoosePlayers3"
+            app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayersHeader" />
+
+        <Button
+            android:id="@+id/btnStartFromChoosePlayers7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="68dp"
+            android:layout_marginEnd="5sp"
+            android:background="@drawable/deckitembackground"
+            android:fontFamily="@font/fonts"
+            android:text="Lukaluk"
+            android:textAlignment="center"
+            android:textColor="#E2F6DF13"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/btnStartFromChoosePlayers6"
+            app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayersHeader" />
+
+        <Button
+            android:id="@+id/btnAddPlayer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5sp"
+            android:layout_marginStart="7dp"
+            android:background="@drawable/deckitembackground"
+            android:fontFamily="@font/fonts"
+            android:text="Add"
+            android:textAlignment="center"
+            android:textColor="#E2F6DF13"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textInputEditText" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditText"
+            android:layout_width="168dp"
+            android:layout_height="41dp"
+            android:layout_margin="5sp"
+            android:hint="Player Name"
+            android:maxLength="7"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btnStartFromChoosePlayers9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="5sp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:text="Lukaluk"
+        android:textAlignment="center"
+        android:textColor="#E2F6DF13"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/btnStartFromChoosePlayers6"
+        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayersHeader" />
+
+    <Button
+        android:id="@+id/btnStartFromChoosePlayers10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="5sp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:text="lukaluk"
+        android:textAlignment="center"
+        android:textColor="#E2F6DF13"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/btnStartFromChoosePlayers3"
+        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayersHeader" />
+
+    <Button
+        android:id="@+id/btnStartFromChoosePlayers11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5sp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:text="Lukaluk"
+        android:textAlignment="center"
+        android:textColor="#E2F6DF13"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayersHeader" />
+
     <TextView
         android:id="@+id/tvChoosePlayersHeader"
         android:layout_width="match_parent"
@@ -70,7 +244,7 @@
         android:textColor="#E2F6DF13"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.007"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/btnStartFromChoosePlayers3"
         app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayersHeader" />
 
