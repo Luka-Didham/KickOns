@@ -1,27 +1,209 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/setNumPlayers"
-
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FBD34C"
-    android:layout_gravity="center">
+    android:background="#FBD34C">
 
-        <Button
-            android:id="@+id/btnAddPlayer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10sp"
-            android:background="@drawable/deckitembackground"
-            android:fontFamily="@font/fonts"
-            android:text="Add"
-            android:textAlignment="center"
-            android:textColor="#E2F6DF13"
-            android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textInputEditText" />
+
+    <Button
+        android:id="@+id/btnAddPlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:text="Add"
+        android:textAlignment="center"
+        android:textColor="#E2F6DF13"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textInputEditText" />
+
+
+    <Button
+        android:id="@+id/btnStartFromChoosePlayers11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:text="Lu"
+        android:textAlignment="center"
+        android:textColor="#E2F6DF13"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayersHeader" />
+
+    <Button
+        android:id="@+id/btnStartFromChoosePlayers3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:text="Lukaluk"
+        android:textAlignment="center"
+        android:textColor="#E2F6DF13"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/btnStartFromChoosePlayers11"
+        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayersHeader" />
+
+    <Button
+        android:id="@+id/btnStartFromChoosePlayers26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:text="Lukaluk"
+        android:textAlignment="center"
+        android:textColor="#E2F6DF13"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/btnStartFromChoosePlayers3"
+        app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayersHeader" />
+
+    <Button
+        android:id="@+id/btnStartFromChoosePlayers27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:text="Lukaluk"
+        android:textAlignment="center"
+        android:textColor="#E2F6DF13"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnStartFromChoosePlayers11" />
+
+    <Button
+        android:id="@+id/btnStartFromChoosePlayers30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="7dp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:text="Lukaluk"
+        android:textAlignment="center"
+        android:textColor="#E2F6DF13"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnStartFromChoosePlayers27" />
+
+    <Button
+        android:id="@+id/btnStartFromChoosePlayers33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:text="Lukaluk"
+        android:textAlignment="center"
+        android:textColor="#E2F6DF13"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnStartFromChoosePlayers30" />
+
+    <Button
+        android:id="@+id/btnStartFromChoosePlayers34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:text="Lukaluk"
+        android:textAlignment="center"
+        android:textColor="#E2F6DF13"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/btnStartFromChoosePlayers33"
+        app:layout_constraintTop_toBottomOf="@+id/btnStartFromChoosePlayers31" />
+
+    <Button
+        android:id="@+id/btnStartFromChoosePlayers35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:text="Lukaluk"
+        android:textAlignment="center"
+        android:textColor="#E2F6DF13"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/btnStartFromChoosePlayers34"
+        app:layout_constraintTop_toBottomOf="@+id/btnStartFromChoosePlayers32" />
+
+    <Button
+        android:id="@+id/btnStartFromChoosePlayers31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:text="Lukaluk"
+        android:textAlignment="center"
+        android:textColor="#E2F6DF13"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/btnStartFromChoosePlayers30"
+        app:layout_constraintTop_toBottomOf="@+id/btnStartFromChoosePlayers28" />
+
+    <Button
+        android:id="@+id/btnStartFromChoosePlayers32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:text="Lukaluk"
+        android:textAlignment="center"
+        android:textColor="#E2F6DF13"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/btnStartFromChoosePlayers31"
+        app:layout_constraintTop_toBottomOf="@+id/btnStartFromChoosePlayers29" />
+
+    <Button
+        android:id="@+id/btnStartFromChoosePlayers28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:text="easzdfxcghj"
+        android:textAlignment="center"
+        android:textColor="#E2F6DF13"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/btnStartFromChoosePlayers27"
+        app:layout_constraintTop_toBottomOf="@+id/btnStartFromChoosePlayers3" />
+
+    <Button
+        android:id="@+id/btnStartFromChoosePlayers29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/deckitembackground"
+        android:fontFamily="@font/fonts"
+        android:text="Lukaluk"
+        android:textAlignment="center"
+        android:textColor="#E2F6DF13"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/btnStartFromChoosePlayers28"
+        app:layout_constraintTop_toBottomOf="@+id/btnStartFromChoosePlayers26" />
 
     <TextView
         android:id="@+id/tvChoosePlayersHeader"
@@ -44,10 +226,8 @@
         android:id="@+id/btnStartFromChoosePlayers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10sp"
-        android:layout_marginTop="10sp"
-        android:layout_marginEnd="10sp"
-        android:layout_marginBottom="10sp"
+        android:layout_margin="5sp"
+        android:layout_marginStart="31dp"
         android:background="@drawable/deckitembackground"
         android:fontFamily="@font/fonts"
         android:text="START!"
@@ -56,18 +236,17 @@
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/btnAddPlayer" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/textInputEditText"
         android:layout_width="168dp"
         android:layout_height="41dp"
-        android:layout_marginStart="5sp"
-        android:layout_marginTop="5sp"
+        android:layout_margin="5sp"
         android:hint="Player Name"
-        android:maxLength="10"
+        android:maxLength="7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-</RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
