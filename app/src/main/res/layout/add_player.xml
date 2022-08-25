@@ -20,7 +20,8 @@
         android:text="Lukaluk"
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
-        android:textSize="10sp"
+        android:textSize="12sp"
+        android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/btnPlayer25"
         app:layout_constraintTop_toBottomOf="@+id/btnPlayer23" />
 
@@ -50,7 +51,8 @@
         android:text="Lu"
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
-        android:textSize="10sp"
+        android:textSize="12sp"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayersHeader" />
 
@@ -65,7 +67,8 @@
         android:text="Lukaluk"
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
-        android:textSize="10sp"
+        android:textSize="12sp"
+        android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/btnPlayer1"
         app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayersHeader" />
 
@@ -79,7 +82,8 @@
         android:text="Lukaluk"
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
-        android:textSize="10sp"
+        android:textSize="12sp"
+        android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/btnPlayer2"
         app:layout_constraintTop_toBottomOf="@+id/tvChoosePlayersHeader" />
 
@@ -94,7 +98,8 @@
         android:text="Lukaluk"
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
-        android:textSize="10sp"
+        android:textSize="12sp"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnPlayer1" />
 
@@ -110,7 +115,8 @@
         android:text="Lukaluk"
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
-        android:textSize="10sp"
+        android:textSize="12sp"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnPlayer4" />
 
@@ -124,7 +130,8 @@
         android:text="Lukaluk"
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
-        android:textSize="10sp"
+        android:textSize="12sp"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnPlayer7" />
 
@@ -138,7 +145,8 @@
         android:text="Lukaluk"
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
-        android:textSize="10sp"
+        android:textSize="12sp"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnPlayer10" />
 
@@ -152,7 +160,8 @@
         android:text="Lukaluk"
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
-        android:textSize="10sp"
+        android:textSize="12sp"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnPlayer13" />
 
@@ -166,7 +175,8 @@
         android:text="Lukaluk"
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
-        android:textSize="10sp"
+        android:textSize="12sp"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnPlayer16" />
 
@@ -180,7 +190,8 @@
         android:text="Lukaluk"
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
-        android:textSize="10sp"
+        android:textSize="12sp"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnPlayer19" />
 
@@ -194,7 +205,8 @@
         android:text="Lukaluk"
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
-        android:textSize="10sp"
+        android:textSize="12sp"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnPlayer22" />
 
@@ -208,7 +220,8 @@
         android:text="Lukaluk"
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
-        android:textSize="10sp"
+        android:textSize="12sp"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnPlayer25" />
 
@@ -224,9 +237,10 @@
         android:text="Lukaluk"
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
-        android:textSize="10sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/btnPlayer28"
-        app:layout_constraintTop_toBottomOf="@+id/btnPlayer26" />
+        app:layout_constraintTop_toBottomOf="@+id/btnPlayer26"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/btnPlayer30"
@@ -240,7 +254,8 @@
         android:text="Lukaluk"
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
-        android:textSize="10sp"
+        android:textSize="12sp"
+        android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/btnPlayer29"
         app:layout_constraintTop_toBottomOf="@+id/btnPlayer27" />
 
@@ -256,7 +271,8 @@
         android:text="Lukaluk"
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
-        android:textSize="10sp"
+        android:textSize="12sp"
+        android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/btnPlayer26"
         app:layout_constraintTop_toBottomOf="@+id/btnPlayer24" />
 
@@ -271,7 +287,8 @@
         android:text="Lukaluk"
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
-        android:textSize="10sp"
+        android:textSize="12sp"
+        android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/btnPlayer22"
         app:layout_constraintTop_toBottomOf="@+id/btnPlayer20" />
 
@@ -286,7 +303,8 @@
         android:text="Lukaluk"
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
-        android:textSize="10sp"
+        android:textSize="12sp"
+        android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/btnPlayer23"
         app:layout_constraintTop_toBottomOf="@+id/btnPlayer21" />
 
@@ -302,7 +320,8 @@
         android:text="Lukaluk"
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
-        android:textSize="10sp"
+        android:textSize="12sp"
+        android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/btnPlayer19"
         app:layout_constraintTop_toBottomOf="@+id/btnPlayer17" />
 
@@ -318,7 +337,8 @@
         android:text="Lukaluk"
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
-        android:textSize="10sp"
+        android:textSize="12sp"
+        android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/btnPlayer20"
         app:layout_constraintTop_toBottomOf="@+id/btnPlayer18" />
 
@@ -334,7 +354,8 @@
         android:text="Lukaluk"
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
-        android:textSize="10sp"
+        android:textSize="12sp"
+        android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/btnPlayer16"
         app:layout_constraintTop_toBottomOf="@+id/btnPlayer14" />
 
@@ -349,7 +370,8 @@
         android:text="Lukaluk"
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
-        android:textSize="10sp"
+        android:textSize="12sp"
+        android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/btnPlayer17"
         app:layout_constraintTop_toBottomOf="@+id/btnPlayer15" />
 
@@ -364,7 +386,8 @@
         android:text="Lukaluk"
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
-        android:textSize="10sp"
+        android:textSize="12sp"
+        android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/btnPlayer13"
         app:layout_constraintTop_toBottomOf="@+id/btnPlayer11" />
 
@@ -379,7 +402,8 @@
         android:text="Lukaluk"
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
-        android:textSize="10sp"
+        android:textSize="12sp"
+        android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/btnPlayer14"
         app:layout_constraintTop_toBottomOf="@+id/btnPlayer12" />
 
@@ -395,7 +419,8 @@
         android:text="Lukaluk"
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
-        android:textSize="10sp"
+        android:textSize="12sp"
+        android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/btnPlayer10"
         app:layout_constraintTop_toBottomOf="@+id/btnPlayer8" />
 
@@ -411,7 +436,8 @@
         android:text="Lukaluk"
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
-        android:textSize="10sp"
+        android:textSize="12sp"
+        android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/btnPlayer11"
         app:layout_constraintTop_toBottomOf="@+id/btnPlayer9" />
 
@@ -426,7 +452,8 @@
         android:text="Lukaluk"
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
-        android:textSize="10sp"
+        android:textSize="12sp"
+        android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/btnPlayer7"
         app:layout_constraintTop_toBottomOf="@+id/btnPlayer5" />
 
@@ -441,7 +468,8 @@
         android:text="Lukaluk"
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
-        android:textSize="10sp"
+        android:textSize="12sp"
+        android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/btnPlayer8"
         app:layout_constraintTop_toBottomOf="@+id/btnPlayer6" />
 
@@ -457,7 +485,8 @@
         android:text="easzdfxcghj"
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
-        android:textSize="10sp"
+        android:textSize="12sp"
+        android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/btnPlayer4"
         app:layout_constraintTop_toBottomOf="@+id/btnPlayer2" />
 
@@ -472,7 +501,8 @@
         android:text="Lukaluk"
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
-        android:textSize="10sp"
+        android:textSize="12sp"
+        android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/btnPlayer5"
         app:layout_constraintTop_toBottomOf="@+id/btnPlayer3" />
 
