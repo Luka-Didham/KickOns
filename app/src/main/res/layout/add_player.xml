@@ -542,7 +542,7 @@
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/textInputEditText"
         android:layout_width="168dp"
-        android:layout_height="41dp"
+        android:layout_height="48dp"
         android:layout_margin="5sp"
         android:hint="Player Name"
         android:inputType="textPersonName"
