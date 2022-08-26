@@ -1,15 +1,13 @@
 package com.example.KickOns
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.RelativeLayout
-import android.widget.TextView
-import com.example.KickOns.R
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.*
+import java.util.regex.Matcher
+import java.util.regex.Pattern
 
 
 class MainActivity : AppCompatActivity() {
@@ -27,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         val len = cardList.size
         btnScreen.setOnClickListener {
             if(clicked<len) {
-                changeCard(cardList.get(clicked).cardType, cardList.get(clicked).challenge)
+                changeCard(cardList.get(clicked).cardType, randomPlayer(cardList.get(clicked).challenge))
                 clicked++
             }else {
                 clicked = 0
@@ -88,6 +86,19 @@ class MainActivity : AppCompatActivity() {
             screenView.background = resources.getDrawable(R.drawable.handicap, theme)
         }
 
+    }
+
+    fun randomPlayer(prompt: String): String{
+        var newPrompt = prompt.lowercase()
+        var regex: Regex = "#player".toRegex()
+        val pat: Pattern = Pattern.compile("#player")
+        val matcher: Matcher = pat.matcher(newPrompt)
+        var count = 0
+        while(matcher.find()) {
+            newPrompt = newPrompt.replaceFirst("#player".toRegex(), count.toString())
+            count++
+        }
+        return newPrompt
     }
 
     }
