@@ -12,9 +12,10 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         app:cardElevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="55dp">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="339dp"
@@ -35,7 +36,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:padding="15dp"
-                android:text = "Game is starting soon, press next to begin"
+                android:text="Game is starting soon, press next to begin"
                 android:textSize="21dp" />
 
 
