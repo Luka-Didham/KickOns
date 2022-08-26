@@ -28,7 +28,21 @@ class AddPlayer : AppCompatActivity() {
         var editText = textInputEditText
         var MAX_PLAYERS = 30
         var positionCount = 1
+        if(!players.isEmpty()) {
+            for (player in players) {
 
+                val buttonID = player.id
+                var btn = findViewById<Button>(buttonID)
+                btn.text = player.text
+                btn.visibility = View.VISIBLE
+                btn.setOnClickListener {
+                    players.remove(btn)
+                    btn.visibility = View.INVISIBLE
+                }
+
+            }
+
+        }
         btnAddPlayer.setOnClickListener{
             var text = editText.getText().toString()
             print(text)
