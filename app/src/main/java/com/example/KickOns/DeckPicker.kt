@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.KickOns.databinding.DeckPickerBinding
 import kotlinx.android.synthetic.main.deck_creation.*
+import kotlinx.android.synthetic.main.deck_item.*
 import kotlinx.android.synthetic.main.deck_picker.*
 import kotlinx.coroutines.*
 

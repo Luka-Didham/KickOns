@@ -14,6 +14,10 @@ class DeckViewHolder(
             deckCell.deckTitle.text = deck.name
             deckCell.cardView.setOnClickListener {
                 clickListener.onClick(deck)
+
             }
+//           deckCell.btnDelete.setOnClickListener {
+//               DeckDAO.deleteDeck(deck.id);
+//           }
         }
 }

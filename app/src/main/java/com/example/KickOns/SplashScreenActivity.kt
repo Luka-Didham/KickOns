@@ -3,7 +3,7 @@ package com.example.KickOns
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.colorchanging.R
+import com.example.KickOns.R
 import kotlinx.android.synthetic.main.activity_splash_screen.*
 
 class SplashScreenActivity : AppCompatActivity() {
