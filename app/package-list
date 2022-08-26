@@ -71,6 +71,7 @@ $dokka.location:com.example.KickOns/MainActivity///PointingToDeclaration/app/co
 $dokka.location:com.example.KickOns/MainActivity/MainActivity/#/PointingToDeclaration/app/com.example.KickOns/-main-activity/-main-activity.html
 $dokka.location:com.example.KickOns/MainActivity/changeCard/#kotlin.Int#kotlin.String/PointingToDeclaration/app/com.example.KickOns/-main-activity/change-card.html
 $dokka.location:com.example.KickOns/MainActivity/randomPlayer/#kotlin.String/PointingToDeclaration/app/com.example.KickOns/-main-activity/random-player.html
+$dokka.location:com.example.KickOns/MainActivity/randomPlayer2/#kotlin.String/PointingToDeclaration/app/com.example.KickOns/-main-activity/random-player2.html
 $dokka.location:com.example.KickOns/Player///PointingToDeclaration/app/com.example.KickOns/-player/index.html
 $dokka.location:com.example.KickOns/Player/Player/#kotlin.String?/PointingToDeclaration/app/com.example.KickOns/-player/-player.html
 $dokka.location:com.example.KickOns/Player/getName/#/PointingToDeclaration/app/com.example.KickOns/-player/get-name.html
