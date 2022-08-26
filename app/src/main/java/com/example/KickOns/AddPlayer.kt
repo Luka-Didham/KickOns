@@ -28,13 +28,17 @@ class AddPlayer : AppCompatActivity() {
         var editText = textInputEditText
         var MAX_PLAYERS = 30
         var positionCount = 1
-        if(!players.isEmpty()) {
+        if(!playerList.isEmpty()) {
             for (player in playerList) {
-                var btn = findViewById<Button>(playerList.indexOf(player))
+                val num = playerList.indexOf(player) + 1
+                val idString = "btnPlayer$num"
+                val buttonID = resources.getIdentifier(idString, "id", packageName)
+
+                var btn = findViewById<Button>(buttonID)
                 btn.text = player.name
                 btn.visibility = View.VISIBLE
                 btn.setOnClickListener {
-                    players.remove(btn)
+                    playerList.removeAt(playerList.indexOf(player))
                     btn.visibility = View.INVISIBLE
                 }
 
@@ -51,7 +55,7 @@ class AddPlayer : AppCompatActivity() {
                 }else{
                 if(playerList.size<MAX_PLAYERS) {
                     editText.setText("")
-                    val num = playerList.size+1
+                    val num = playerList.size
                     val idString = "btnPlayer$num"
                     val buttonID = resources.getIdentifier(idString, "id", packageName)
                     val btn = findViewById<Button>(buttonID)
