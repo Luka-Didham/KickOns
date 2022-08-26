@@ -29,11 +29,9 @@ class AddPlayer : AppCompatActivity() {
         var MAX_PLAYERS = 30
         var positionCount = 1
         if(!players.isEmpty()) {
-            for (player in players) {
-
-                val buttonID = player.id
-                var btn = findViewById<Button>(buttonID)
-                btn.text = player.text
+            for (player in playerList) {
+                var btn = findViewById<Button>(playerList.indexOf(player))
+                btn.text = player.name
                 btn.visibility = View.VISIBLE
                 btn.setOnClickListener {
                     players.remove(btn)
@@ -46,23 +44,22 @@ class AddPlayer : AppCompatActivity() {
         btnAddPlayer.setOnClickListener{
             var text = editText.getText().toString()
             print(text)
+            val p: Player = Player(text)
+            playerList.add(p)
             if(text == ""){
                 editText.hint = "Please Add Name"
                 }else{
-                if(players.size<MAX_PLAYERS) {
+                if(playerList.size<MAX_PLAYERS) {
                     editText.setText("")
-                    val num = players.size+1
+                    val num = playerList.size+1
                     val idString = "btnPlayer$num"
                     val buttonID = resources.getIdentifier(idString, "id", packageName)
-                    players.add(findViewById(buttonID))
-                    var btn = players[players.size-1]
-                    btn.text = text
+                    val btn = findViewById<Button>(buttonID)
+                    btn.text = p.name
                     btn.visibility = View.VISIBLE
                     btn.setOnClickListener {
-                        if (players.contains(btn)) {
-                            players.remove(btn)
-                            btn.visibility = View.INVISIBLE
-                        }
+                       playerList.remove(p)
+                       btn.visibility = View.INVISIBLE
                     }
                 }else{
                     editText.hint = "Max 30 players"
@@ -71,7 +68,7 @@ class AddPlayer : AppCompatActivity() {
         }
         }
         btnStartFromChoosePlayers.setOnClickListener{
-            if(players.size>1) {
+            if(playerList.size>1) {
                 val intent = Intent(this, DeckPicker()::class.java)
                 startActivity(intent)
             }else{
