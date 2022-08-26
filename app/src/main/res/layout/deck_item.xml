@@ -11,7 +11,7 @@
         style="?android:attr/borderlessButtonStyle"
         android:id="@+id/cardView"
         android:layout_width="wrap_content"
-        android:layout_height="83dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:cardElevation="0dp"
@@ -25,7 +25,8 @@
             android:layout_height="match_parent"
             android:background="@drawable/deckitembackground">
 
-        <ImageView
+
+            <ImageView
             android:id="@+id/imageView2"
             android:layout_margin="10dp"
             android:layout_width="67dp"
@@ -61,8 +62,19 @@
 
             </LinearLayout>
 
+            <Button
+                android:id="@+id/btn_delete"
+                android:layout_width="40sp"
+                android:layout_height="40sp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:backgroundTint="#E91E63"
+                android:text="X"
+                android:layout_marginLeft="50sp"
+                />
+
+
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
