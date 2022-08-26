@@ -28,24 +28,9 @@ class AddPlayer : AppCompatActivity() {
         var editText = textInputEditText
         var MAX_PLAYERS = 30
         var positionCount = 1
-        if(!playerList.isEmpty()) {
-            for (player in playerList) {
-                val num = playerList.indexOf(player) + 1
-                val idString = "btnPlayer$num"
-                val buttonID = resources.getIdentifier(idString, "id", packageName)
-
-                var btn = findViewById<Button>(buttonID)
-                btn.text = player.name
-                btn.visibility = View.VISIBLE
-                btn.setOnClickListener {
-                    playerList.removeAt(playerList.indexOf(player))
-                    btn.visibility = View.INVISIBLE
-                }
-
-            }
-
-        }
+        redraw()
         btnAddPlayer.setOnClickListener{
+
             var text = editText.getText().toString()
             print(text)
             val p: Player = Player(text)
@@ -63,11 +48,14 @@ class AddPlayer : AppCompatActivity() {
                     btn.visibility = View.VISIBLE
                     btn.setOnClickListener {
                        playerList.remove(p)
-                       btn.visibility = View.INVISIBLE
+                       //btn.visibility = View.INVISIBLE
+                        redraw()
                     }
+                    redraw()
                 }else{
                     editText.hint = "Max 30 players"
                 }
+
 
         }
         }
@@ -82,5 +70,26 @@ class AddPlayer : AppCompatActivity() {
 
 
 
-    }}
+    }
+
+    fun redraw(){
+        if(!playerList.isEmpty()) {
+            for (player in playerList) {
+                val num = playerList.indexOf(player) + 1
+                val idString = "btnPlayer$num"
+                val buttonID = resources.getIdentifier(idString, "id", packageName)
+
+                var btn = findViewById<Button>(buttonID)
+                btn.text = player.name
+                btn.visibility = View.VISIBLE
+                btn.setOnClickListener {
+                    playerList.removeAt(playerList.indexOf(player))
+                    btn.visibility = View.INVISIBLE
+                }
+
+            }
+
+        }
+    }
+}
 
