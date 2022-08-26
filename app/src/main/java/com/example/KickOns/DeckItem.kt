@@ -8,4 +8,5 @@ data class DeckItem(
     @PrimaryKey(autoGenerate = true)
     val id: Int?,
     val name: String
+    //val description: String
 )

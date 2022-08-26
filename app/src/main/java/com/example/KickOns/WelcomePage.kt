@@ -15,7 +15,9 @@ class WelcomePage : AppCompatActivity() {
         setContentView(R.layout.welcome_page)
 
         btnPlay.setOnClickListener {
-            val intent = Intent(this, DeckPicker::class.java)
+            val intent = Intent(this, AddPlayer::class.java)
+            //Dummy data to test game
+            //intent.putExtra("deck_id",1)
             startActivity(intent)
         }
 

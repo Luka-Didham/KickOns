@@ -4,21 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="10dp">
+    android:padding="10dp"
+    android:background="#FBD34C">
 
     <androidx.cardview.widget.CardView
+        style="?android:attr/borderlessButtonStyle"
         android:id="@+id/cardView"
         android:layout_width="349dp"
         android:layout_height="83dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:cardElevation="10dp"
+        app:cardElevation="0dp"
         android:clickable="true"
-        tools:layout_editor_absoluteY="53dp">
+        tools:layout_editor_absoluteY="53dp"
+        app:cardBackgroundColor="@android:color/transparent"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@drawable/deckitembackground">
 
         <ImageView
             android:id="@+id/imageView2"
@@ -26,7 +31,8 @@
             android:layout_width="67dp"
             android:layout_height="70dp"
             android:layout_gravity="center"
-            app:srcCompat="@drawable/shape" />
+            app:srcCompat="@drawable/logo_simple"
+            />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -34,14 +40,15 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:textSize="32sp"
                     android:id="@+id/deck_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textFontWeight="900"
                     android:padding="5dp"
-                    android:text="TextView" />
+                    android:text="TextView"
+                    android:textColor="#FBD34C"
+                    android:textFontWeight="900"
+                    android:textSize="32sp" />
 
                 <TextView
                     android:id="@+id/deck_sub"
@@ -49,7 +56,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:padding="5dp"
-                    android:text="TextView" />
+                    android:text="TextView"
+                    android:textColor="#FBD34C" />
             </LinearLayout>
 
         </LinearLayout>

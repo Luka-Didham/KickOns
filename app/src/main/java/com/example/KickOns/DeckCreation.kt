@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 
 class DeckCreation() : AppCompatActivity() {
 
-    private var backToMain: MainActivity? = null
+    private var backToMain: DeckPicker? = null
     private var confirmName: CardCreation? = null
     private lateinit var db: CardDB
 
@@ -23,15 +23,16 @@ class DeckCreation() : AppCompatActivity() {
         db = CardDB.getDatabase(this)
         val deckDao = db.deckDAO()
 
-        val text = findViewById<EditText>(R.id.editDeckName) as EditText
+        val deckName = findViewById<EditText>(R.id.editDeckName) as EditText
+        val deckDesc = findViewById<EditText>(R.id.editDeckName) as EditText
 
         btnBackFromCreateDeck.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, DeckPicker::class.java)
             startActivity(intent)
         }
 
         btnSaveDeck.setOnClickListener {
-            val d = DeckItem(null, text.text.toString())
+            val d = DeckItem(null, deckName.text.toString())//, deckDesc.text.toString())
             val intent = Intent(this, CardCreation()::class.java)
 
             //Saves and sends deck Id to card add screen

@@ -6,6 +6,8 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.add_player.*
 import kotlinx.android.synthetic.main.card_creation.*
 import kotlinx.android.synthetic.main.welcome_page.*
@@ -14,109 +16,53 @@ class AddPlayer : AppCompatActivity() {
 
     private var startGame: MainActivity? = null
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.add_player)
+        var players = ArrayList<Button>()
+        var editText = textInputEditText
+        var MAX_PLAYERS = 30
+        var positionCount = 1
 
-        val spinner = findViewById<Spinner>(R.id.spinNumPlayers) as Spinner
-        val numPlayers = resources.getStringArray(R.array.numPlayers)
+        btnAddPlayer.setOnClickListener{
+            var text = editText.getText().toString()
+            print(text)
+            if(text == ""){
+                editText.hint = "Please Add Name"
+                }else{
+                if(players.size<MAX_PLAYERS) {
+                    editText.setText("")
+                    val num = players.size+1
+                    val idString = "btnPlayer$num"
+                    val buttonID = resources.getIdentifier(idString, "id", packageName)
+                    players.add(findViewById(buttonID))
+                    var btn = players[players.size-1]
+                    btn.text = text
+                    btn.visibility = View.VISIBLE
+                    btn.setOnClickListener {
+                        if (players.contains(btn)) {
+                            players.remove(btn)
+                            btn.visibility = View.INVISIBLE
+                        }
+                    }
+                }else{
+                    editText.hint = "Max 30 players"
+                }
 
-        btnStartFromChoosePlayers.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
         }
-
-        if (spinner != null) {
-            val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, numPlayers)
-            spinner.adapter = adapter
-
-            var clicked = 0
-
-            spinner.onItemSelectedListener = object :
-                AdapterView.OnItemSelectedListener {
-                override fun onNothingSelected(parent: AdapterView<*>) {
-                    spinner.setSelection(clicked)
-                }
-
-                override fun onItemSelected(
-                    parent: AdapterView<*>,
-                    view: View,
-                    position: Int,
-                    id: Long
-                ) {
-                    Toast.makeText(
-                        this@AddPlayer, getString(R.string.selected_item) + " " +
-                                "" + numPlayers[position], Toast.LENGTH_SHORT
-                    ).show()
-
-                    clicked = position + 1
-                    changeNumPlayers(clicked)
-
-                }
+        }
+        btnStartFromChoosePlayers.setOnClickListener{
+            if(players.size>1) {
+                val intent = Intent(this, DeckPicker()::class.java)
+                startActivity(intent)
+            }else{
+                editText.hint = "Minimum 1 player"
             }
-
         }
 
-    }
-
-    private fun changeNumPlayers(numPeople: Int) {
-        val screenView = findViewById<ConstraintLayout>(R.id.setNumPlayers)
-        //standard card
-        if (numPeople == 1) {
-            editPlayer1.visibility = View.VISIBLE
-            editPlayer2.visibility = View.INVISIBLE
-            editPlayer3.visibility = View.INVISIBLE
-            editPlayer4.visibility = View.INVISIBLE
-            editPlayer5.visibility = View.INVISIBLE
-            editPlayer6.visibility = View.INVISIBLE
-        }
-        //power-up card
-        if (numPeople == 2) {
-            editPlayer1.visibility = View.VISIBLE
-            editPlayer2.visibility = View.VISIBLE
-            editPlayer3.visibility = View.INVISIBLE
-            editPlayer4.visibility = View.INVISIBLE
-            editPlayer5.visibility = View.INVISIBLE
-            editPlayer6.visibility = View.INVISIBLE
-        }
-        //law card
-        if (numPeople == 3) {
-            editPlayer1.visibility = View.VISIBLE
-            editPlayer2.visibility = View.VISIBLE
-            editPlayer3.visibility = View.VISIBLE
-            editPlayer4.visibility = View.INVISIBLE
-            editPlayer5.visibility = View.INVISIBLE
-            editPlayer6.visibility = View.INVISIBLE
-        }
-        //handicap card
-        if (numPeople == 4) {
-            editPlayer1.visibility = View.VISIBLE
-            editPlayer2.visibility = View.VISIBLE
-            editPlayer3.visibility = View.VISIBLE
-            editPlayer4.visibility = View.VISIBLE
-            editPlayer5.visibility = View.INVISIBLE
-            editPlayer6.visibility = View.INVISIBLE
-        }
-
-        if (numPeople == 5) {
-            editPlayer1.visibility = View.VISIBLE
-            editPlayer2.visibility = View.VISIBLE
-            editPlayer3.visibility = View.VISIBLE
-            editPlayer4.visibility = View.VISIBLE
-            editPlayer5.visibility = View.VISIBLE
-            editPlayer6.visibility = View.INVISIBLE
-        }
-
-        if (numPeople == 6) {
-            editPlayer1.visibility = View.VISIBLE
-            editPlayer2.visibility = View.VISIBLE
-            editPlayer3.visibility = View.VISIBLE
-            editPlayer4.visibility = View.VISIBLE
-            editPlayer5.visibility = View.VISIBLE
-            editPlayer6.visibility = View.VISIBLE
-        }
-    }
 
 
-}
+    }}
+
