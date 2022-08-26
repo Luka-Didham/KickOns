@@ -3,6 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Aquired/COSC345/app/src/main/res/drawable/shape.xml" value="0.188" />
+        <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/activity_game.xml" value="0.20677083333333332" />
+        <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/activity_main.xml" value="0.12228260869565218" />
+        <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/activity_splash_screen.xml" value="0.18072916666666666" />
+        <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/add_player.xml" value="0.2078125" />
+        <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/card_creation.xml" value="0.1" />
+        <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/card_item.xml" value="0.18697916666666667" />
+        <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/card_row.xml" value="0.1" />
+        <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/card_view.xml" value="0.18697916666666667" />
+        <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/deck_cards.xml" value="0.18802083333333333" />
+        <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/deck_creation.xml" value="0.2078125" />
+        <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/deck_item.xml" value="0.1" />
+        <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/deck_picker.xml" value="0.1" />
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/drawable-v24/ani_design2.xml" value="0.22" />
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/drawable-v24/ani_design3.xml" value="0.3675" />
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/drawable-v24/ani_design4.xml" value="0.3675" />
@@ -23,27 +36,44 @@
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/drawable/ani_normal.xml" value="0.196" />
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/drawable/background_ani.xml" value="0.3675" />
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/drawable/background_manager_ani.xml" value="0.3305" />
-        <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/drawable/deckitem.xml" value="0.195" />
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/drawable/handicap.xml" value="0.155" />
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/drawable/handicap_card.xml" value="0.155" />
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1865" />
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/font/fonts.xml" value="0.18888888888888888" />
-        <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/layout/activity_game.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/layout/activity_handicap.xml" value="0.26927083333333335" />
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/layout/activity_law.xml" value="0.2" />
-        <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/layout/activity_main.xml" value="0.22962962962962963" />
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/layout/activity_powerup.xml" value="0.26927083333333335" />
-        <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/layout/activity_splash_screen.xml" value="0.18" />
-        <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/layout/add_player.xml" value="0.22" />
-        <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/layout/card_creation.xml" value="0.18802083333333333" />
-        <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/layout/card_item.xml" value="0.18802083333333333" />
-        <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/layout/card_row.xml" value="0.18802083333333333" />
-        <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/layout/deck_cards.xml" value="0.18802083333333333" />
-        <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/layout/deck_creation.xml" value="0.18802083333333333" />
-        <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/layout/deck_item.xml" value="0.18802083333333333" />
-        <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/layout/deck_picker.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/layout/activity_splash_screen.xml" value="0.2994791666666667" />
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/layout/welcome.xml" value="0.1453125" />
-        <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/layout/welcome_page.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/USER/Documents/Life Stuff/Uni Stuff/Third Year/Second Sem/COSC345/KickOns/app/src/main/res/drawable-v24/law.xml" value="0.1525" />
+        <entry key="..\:/Users/USER/Documents/Life Stuff/Uni Stuff/Third Year/Second Sem/COSC345/KickOns/app/src/main/res/drawable-v24/powerup.xml" value="0.1525" />
+        <entry key="..\:/Users/USER/Documents/Life Stuff/Uni Stuff/Third Year/Second Sem/COSC345/KickOns/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/USER/Documents/Life Stuff/Uni Stuff/Third Year/Second Sem/COSC345/KickOns/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
+        <entry key="..\:/Users/USER/Documents/Life Stuff/Uni Stuff/Third Year/Second Sem/COSC345/KickOns/app/src/main/res/layout/add_player.xml" value="0.26403985507246375" />
+        <entry key="..\:/Users/USER/Documents/Life Stuff/Uni Stuff/Third Year/Second Sem/COSC345/KickOns/app/src/main/res/layout/card_creation.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/USER/Documents/Life Stuff/Uni Stuff/Third Year/Second Sem/COSC345/KickOns/app/src/main/res/layout/deck_creation.xml" value="0.19351570415400202" />
+        <entry key="..\:/Users/USER/Documents/Life Stuff/Uni Stuff/Third Year/Second Sem/COSC345/KickOns/app/src/main/res/layout/deck_picker.xml" value="0.19275582573454914" />
+        <entry key="..\:/Users/USER/Documents/Life Stuff/Uni Stuff/Third Year/Second Sem/COSC345/KickOns/app/src/main/res/layout/welcome_page.xml" value="0.22" />
+        <entry key="..\:/Users/USER/Documents/Life Stuff/Uni Stuff/Third Year/Second Sem/COSC345/KickOns/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.12666666666666668" />
+        <entry key="..\:/Users/USER/Documents/Life Stuff/Uni Stuff/Third Year/Second Sem/COSC345/KickOns/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1425" />
+        <entry key="..\:/Users/aksha/AppData/Local/Temp/drawable-temp/fake_of_background_manager_ani.xml" value="0.1015" />
+        <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/drawable-v24/standard.xml" value="0.1235" />
+        <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/drawable/btn_shape_triangle.xml" value="0.1235" />
+        <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/drawable/deckitembackground.xml" value="0.1235" />
+        <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/drawable/yellow_logo_colour.xml" value="0.1235" />
+        <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/font/fonts.xml" value="0.14270833333333333" />
+        <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/layout/activity_game.xml" value="0.1125" />
+        <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/layout/activity_main.xml" value="0.1125" />
+        <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/layout/add_player.xml" value="0.264" />
+        <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/layout/card_creation.xml" value="0.2" />
+        <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/layout/card_item.xml" value="0.23822463768115942" />
+        <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/layout/card_row.xml" value="0.23822463768115942" />
+        <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/layout/deck_cards.xml" value="0.23822463768115942" />
+        <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/layout/deck_creation.xml" value="0.23822463768115942" />
+        <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/layout/deck_item.xml" value="0.176" />
+        <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/layout/deck_picker.xml" value="0.19384057971014493" />
+        <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/layout/welcome_page.xml" value="0.19384057971014493" />
       </map>
     </option>
   </component>
