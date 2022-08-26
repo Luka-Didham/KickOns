@@ -3,6 +3,9 @@ $dokka.linkExtension:html
 $dokka.location:com.example.KickOns////PointingToDeclaration/app/com.example.KickOns/index.html
 $dokka.location:com.example.KickOns/AddPlayer///PointingToDeclaration/app/com.example.KickOns/-add-player/index.html
 $dokka.location:com.example.KickOns/AddPlayer/AddPlayer/#/PointingToDeclaration/app/com.example.KickOns/-add-player/-add-player.html
+$dokka.location:com.example.KickOns/AddPlayerKt///PointingToDeclaration/app/com.example.KickOns/-add-player-kt/index.html
+$dokka.location:com.example.KickOns/AddPlayerKt/getPlayers/#/PointingToDeclaration/app/com.example.KickOns/-add-player-kt/get-players.html
+$dokka.location:com.example.KickOns/AddPlayerKt/setPlayers/#kotlin.collections.MutableList[android.widget.Button]/PointingToDeclaration/app/com.example.KickOns/-add-player-kt/set-players.html
 $dokka.location:com.example.KickOns/CardAdapter///PointingToDeclaration/app/com.example.KickOns/-card-adapter/index.html
 $dokka.location:com.example.KickOns/CardAdapter/CardAdapter/#kotlin.collections.List[com.example.KickOns.CardItem]/PointingToDeclaration/app/com.example.KickOns/-card-adapter/-card-adapter.html
 $dokka.location:com.example.KickOns/CardAdapter/getItemCount/#/PointingToDeclaration/app/com.example.KickOns/-card-adapter/get-item-count.html
@@ -45,6 +48,7 @@ $dokka.location:com.example.KickOns/DeckCreation///PointingToDeclaration/app/co
 $dokka.location:com.example.KickOns/DeckCreation/DeckCreation/#/PointingToDeclaration/app/com.example.KickOns/-deck-creation/-deck-creation.html
 $dokka.location:com.example.KickOns/DeckDAO///PointingToDeclaration/app/com.example.KickOns/-deck-d-a-o/index.html
 $dokka.location:com.example.KickOns/DeckDAO/addDeck/#com.example.KickOns.DeckItem/PointingToDeclaration/app/com.example.KickOns/-deck-d-a-o/add-deck.html
+$dokka.location:com.example.KickOns/DeckDAO/deleteDeck/#kotlin.Int/PointingToDeclaration/app/com.example.KickOns/-deck-d-a-o/delete-deck.html
 $dokka.location:com.example.KickOns/DeckDAO/getAll/#/PointingToDeclaration/app/com.example.KickOns/-deck-d-a-o/get-all.html
 $dokka.location:com.example.KickOns/DeckDAO/getAllWithCards/#/PointingToDeclaration/app/com.example.KickOns/-deck-d-a-o/get-all-with-cards.html
 $dokka.location:com.example.KickOns/DeckDAO/getById/#kotlin.Int/PointingToDeclaration/app/com.example.KickOns/-deck-d-a-o/get-by-id.html
@@ -62,8 +66,6 @@ $dokka.location:com.example.KickOns/DeckWithCards///PointingToDeclaration/app/c
 $dokka.location:com.example.KickOns/DeckWithCards/DeckWithCards/#com.example.KickOns.DeckItem#kotlin.collections.List[com.example.KickOns.CardItem]/PointingToDeclaration/app/com.example.KickOns/-deck-with-cards/-deck-with-cards.html
 $dokka.location:com.example.KickOns/DeckWithCards/getCards/#/PointingToDeclaration/app/com.example.KickOns/-deck-with-cards/get-cards.html
 $dokka.location:com.example.KickOns/DeckWithCards/getDeck/#/PointingToDeclaration/app/com.example.KickOns/-deck-with-cards/get-deck.html
-$dokka.location:com.example.KickOns/Game///PointingToDeclaration/app/com.example.KickOns/-game/index.html
-$dokka.location:com.example.KickOns/Game/Game/#/PointingToDeclaration/app/com.example.KickOns/-game/-game.html
 $dokka.location:com.example.KickOns/MainActivity///PointingToDeclaration/app/com.example.KickOns/-main-activity/index.html
 $dokka.location:com.example.KickOns/MainActivity/MainActivity/#/PointingToDeclaration/app/com.example.KickOns/-main-activity/-main-activity.html
 $dokka.location:com.example.KickOns/MainActivity/changeCard/#kotlin.Int#kotlin.String/PointingToDeclaration/app/com.example.KickOns/-main-activity/change-card.html
