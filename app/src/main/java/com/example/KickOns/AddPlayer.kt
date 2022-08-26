@@ -12,6 +12,9 @@ import kotlinx.android.synthetic.main.add_player.*
 import kotlinx.android.synthetic.main.card_creation.*
 import kotlinx.android.synthetic.main.welcome_page.*
 
+
+var players = mutableListOf<Button>()
+
 class AddPlayer : AppCompatActivity() {
 
     private var startGame: MainActivity? = null
@@ -21,7 +24,7 @@ class AddPlayer : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.add_player)
-        var players = ArrayList<Button>()
+
         var editText = textInputEditText
         var MAX_PLAYERS = 30
         var positionCount = 1
