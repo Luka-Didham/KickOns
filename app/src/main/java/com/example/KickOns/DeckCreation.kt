@@ -38,6 +38,7 @@ class DeckCreation() : AppCompatActivity() {
             //Saves and sends deck Id to card add screen
             GlobalScope.launch {
                 val deckId = async { db.deckDAO().addDeck(d) }
+
                 intent.putExtra("deck_id", deckId.await())
                 startActivity(intent)
             }

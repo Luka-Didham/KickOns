@@ -18,6 +18,6 @@ interface DeckDAO {
     fun getById(deck_id: Int): List<DeckWithCards>
 
     @Query("DELETE FROM deck_table WHERE ID = :deck_id")
-    suspend fun deleteDeck(deck_id : Int)
+    suspend fun deleteDeck(deck_id : Int?)
 
 }

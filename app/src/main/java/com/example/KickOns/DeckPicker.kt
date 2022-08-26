@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.deck_item.*
 import kotlinx.android.synthetic.main.deck_picker.*
 import kotlinx.coroutines.*
 
-class DeckPicker() : AppCompatActivity(), DeckClickListener {
+class DeckPicker() : AppCompatActivity(), DeckClickListener,BtnListener {
 
     private var playWithDefaultDeck: AddPlayer? = null
     private var confirmName: CardCreation? = null
@@ -32,7 +32,7 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener {
             withContext(Dispatchers.Main){
                 binding.recyclerView.apply {
                     layoutManager = LinearLayoutManager(applicationContext,LinearLayoutManager.VERTICAL,false)
-                    adapter = DeckAdapter(deckList.await(),mainActivity)
+                    adapter = DeckAdapter(deckList.await(),mainActivity, mainActivity)
                 }
             }
         }
@@ -42,6 +42,14 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener {
             startActivity(intent)
         }
 
+    }
+
+    override fun btnClick(deck: DeckItem) {
+        GlobalScope.launch {
+            db.deckDAO().deleteDeck(deck.id)
+            withContext(Dispatchers.Main){
+            }
+        }
     }
 
     override fun onClick(deck: DeckItem) {

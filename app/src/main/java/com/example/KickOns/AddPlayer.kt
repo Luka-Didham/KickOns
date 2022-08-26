@@ -13,8 +13,6 @@ import kotlinx.android.synthetic.main.card_creation.*
 import kotlinx.android.synthetic.main.welcome_page.*
 
 
-var players = mutableListOf<Button>()
-
 class AddPlayer : AppCompatActivity() {
 
     private var startGame: MainActivity? = null

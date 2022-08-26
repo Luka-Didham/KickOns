@@ -9,8 +9,8 @@ import kotlinx.coroutines.*
 import java.util.*
 import java.util.regex.Matcher
 import java.util.regex.Pattern
-import kotlin.random.Random.*
-import kotlin.random.Random.Default.nextInt
+import kotlin.random.Random
+
 
 
 class MainActivity : AppCompatActivity() {
