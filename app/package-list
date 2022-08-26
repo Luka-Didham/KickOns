@@ -3,6 +3,7 @@ $dokka.linkExtension:html
 $dokka.location:com.example.KickOns////PointingToDeclaration/app/com.example.KickOns/index.html
 $dokka.location:com.example.KickOns/AddPlayer///PointingToDeclaration/app/com.example.KickOns/-add-player/index.html
 $dokka.location:com.example.KickOns/AddPlayer/AddPlayer/#/PointingToDeclaration/app/com.example.KickOns/-add-player/-add-player.html
+$dokka.location:com.example.KickOns/AddPlayer/redraw/#/PointingToDeclaration/app/com.example.KickOns/-add-player/redraw.html
 $dokka.location:com.example.KickOns/AddPlayerKt///PointingToDeclaration/app/com.example.KickOns/-add-player-kt/index.html
 $dokka.location:com.example.KickOns/AddPlayerKt/getPlayers/#/PointingToDeclaration/app/com.example.KickOns/-add-player-kt/get-players.html
 $dokka.location:com.example.KickOns/AddPlayerKt/setPlayers/#kotlin.collections.MutableList[android.widget.Button]/PointingToDeclaration/app/com.example.KickOns/-add-player-kt/set-players.html
