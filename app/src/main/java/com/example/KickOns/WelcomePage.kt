@@ -3,6 +3,7 @@ package com.example.KickOns
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.colorchanging.R
 import kotlinx.android.synthetic.main.welcome_page.*
 
 class WelcomePage : AppCompatActivity() {

@@ -10,7 +10,7 @@
     <androidx.cardview.widget.CardView
         style="?android:attr/borderlessButtonStyle"
         android:id="@+id/cardView"
-        android:layout_width="349dp"
+        android:layout_width="wrap_content"
         android:layout_height="83dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +41,7 @@
 
                 <TextView
                     android:id="@+id/deck_title"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:padding="5dp"
@@ -52,15 +52,17 @@
 
                 <TextView
                     android:id="@+id/deck_sub"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:padding="5dp"
                     android:text="TextView"
                     android:textColor="#FBD34C" />
+
             </LinearLayout>
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
