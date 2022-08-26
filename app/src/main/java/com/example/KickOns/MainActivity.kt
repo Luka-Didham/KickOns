@@ -6,8 +6,11 @@ import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.*
+import java.util.*
 import java.util.regex.Matcher
 import java.util.regex.Pattern
+import kotlin.random.Random.*
+import kotlin.random.Random.Default.nextInt
 
 
 class MainActivity : AppCompatActivity() {
@@ -15,6 +18,7 @@ class MainActivity : AppCompatActivity() {
     private var createDeck: DeckCreation? = null
     private var createCard: CardCreation? = null
     private lateinit var db : CardDB
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -93,10 +97,9 @@ class MainActivity : AppCompatActivity() {
         var regex: Regex = "#player".toRegex()
         val pat: Pattern = Pattern.compile("#player")
         val matcher: Matcher = pat.matcher(newPrompt)
-        var count = 0
         while(matcher.find()) {
-            newPrompt = newPrompt.replaceFirst("#player".toRegex(), count.toString())
-            count++
+            val randomIndex = Random.nextInt(playerList.size-1)
+            newPrompt = newPrompt.replaceFirst("#player".toRegex(), playerList[randomIndex].name.toString())
         }
         return newPrompt
     }
