@@ -69,6 +69,12 @@ $dokka.location:com.example.KickOns/DeckWithCards/getDeck/#/PointingToDeclaratio
 $dokka.location:com.example.KickOns/MainActivity///PointingToDeclaration/app/com.example.KickOns/-main-activity/index.html
 $dokka.location:com.example.KickOns/MainActivity/MainActivity/#/PointingToDeclaration/app/com.example.KickOns/-main-activity/-main-activity.html
 $dokka.location:com.example.KickOns/MainActivity/changeCard/#kotlin.Int#kotlin.String/PointingToDeclaration/app/com.example.KickOns/-main-activity/change-card.html
+$dokka.location:com.example.KickOns/Player///PointingToDeclaration/app/com.example.KickOns/-player/index.html
+$dokka.location:com.example.KickOns/Player/Player/#kotlin.String?/PointingToDeclaration/app/com.example.KickOns/-player/-player.html
+$dokka.location:com.example.KickOns/Player/getName/#/PointingToDeclaration/app/com.example.KickOns/-player/get-name.html
+$dokka.location:com.example.KickOns/PlayerKt///PointingToDeclaration/app/com.example.KickOns/-player-kt/index.html
+$dokka.location:com.example.KickOns/PlayerKt/getPlayerList/#/PointingToDeclaration/app/com.example.KickOns/-player-kt/get-player-list.html
+$dokka.location:com.example.KickOns/PlayerKt/setPlayerList/#kotlin.collections.MutableList[com.example.KickOns.Player]/PointingToDeclaration/app/com.example.KickOns/-player-kt/set-player-list.html
 $dokka.location:com.example.KickOns/SplashScreenActivity///PointingToDeclaration/app/com.example.KickOns/-splash-screen-activity/index.html
 $dokka.location:com.example.KickOns/SplashScreenActivity/SplashScreenActivity/#/PointingToDeclaration/app/com.example.KickOns/-splash-screen-activity/-splash-screen-activity.html
 $dokka.location:com.example.KickOns/WelcomePage///PointingToDeclaration/app/com.example.KickOns/-welcome-page/index.html
