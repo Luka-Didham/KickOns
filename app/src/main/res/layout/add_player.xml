@@ -48,7 +48,7 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/deckitembackground"
         android:fontFamily="@font/fonts"
-        android:text="Lu"
+        android:text="Lukaluk"
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
         android:textSize="12sp"
@@ -482,7 +482,7 @@
         android:layout_marginTop="5dp"
         android:background="@drawable/deckitembackground"
         android:fontFamily="@font/fonts"
-        android:text="easzdfxcghj"
+        android:text="Lukaluk"
         android:textAlignment="center"
         android:textColor="#E2F6DF13"
         android:textSize="12sp"
@@ -545,7 +545,9 @@
         android:layout_height="41dp"
         android:layout_margin="5sp"
         android:hint="Player Name"
+        android:inputType="textPersonName"
         android:maxLength="7"
+        android:singleLine="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
