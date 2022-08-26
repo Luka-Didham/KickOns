@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         val len = cardList.size
         btnScreen.setOnClickListener {
             if(clicked<len) {
-                changeCard(cardList.get(clicked).cardType, cardList.get(clicked).challenge)
+                changeCard(cardList.get(clicked).cardType, randomPlayer(cardList.get(clicked).challenge))
                 clicked++
             }else {
                 clicked = 0
@@ -88,6 +88,12 @@ class MainActivity : AppCompatActivity() {
             screenView.background = resources.getDrawable(R.drawable.handicap, theme)
         }
 
+    }
+
+    fun randomPlayer(prompt: String): String{
+        var regex: Regex = "#player".toRegex()
+        var newPrompt = prompt.replace("#player".toRegex(),"testPlayer")
+        return newPrompt
     }
 
     }
