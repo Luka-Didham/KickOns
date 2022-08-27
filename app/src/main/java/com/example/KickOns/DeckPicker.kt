@@ -20,19 +20,17 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener,BtnListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DeckPickerBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
+        setContentView(binding.root)
         val mainActivity = this
         db = CardDB.getDatabase(this)
         val deckDao = db.deckDAO()
-        var deckList: List<DeckItem> = emptyList()
 
         GlobalScope.launch{
-            val deckList = async {deckDao.getAll()}
             withContext(Dispatchers.Main){
                 binding.recyclerView.apply {
                     layoutManager = LinearLayoutManager(applicationContext,LinearLayoutManager.VERTICAL,false)
-                    adapter = DeckAdapter(deckList.await(),mainActivity, mainActivity)
+                    adapter = DeckAdapter(deckList,mainActivity, mainActivity)
                 }
             }
         }
@@ -44,13 +42,16 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener,BtnListener {
 
     }
 
-    override fun btnClick(deck: DeckItem) {
+     override fun btnClick(deck: DeckItem) {
+         val pos : Int = deckList.indexOf(deck)
         GlobalScope.launch {
-            db.deckDAO().deleteDeck(deck.id)
-            withContext(Dispatchers.Main){
-            }
+            db.deckDAO().deleteDeck(deckList.indexOf(deck))
         }
+         deckList.remove(deck)
+         binding.recyclerView.adapter?.notifyItemRemoved(pos)
     }
+
+
 
     override fun onClick(deck: DeckItem) {
        val intent = Intent(this, MainActivity::class.java)

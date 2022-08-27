@@ -15,6 +15,7 @@ class DeckAdapter(
         val from = LayoutInflater.from(parent.context)
         val binding = DeckItemBinding.inflate(from, parent, false)
         return DeckViewHolder(binding, clickListener, btnListener)
+
     }
 
     override fun onBindViewHolder(holder: DeckViewHolder, position: Int) {
