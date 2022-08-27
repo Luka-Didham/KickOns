@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.KickOns.R
 import kotlinx.android.synthetic.main.activity_splash_screen.*
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import java.lang.Thread.sleep
 
 class SplashScreenActivity : AppCompatActivity() {
@@ -16,6 +18,7 @@ class SplashScreenActivity : AppCompatActivity() {
         mediaPlayer = MediaPlayer.create(applicationContext, R.raw.mytune)
         mediaPlayer.start()
         logo.alpha = 0f
+        //Populate decks during start
         logo.animate().setDuration(10000).alpha(1f).withEndAction {
             val app = Intent(this, WelcomePage::class.java)
             startActivity(app)

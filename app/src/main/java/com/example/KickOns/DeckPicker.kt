@@ -27,6 +27,7 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener,BtnListener {
         val deckDao = db.deckDAO()
 
         GlobalScope.launch{
+            getDecks()
             withContext(Dispatchers.Main){
                 binding.recyclerView.apply {
                     layoutManager = LinearLayoutManager(applicationContext,LinearLayoutManager.VERTICAL,false)
@@ -45,7 +46,7 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener,BtnListener {
      override fun btnClick(deck: DeckItem) {
          val pos : Int = deckList.indexOf(deck)
         GlobalScope.launch {
-            db.deckDAO().deleteDeck(deckList.indexOf(deck))
+            db.deckDAO().deleteDeck(deck.id)
         }
          deckList.remove(deck)
          binding.recyclerView.adapter?.notifyItemRemoved(pos)
@@ -58,7 +59,6 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener,BtnListener {
         GlobalScope.launch{
             //Querry db and wait for response
             getCards(deck.id)
-
             //On main launch next page
             withContext(Dispatchers.Main){
                 startActivity(intent)
@@ -74,6 +74,12 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener,BtnListener {
         }
     }
 
+    private fun getDecks(){
+        deckList.clear()
+        for(deck in db.deckDAO().getAll()){
+            deckList.add(deck)
+        }
+    }
 
 }
 

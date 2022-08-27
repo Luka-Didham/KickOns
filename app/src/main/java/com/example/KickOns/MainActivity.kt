@@ -29,7 +29,8 @@ class MainActivity : AppCompatActivity() {
         val len = cardList.size
         btnScreen.setOnClickListener {
             if(clicked<len) {
-                changeCard(cardList.get(clicked).cardType, randomPlayer(cardList.get(clicked).challenge))
+                //changeCard(cardList.get(clicked).cardType, randomPlayer(cardList.get(clicked).challenge))
+                changeCard(cardList.get(clicked).cardType, cardList.get(clicked).challenge)
                 clicked++
             }else {
                 clicked = 0
