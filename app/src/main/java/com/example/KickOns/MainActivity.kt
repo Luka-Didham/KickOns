@@ -2,6 +2,7 @@ package com.example.KickOns
 
 import android.content.Intent
 import android.os.Bundle
+import android.provider.SyncStateContract.Helpers.insert
 import android.view.View
 import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         db = CardDB.getDatabase(this)
+
 
         setContentView(R.layout.activity_main)
         var clicked = 0

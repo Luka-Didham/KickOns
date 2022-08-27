@@ -14,6 +14,8 @@ class WelcomePage : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.welcome_page)
+        //SHOWCASE MODE
+        PopulateDecks(applicationContext).insert()
 
         btnPlay.setOnClickListener {
             val intent = Intent(this, AddPlayer::class.java)
