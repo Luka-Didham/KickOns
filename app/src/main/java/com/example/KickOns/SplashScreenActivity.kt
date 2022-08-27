@@ -19,7 +19,7 @@ class SplashScreenActivity : AppCompatActivity() {
         mediaPlayer.start()
         logo.alpha = 0f
         //Populate decks during start
-        logo.animate().setDuration(10000).alpha(1f).withEndAction {
+        logo.animate().setDuration(5000).alpha(1f).withEndAction {
             val app = Intent(this, WelcomePage::class.java)
             startActivity(app)
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
