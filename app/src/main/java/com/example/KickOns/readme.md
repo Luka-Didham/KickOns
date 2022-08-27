@@ -13,7 +13,9 @@ git clone https://github.com/Luka-Didham/COSC345.git
 ## Usage
 To run the app open android studio and create a new virtual device running API 29+
 
-Select 
+Select you're chosen emulator and press the green play button to start the app
+
+Once the app has loaded press play to begin
 
 ### Game 
 1. Add at least two players and press start 
