@@ -4,9 +4,8 @@ $dokka.location:com.example.KickOns////PointingToDeclaration/app/com.example.Ki
 $dokka.location:com.example.KickOns/AddPlayer///PointingToDeclaration/app/com.example.KickOns/-add-player/index.html
 $dokka.location:com.example.KickOns/AddPlayer/AddPlayer/#/PointingToDeclaration/app/com.example.KickOns/-add-player/-add-player.html
 $dokka.location:com.example.KickOns/AddPlayer/redraw/#/PointingToDeclaration/app/com.example.KickOns/-add-player/redraw.html
-$dokka.location:com.example.KickOns/AddPlayerKt///PointingToDeclaration/app/com.example.KickOns/-add-player-kt/index.html
-$dokka.location:com.example.KickOns/AddPlayerKt/getPlayers/#/PointingToDeclaration/app/com.example.KickOns/-add-player-kt/get-players.html
-$dokka.location:com.example.KickOns/AddPlayerKt/setPlayers/#kotlin.collections.MutableList[android.widget.Button]/PointingToDeclaration/app/com.example.KickOns/-add-player-kt/set-players.html
+$dokka.location:com.example.KickOns/BtnListener///PointingToDeclaration/app/com.example.KickOns/-btn-listener/index.html
+$dokka.location:com.example.KickOns/BtnListener/btnClick/#com.example.KickOns.DeckItem/PointingToDeclaration/app/com.example.KickOns/-btn-listener/btn-click.html
 $dokka.location:com.example.KickOns/CardAdapter///PointingToDeclaration/app/com.example.KickOns/-card-adapter/index.html
 $dokka.location:com.example.KickOns/CardAdapter/CardAdapter/#kotlin.collections.List[com.example.KickOns.CardItem]/PointingToDeclaration/app/com.example.KickOns/-card-adapter/-card-adapter.html
 $dokka.location:com.example.KickOns/CardAdapter/getItemCount/#/PointingToDeclaration/app/com.example.KickOns/-card-adapter/get-item-count.html
@@ -37,7 +36,7 @@ $dokka.location:com.example.KickOns/CardViewHolder///PointingToDeclaration/app/
 $dokka.location:com.example.KickOns/CardViewHolder/CardViewHolder/#[Error type: Unresolved type for CardItemBinding]/PointingToDeclaration/app/com.example.KickOns/-card-view-holder/-card-view-holder.html
 $dokka.location:com.example.KickOns/CardViewHolder/bindCard/#com.example.KickOns.CardItem/PointingToDeclaration/app/com.example.KickOns/-card-view-holder/bind-card.html
 $dokka.location:com.example.KickOns/DeckAdapter///PointingToDeclaration/app/com.example.KickOns/-deck-adapter/index.html
-$dokka.location:com.example.KickOns/DeckAdapter/DeckAdapter/#kotlin.collections.List[com.example.KickOns.DeckItem]#com.example.KickOns.DeckClickListener/PointingToDeclaration/app/com.example.KickOns/-deck-adapter/-deck-adapter.html
+$dokka.location:com.example.KickOns/DeckAdapter/DeckAdapter/#kotlin.collections.List[com.example.KickOns.DeckItem]#com.example.KickOns.DeckClickListener#com.example.KickOns.BtnListener/PointingToDeclaration/app/com.example.KickOns/-deck-adapter/-deck-adapter.html
 $dokka.location:com.example.KickOns/DeckAdapter/getItemCount/#/PointingToDeclaration/app/com.example.KickOns/-deck-adapter/get-item-count.html
 $dokka.location:com.example.KickOns/DeckAdapter/onBindViewHolder/#com.example.KickOns.DeckViewHolder#kotlin.Int/PointingToDeclaration/app/com.example.KickOns/-deck-adapter/on-bind-view-holder.html
 $dokka.location:com.example.KickOns/DeckAdapter/onCreateViewHolder/#android.view.ViewGroup#kotlin.Int/PointingToDeclaration/app/com.example.KickOns/-deck-adapter/on-create-view-holder.html
@@ -49,7 +48,7 @@ $dokka.location:com.example.KickOns/DeckCreation///PointingToDeclaration/app/co
 $dokka.location:com.example.KickOns/DeckCreation/DeckCreation/#/PointingToDeclaration/app/com.example.KickOns/-deck-creation/-deck-creation.html
 $dokka.location:com.example.KickOns/DeckDAO///PointingToDeclaration/app/com.example.KickOns/-deck-d-a-o/index.html
 $dokka.location:com.example.KickOns/DeckDAO/addDeck/#com.example.KickOns.DeckItem/PointingToDeclaration/app/com.example.KickOns/-deck-d-a-o/add-deck.html
-$dokka.location:com.example.KickOns/DeckDAO/deleteDeck/#kotlin.Int/PointingToDeclaration/app/com.example.KickOns/-deck-d-a-o/delete-deck.html
+$dokka.location:com.example.KickOns/DeckDAO/deleteDeck/#kotlin.Int?/PointingToDeclaration/app/com.example.KickOns/-deck-d-a-o/delete-deck.html
 $dokka.location:com.example.KickOns/DeckDAO/getAll/#/PointingToDeclaration/app/com.example.KickOns/-deck-d-a-o/get-all.html
 $dokka.location:com.example.KickOns/DeckDAO/getAllWithCards/#/PointingToDeclaration/app/com.example.KickOns/-deck-d-a-o/get-all-with-cards.html
 $dokka.location:com.example.KickOns/DeckDAO/getById/#kotlin.Int/PointingToDeclaration/app/com.example.KickOns/-deck-d-a-o/get-by-id.html
@@ -57,11 +56,15 @@ $dokka.location:com.example.KickOns/DeckItem///PointingToDeclaration/app/com.ex
 $dokka.location:com.example.KickOns/DeckItem/DeckItem/#kotlin.Int?#kotlin.String/PointingToDeclaration/app/com.example.KickOns/-deck-item/-deck-item.html
 $dokka.location:com.example.KickOns/DeckItem/getId/#/PointingToDeclaration/app/com.example.KickOns/-deck-item/get-id.html
 $dokka.location:com.example.KickOns/DeckItem/getName/#/PointingToDeclaration/app/com.example.KickOns/-deck-item/get-name.html
+$dokka.location:com.example.KickOns/DeckItemKt///PointingToDeclaration/app/com.example.KickOns/-deck-item-kt/index.html
+$dokka.location:com.example.KickOns/DeckItemKt/getDeckList/#/PointingToDeclaration/app/com.example.KickOns/-deck-item-kt/get-deck-list.html
+$dokka.location:com.example.KickOns/DeckItemKt/setDeckList/#kotlin.collections.MutableList[com.example.KickOns.DeckItem]/PointingToDeclaration/app/com.example.KickOns/-deck-item-kt/set-deck-list.html
 $dokka.location:com.example.KickOns/DeckPicker///PointingToDeclaration/app/com.example.KickOns/-deck-picker/index.html
 $dokka.location:com.example.KickOns/DeckPicker/DeckPicker/#/PointingToDeclaration/app/com.example.KickOns/-deck-picker/-deck-picker.html
+$dokka.location:com.example.KickOns/DeckPicker/btnClick/#com.example.KickOns.DeckItem/PointingToDeclaration/app/com.example.KickOns/-deck-picker/btn-click.html
 $dokka.location:com.example.KickOns/DeckPicker/onClick/#com.example.KickOns.DeckItem/PointingToDeclaration/app/com.example.KickOns/-deck-picker/on-click.html
 $dokka.location:com.example.KickOns/DeckViewHolder///PointingToDeclaration/app/com.example.KickOns/-deck-view-holder/index.html
-$dokka.location:com.example.KickOns/DeckViewHolder/DeckViewHolder/#[Error type: Unresolved type for DeckItemBinding]#com.example.KickOns.DeckClickListener/PointingToDeclaration/app/com.example.KickOns/-deck-view-holder/-deck-view-holder.html
+$dokka.location:com.example.KickOns/DeckViewHolder/DeckViewHolder/#[Error type: Unresolved type for DeckItemBinding]#com.example.KickOns.DeckClickListener#com.example.KickOns.BtnListener/PointingToDeclaration/app/com.example.KickOns/-deck-view-holder/-deck-view-holder.html
 $dokka.location:com.example.KickOns/DeckViewHolder/bindDeck/#com.example.KickOns.DeckItem/PointingToDeclaration/app/com.example.KickOns/-deck-view-holder/bind-deck.html
 $dokka.location:com.example.KickOns/DeckWithCards///PointingToDeclaration/app/com.example.KickOns/-deck-with-cards/index.html
 $dokka.location:com.example.KickOns/DeckWithCards/DeckWithCards/#com.example.KickOns.DeckItem#kotlin.collections.List[com.example.KickOns.CardItem]/PointingToDeclaration/app/com.example.KickOns/-deck-with-cards/-deck-with-cards.html
