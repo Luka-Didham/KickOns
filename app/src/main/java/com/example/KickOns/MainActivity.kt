@@ -94,17 +94,33 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+//    fun rPlayer(prompt: String) : String{
+//        var newPrompt = prompt.lowercase()
+//        var regex =  Regex("(#player)\\w+")
+//        )
+//        val matcher: Matcher = pat.matcher(newPrompt)
+//        while(matcher.find()) {
+//            val randomIndex = Random.nextInt(playerList.size-1)
+//            newPrompt = newPrompt.replaceFirst("#player".toRegex(), playerList[randomIndex].name.toString())
+//        }
+//        return newPrompt
+//    }
+
 
     fun randomPlayer(prompt: String): String{
+
+        val sList = playerList.shuffled()
         var newPrompt = prompt.lowercase()
-        var regex: Regex = "#player".toRegex()
-        val pat: Pattern = Pattern.compile("#player")
-        val matcher: Matcher = pat.matcher(newPrompt)
-        while(matcher.find()) {
-            val randomIndex = Random.nextInt(playerList.size-1)
-            newPrompt = newPrompt.replaceFirst("#player".toRegex(), playerList[randomIndex].name.toString())
+        var regex =  Regex("(#player)\\w+")
+        val matches = regex.findAll(newPrompt)
+        val sm = matches.count()
+
+        for(m in matches){
+            val s = m.value
+            newPrompt = newPrompt.replace(m.value, sList[s.last().digitToInt()-1].name.toString())
         }
         return newPrompt
     }
+
 
 }
