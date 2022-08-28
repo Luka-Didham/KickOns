@@ -15,17 +15,14 @@ import kotlinx.android.synthetic.main.welcome_page.*
 
 class AddPlayer : AppCompatActivity() {
 
-    private var startGame: MainActivity? = null
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
-
+        //TODO("Add recycler view adapter")
         super.onCreate(savedInstanceState)
         setContentView(R.layout.add_player)
 
         var editText = textInputEditText
         var MAX_PLAYERS = 30
-        var positionCount = 1
+
         redraw()
         btnAddPlayer.setOnClickListener{
 
@@ -46,16 +43,13 @@ class AddPlayer : AppCompatActivity() {
                     btn.visibility = View.VISIBLE
                     btn.setOnClickListener {
                        playerList.remove(p)
-                       //btn.visibility = View.INVISIBLE
-                        redraw()
                     }
                     redraw()
                 }else{
                     editText.hint = "Max 30 players"
                 }
 
-
-        }
+            }
         }
         btnStartFromChoosePlayers.setOnClickListener{
             if(playerList.size>1) {
@@ -65,8 +59,6 @@ class AddPlayer : AppCompatActivity() {
                 editText.hint = "Minimum 1 player"
             }
         }
-
-
 
     }
 

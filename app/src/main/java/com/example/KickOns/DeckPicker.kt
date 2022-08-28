@@ -16,6 +16,7 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener,BtnListener {
     private var confirmName: CardCreation? = null
     private lateinit var db: CardDB
     private lateinit var binding: DeckPickerBinding
+    private lateinit var deckDao: DeckDAO
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +25,7 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener,BtnListener {
         setContentView(binding.root)
         val mainActivity = this
         db = CardDB.getDatabase(this)
-        val deckDao = db.deckDAO()
+        deckDao = db.deckDAO()
 
         GlobalScope.launch{
             getDecks()
@@ -46,7 +47,7 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener,BtnListener {
      override fun btnClick(deck: DeckItem) {
          val pos : Int = deckList.indexOf(deck)
         GlobalScope.launch {
-            db.deckDAO().deleteDeck(deck.id)
+            deckDao.deleteDeck(deck.id)
         }
          deckList.remove(deck)
          binding.recyclerView.adapter?.notifyItemRemoved(pos)
@@ -76,7 +77,7 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener,BtnListener {
 
     private fun getDecks(){
         deckList.clear()
-        for(deck in db.deckDAO().getAll()){
+        for(deck in deckDao.getAll()){
             deckList.add(deck)
         }
     }

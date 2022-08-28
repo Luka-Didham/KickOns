@@ -16,23 +16,20 @@ import kotlin.text.Regex
 
 class MainActivity : AppCompatActivity() {
 
-    private var createDeck: DeckCreation? = null
-    private var createCard: CardCreation? = null
     private lateinit var db : CardDB
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         db = CardDB.getDatabase(this)
-
-
         setContentView(R.layout.activity_main)
+
         var clicked = 0
         val len = cardList.size
+
         btnScreen.setOnClickListener {
             if(clicked<len) {
                 changeCard(cardList.get(clicked).cardType, randomPlayer(cardList.get(clicked).challenge))
-                //changeCard(cardList.get(clicked).cardType, cardList.get(clicked).challenge)
                 clicked++
             }else {
                 clicked = 0
@@ -49,7 +46,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        }
+    }
 
     /*
     0 = standard card
@@ -94,17 +91,6 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-//    fun rPlayer(prompt: String) : String{
-//        var newPrompt = prompt.lowercase()
-//        var regex =  Regex("(#player)\\w+")
-//        )
-//        val matcher: Matcher = pat.matcher(newPrompt)
-//        while(matcher.find()) {
-//            val randomIndex = Random.nextInt(playerList.size-1)
-//            newPrompt = newPrompt.replaceFirst("#player".toRegex(), playerList[randomIndex].name.toString())
-//        }
-//        return newPrompt
-//    }
 
 
     fun randomPlayer(prompt: String): String{

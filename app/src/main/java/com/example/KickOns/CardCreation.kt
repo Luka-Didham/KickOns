@@ -24,15 +24,12 @@ class CardCreation : AppCompatActivity(){
         var clicked = 0
 
 
-
         setContentView(R.layout.card_creation)
-
-        val cardTypes = resources.getStringArray(R.array.CardTypes)
-        val text = findViewById<EditText>(R.id.editCardDetails) as EditText
+        val text = findViewById<EditText>(R.id.editCardDetails)
 
         btnEnter.setOnClickListener {
             //TODO `add error checking
-            save(clicked.toInt(),text.text.toString(),deck_id?.toInt())
+            save(clicked,text.text.toString(),deck_id?.toInt())
             text.text.clear()
         }
 
