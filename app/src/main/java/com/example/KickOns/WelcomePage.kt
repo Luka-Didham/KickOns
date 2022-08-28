@@ -8,12 +8,11 @@ import kotlinx.android.synthetic.main.welcome_page.*
 
 class WelcomePage : AppCompatActivity() {
 
-    private var pickDeck: DeckPicker? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.welcome_page)
+
         //SHOWCASE MODE
         PopulateDecks(applicationContext).insert()
 

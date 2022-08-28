@@ -92,7 +92,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
     fun randomPlayer(prompt: String): String{
         val sList = playerList.shuffled()
         var newPrompt = prompt.lowercase()

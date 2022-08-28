@@ -15,14 +15,12 @@ class CardCreation : AppCompatActivity(){
     private var backToMain: MainActivity? = null
     private lateinit var db : CardDB
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         db = CardDB.getDatabase(this)
         val cardDao = db.cardDAO()
         val deck_id: Long? = intent.extras?.getLong("deck_id")
         super.onCreate(savedInstanceState)
         var clicked = 0
-
 
         setContentView(R.layout.card_creation)
         val text = findViewById<EditText>(R.id.editCardDetails)
@@ -58,19 +56,35 @@ class CardCreation : AppCompatActivity(){
 
     }
 
+    private fun save(id: Int, text: String, deck_id:Int?) {
+        //TODO("Add alert telling the user they're arent enough players")
+        if(pCheck(text)) return;
 
-    private fun save(id: Int, text: String, deck_id:Int?){
-
-        if(text != null && id != null){
-
-
-            val c = CardItem(null,id,text,deck_id)
+        if (text != null && id != null) {
+            val c = CardItem(null, id, text, deck_id)
             GlobalScope.launch {
                 db.cardDAO().addCard(c)
             }
-
         }
     }
+
+
+
+
+
+    private fun pCheck(text: String): Boolean {
+        var newPrompt = text.lowercase()
+        var regex = Regex("(#player)\\w+")
+        val matches = regex.findAll(newPrompt)
+        for (m in matches) {
+            val s = m.value
+            if (s.last().digitToInt() >= playerList.size){
+                return true
+            }
+        }
+        return false
+    }
+
 
     private fun changeCard(cardType: Int) {
         val screenView = findViewById<ConstraintLayout>(R.id.make_card)
@@ -79,7 +93,8 @@ class CardCreation : AppCompatActivity(){
             ivCardTypePowerUp.visibility = View.INVISIBLE
             ivCardTypeHandicap.visibility = View.INVISIBLE
             ivCardTypeLaw.visibility = View.INVISIBLE
-            editCardDetails.hint = "[Player], howl at the moon 3 times with [player2] or take a penalty"
+            editCardDetails.hint =
+                "[Player], howl at the moon 3 times with [player2] or take a penalty"
             screenView.background = resources.getDrawable(R.drawable.standard, theme)
 
         }
@@ -88,7 +103,8 @@ class CardCreation : AppCompatActivity(){
             ivCardTypePowerUp.visibility = View.VISIBLE
             ivCardTypeHandicap.visibility = View.INVISIBLE
             ivCardTypeLaw.visibility = View.INVISIBLE
-            editCardDetails.hint = "[Player], if any player makes eye contact with you, they take a penalty."
+            editCardDetails.hint =
+                "[Player], if any player makes eye contact with you, they take a penalty."
             screenView.background = resources.getDrawable(R.drawable.powerup, theme)
         }
         //law card
