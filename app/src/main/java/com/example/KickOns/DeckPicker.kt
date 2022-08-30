@@ -26,7 +26,8 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener,BtnListener {
         setContentView(binding.root)
         val mainActivity = this
 
-        recyclerView.itemAnimator?.removeDuration = 20
+        //Speed at which items are deleted
+        recyclerView.itemAnimator?.removeDuration = 5
         val swipeGesture = object : SwipeGesture(this){
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 when(direction){
