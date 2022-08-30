@@ -25,7 +25,7 @@ abstract class SwipeGesture(val context: Context): ItemTouchHelper.SimpleCallbac
         return false
     }
 
-    //TODO("Make the animation feel smoother")
+    //TODO("Make the swipe feel smoother")
     override fun getSwipeEscapeVelocity(defaultValue: Float): Float {
         return defaultValue/2
     }

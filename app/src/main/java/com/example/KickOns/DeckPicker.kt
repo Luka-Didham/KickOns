@@ -23,16 +23,15 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener,BtnListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DeckPickerBinding.inflate(layoutInflater)
-
         setContentView(binding.root)
         val mainActivity = this
 
-
+        recyclerView.itemAnimator?.removeDuration = 20
         val swipeGesture = object : SwipeGesture(this){
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 when(direction){
                     ItemTouchHelper.LEFT ->{
-                        btnClick(deckList[viewHolder.adapterPosition])
+                        delete(deckList[viewHolder.adapterPosition], viewHolder.adapterPosition)
                     }
                 }
 
@@ -60,6 +59,13 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener,BtnListener {
             startActivity(intent)
         }
 
+    }
+    fun delete(deck: DeckItem, pos : Int){
+        deckList.remove(deck)
+        binding.recyclerView.adapter?.notifyItemRemoved(pos)
+        GlobalScope.launch {
+            deckDao.deleteDeck(deck.id)
+        }
     }
 
      override fun btnClick(deck: DeckItem) {
