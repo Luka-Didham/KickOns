@@ -3,7 +3,9 @@ package com.example.KickOns
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.KickOns.databinding.DeckPickerBinding
 import kotlinx.android.synthetic.main.deck_creation.*
 import kotlinx.android.synthetic.main.deck_item.*
@@ -24,6 +26,22 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener,BtnListener {
 
         setContentView(binding.root)
         val mainActivity = this
+
+
+        val swipeGesture = object : SwipeGesture(this){
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                when(direction){
+                    ItemTouchHelper.LEFT ->{
+                        btnClick(deckList[viewHolder.getAdapterPosition()])
+                    }
+                }
+
+            }
+        }
+
+        val touchHelper = ItemTouchHelper(swipeGesture)
+        touchHelper.attachToRecyclerView(binding.recyclerView)
+
         db = CardDB.getDatabase(this)
         deckDao = db.deckDAO()
 

@@ -69,13 +69,11 @@ class CardCreation : AppCompatActivity(){
     }
 
 
-
-
-
     private fun pCheck(text: String): Boolean {
         var newPrompt = text.lowercase()
         var regex = Regex("(#player)\\w+")
         val matches = regex.findAll(newPrompt)
+
         for (m in matches) {
             val s = m.value
             if (s.last().digitToInt() >= playerList.size){

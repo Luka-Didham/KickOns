@@ -13,14 +13,14 @@ class PopulateDecks(ctx: Context) {
 
     //Cards for the deck
     var tList = listOf(
-//        arrayOf("Take a penalty for every time you have broken production",0),
+//        arrayOf("Take a penalty for every tim e you have broken production",0),
 //        arrayOf("Take a penalty for each of your repos which don’t have a readme",0),
 //        arrayOf("Team game. Thumbs up for python and down for Java. Everyone on the smallest team take a penalty ",0),
         arrayOf("#player1 tell the group your biggest development mistake. Everyone who has made that mistake take a penalty. \n",0),
         arrayOf("Name as many programming languages as you can. The player who fails take a penalty #player1 you start.",0),
         arrayOf("#Player1 cannot speak for the next 3 cards or takes a maximum penalty.\n",3),
         arrayOf("Every player must end ever sentence with “semi-colon” or take a penalty.",2),
-        arrayOf("#Player1 be #player2 chair for the next 3 cards or take a maximum penalty.",1)
+        arrayOf("#Player1 be #player2's chair for the next 3 cards or take a maximum penalty.",1)
     )
 
     fun insert(){
