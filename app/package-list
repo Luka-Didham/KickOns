@@ -37,6 +37,7 @@ $dokka.location:com.example.KickOns/CardViewHolder/CardViewHolder/#[Error type: 
 $dokka.location:com.example.KickOns/CardViewHolder/bindCard/#com.example.KickOns.CardItem/PointingToDeclaration/app/com.example.KickOns/-card-view-holder/bind-card.html
 $dokka.location:com.example.KickOns/DeckAdapter///PointingToDeclaration/app/com.example.KickOns/-deck-adapter/index.html
 $dokka.location:com.example.KickOns/DeckAdapter/DeckAdapter/#kotlin.collections.List[com.example.KickOns.DeckItem]#com.example.KickOns.DeckClickListener#com.example.KickOns.BtnListener/PointingToDeclaration/app/com.example.KickOns/-deck-adapter/-deck-adapter.html
+$dokka.location:com.example.KickOns/DeckAdapter/deleteItem/#kotlin.Int/PointingToDeclaration/app/com.example.KickOns/-deck-adapter/delete-item.html
 $dokka.location:com.example.KickOns/DeckAdapter/getItemCount/#/PointingToDeclaration/app/com.example.KickOns/-deck-adapter/get-item-count.html
 $dokka.location:com.example.KickOns/DeckAdapter/onBindViewHolder/#com.example.KickOns.DeckViewHolder#kotlin.Int/PointingToDeclaration/app/com.example.KickOns/-deck-adapter/on-bind-view-holder.html
 $dokka.location:com.example.KickOns/DeckAdapter/onCreateViewHolder/#android.view.ViewGroup#kotlin.Int/PointingToDeclaration/app/com.example.KickOns/-deck-adapter/on-create-view-holder.html
@@ -94,6 +95,9 @@ $dokka.location:com.example.KickOns/SplashScreenActivity///PointingToDeclaration
 $dokka.location:com.example.KickOns/SplashScreenActivity/SplashScreenActivity/#/PointingToDeclaration/app/com.example.KickOns/-splash-screen-activity/-splash-screen-activity.html
 $dokka.location:com.example.KickOns/SplashScreenActivity/getMediaPlayer/#/PointingToDeclaration/app/com.example.KickOns/-splash-screen-activity/get-media-player.html
 $dokka.location:com.example.KickOns/SplashScreenActivity/setMediaPlayer/#android.media.MediaPlayer/PointingToDeclaration/app/com.example.KickOns/-splash-screen-activity/set-media-player.html
+$dokka.location:com.example.KickOns/SwipeGesture///PointingToDeclaration/app/com.example.KickOns/-swipe-gesture/index.html
+$dokka.location:com.example.KickOns/SwipeGesture/SwipeGesture/#android.content.Context/PointingToDeclaration/app/com.example.KickOns/-swipe-gesture/-swipe-gesture.html
+$dokka.location:com.example.KickOns/SwipeGesture/onMove/#androidx.recyclerview.widget.RecyclerView#androidx.recyclerview.widget.RecyclerView.ViewHolder#androidx.recyclerview.widget.RecyclerView.ViewHolder/PointingToDeclaration/app/com.example.KickOns/-swipe-gesture/on-move.html
 $dokka.location:com.example.KickOns/WelcomePage///PointingToDeclaration/app/com.example.KickOns/-welcome-page/index.html
 $dokka.location:com.example.KickOns/WelcomePage/WelcomePage/#/PointingToDeclaration/app/com.example.KickOns/-welcome-page/-welcome-page.html
 com.example.KickOns
