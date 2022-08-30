@@ -32,7 +32,7 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener,BtnListener {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 when(direction){
                     ItemTouchHelper.LEFT ->{
-                        btnClick(deckList[viewHolder.getAdapterPosition()])
+                        btnClick(deckList[viewHolder.adapterPosition])
                     }
                 }
 
@@ -50,7 +50,7 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener,BtnListener {
             withContext(Dispatchers.Main){
                 binding.recyclerView.apply {
                     layoutManager = LinearLayoutManager(applicationContext,LinearLayoutManager.VERTICAL,false)
-                    adapter = DeckAdapter(deckList,mainActivity, mainActivity)
+                    adapter = DeckAdapter(deckList,mainActivity)
                 }
             }
         }
@@ -64,11 +64,11 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener,BtnListener {
 
      override fun btnClick(deck: DeckItem) {
          val pos : Int = deckList.indexOf(deck)
+         deckList.remove(deck)
+         binding.recyclerView.adapter?.notifyItemRemoved(pos)
         GlobalScope.launch {
             deckDao.deleteDeck(deck.id)
         }
-         deckList.remove(deck)
-         binding.recyclerView.adapter?.notifyItemRemoved(pos)
     }
 
 
@@ -85,6 +85,9 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener,BtnListener {
         }
     }
 
+
+    //TODO("This seems stupid,
+    // decide if we want global list var or to just query local db")
     private suspend fun getCards(id: Int?) {
         cardList.clear()
         val cards = db.cardDAO().getByDeckId(id)

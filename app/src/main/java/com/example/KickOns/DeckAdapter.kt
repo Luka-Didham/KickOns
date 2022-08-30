@@ -7,14 +7,13 @@ import com.example.KickOns.databinding.DeckItemBinding
 
 class DeckAdapter(
     private val decks: List<DeckItem>,
-    private val clickListener: DeckClickListener,
-    private val btnListener: BtnListener)
+    private val clickListener: DeckClickListener)
     : RecyclerView.Adapter<DeckViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DeckViewHolder {
         val from = LayoutInflater.from(parent.context)
         val binding = DeckItemBinding.inflate(from, parent, false)
-        return DeckViewHolder(binding, clickListener, btnListener)
+        return DeckViewHolder(binding, clickListener)
 
     }
 
