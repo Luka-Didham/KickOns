@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.17476019184652278" />
+        <entry key="../../../../tmp/drawable-temp/fake_of_background_manager_ani.xml" value="0.2325" />
         <entry key="..\:/Aquired/COSC345/app/src/main/res/drawable/shape.xml" value="0.188" />
         <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/activity_game.xml" value="0.20677083333333332" />
         <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/activity_main.xml" value="0.12228260869565218" />
@@ -75,11 +76,19 @@
         <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/layout/deck_item.xml" value="0.176" />
         <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/layout/deck_picker.xml" value="0.19384057971014493" />
         <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/layout/welcome_page.xml" value="0.19384057971014493" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2545" />
+        <entry key="app/src/main/res/drawable-v24/law.xml" value="0.2545" />
+        <entry key="app/src/main/res/drawable-v24/powerup.xml" value="0.2545" />
+        <entry key="app/src/main/res/drawable-v24/standard.xml" value="0.2545" />
+        <entry key="app/src/main/res/drawable/btn_shape_triangle.xml" value="0.2545" />
         <entry key="app/src/main/res/drawable/deckitembackground.xml" value="0.1965" />
         <entry key="app/src/main/res/drawable/del_border.xml" value="0.1995" />
+        <entry key="app/src/main/res/drawable/handicap.xml" value="0.2545" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2545" />
         <entry key="app/src/main/res/drawable/shape.xml" value="0.2005" />
-        <entry key="app/src/main/res/layout/activity_deck_edit.xml" value="0.12001811594202899" />
+        <entry key="app/src/main/res/layout/activity_deck_edit.xml" value="0.10553278688524591" />
         <entry key="app/src/main/res/layout/activity_game.xml" value="0.12001811594202899" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.24895833333333334" />
         <entry key="app/src/main/res/layout/add_player.xml" value="0.1" />
         <entry key="app/src/main/res/layout/card_creation.xml" value="0.36822916666666666" />
         <entry key="app/src/main/res/layout/card_item.xml" value="0.36822916666666666" />
