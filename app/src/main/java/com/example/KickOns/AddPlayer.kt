@@ -12,49 +12,47 @@ import kotlinx.android.synthetic.main.add_player.*
 import kotlinx.android.synthetic.main.card_creation.*
 import kotlinx.android.synthetic.main.welcome_page.*
 
+
 class AddPlayer : AppCompatActivity() {
 
-    private var startGame: MainActivity? = null
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
-
+        //TODO("Add recycler view adapter")
         super.onCreate(savedInstanceState)
         setContentView(R.layout.add_player)
-        var players = ArrayList<Button>()
+
         var editText = textInputEditText
         var MAX_PLAYERS = 30
-        var positionCount = 1
 
+        redraw()
         btnAddPlayer.setOnClickListener{
+
             var text = editText.getText().toString()
             print(text)
+            val p: Player = Player(text)
+            playerList.add(p)
             if(text == ""){
                 editText.hint = "Please Add Name"
                 }else{
-                if(players.size<MAX_PLAYERS) {
+                if(playerList.size<MAX_PLAYERS) {
                     editText.setText("")
-                    val num = players.size+1
+                    val num = playerList.size
                     val idString = "btnPlayer$num"
                     val buttonID = resources.getIdentifier(idString, "id", packageName)
-                    players.add(findViewById(buttonID))
-                    var btn = players[players.size-1]
-                    btn.text = text
+                    val btn = findViewById<Button>(buttonID)
+                    btn.text = p.name
                     btn.visibility = View.VISIBLE
                     btn.setOnClickListener {
-                        if (players.contains(btn)) {
-                            players.remove(btn)
-                            btn.visibility = View.INVISIBLE
-                        }
+                       playerList.remove(p)
                     }
+                    redraw()
                 }else{
                     editText.hint = "Max 30 players"
                 }
 
-        }
+            }
         }
         btnStartFromChoosePlayers.setOnClickListener{
-            if(players.size>1) {
+            if(playerList.size>1) {
                 val intent = Intent(this, DeckPicker()::class.java)
                 startActivity(intent)
             }else{
@@ -62,7 +60,26 @@ class AddPlayer : AppCompatActivity() {
             }
         }
 
+    }
 
+    fun redraw(){
+        if(!playerList.isEmpty()) {
+            for (player in playerList) {
+                val num = playerList.indexOf(player) + 1
+                val idString = "btnPlayer$num"
+                val buttonID = resources.getIdentifier(idString, "id", packageName)
 
-    }}
+                var btn = findViewById<Button>(buttonID)
+                btn.text = player.name
+                btn.visibility = View.VISIBLE
+                btn.setOnClickListener {
+                    playerList.removeAt(playerList.indexOf(player))
+                    btn.visibility = View.INVISIBLE
+                }
+
+            }
+
+        }
+    }
+}
 

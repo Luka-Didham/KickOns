@@ -4,8 +4,8 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-//TODO("get this working wihtout having to incremeant version number after schema change")
-@Database(entities = [CardItem::class, DeckItem::class], version = 9)
+//TODO("get this working without having to increment version number after schema change")
+@Database(entities = [CardItem::class, DeckItem::class], version = 11)
 abstract class CardDB : RoomDatabase() {
     abstract fun cardDAO(): CardDAO
     abstract fun deckDAO(): DeckDAO
@@ -23,7 +23,7 @@ abstract class CardDB : RoomDatabase() {
                     context.applicationContext,
                     CardDB::class.java,
                     "card_database"
-                //TODO `remember to remove line bellow when not testing the db
+                //TODO remember to remove line below when not testing the db
                 ).fallbackToDestructiveMigration().build();
                 INSTANCE = instance
                 return instance

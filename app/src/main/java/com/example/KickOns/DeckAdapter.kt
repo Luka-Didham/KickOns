@@ -14,6 +14,12 @@ class DeckAdapter(
         val from = LayoutInflater.from(parent.context)
         val binding = DeckItemBinding.inflate(from, parent, false)
         return DeckViewHolder(binding, clickListener)
+
+    }
+
+    fun deleteItem(i : Int){
+        deckList.removeAt(i)
+        notifyDataSetChanged()
     }
 
     override fun onBindViewHolder(holder: DeckViewHolder, position: Int) {
@@ -22,4 +28,4 @@ class DeckAdapter(
 
     override fun getItemCount(): Int = decks.size
 
-}
+    }

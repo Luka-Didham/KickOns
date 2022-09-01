@@ -1,33 +1,35 @@
 package com.example.KickOns
+
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.SyncStateContract.Helpers.insert
 import android.view.View
 import android.widget.RelativeLayout
-import android.widget.TextView
-import com.example.KickOns.R
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.*
-
+import java.util.*
+import java.util.regex.Matcher
+import java.util.regex.Pattern
+import kotlin.random.Random
+import kotlin.text.Regex
 
 class MainActivity : AppCompatActivity() {
 
-    private var createDeck: DeckCreation? = null
-    private var createCard: CardCreation? = null
     private lateinit var db : CardDB
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         db = CardDB.getDatabase(this)
-
         setContentView(R.layout.activity_main)
+
         var clicked = 0
         val len = cardList.size
+
         btnScreen.setOnClickListener {
             if(clicked<len) {
-                changeCard(cardList.get(clicked).cardType, cardList.get(clicked).challenge)
+                changeCard(cardList.get(clicked).cardType, randomPlayer(cardList.get(clicked).challenge))
                 clicked++
             }else {
                 clicked = 0
@@ -44,10 +46,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        }
+    }
 
     /*
-    0 = strandard card
+    0 = standard card
     1 = powerup card
     2 = law card
     3 = handicap card
@@ -90,4 +92,19 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    fun randomPlayer(prompt: String): String{
+        val sList = playerList.shuffled()
+        var newPrompt = prompt.lowercase()
+        var regex =  Regex("(#player)\\w+")
+        val matches = regex.findAll(newPrompt)
+        for(m in matches){
+            val s = m.value
+            //TODO("App Will crash if card prompt has a #player:int where the int > playerList.size
+            //  ")
+            newPrompt = newPrompt.replace(m.value, sList[s.last().digitToInt()-1].name.toString())
+        }
+        return newPrompt
     }
+
+
+}
