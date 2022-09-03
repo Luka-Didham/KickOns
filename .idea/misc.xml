@@ -86,7 +86,7 @@
         <entry key="app/src/main/res/drawable/handicap.xml" value="0.2545" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2545" />
         <entry key="app/src/main/res/drawable/shape.xml" value="0.2005" />
-        <entry key="app/src/main/res/layout/activity_deck_edit.xml" value="0.10553278688524591" />
+        <entry key="app/src/main/res/layout/activity_deck_edit.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_game.xml" value="0.12001811594202899" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.24895833333333334" />
         <entry key="app/src/main/res/layout/add_player.xml" value="0.1" />

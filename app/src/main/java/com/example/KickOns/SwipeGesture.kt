@@ -32,7 +32,7 @@ abstract class SwipeGesture(val context: Context): ItemTouchHelper.SimpleCallbac
     override fun getSwipeThreshold(viewHolder: RecyclerView.ViewHolder): Float {
         return 0.6f
     }
-
+    //TODO("Highlight Selected item")
     override fun onChildDrawOver(
         c: Canvas,
         recyclerView: RecyclerView,
