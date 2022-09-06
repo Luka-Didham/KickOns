@@ -31,3 +31,6 @@ i.e. "#player has to dance" -> "James has to dance"
 
 # Android CI
 [![Android CI](https://github.com/Luka-Didham/COSC345/actions/workflows/android.yml/badge.svg)](https://github.com/Luka-Didham/COSC345/actions/workflows/android.yml)
+
+# Questionnaire
+https://docs.google.com/forms/d/1cbFpy2ZIdCAx8iL0ZZ2GZf13UfXBPHssZNWesz-KLTU/edit#settings
