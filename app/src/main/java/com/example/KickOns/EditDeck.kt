@@ -71,8 +71,6 @@ class EditDeck(): AppCompatActivity() {
 
 
 
-
-
     private fun posDec(pos: Int) : Int {
         if (pos - 1 < 0) return cardList.size - 1
         return pos-1
