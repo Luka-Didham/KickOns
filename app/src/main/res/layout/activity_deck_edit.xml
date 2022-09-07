@@ -41,31 +41,32 @@
             <EditText
                 android:id="@+id/editCard"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="300dp"
                 android:layout_marginHorizontal="25sp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/fonts"
                 android:gravity="center"
-                android:paddingBottom="320dp"
-                android:textColor="@android:color/system_accent1_400"
+                android:paddingBottom="10dp"
+                android:textColor="@color/black"
                 android:textColorHint="#78909C"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
 
-
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                tools:visibility="visible">
 
                 <Button
                     android:id="@+id/del_card"
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="30dp"
-                    app:cornerRadius="99dp"
-                    android:text="Delete" />
+                    android:text="Delete"
+                    app:cornerRadius="99dp" />
 
                 <View
                     android:layout_width="0dp"
@@ -76,10 +77,10 @@
                 <Button
                     android:id="@+id/sv_crd"
                     android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_height="match_parent"
                     android:layout_marginHorizontal="30dp"
-                    app:cornerRadius="99dp"
-                    android:text="save" />
+                    android:text="save"
+                    app:cornerRadius="99dp" />
             </LinearLayout>
 
 

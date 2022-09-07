@@ -14,7 +14,7 @@ import kotlinx.coroutines.withContext
 class EditDeck(): AppCompatActivity() {
     private lateinit var db : CardDB
     private lateinit var cardDao: CardDAO
-    override fun onCreate(savedInstance: Bundle?){
+    override fun onCreate(savedInstance: Bundle?) {
 
         super.onCreate(savedInstance)
 
@@ -26,18 +26,23 @@ class EditDeck(): AppCompatActivity() {
         setContentView(R.layout.activity_deck_edit)
         //Get Cards for specified deck
         //TODO("Parse in extra context of deck id from precious view")
-        getCards(0);
+        val id = intent.extras?.getInt("id")
+        getCards(id!!);
 
         val cardText = findViewById<EditText>(R.id.editCard)
         nextCard(cardText, pos);
 
 
         btn_next.setOnClickListener {
-            nextCard(cardText,pos++)
+            pos = posInc(pos)
+            nextCard(cardText, pos)
+
         }
 
         btn_prev.setOnClickListener {
-            nextCard(cardText,pos--)
+            pos = posDec(pos)
+            nextCard(cardText, pos)
+
         }
 
 
@@ -46,23 +51,39 @@ class EditDeck(): AppCompatActivity() {
                 cardDao.delete(cardList[pos])
             }
             cardList.removeAt(pos)
-            pos ++;
-            nextCard(cardText, pos);
+            pos = posInc(pos);
+            nextCard(cardText, pos)
+
         }
 
-        //TODO("Check if this is how you update db entries
-        // as challenge needs to be set to a var which seems wrong")
         sv_crd.setOnClickListener {
             cardList[pos].challenge = cardText.text.toString()
             GlobalScope.launch {
                 cardDao.update(cardList[pos])
+
+                withContext(Dispatchers.Main) {
+                    pos = posInc(pos);
+                    nextCard(cardText, pos)
+                }
             }
-            pos ++;
-            nextCard(cardText, pos);
         }
-
-
     }
+
+
+
+
+
+    private fun posDec(pos: Int) : Int {
+        if (pos - 1 < 0) return cardList.size - 1
+        return pos-1
+    }
+
+    private fun posInc(pos : Int): Int {
+        if (pos+1 == cardList.size) return 0
+        return pos+1
+    }
+
+
 
     private fun nextCard(text: EditText, pos : Int){
             text.setText(cardList[pos].challenge)
@@ -70,7 +91,7 @@ class EditDeck(): AppCompatActivity() {
 
     private fun getCards(id: Int){
         GlobalScope.launch {
-            val cards = db.cardDAO().getByDeckId(1)
+            val cards = db.cardDAO().getByDeckId(id)
             withContext(Dispatchers.Main){
                 cards.forEach{
                     cardList.add(it)

@@ -57,6 +57,7 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener,BtnListener {
 
         btnCreateDeckFromChoose.setOnClickListener {
             val intent = Intent(this, DeckCreation::class.java)
+
             startActivity(intent)
         }
 
@@ -82,11 +83,13 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener,BtnListener {
 
     override fun onClick(deck: DeckItem) {
        val intent = Intent(this, EditDeck::class.java)
+        val d = deck.id
         GlobalScope.launch{
             //Querry db and wait for response
             getCards(deck.id)
             //On main launch next page
             withContext(Dispatchers.Main){
+                intent.putExtra("id",deck.id)
                 startActivity(intent)
             }
         }
