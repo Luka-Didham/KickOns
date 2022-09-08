@@ -51,7 +51,13 @@ class EditDeck(): AppCompatActivity(){
 
         setContentView(R.layout.activity_deck_edit)
 
-        //Swipe detection
+        //Swipe detection\
+        val swipe = object : CardSwipe(this){
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                TODO("Not yet implemented")
+            }
+        }
+
         val gestureListener = object : CardSwipeGesture(this){
             override fun onScroll(
                 e1: MotionEvent?,
@@ -59,7 +65,6 @@ class EditDeck(): AppCompatActivity(){
                 distanceX: Float,
                 distanceY: Float
             ): Boolean {
-
                 editCrd.x -= distanceX
                 editCrd.y -= distanceY
                 Log.d("x", "$distanceX")
@@ -81,18 +86,26 @@ class EditDeck(): AppCompatActivity(){
             }
         }
 
-        view.setOnScrollChangeListener(object: View.OnScrollChangeListener{
-            override fun onScrollChange(p0: View?, scrollX: Int, scrollY: Int, x: Int, y: Int) {
-
-
-            }
-        })
+//        editCrd.setOnTouchListener(object: OnSwipeTouchListener(this) {
+//            override fun onSwipeLeft() {
+//                onBackPressed()
+//            }
+//            override fun onSwipeRight() {
+//                onBackPressed()
+//            }
+//        })
 
         gestureDetector = GestureDetector(this,gestureListener)
-
-
         edit_deck.setOnTouchListener { _, e ->
-            gestureDetector.onTouchEvent(e)
+            when(e.action){
+                MotionEvent.ACTION_UP -> {
+                   //TODO("add sliding animation")
+                    snapCard()
+                }
+                else -> {
+                    gestureDetector.onTouchEvent(e)
+                }
+            }
             true
         }
 
@@ -146,6 +159,11 @@ class EditDeck(): AppCompatActivity(){
     private fun posInc(pos : Int): Int {
         if (pos+1 == cardList.size) return 0
         return pos+1
+    }
+
+    private fun snapCard(){
+        editCrd.x = (edit_deck.width/2 - editCrd.width/2).toFloat()
+        editCrd.y = (edit_deck.height/2 - editCrd.height/2).toFloat()
     }
 
     private fun nextCard(text: EditText, pos : Int){

@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 abstract class CardSwipeGesture(context: Context): GestureDetector.SimpleOnGestureListener() {
 
     override fun onDoubleTap(e: MotionEvent?): Boolean {
-        Log.d("DD","wow")
         return true
     }
 
@@ -25,4 +24,7 @@ abstract class CardSwipeGesture(context: Context): GestureDetector.SimpleOnGestu
         return true
     }
 
+    fun drawChild() {
+
+    }
 }
