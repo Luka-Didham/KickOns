@@ -96,8 +96,6 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener,BtnListener {
     }
 
 
-    //TODO("This seems stupid,
-    // decide if we want global list var or to just query local db")
     private suspend fun getCards(id: Int?) {
         cardList.clear()
         val cards = db.cardDAO().getByDeckId(id)
