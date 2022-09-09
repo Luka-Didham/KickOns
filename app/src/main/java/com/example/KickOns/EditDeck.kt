@@ -18,6 +18,8 @@ import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.text.set
 import androidx.dynamicanimation.animation.DynamicAnimation
 import androidx.dynamicanimation.animation.SpringAnimation
+import androidx.dynamicanimation.animation.SpringForce
+import androidx.dynamicanimation.animation.SpringForce.*
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.example.KickOns.databinding.ActivityDeckEditBinding
@@ -176,10 +178,22 @@ class EditDeck(): AppCompatActivity(){
 
     private fun snapCard(){
         editCrd.let { crd ->
-            SpringAnimation(crd,DynamicAnimation.ROTATION, 0F).start()
-            SpringAnimation(crd,DynamicAnimation.X, (edit_deck.width/2 - editCrd.width/2).toFloat()).start()
+            SpringAnimation(crd,DynamicAnimation.ROTATION, 0F).apply{
+                spring.dampingRatio = DAMPING_RATIO_LOW_BOUNCY
+                spring.stiffness = STIFFNESS_LOW
+                start()
+            }
+            SpringAnimation(crd,DynamicAnimation.X, (edit_deck.width/2 - editCrd.width/2).toFloat()).apply{
+                spring.dampingRatio = DAMPING_RATIO_LOW_BOUNCY
+                spring.stiffness = STIFFNESS_LOW
+                start()
+            }
             //TODO("Think its not centering because its using sp instead of dp, vica versa)
-            SpringAnimation(crd,DynamicAnimation.Y, (edit_deck.height/2 - editCrd.height/2 - 80).toFloat()).start()
+            SpringAnimation(crd,DynamicAnimation.Y, (edit_deck.height/2 - editCrd.height/2 - 80).toFloat()).apply{
+                spring.dampingRatio = DAMPING_RATIO_LOW_BOUNCY
+                spring.stiffness = STIFFNESS_LOW
+                start()
+            }
 
         }
     }
