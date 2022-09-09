@@ -74,7 +74,10 @@ class EditDeck(): AppCompatActivity(){
             ): Boolean {
                 editCrd.x -= distanceX
                 editCrd.y -= distanceY
+                editCrd.pivotX = e1!!.rawX
+                editCrd.pivotY = (edit_deck.height * 0.75).toFloat()
                 editCrd.rotation -= distanceX/10
+
                 Log.d("x", "$distanceX")
                 Log.d("y", "$distanceY")
                 return true
