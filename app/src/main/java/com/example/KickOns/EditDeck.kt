@@ -16,6 +16,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.OnSwipe
 import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.text.set
+import androidx.dynamicanimation.animation.DynamicAnimation
+import androidx.dynamicanimation.animation.SpringAnimation
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.example.KickOns.databinding.ActivityDeckEditBinding
@@ -51,8 +53,10 @@ class EditDeck(): AppCompatActivity(){
         var pos = 0
         val binding = ActivityDeckEditBinding.inflate(layoutInflater)
         val view = binding.root
-
         setContentView(R.layout.activity_deck_edit)
+
+
+        //Snap Animation
 
         //Swipe detection
         val swipe = object : CardSwipe(this){
@@ -70,6 +74,7 @@ class EditDeck(): AppCompatActivity(){
             ): Boolean {
                 editCrd.x -= distanceX
                 editCrd.y -= distanceY
+                editCrd.rotation -= distanceX/10
                 Log.d("x", "$distanceX")
                 Log.d("y", "$distanceY")
                 return true
@@ -167,8 +172,13 @@ class EditDeck(): AppCompatActivity(){
     }
 
     private fun snapCard(){
-        editCrd.x = (edit_deck.width/2 - editCrd.width/2).toFloat()
-        editCrd.y = (edit_deck.height/2 - editCrd.height/2).toFloat()
+        editCrd.let { crd ->
+            SpringAnimation(crd,DynamicAnimation.ROTATION, 0F).start()
+            SpringAnimation(crd,DynamicAnimation.X, (edit_deck.width/2 - editCrd.width/2).toFloat()).start()
+            //TODO("Think its not centering because its using sp instead of dp, vica versa)
+            SpringAnimation(crd,DynamicAnimation.Y, (edit_deck.height/2 - editCrd.height/2 - 80).toFloat()).start()
+
+        }
     }
 
     private fun nextCard(pos : Int){

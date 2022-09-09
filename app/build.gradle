@@ -106,6 +106,9 @@ android {
 dependencies {
     dokkaHtmlPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.7.10")
 
+    def dynamicanimation_version = '1.0.0'
+    implementation "androidx.dynamicanimation:dynamicanimation:$dynamicanimation_version"
+
     apply plugin : "kotlin-android"
     apply plugin : "kotlin-android-extensions"
     apply plugin: 'kotlin-kapt'
