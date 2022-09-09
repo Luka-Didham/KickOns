@@ -30,6 +30,7 @@ When the app has loaded press play to begin
 i.e. "#player has to dance" -> "James has to dance"
 
 # Android CI
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/0e50a261457b4852bb15ca5b8f767141)](https://app.codacy.com/gh/Luka-Didham/COSC345?utm_source=github.com&utm_medium=referral&utm_content=Luka-Didham/COSC345&utm_campaign=Badge_Grade_Settings)
 [![Android CI](https://github.com/Luka-Didham/COSC345/actions/workflows/android.yml/badge.svg)](https://github.com/Luka-Didham/COSC345/actions/workflows/android.yml)
 
 # Questionnaire
