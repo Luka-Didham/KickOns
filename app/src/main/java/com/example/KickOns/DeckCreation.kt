@@ -15,16 +15,17 @@ class DeckCreation() : AppCompatActivity() {
     private var backToMain: DeckPicker? = null
     private var confirmName: CardCreation? = null
     private lateinit var db: CardDB
+    private lateinit var deckDao: DeckDAO
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.deck_creation)
 
         db = CardDB.getDatabase(this)
-        val deckDao = db.deckDAO()
+        deckDao = db.deckDAO()
 
-        val deckName = findViewById<EditText>(R.id.editDeckName) as EditText
-        val deckDesc = findViewById<EditText>(R.id.editDeckName) as EditText
+        val deckName = findViewById<EditText>(R.id.editDeckName)
+        val deckDesc = findViewById<EditText>(R.id.editDeckName)
 
         btnBackFromCreateDeck.setOnClickListener {
             val intent = Intent(this, DeckPicker::class.java)
@@ -34,10 +35,11 @@ class DeckCreation() : AppCompatActivity() {
         btnSaveDeck.setOnClickListener {
             val d = DeckItem(null, deckName.text.toString())//, deckDesc.text.toString())
             val intent = Intent(this, CardCreation()::class.java)
+            deckList.add(d)
 
             //Saves and sends deck Id to card add screen
             GlobalScope.launch {
-                val deckId = async { db.deckDAO().addDeck(d) }
+                val deckId = async {   db.deckDAO().addDeck(d) }
                 intent.putExtra("deck_id", deckId.await())
                 startActivity(intent)
             }

@@ -68,6 +68,17 @@
         app:layout_constraintBottom_toTopOf="@+id/btnCreateDeckFromChoose"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvChooseDeck" />
+        app:layout_constraintTop_toBottomOf="@+id/tvChooseDeck"
+        >
+
+<!--        <ImageButton-->
+<!--            android:id="@+id/btnDeleteDeck"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@drawable/ic_delete"-->
+<!--            />-->
+
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

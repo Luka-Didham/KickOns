@@ -2,6 +2,7 @@ package com.example.KickOns
 
 import android.content.Intent
 import android.os.Bundle
+import android.provider.SyncStateContract.Helpers.insert
 import android.view.View
 import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
@@ -15,18 +16,17 @@ import kotlin.text.Regex
 
 class MainActivity : AppCompatActivity() {
 
-    private var createDeck: DeckCreation? = null
-    private var createCard: CardCreation? = null
     private lateinit var db : CardDB
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         db = CardDB.getDatabase(this)
-
         setContentView(R.layout.activity_main)
+
         var clicked = 0
         val len = cardList.size
+
         btnScreen.setOnClickListener {
             if(clicked<len) {
                 changeCard(cardList.get(clicked).cardType, randomPlayer(cardList.get(clicked).challenge))
@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        }
+    }
 
     /*
     0 = standard card
@@ -93,40 +93,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun randomPlayer(prompt: String): String{
+        val sList = playerList.shuffled()
         var newPrompt = prompt.lowercase()
-        var regex: Regex = "@player[1-9]".toRegex()
-        val pat: Pattern = Pattern.compile("@player[1-9]")
-        val matcher: Matcher = pat.matcher(newPrompt)
-        while(matcher.find()) {
-            val randomIndex = Random.nextInt(playerList.size-1)
-            newPrompt = newPrompt.replaceFirst("@player".toRegex(), playerList[randomIndex].name.toString())
-        }
-        return newPrompt
-
-    }
-
-    /**
-     * A function to randomly decide the players in the question provided to the mainActivity
-     *
-     * @param prompt The initial prompt before the players are randomly assigned, still with @players
-     * @author Luka Didham & Kurt Wedding-Speight
-     */
-    fun randomPlayer2(prompt: String): String{
-        var newPrompt = prompt.lowercase()
-        val playerMap: MutableMap<Int, String> = mutableMapOf()
-        val regex1: Regex = "(@player[1-9](?=(,|\\.| |/)))|(@player[1-9][1-9](?=(,|\\.| )))".toRegex()
-        // TODO change the regex to stop reading after @player1 by any character that isn't a number.
-        val players = regex1.findAll(newPrompt)
-        for (element in players){
-            val a = element.value.replace("@player", "")
-            playerMap[a.toInt()] = playerList[Random.nextInt(playerList.size-1)].name.toString()
-            // TODO fix this!
-            println(element.value + a)
-        }
-        for(num in players){
-            val playerNo = num.value.replace("@player", "").toInt()
-            newPrompt = newPrompt.replace("@player$playerNo", playerMap.getValue(playerNo).toString())
+        var regex =  Regex("(#player)\\w+")
+        val matches = regex.findAll(newPrompt)
+        for(m in matches){
+            val s = m.value
+            //TODO("App Will crash if card prompt has a #player:int where the int > playerList.size
+            //  ")
+            newPrompt = newPrompt.replace(m.value, sList[s.last().digitToInt()-1].name.toString())
         }
         return newPrompt
     }
+
+
 }

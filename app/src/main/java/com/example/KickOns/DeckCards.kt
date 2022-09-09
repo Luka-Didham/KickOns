@@ -12,8 +12,6 @@ import kotlinx.coroutines.*
 
 class DeckCards() : AppCompatActivity(){
 
-    private var backToMain: MainActivity? = null
-    private var confirmName: CardCreation? = null
     private lateinit var db: CardDB
     private lateinit var binding: DeckCardsBinding
 

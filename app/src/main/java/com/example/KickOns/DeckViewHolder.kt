@@ -7,7 +7,8 @@ import com.example.KickOns.databinding.DeckItemBinding
 
 class DeckViewHolder(
     private val deckCell: DeckItemBinding,
-    private val clickListener: DeckClickListener
+    private val clickListener: DeckClickListener,
+
     ) : RecyclerView.ViewHolder(deckCell.root) {
 
         fun bindDeck(deck: DeckItem){
@@ -16,8 +17,5 @@ class DeckViewHolder(
                 clickListener.onClick(deck)
 
             }
-//           deckCell.btnDelete.setOnClickListener {
-//               DeckDAO.deleteDeck(deck.id);
-//           }
         }
 }

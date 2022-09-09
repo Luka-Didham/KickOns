@@ -10,6 +10,6 @@ data class CardItem (
     @PrimaryKey(autoGenerate = true)
     val id: Int?,
     val cardType: Int,
-    val challenge: String,
+    var challenge: String,
     val deckId: Int?
 )

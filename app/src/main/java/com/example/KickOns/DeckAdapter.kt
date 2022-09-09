@@ -2,6 +2,7 @@ package com.example.KickOns
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.KickOns.databinding.DeckItemBinding
 
@@ -14,6 +15,7 @@ class DeckAdapter(
         val from = LayoutInflater.from(parent.context)
         val binding = DeckItemBinding.inflate(from, parent, false)
         return DeckViewHolder(binding, clickListener)
+
     }
 
     override fun onBindViewHolder(holder: DeckViewHolder, position: Int) {
@@ -22,4 +24,4 @@ class DeckAdapter(
 
     override fun getItemCount(): Int = decks.size
 
-}
+    }

@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.17476019184652278" />
         <entry key="..\:/Aquired/COSC345/app/src/main/res/drawable/shape.xml" value="0.188" />
+        <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/activity_deck_edit.xml" value="0.2203125" />
         <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/activity_game.xml" value="0.20677083333333332" />
         <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/activity_main.xml" value="0.12228260869565218" />
         <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/activity_splash_screen.xml" value="0.18072916666666666" />
@@ -36,10 +38,12 @@
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/drawable/ani_normal.xml" value="0.196" />
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/drawable/background_ani.xml" value="0.3675" />
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/drawable/background_manager_ani.xml" value="0.3305" />
+        <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/drawable/deckitem.xml" value="0.195" />
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/drawable/handicap.xml" value="0.155" />
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/drawable/handicap_card.xml" value="0.155" />
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1865" />
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/font/fonts.xml" value="0.18888888888888888" />
+        <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/layout/activity_game.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/layout/activity_handicap.xml" value="0.26927083333333335" />
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/layout/activity_law.xml" value="0.2" />
         <entry key="..\:/Users/HCI/AndroidStudioProjects/ColorChanging/app/src/main/res/layout/activity_main.xml" value="0.22962962962962963" />
@@ -74,8 +78,17 @@
         <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/layout/deck_item.xml" value="0.176" />
         <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/layout/deck_picker.xml" value="0.19384057971014493" />
         <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/layout/welcome_page.xml" value="0.19384057971014493" />
+        <entry key="app/src/main/res/drawable/deckitembackground.xml" value="0.1965" />
+        <entry key="app/src/main/res/drawable/del_border.xml" value="0.1995" />
+        <entry key="app/src/main/res/drawable/shape.xml" value="0.2005" />
+        <entry key="app/src/main/res/layout/activity_deck_edit.xml" value="0.12001811594202899" />
+        <entry key="app/src/main/res/layout/activity_game.xml" value="0.12001811594202899" />
         <entry key="app/src/main/res/layout/add_player.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/deck_item.xml" value="0.511400651465798" />
+        <entry key="app/src/main/res/layout/card_creation.xml" value="0.36822916666666666" />
+        <entry key="app/src/main/res/layout/card_item.xml" value="0.36822916666666666" />
+        <entry key="app/src/main/res/layout/deck_creation.xml" value="0.12001811594202899" />
+        <entry key="app/src/main/res/layout/deck_item.xml" value="0.35853658536585364" />
+        <entry key="app/src/main/res/layout/welcome_page.xml" value="0.12001811594202899" />
       </map>
     </option>
   </component>
