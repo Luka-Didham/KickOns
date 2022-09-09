@@ -8,9 +8,7 @@ import android.view.View
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 
-abstract class CardSwipeGesture(context: Context): GestureDetector.SimpleOnGestureListener() {
-
-
+abstract class CardSwipeGesture(val context: Context): GestureDetector.SimpleOnGestureListener() {
 
     override fun onFling(
         e1: MotionEvent?,
@@ -18,11 +16,7 @@ abstract class CardSwipeGesture(context: Context): GestureDetector.SimpleOnGestu
         velocityX: Float,
         velocityY: Float
     ): Boolean {
-        Log.d("M Event", e1?.x.toString())
         return true
     }
 
-    fun drawChild() {
-
-    }
 }
