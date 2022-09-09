@@ -10,9 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 abstract class CardSwipeGesture(context: Context): GestureDetector.SimpleOnGestureListener() {
 
-    override fun onDoubleTap(e: MotionEvent?): Boolean {
-        return true
-    }
+
 
     override fun onFling(
         e1: MotionEvent?,

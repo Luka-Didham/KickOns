@@ -13,6 +13,7 @@ import android.widget.AbsListView
 import android.widget.EditText
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.motion.widget.OnSwipe
 import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.text.set
 import androidx.recyclerview.widget.ItemTouchHelper
@@ -34,6 +35,8 @@ class EditDeck(): AppCompatActivity(){
     private lateinit var binding: ActivityDeckEditBinding
     private lateinit var gestureDetector: GestureDetector
 
+    private lateinit var childText: EditText
+    private lateinit var cardText: EditText
 
     @RequiresApi(Build.VERSION_CODES.M)
     @SuppressLint("ClickableViewAccessibility")
@@ -51,7 +54,7 @@ class EditDeck(): AppCompatActivity(){
 
         setContentView(R.layout.activity_deck_edit)
 
-        //Swipe detection\
+        //Swipe detection
         val swipe = object : CardSwipe(this){
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 TODO("Not yet implemented")
@@ -113,19 +116,21 @@ class EditDeck(): AppCompatActivity(){
         val id = intent.extras?.getInt("id")
         getCards(id!!);
 
-        val cardText = findViewById<EditText>(R.id.editCard)
-        nextCard(cardText, pos);
+        cardText = findViewById(R.id.editCard)
+        childText = findViewById(R.id.editChild)
+
+        nextCard(pos);
 
 
         btn_next.setOnClickListener {
             pos = posInc(pos)
-            nextCard(cardText, pos)
+            nextCard(pos)
 
         }
 
         btn_prev.setOnClickListener {
             pos = posDec(pos)
-            nextCard(cardText, pos)
+            nextCard(pos)
 
         }
 
@@ -135,7 +140,7 @@ class EditDeck(): AppCompatActivity(){
             }
             cardList.removeAt(pos)
             pos = posInc(pos);
-            nextCard(cardText, pos)
+            nextCard(pos)
         }
 
         sv_crd.setOnClickListener {
@@ -145,7 +150,7 @@ class EditDeck(): AppCompatActivity(){
 
                 withContext(Dispatchers.Main) {
                     pos = posInc(pos);
-                    nextCard(cardText, pos)
+                    nextCard(pos)
                 }
             }
         }
@@ -166,8 +171,9 @@ class EditDeck(): AppCompatActivity(){
         editCrd.y = (edit_deck.height/2 - editCrd.height/2).toFloat()
     }
 
-    private fun nextCard(text: EditText, pos : Int){
-            text.setText(cardList[pos].challenge)
+    private fun nextCard(pos : Int){
+            cardText.setText(cardList[pos].challenge)
+            childText.setText(cardList[posInc(pos)].challenge)
     }
 
     private fun getCards(id: Int){
