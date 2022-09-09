@@ -177,6 +177,9 @@ class EditDeck(): AppCompatActivity(){
     }
 
     private fun snapCard(){
+        //TODO Change multiple apply to a spring force
+
+        val sf = SpringForce()
         editCrd.let { crd ->
             SpringAnimation(crd,DynamicAnimation.ROTATION, 0F).apply{
                 spring.dampingRatio = DAMPING_RATIO_LOW_BOUNCY
