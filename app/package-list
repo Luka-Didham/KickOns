@@ -43,8 +43,12 @@ $dokka.location:com.example.KickOns/CardSwipe/onChildDraw/#android.graphics.Canv
 $dokka.location:com.example.KickOns/CardSwipe/onMove/#androidx.recyclerview.widget.RecyclerView#androidx.recyclerview.widget.RecyclerView.ViewHolder#androidx.recyclerview.widget.RecyclerView.ViewHolder/PointingToDeclaration/app/com.example.KickOns/-card-swipe/on-move.html
 $dokka.location:com.example.KickOns/CardSwipeGesture///PointingToDeclaration/app/com.example.KickOns/-card-swipe-gesture/index.html
 $dokka.location:com.example.KickOns/CardSwipeGesture/CardSwipeGesture/#android.content.Context/PointingToDeclaration/app/com.example.KickOns/-card-swipe-gesture/-card-swipe-gesture.html
-$dokka.location:com.example.KickOns/CardSwipeGesture/getContext/#/PointingToDeclaration/app/com.example.KickOns/-card-swipe-gesture/get-context.html
+$dokka.location:com.example.KickOns/CardSwipeGesture/drawChild/#/PointingToDeclaration/app/com.example.KickOns/-card-swipe-gesture/draw-child.html
+$dokka.location:com.example.KickOns/CardSwipeGesture/getDifX/#/PointingToDeclaration/app/com.example.KickOns/-card-swipe-gesture/get-dif-x.html
+$dokka.location:com.example.KickOns/CardSwipeGesture/getDifY/#/PointingToDeclaration/app/com.example.KickOns/-card-swipe-gesture/get-dif-y.html
 $dokka.location:com.example.KickOns/CardSwipeGesture/onFling/#android.view.MotionEvent?#android.view.MotionEvent?#kotlin.Float#kotlin.Float/PointingToDeclaration/app/com.example.KickOns/-card-swipe-gesture/on-fling.html
+$dokka.location:com.example.KickOns/CardSwipeGesture/setDifX/#kotlin.Float/PointingToDeclaration/app/com.example.KickOns/-card-swipe-gesture/set-dif-x.html
+$dokka.location:com.example.KickOns/CardSwipeGesture/setDifY/#kotlin.Float/PointingToDeclaration/app/com.example.KickOns/-card-swipe-gesture/set-dif-y.html
 $dokka.location:com.example.KickOns/CardTouchListener///PointingToDeclaration/app/com.example.KickOns/-card-touch-listener/index.html
 $dokka.location:com.example.KickOns/CardTouchListener/onTouch/#android.view.View?#android.view.MotionEvent?/PointingToDeclaration/app/com.example.KickOns/-card-touch-listener/on-touch.html
 $dokka.location:com.example.KickOns/CardViewHolder///PointingToDeclaration/app/com.example.KickOns/-card-view-holder/index.html
