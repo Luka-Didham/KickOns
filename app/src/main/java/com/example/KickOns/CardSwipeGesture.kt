@@ -10,7 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 
 abstract class CardSwipeGesture(context: Context): GestureDetector.SimpleOnGestureListener() {
 
-
+    var difX: Float = 0.0f
+    var difY: Float = 0.0f
 
     override fun onFling(
         e1: MotionEvent?,
