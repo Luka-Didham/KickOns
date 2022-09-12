@@ -71,13 +71,14 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener,BtnListener {
     }
 
      override fun btnClick(deck: DeckItem) {
-         val pos : Int = deckList.indexOf(deck)
+         val pos: Int = deckList.indexOf(deck)
          deckList.remove(deck)
          binding.recyclerView.adapter?.notifyItemRemoved(pos)
-        GlobalScope.launch {
-            deckDao.deleteDeck(deck.id)
-        }
-    }
+         GlobalScope.launch {
+             deckDao.deleteDeck(deck.id)
+         }
+
+     }
 
 
 
