@@ -38,20 +38,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivLogo" />
 
-    <Button
-        android:id="@+id/btnOptions"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/deckitembackground"
-        android:fontFamily="@font/fonts"
-        android:text="OPTIONS"
-        android:textAlignment="center"
-        android:textColor="#FBD34C"
-        android:textSize="30dp"
-        android:layout_marginTop="18dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnPlay" />
+<!--    <Button-->
+<!--        android:id="@+id/btnOptions"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@drawable/deckitembackground"-->
+<!--        android:fontFamily="@font/fonts"-->
+<!--        android:text="OPTIONS"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textColor="#FBD34C"-->
+<!--        android:textSize="30dp"-->
+<!--        android:layout_marginTop="18dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/btnPlay" />-->
 
     <Button
         android:id="@+id/btnHelp"
@@ -63,10 +63,10 @@
         android:textAlignment="center"
         android:textColor="#FBD34C"
         android:textSize="30dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnOptions" />
+        app:layout_constraintTop_toBottomOf="@+id/btnPlay" />
 
     <ImageView
         android:id="@+id/ivLogo"

@@ -10,6 +10,10 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import java.lang.Thread.sleep
 
+/** The Splash Screen is the first page that is displayed when the app is launched
+ * it shows the apps logo as well as plays music.
+ */
+
 class SplashScreenActivity : AppCompatActivity() {
     lateinit var mediaPlayer: MediaPlayer
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,7 +30,6 @@ class SplashScreenActivity : AppCompatActivity() {
             finish()
         }
     }
-
     protected override fun onPause() {
         super.onPause()
         mediaPlayer.release()

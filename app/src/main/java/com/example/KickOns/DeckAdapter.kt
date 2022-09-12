@@ -18,11 +18,6 @@ class DeckAdapter(
 
     }
 
-    fun deleteItem(i : Int){
-        deckList.removeAt(i)
-        notifyDataSetChanged()
-    }
-
     override fun onBindViewHolder(holder: DeckViewHolder, position: Int) {
         holder.bindDeck(decks[position])
     }
