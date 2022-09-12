@@ -59,7 +59,7 @@ class AddPlayer : AppCompatActivity() {
                 val intent = Intent(this, DeckPicker()::class.java)
                 startActivity(intent)
             }else{
-                editText.hint = "Minimum 1 player"
+                editText.hint = "Minimum 2 player"
             }
         }
 

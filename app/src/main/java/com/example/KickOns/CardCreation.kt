@@ -95,7 +95,7 @@ class CardCreation : AppCompatActivity(){
             ivCardTypeHandicap.visibility = View.INVISIBLE
             ivCardTypeLaw.visibility = View.INVISIBLE
             editCardDetails.hint =
-                "[Player], howl at the moon 3 times with [player2] or take a penalty"
+                "#Player, howl at the moon 3 times with #player2 or take a penalty"
             screenView.background = resources.getDrawable(R.drawable.standard, theme)
 
         }
@@ -105,7 +105,7 @@ class CardCreation : AppCompatActivity(){
             ivCardTypeHandicap.visibility = View.INVISIBLE
             ivCardTypeLaw.visibility = View.INVISIBLE
             editCardDetails.hint =
-                "[Player], if any player makes eye contact with you, they take a penalty."
+                "#Player, if any player makes eye contact with you, they take a penalty."
             screenView.background = resources.getDrawable(R.drawable.powerup, theme)
         }
         //law card
@@ -113,7 +113,7 @@ class CardCreation : AppCompatActivity(){
             ivCardTypeLaw.visibility = View.VISIBLE
             ivCardTypeHandicap.visibility = View.INVISIBLE
             ivCardTypePowerUp.visibility = View.INVISIBLE
-            editCardDetails.hint = "[Everyone], take a penalty every time someone says 'uhmm'"
+            editCardDetails.hint = "Everyone, take a penalty every time someone says 'uhmm'"
             screenView.background = resources.getDrawable(R.drawable.law, theme)
         }
         //handicap card
@@ -121,7 +121,7 @@ class CardCreation : AppCompatActivity(){
             ivCardTypeHandicap.visibility = View.VISIBLE
             ivCardTypeLaw.visibility = View.INVISIBLE
             ivCardTypePowerUp.visibility = View.INVISIBLE
-            editCardDetails.hint = "[Player], you now have to play the next 12 rounds on all fours."
+            editCardDetails.hint = "#Player, you now have to play the next 12 rounds on all fours."
             screenView.background = resources.getDrawable(R.drawable.handicap, theme)
         }
     }
