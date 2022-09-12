@@ -1,5 +1,4 @@
 package com.example.KickOns
-
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -11,6 +10,10 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.add_player.*
 import kotlinx.android.synthetic.main.card_creation.*
 import kotlinx.android.synthetic.main.welcome_page.*
+
+/** A class that is able to add players to the game as
+ * well as set restrictions on how many players can play and the minimum number of players needed.
+ */
 
 
 class AddPlayer : AppCompatActivity() {
