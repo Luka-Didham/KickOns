@@ -2,6 +2,7 @@ package com.example.KickOns
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.KickOns.databinding.DeckItemBinding
 
@@ -15,11 +16,6 @@ class DeckAdapter(
         val binding = DeckItemBinding.inflate(from, parent, false)
         return DeckViewHolder(binding, clickListener)
 
-    }
-
-    fun deleteItem(i : Int){
-        deckList.removeAt(i)
-        notifyDataSetChanged()
     }
 
     override fun onBindViewHolder(holder: DeckViewHolder, position: Int) {

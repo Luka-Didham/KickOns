@@ -31,3 +31,9 @@ i.e. "#player has to dance" -> "James has to dance"
 
 # Android CI
 [![Android CI](https://github.com/Luka-Didham/COSC345/actions/workflows/android.yml/badge.svg)](https://github.com/Luka-Didham/COSC345/actions/workflows/android.yml)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/1046b7071d5d46749bc6d42538852e57)](https://www.codacy.com/gh/Luka-Didham/COSC345/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Luka-Didham/COSC345&amp;utm_campaign=Badge_Grade)
+[![codecov](https://codecov.io/gh/Luka-Didham/COSC345/branch/main/graph/badge.svg?token=Iely5P4K59)](https://codecov.io/gh/Luka-Didham/COSC345)
+[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/1046b7071d5d46749bc6d42538852e57)](https://www.codacy.com/gh/Luka-Didham/COSC345/dashboard?utm_source=github.com&utm_medium=referral&utm_content=Luka-Didham/COSC345&utm_campaign=Badge_Coverage)
+
+# Questionnaire
+https://docs.google.com/forms/d/1cbFpy2ZIdCAx8iL0ZZ2GZf13UfXBPHssZNWesz-KLTU/edit#settings

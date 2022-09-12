@@ -57,6 +57,7 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener,BtnListener {
 
         btnCreateDeckFromChoose.setOnClickListener {
             val intent = Intent(this, DeckCreation::class.java)
+
             startActivity(intent)
         }
 
@@ -81,20 +82,20 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener,BtnListener {
 
 
     override fun onClick(deck: DeckItem) {
-       val intent = Intent(this, MainActivity::class.java)
+       val intent = Intent(this, EditDeck::class.java)
+        val d = deck.id
         GlobalScope.launch{
             //Querry db and wait for response
             getCards(deck.id)
             //On main launch next page
             withContext(Dispatchers.Main){
+                intent.putExtra("id",deck.id)
                 startActivity(intent)
             }
         }
     }
 
 
-    //TODO("This seems stupid,
-    // decide if we want global list var or to just query local db")
     private suspend fun getCards(id: Int?) {
         cardList.clear()
         val cards = db.cardDAO().getByDeckId(id)
