@@ -10,6 +10,9 @@ import kotlinx.android.synthetic.main.card_creation.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
+/** Allows the players to create cards and save them onto the deck
+ *
+ */
 class CardCreation : AppCompatActivity(){
 
     private var backToMain: MainActivity? = null
