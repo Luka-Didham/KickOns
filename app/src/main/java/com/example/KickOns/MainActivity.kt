@@ -95,7 +95,7 @@ class MainActivity : AppCompatActivity() {
     fun randomPlayer(prompt: String): String{
         val sList = playerList.shuffled()
         var newPrompt = prompt.lowercase()
-        var regex =  Regex("(#player)\\w+")
+        var regex =  Regex("(@player)\\w+")
         val matches = regex.findAll(newPrompt)
         for(m in matches){
             val s = m.value
