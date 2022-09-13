@@ -97,10 +97,12 @@ class MainActivity : AppCompatActivity() {
         var newPrompt = prompt.lowercase()
         var regex =  Regex("(@player)\\w+")
         val matches = regex.findAll(newPrompt)
+        if(matches.count()>sList.count()){
+            return "Not enough players added for card"
+        }
         for(m in matches){
             val s = m.value
-            //TODO("App Will crash if card prompt has a #player:int where the int > playerList.size
-            //  ")
+
             newPrompt = newPrompt.replace(m.value, sList[s.last().digitToInt()-1].name.toString())
         }
         return newPrompt
