@@ -5,6 +5,7 @@ plugins {
 
 apply plugin: "org.jetbrains.dokka"
 apply plugin: 'jacoco'
+apply plugin: 'kotlin-android-extensions'
 
 jacoco {
     toolVersion = "$jacocoVersion"
@@ -62,7 +63,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.colorchanging"
+        applicationId "com.example.KickOns"
         minSdk 21
         targetSdk 32
         versionCode 1
@@ -104,6 +105,9 @@ android {
 
 dependencies {
     dokkaHtmlPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.7.10")
+
+    def dynamicanimation_version = '1.0.0'
+    implementation "androidx.dynamicanimation:dynamicanimation:$dynamicanimation_version"
 
     apply plugin : "kotlin-android"
     apply plugin : "kotlin-android-extensions"

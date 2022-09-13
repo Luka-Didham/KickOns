@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000">
+       <KeyFrameSet>
+       </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="84dp"
+            motion:layout_constraintHorizontal_bias="0.043"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="5sp"
+            motion:layout_constraintTop_toBottomOf="@+id/tvChoosePlayersHeader"
+            android:id="@+id/btnStartFromChoosePlayers11" />
+        <Constraint
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@+id/tvChoosePlayersHeader"
+            android:id="@+id/btnStartFromChoosePlayers16"
+            motion:layout_editor_absoluteY="190dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_editor_absoluteX="41dp" />
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@+id/tvChoosePlayersHeader"
+            android:id="@+id/btnStartFromChoosePlayers14" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+    </ConstraintSet>
+</MotionScene>

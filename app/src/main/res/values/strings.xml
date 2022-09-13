@@ -3,9 +3,19 @@
     <string name="selected_item">Selected item:</string>
 
     <string-array name="CardTypes">
-        <item>Challenge</item>
+        <item>Standard</item>
         <item>Power-Up</item>
         <item>Law</item>
         <item>Handicap</item>
     </string-array>
+    
+    <string-array name="numPlayers">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+
 </resources>

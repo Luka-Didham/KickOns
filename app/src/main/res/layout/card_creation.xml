@@ -6,36 +6,96 @@
     android:id="@+id/make_card"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="50dp"
     android:background="@drawable/standard"
     android:layout_gravity="center"
     >
 
-        <Spinner
-            android:id="@+id/spinCardType"
-            android:layout_width="240dp"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/btn_dropdown"
-            android:textAlignment="center"
-            android:spinnerMode="dropdown"
+        <ImageView
+            android:id="@+id/ivCardTypeHandicap"
+            android:layout_width="250sp"
+            android:layout_height="89sp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/handicap_title"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivCardTypeLaw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/law2"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivCardTypePowerUp"
+            android:layout_width="250sp"
+            android:layout_height="91sp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/powerup_title"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnPrevCardType"
+            android:layout_width="50sp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/btn_shape_triangle"
+            android:rotation="-45"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnNextCardType"
+            android:layout_width="50sp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/btn_shape_triangle"
+            android:rotation="135"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/editCardDetails"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter card details here"
+            android:hint="\@Player, howl at the moon 3 times with \@player or take a penalty"
             android:textStyle="bold"
             android:textColor="#FFFFFF"
             android:fontFamily="@font/fonts"
-            android:textSize="18sp"
+            android:textSize="25sp"
+            android:visibility="visible"
+            android:layout_margin="50sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <Button
+            android:id="@+id/btnEnter"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fonts"
+            android:text="Save Card"
+            android:background="@drawable/deckitembackground"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#FFFF"
+            android:layout_marginBottom="25sp"
+            app:layout_constraintBottom_toTopOf="@+id/btnBackFromCreateCard"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             />
 
         <Button
@@ -43,27 +103,15 @@
             android:layout_width="240dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/fonts"
-            android:textStyle="bold"
             android:text="Back to Main"
-            android:textSize="18sp"
+            android:background="@drawable/deckitembackground"
+            android:textColor="#FFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="40sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            />
-
-        <Button
-            android:id="@+id/btnEnter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/fonts"
-            android:textStyle="bold"
-            android:text="Enter"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/btnBackFromCreateCard"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editCardDetails"
             />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

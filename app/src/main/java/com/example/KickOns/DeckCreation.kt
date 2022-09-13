@@ -7,45 +7,42 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.deck_creation.*
 import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 
-class DeckCreation : AppCompatActivity() {
+class DeckCreation() : AppCompatActivity() {
 
-    private var backToMain: MainActivity? = null
-    private var confirmName : CardCreation? = null
-    private lateinit var db : CardDB
+    private var backToMain: DeckPicker? = null
+    private var confirmName: CardCreation? = null
+    private lateinit var db: CardDB
+    private lateinit var deckDao: DeckDAO
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.deck_creation)
 
         db = CardDB.getDatabase(this)
-        val deckDao = db.deckDAO()
+        deckDao = db.deckDAO()
 
-        val text = findViewById<EditText>(R.id.editDeckName) as EditText
+        val deckName = findViewById<EditText>(R.id.editDeckName)
+        val deckDesc = findViewById<EditText>(R.id.editDeckName)
 
         btnBackFromCreateDeck.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, DeckPicker::class.java)
             startActivity(intent)
         }
 
         btnSaveDeck.setOnClickListener {
-            val d = DeckItem(null,text.text.toString())
-            save(d)
+            val d = DeckItem(null, deckName.text.toString())//, deckDesc.text.toString())
             val intent = Intent(this, CardCreation()::class.java)
-//          INSERT CODE FOR SAVING DECK INSTANCE AND NAME HERE
-    //Get Deck name from view and create new deck instance
-    //Save Deck instance
+            deckList.add(d)
 
-            startActivity(intent)
-        }
-
-    }
-//TODO("Add exception handling if the Deck is not saved")
-    private fun save(deck: DeckItem){
-        GlobalScope.launch {
-            db.deckDAO().addDeck(deck)
+            //Saves and sends deck Id to card add screen
+            GlobalScope.launch {
+                val deckId = async {   db.deckDAO().addDeck(d) }
+                intent.putExtra("deck_id", deckId.await())
+                startActivity(intent)
+            }
         }
 
     }
