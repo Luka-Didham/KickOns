@@ -9,7 +9,7 @@ class PopulateDecks(ctx: Context) {
     val deckDao = db.deckDAO()
     val cardDao = db.cardDAO()
 
-    val d = DeckItem(1,"Sample")
+    val d = DeckItem(1,"Andrew Starter Deck")
 
     //Cards for the deck
     var tList = listOf(
