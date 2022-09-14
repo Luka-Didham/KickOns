@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
@@ -24,8 +25,7 @@ class AddPlayer : AppCompatActivity() {
         setContentView(R.layout.add_player)
         val adapter = AddPlayerAdapter(playerList)
         RVplayers.adapter = adapter
-        RVplayers.layoutManager = LinearLayoutManager(this)
-
+        RVplayers.layoutManager = GridLayoutManager(this, 3)
         var editText = textInputEditText
         var MAX_PLAYERS = 30
 
@@ -40,7 +40,9 @@ class AddPlayer : AppCompatActivity() {
                     val p: Player = Player(text)
                     playerList.add(p)
                     adapter.notifyDataSetChanged()
+
                 }else{
+                    editText.setText("")
                     editText.hint = "Max 30 players"
                 }
             }

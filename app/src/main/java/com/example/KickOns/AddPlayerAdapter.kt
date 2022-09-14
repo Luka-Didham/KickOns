@@ -19,6 +19,7 @@ class AddPlayerAdapter(
 
     override fun onBindViewHolder(holder: PlayerViewHolder, position: Int) {
         holder.itemView.playerText.text = players[position].name
+
     }
 
     override fun getItemCount(): Int {
