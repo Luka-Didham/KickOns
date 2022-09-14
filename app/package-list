@@ -3,7 +3,15 @@ $dokka.linkExtension:html
 $dokka.location:com.example.KickOns////PointingToDeclaration/app/com.example.KickOns/index.html
 $dokka.location:com.example.KickOns/AddPlayer///PointingToDeclaration/app/com.example.KickOns/-add-player/index.html
 $dokka.location:com.example.KickOns/AddPlayer/AddPlayer/#/PointingToDeclaration/app/com.example.KickOns/-add-player/-add-player.html
-$dokka.location:com.example.KickOns/AddPlayer/redraw/#/PointingToDeclaration/app/com.example.KickOns/-add-player/redraw.html
+$dokka.location:com.example.KickOns/AddPlayerAdapter.PlayerViewHolder///PointingToDeclaration/app/com.example.KickOns/-add-player-adapter/-player-view-holder/index.html
+$dokka.location:com.example.KickOns/AddPlayerAdapter.PlayerViewHolder/AddPlayerAdapter.PlayerViewHolder/#android.view.View/PointingToDeclaration/app/com.example.KickOns/-add-player-adapter/-player-view-holder/-add-player-adapter.-player-view-holder.html
+$dokka.location:com.example.KickOns/AddPlayerAdapter///PointingToDeclaration/app/com.example.KickOns/-add-player-adapter/index.html
+$dokka.location:com.example.KickOns/AddPlayerAdapter/AddPlayerAdapter/#kotlin.collections.List[com.example.KickOns.Player]/PointingToDeclaration/app/com.example.KickOns/-add-player-adapter/-add-player-adapter.html
+$dokka.location:com.example.KickOns/AddPlayerAdapter/getItemCount/#/PointingToDeclaration/app/com.example.KickOns/-add-player-adapter/get-item-count.html
+$dokka.location:com.example.KickOns/AddPlayerAdapter/getPlayers/#/PointingToDeclaration/app/com.example.KickOns/-add-player-adapter/get-players.html
+$dokka.location:com.example.KickOns/AddPlayerAdapter/onBindViewHolder/#com.example.KickOns.AddPlayerAdapter.PlayerViewHolder#kotlin.Int/PointingToDeclaration/app/com.example.KickOns/-add-player-adapter/on-bind-view-holder.html
+$dokka.location:com.example.KickOns/AddPlayerAdapter/onCreateViewHolder/#android.view.ViewGroup#kotlin.Int/PointingToDeclaration/app/com.example.KickOns/-add-player-adapter/on-create-view-holder.html
+$dokka.location:com.example.KickOns/AddPlayerAdapter/setPlayers/#kotlin.collections.List[com.example.KickOns.Player]/PointingToDeclaration/app/com.example.KickOns/-add-player-adapter/set-players.html
 $dokka.location:com.example.KickOns/BtnListener///PointingToDeclaration/app/com.example.KickOns/-btn-listener/index.html
 $dokka.location:com.example.KickOns/BtnListener/btnClick/#com.example.KickOns.DeckItem/PointingToDeclaration/app/com.example.KickOns/-btn-listener/btn-click.html
 $dokka.location:com.example.KickOns/CardAdapter///PointingToDeclaration/app/com.example.KickOns/-card-adapter/index.html
