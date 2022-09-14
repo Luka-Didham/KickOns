@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.add_player.*
@@ -19,41 +20,32 @@ import kotlinx.android.synthetic.main.welcome_page.*
 class AddPlayer : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        //TODO("Add recycler view adapter")
         super.onCreate(savedInstanceState)
         setContentView(R.layout.add_player)
+        val adapter = AddPlayerAdapter(playerList)
+        RVplayers.adapter = adapter
+        RVplayers.layoutManager = LinearLayoutManager(this)
 
         var editText = textInputEditText
         var MAX_PLAYERS = 30
 
-        redraw()
-        btnAddPlayer.setOnClickListener{
 
-            var text = editText.getText().toString()
-            print(text)
-            val p: Player = Player(text)
-            playerList.add(p)
+        btnAddPlayer.setOnClickListener{
+            val text = editText.getText().toString()
             if(text == ""){
                 editText.hint = "Please Add Name"
-                }else{
+            }else{
                 if(playerList.size<MAX_PLAYERS) {
                     editText.setText("")
-                    val num = playerList.size
-                    val idString = "btnPlayer$num"
-                    val buttonID = resources.getIdentifier(idString, "id", packageName)
-                    val btn = findViewById<Button>(buttonID)
-                    btn.text = p.name
-                    btn.visibility = View.VISIBLE
-                    btn.setOnClickListener {
-                       playerList.remove(p)
-                    }
-                    redraw()
+                    val p: Player = Player(text)
+                    playerList.add(p)
+                    adapter.notifyDataSetChanged()
                 }else{
                     editText.hint = "Max 30 players"
                 }
-
             }
         }
+
         btnStartFromChoosePlayers.setOnClickListener{
             if(playerList.size>1) {
                 val intent = Intent(this, DeckPicker()::class.java)
@@ -63,26 +55,6 @@ class AddPlayer : AppCompatActivity() {
             }
         }
 
-    }
-
-    fun redraw(){
-        if(!playerList.isEmpty()) {
-            for (player in playerList) {
-                val num = playerList.indexOf(player) + 1
-                val idString = "btnPlayer$num"
-                val buttonID = resources.getIdentifier(idString, "id", packageName)
-
-                var btn = findViewById<Button>(buttonID)
-                btn.text = player.name
-                btn.visibility = View.VISIBLE
-                btn.setOnClickListener {
-                    playerList.removeAt(playerList.indexOf(player))
-                    btn.visibility = View.INVISIBLE
-                }
-
-            }
-
-        }
     }
 }
 

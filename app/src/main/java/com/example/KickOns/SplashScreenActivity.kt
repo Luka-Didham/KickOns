@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 import java.lang.Thread.sleep
 
 /** The Splash Screen is the first page that is displayed when the app is launched
- * it shows the apps logo as well as plays music.
+ * it shows the apps logo as well as it plays music.
  */
 
 class SplashScreenActivity : AppCompatActivity() {
@@ -23,7 +23,7 @@ class SplashScreenActivity : AppCompatActivity() {
         mediaPlayer.start()
         logo.alpha = 0f
         //Populate decks during start
-        logo.animate().setDuration(5000).alpha(1f).withEndAction {
+        logo.animate().setDuration(0).alpha(1f).withEndAction {
             val app = Intent(this, WelcomePage::class.java)
             startActivity(app)
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
