@@ -26,10 +26,10 @@ class MainActivity : AppCompatActivity() {
 
         var clicked = 0
         val len = cardList.size
-
+        var cardListShuffled = cardList.shuffled()
         btnScreen.setOnClickListener {
             if(clicked<len) {
-                changeCard(cardList.get(clicked).cardType, randomPlayer(cardList.get(clicked).challenge))
+                changeCard(cardListShuffled.get(clicked).cardType, randomPlayer(cardListShuffled.get(clicked).challenge))
                 clicked++
             }else {
                 clicked = 0
@@ -95,7 +95,7 @@ class MainActivity : AppCompatActivity() {
     fun randomPlayer(prompt: String): String{
         val sList = playerList.shuffled()
         var newPrompt = prompt.lowercase()
-        var regex =  Regex("(@player)\\w+")
+        var regex =  Regex("@player\\w+")
         val matches = regex.findAll(newPrompt)
         if(matches.count()>sList.count()){
             return "Not enough players added for card"
