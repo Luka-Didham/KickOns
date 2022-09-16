@@ -67,10 +67,15 @@
         <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/drawable-v24/standard.xml" value="0.1235" />
         <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/drawable/btn_shape_triangle.xml" value="0.1235" />
         <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/drawable/deckitembackground.xml" value="0.1235" />
+        <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/drawable/del_border.xml" value="0.2135" />
+        <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/drawable/edit_button.xml" value="0.2135" />
+        <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/drawable/handicap.xml" value="0.2135" />
         <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/drawable/yellow_logo_colour.xml" value="0.1235" />
         <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/font/fonts.xml" value="0.14270833333333333" />
+        <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/layout/activity_deck_edit.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/layout/activity_game.xml" value="0.1125" />
         <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/layout/activity_splash_screen.xml" value="0.17255434782608695" />
         <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/layout/add_player.xml" value="0.264" />
         <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/layout/add_player_item.xml" value="0.4" />
         <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/layout/card_creation.xml" value="0.2" />
@@ -80,6 +85,7 @@
         <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/layout/deck_creation.xml" value="0.23822463768115942" />
         <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/layout/deck_item.xml" value="0.176" />
         <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/layout/deck_picker.xml" value="0.19384057971014493" />
+        <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/layout/help_page.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/layout/welcome_page.xml" value="0.19384057971014493" />
         <entry key="app/src/main/res/drawable/deckitembackground.xml" value="0.1965" />
         <entry key="app/src/main/res/drawable/del_border.xml" value="0.1995" />

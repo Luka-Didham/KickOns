@@ -54,7 +54,7 @@ class AddPlayer : AppCompatActivity() {
                 startActivity(intent)
             }else{
               editText.setText("")
-              editText.hint = "Minimum 2 player"
+              editText.hint = "Minimum 2 players"
             }
         }
 
