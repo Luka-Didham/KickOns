@@ -71,30 +71,6 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3"
         app:layout_constraintVertical_bias="0.024" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/chango_regular"
-        android:text="The aim of our game is to obtain the least amount of penalties. A set of cards make a deck, with each deck intended to encompass
-a theme. There are 4 types of cards within a deck: Normal, Powerup, Law and Handicap.
-The Normal cards are common cards making up the majority of the deck that have questions, actions, or games. Failure to answer the questions or complete the challenges lands a player with penalties.
-The Handicap cards affect a single player. This is a negative persistent penalty which affects the player. Persists until the paired closing card comes several cards later.
-The Powerup cards affect a single player. This is a positive persistent benefit which affects the player. Persists until the paired closing card comes several cards later.
-The Law cards affect all the players in the game. These cards change the paradigm of the game intended to encourage interaction between players.
-To play the game, simply click play, then on the bottom left hand corner, add in players names, once everyone's in, hit start!
-You will be shown a bunch of different decks to choose from, to play a default deck, simply tap on the deck!
-Otherwise to create a deck, tap on the create deck button, add the deck name and a description describing the nature of the deck
-Once thats done, save the deck and add cards! you can choose the card type you want to add by clicking the buttons located on the top left and right!
-Click save cards to save the cards to the deck, then select the deck and play!"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.0" />
-
     <ScrollView
         android:layout_width="418dp"
         android:layout_height="396dp"
@@ -103,7 +79,26 @@ Click save cards to save the cards to the deck, then select the deck and play!"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/textView6"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.0"></ScrollView>
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/chango_regular"
+            android:text="The aim of our game is to obtain the least amount of penalties. A set of cards make a deck, with each deck intended to encompass
+    a theme. There are 4 types of cards within a deck: Normal, Powerup, Law and Handicap.
+    The Normal cards are common cards making up the majority of the deck that have questions, actions, or games. Failure to answer the questions or complete the challenges lands a player with penalties.
+    The Handicap cards affect a single player. This is a negative persistent penalty which affects the player. Persists until the paired closing card comes several cards later.
+    The Powerup cards affect a single player. This is a positive persistent benefit which affects the player. Persists until the paired closing card comes several cards later.
+    The Law cards affect all the players in the game. These cards change the paradigm of the game intended to encourage interaction between players.
+    To play the game, simply click play, then on the bottom left hand corner, add in players names, once everyone's in, hit start!
+    You will be shown a bunch of different decks to choose from, to play a default deck, simply tap on the deck!
+    Otherwise to create a deck, tap on the create deck button, add the deck name and a description describing the nature of the deck
+    Once thats done, save the deck and add cards! you can choose the card type you want to add by clicking the buttons located on the top left and right!
+    Click save cards to save the cards to the deck, then select the deck and play!"
+            android:textColor="@color/black" />
+    </ScrollView>
 
 
     <!--    <Button-->

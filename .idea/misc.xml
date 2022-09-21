@@ -97,6 +97,8 @@
         <entry key="app/src/main/res/layout/card_item.xml" value="0.36822916666666666" />
         <entry key="app/src/main/res/layout/deck_creation.xml" value="0.12001811594202899" />
         <entry key="app/src/main/res/layout/deck_item.xml" value="0.35853658536585364" />
+        <entry key="app/src/main/res/layout/deck_picker.xml" value="0.28532608695652173" />
+        <entry key="app/src/main/res/layout/help_page.xml" value="0.25416666666666665" />
         <entry key="app/src/main/res/layout/welcome_page.xml" value="0.12001811594202899" />
       </map>
     </option>
