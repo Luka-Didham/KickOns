@@ -4,11 +4,13 @@ import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.Icon
 import android.media.Image
+import android.os.Build
 import android.os.Bundle
 import android.util.LayoutDirection.RTL
 import android.util.Log
 import android.view.View
 import android.widget.*
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.res.ResourcesCompat.getFont
@@ -81,10 +83,13 @@ class AddPlayer : AppCompatActivity() {
     }
 
     //Creates a chip and adds it to the chip group
+    @RequiresApi(Build.VERSION_CODES.M)
     private fun addChip(p: Player){
         val c = Chip(this)
         c.text = p.name.toString()
         c.textSize = 14F
+        c.chipBackgroundColor = getColorStateList(R.color.color_accent)
+        c.setTextColor(getColor(R.color.color_primary))
         c.chipIcon = getDrawable(R.drawable.cancel_button)
         c.typeface = getFont(this,R.font.chango_regular)
         c.layoutDirection = View.LAYOUT_DIRECTION_RTL

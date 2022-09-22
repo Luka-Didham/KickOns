@@ -43,7 +43,7 @@ class WelcomePage : AppCompatActivity() {
             }
 
         //SHOWCASE MODE
-        //PopulateDecks(applicationContext).insert()
+        PopulateDecks(applicationContext).insert()
 
         btnPlay.setOnClickListener {
             val intent = Intent(this, AddPlayer::class.java)
