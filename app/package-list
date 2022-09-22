@@ -94,6 +94,8 @@ $dokka.location:com.example.KickOns/DeckViewHolder/DeckViewHolder/#[Error type: 
 $dokka.location:com.example.KickOns/DeckViewHolder/bindDeck/#com.example.KickOns.DeckItem/PointingToDeclaration/app/com.example.KickOns/-deck-view-holder/bind-deck.html
 $dokka.location:com.example.KickOns/EditDeck///PointingToDeclaration/app/com.example.KickOns/-edit-deck/index.html
 $dokka.location:com.example.KickOns/EditDeck/EditDeck/#/PointingToDeclaration/app/com.example.KickOns/-edit-deck/-edit-deck.html
+$dokka.location:com.example.KickOns/HelpPage///PointingToDeclaration/app/com.example.KickOns/-help-page/index.html
+$dokka.location:com.example.KickOns/HelpPage/HelpPage/#/PointingToDeclaration/app/com.example.KickOns/-help-page/-help-page.html
 $dokka.location:com.example.KickOns/MainActivity///PointingToDeclaration/app/com.example.KickOns/-main-activity/index.html
 $dokka.location:com.example.KickOns/MainActivity/MainActivity/#/PointingToDeclaration/app/com.example.KickOns/-main-activity/-main-activity.html
 $dokka.location:com.example.KickOns/MainActivity/changeCard/#kotlin.Int#kotlin.String/PointingToDeclaration/app/com.example.KickOns/-main-activity/change-card.html
