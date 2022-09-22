@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "209172254016",
+    "firebase_url": "https://kickons-1c063-default-rtdb.firebaseio.com",
+    "project_id": "kickons-1c063",
+    "storage_bucket": "kickons-1c063.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:209172254016:android:843f213e0dea9e59c13ea5",
+        "android_client_info": {
+          "package_name": "com.example.KickOns"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "209172254016-ace54anqb5ea467p9dj17616devm48o3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJ_CIhoZA8mO0oWiWRa1W-WMx6fFFLggw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "209172254016-ace54anqb5ea467p9dj17616devm48o3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

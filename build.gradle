@@ -4,6 +4,7 @@ buildscript {
     ext.room_version = '2.4.3'
     dependencies {
         classpath "org.jacoco:org.jacoco.core:$jacocoVersion"
+        classpath 'com.google.gms:google-services:4.3.14'
 
     }
 }

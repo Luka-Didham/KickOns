@@ -6,17 +6,23 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
-import kotlinx.android.synthetic.main.card_creation.*
+
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 /** Allows the players to create cards and save them onto the deck
  *
  */
+@Suppress
 class CardCreation : AppCompatActivity(){
 
     private var backToMain: MainActivity? = null
     private lateinit var db : CardDB
+    private lateinit var ivCardTypePowerUp : ImageView
+    private lateinit var ivCardTypeHandicap : ImageView
+    private lateinit var ivCardTypeLaw : ImageView
+    private lateinit var editCardDetails : EditText
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         db = CardDB.getDatabase(this)
@@ -26,6 +32,16 @@ class CardCreation : AppCompatActivity(){
         var clicked = 0
 
         setContentView(R.layout.card_creation)
+        //Elements
+        ivCardTypePowerUp = findViewById(R.id.ivCardTypePowerUp)
+        ivCardTypeHandicap = findViewById(R.id.ivCardTypeHandicap)
+        ivCardTypeLaw = findViewById(R.id.ivCardTypeLaw)
+        editCardDetails = findViewById(R.id.editCardDetails)
+        //Buttons
+        val btnEnter = findViewById<Button>(R.id.btnEnter)
+        val btnBackFromCreateCard = findViewById<Button>(R.id.btnBackFromCreateCard)
+        val btnNextCardType = findViewById<Button>(R.id.btnNextCardType)
+        val btnPrevCardType = findViewById<Button>(R.id.btnPrevCardType)
         val text = findViewById<EditText>(R.id.editCardDetails)
 
         btnEnter.setOnClickListener {

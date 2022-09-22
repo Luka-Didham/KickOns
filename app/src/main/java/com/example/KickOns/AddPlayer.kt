@@ -8,10 +8,9 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.add_player.*
-import kotlinx.android.synthetic.main.card_creation.*
-import kotlinx.android.synthetic.main.welcome_page.*
+import com.example.KickOns.databinding.AddPlayerBinding
+import com.example.KickOns.databinding.AddPlayerItemBinding
+
 
 /** A class that is able to add players to the game as
  * well as set restrictions on how many players can play and the minimum number of players needed.
@@ -23,12 +22,15 @@ class AddPlayer : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.add_player)
-        val adapter = AddPlayerAdapter(playerList)
-        RVplayers.adapter = adapter
+        val binding = AddPlayerBinding.inflate(layoutInflater)
+        val view = binding.root
+        val RVplayers = findViewById<RecyclerView>(R.id.RVplayers)
+        RVplayers.adapter = AddPlayerAdapter(playerList)
         RVplayers.layoutManager = GridLayoutManager(this, 3)
-        var editText = textInputEditText
+        var editText = findViewById<EditText>(R.id.textInputEditText)
         var MAX_PLAYERS = 30
-
+        val btnAddPlayer = findViewById<Button>(R.id.btnAddPlayer)
+        val btnStartFromChoosePlayers = findViewById<Button>(R.id.btnStartFromChoosePlayers)
 
         btnAddPlayer.setOnClickListener{
             val text = editText.getText().toString()
@@ -39,7 +41,7 @@ class AddPlayer : AppCompatActivity() {
                     editText.setText("")
                     val p: Player = Player(text)
                     playerList.add(p)
-                    adapter.notifyDataSetChanged()
+//                    adapter.notifyDataSetChanged()
 
                 }else{
                     editText.setText("")

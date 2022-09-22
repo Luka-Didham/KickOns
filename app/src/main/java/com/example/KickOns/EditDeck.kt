@@ -11,9 +11,11 @@ import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.View
 import android.widget.AbsListView
+import android.widget.Button
 import android.widget.EditText
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.constraintlayout.motion.widget.OnSwipe
 import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.animation.doOnEnd
@@ -28,8 +30,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.KickOns.databinding.ActivityDeckEditBinding
 import com.example.KickOns.databinding.ActivityMainBinding.inflate
 import com.example.KickOns.databinding.DeckPickerBinding
-import kotlinx.android.synthetic.main.activity_deck_edit.*
-import kotlinx.android.synthetic.main.activity_deck_edit.view.*
 import kotlinx.coroutines.*
 import java.lang.Thread.sleep
 import kotlin.math.abs
@@ -40,10 +40,11 @@ class EditDeck(): AppCompatActivity(){
     private var pos = 0
     private lateinit var db: CardDB
     private lateinit var cardDao: CardDAO
-    private lateinit var binding: ActivityDeckEditBinding
     private lateinit var gestureDetector: GestureDetector
     private lateinit var childText: EditText
     private lateinit var cardText: EditText
+    private lateinit var editCrd: CardView
+    private lateinit var view: View
 
     @RequiresApi(Build.VERSION_CODES.M)
     @SuppressLint("ClickableViewAccessibility")
@@ -56,23 +57,32 @@ class EditDeck(): AppCompatActivity(){
 
         //Position of card in deck
         val binding = ActivityDeckEditBinding.inflate(layoutInflater)
-        val view = binding.root
+        view = binding.root
         setContentView(R.layout.activity_deck_edit)
+
+        //Elements
+        editCrd = findViewById(R.id.editCrd)
+
+        //Buttons
+        val btn_next = findViewById<Button>(R.id.btn_next)
+        val btn_prev = findViewById<Button>(R.id.btn_prev)
+        val del_card = findViewById<Button>(R.id.del_card)
+        val sv_crd = findViewById<Button>(R.id.sv_crd)
 
 
         //Snap Animation
         val gestureListener = object : CardSwipeGesture(this){
             override fun onScroll(
-                e1: MotionEvent?,
-                e2: MotionEvent?,
+                e1: MotionEvent,
+                e2: MotionEvent,
                 distanceX: Float,
                 distanceY: Float
             ): Boolean {
                 if(swiped) return true
                 editCrd.x -= distanceX
                 editCrd.y -= distanceY
-                editCrd.pivotX = e1!!.rawX
-                editCrd.pivotY = (edit_deck.height * 0.75).toFloat()
+                editCrd.pivotX = e1.rawX
+                editCrd.pivotY = (view.height * 0.75).toFloat()
                 editCrd.rotation -= distanceX/10
 
                 //TODO("Send Card off at angle e.g distanceX/distanceY")
@@ -85,13 +95,13 @@ class EditDeck(): AppCompatActivity(){
             }
 
             override fun onFling(
-                e1: MotionEvent?,
-                e2: MotionEvent?,
+                e1: MotionEvent,
+                e2: MotionEvent,
                 velocityX: Float,
                 velocityY: Float
             ): Boolean {
-                val difX = e1!!.rawX - e2!!.rawX
-                val difY = e1!!.rawY - e2!!.rawY
+                val difX = e1.rawX - e2.rawX
+                val difY = e1.rawY - e2.rawY
 
                 Log.d("e", "e1 = $difX e2 = $difY")
                 return true
@@ -99,7 +109,7 @@ class EditDeck(): AppCompatActivity(){
 
         }
         gestureDetector = GestureDetector(this,gestureListener)
-        edit_deck.setOnTouchListener { _, e ->
+        view.setOnTouchListener { _, e ->
             when(e.action){
                 MotionEvent.ACTION_UP -> {
                    //TODO("add sliding animation")
@@ -197,8 +207,8 @@ class EditDeck(): AppCompatActivity(){
     }
 
     private fun resetCard(){
-        editCrd.x = (edit_deck.width/2 - editCrd.width/2).toFloat()
-        editCrd.y = (edit_deck.height/2 - editCrd.height/2 -80).toFloat()
+        editCrd.x = (view.width/2 - editCrd.width/2).toFloat()
+        editCrd.y = (view.height/2 - editCrd.height/2 -80).toFloat()
         editCrd.rotation = 0F
     }
     private fun snapCard(){
@@ -212,13 +222,13 @@ class EditDeck(): AppCompatActivity(){
                 spring.stiffness = STIFFNESS_LOW
                 start()
             }
-           SpringAnimation(crd,DynamicAnimation.X, (edit_deck.width/2 - editCrd.width/2).toFloat()).apply{
+           SpringAnimation(crd,DynamicAnimation.X, (view.width/2 - editCrd.width/2).toFloat()).apply{
                 spring.dampingRatio = DAMPING_RATIO_LOW_BOUNCY
                 spring.stiffness = STIFFNESS_LOW
                 start()
             }
             //TODO("Think its not centering because its using sp instead of dp, vica versa)
-           SpringAnimation(crd,DynamicAnimation.Y, (edit_deck.height/2 - editCrd.height/2 - 80).toFloat()).apply{
+           SpringAnimation(crd,DynamicAnimation.Y, (view.height/2 - editCrd.height/2 - 80).toFloat()).apply{
                 spring.dampingRatio = DAMPING_RATIO_LOW_BOUNCY
                 spring.stiffness = STIFFNESS_LOW
                 start()
