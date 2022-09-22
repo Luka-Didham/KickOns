@@ -2,14 +2,12 @@ package com.example.KickOns
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.KickOns.databinding.DeckPickerBinding
-import kotlinx.android.synthetic.main.deck_creation.*
-import kotlinx.android.synthetic.main.deck_item.*
-import kotlinx.android.synthetic.main.deck_picker.*
 import kotlinx.coroutines.*
 
 class DeckPicker() : AppCompatActivity(), DeckClickListener,BtnListener {
@@ -24,7 +22,10 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener,BtnListener {
         super.onCreate(savedInstanceState)
         binding = DeckPickerBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         val mainActivity = this
+        val recyclerView = binding.recyclerView
+        val btnCreateDeckFromChoose = findViewById<Button>(R.id.btnCreateDeckFromChoose)
 
         //Speed at which items are deleted
         recyclerView.itemAnimator?.removeDuration = 5
