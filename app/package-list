@@ -56,10 +56,12 @@ $dokka.location:com.example.KickOns/CardSwipeGesture/onFling/#android.view.Motio
 $dokka.location:com.example.KickOns/CardSwipeGesture/setDifX/#kotlin.Float/PointingToDeclaration/app/com.example.KickOns/-card-swipe-gesture/set-dif-x.html
 $dokka.location:com.example.KickOns/CardSwipeGesture/setDifY/#kotlin.Float/PointingToDeclaration/app/com.example.KickOns/-card-swipe-gesture/set-dif-y.html
 $dokka.location:com.example.KickOns/CardTouchListener///PointingToDeclaration/app/com.example.KickOns/-card-touch-listener/index.html
-$dokka.location:com.example.KickOns/CardTouchListener/onTouch/#android.view.View?#android.view.MotionEvent?/PointingToDeclaration/app/com.example.KickOns/-card-touch-listener/on-touch.html
+$dokka.location:com.example.KickOns/CardTouchListener/onClick/#android.view.View?/PointingToDeclaration/app/com.example.KickOns/-card-touch-listener/on-click.html
 $dokka.location:com.example.KickOns/CardViewHolder///PointingToDeclaration/app/com.example.KickOns/-card-view-holder/index.html
 $dokka.location:com.example.KickOns/CardViewHolder/CardViewHolder/#[Error type: Unresolved type for CardItemBinding]/PointingToDeclaration/app/com.example.KickOns/-card-view-holder/-card-view-holder.html
 $dokka.location:com.example.KickOns/CardViewHolder/bindCard/#com.example.KickOns.CardItem/PointingToDeclaration/app/com.example.KickOns/-card-view-holder/bind-card.html
+$dokka.location:com.example.KickOns/ChipClickListener///PointingToDeclaration/app/com.example.KickOns/-chip-click-listener/index.html
+$dokka.location:com.example.KickOns/ChipClickListener/onClick/#com.google.android.material.chip.ChipGroup#android.view.View?/PointingToDeclaration/app/com.example.KickOns/-chip-click-listener/on-click.html
 $dokka.location:com.example.KickOns/DeckAdapter///PointingToDeclaration/app/com.example.KickOns/-deck-adapter/index.html
 $dokka.location:com.example.KickOns/DeckAdapter/DeckAdapter/#kotlin.collections.List[com.example.KickOns.DeckItem]#com.example.KickOns.DeckClickListener/PointingToDeclaration/app/com.example.KickOns/-deck-adapter/-deck-adapter.html
 $dokka.location:com.example.KickOns/DeckAdapter/getItemCount/#/PointingToDeclaration/app/com.example.KickOns/-deck-adapter/get-item-count.html
@@ -99,6 +101,9 @@ $dokka.location:com.example.KickOns/MainActivity/randomPlayer/#kotlin.String/Poi
 $dokka.location:com.example.KickOns/Player///PointingToDeclaration/app/com.example.KickOns/-player/index.html
 $dokka.location:com.example.KickOns/Player/Player/#kotlin.String?/PointingToDeclaration/app/com.example.KickOns/-player/-player.html
 $dokka.location:com.example.KickOns/Player/getName/#/PointingToDeclaration/app/com.example.KickOns/-player/get-name.html
+$dokka.location:com.example.KickOns/PlayerDecoration///PointingToDeclaration/app/com.example.KickOns/-player-decoration/index.html
+$dokka.location:com.example.KickOns/PlayerDecoration/PlayerDecoration/#kotlin.Int/PointingToDeclaration/app/com.example.KickOns/-player-decoration/-player-decoration.html
+$dokka.location:com.example.KickOns/PlayerDecoration/getItemOffset/#android.graphics.Rect#android.view.View#androidx.recyclerview.widget.RecyclerView#androidx.recyclerview.widget.RecyclerView.State/PointingToDeclaration/app/com.example.KickOns/-player-decoration/get-item-offset.html
 $dokka.location:com.example.KickOns/PlayerKt///PointingToDeclaration/app/com.example.KickOns/-player-kt/index.html
 $dokka.location:com.example.KickOns/PlayerKt/getPlayerList/#/PointingToDeclaration/app/com.example.KickOns/-player-kt/get-player-list.html
 $dokka.location:com.example.KickOns/PlayerKt/setPlayerList/#kotlin.collections.MutableList[com.example.KickOns.Player]/PointingToDeclaration/app/com.example.KickOns/-player-kt/set-player-list.html
