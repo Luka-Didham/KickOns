@@ -80,7 +80,6 @@
         app:layout_constraintStart_toStartOf="@+id/textView6"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:layout_constraintVertical_bias="0.0">
-
         <TextView
             android:id="@+id/textView6"
             android:layout_width="match_parent"
@@ -100,14 +99,17 @@
             android:textColor="@color/black" />
     </ScrollView>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnGobacK"
-        android:layout_width="77dp"
-        android:layout_height="43dp"
+        android:layout_width="66dp"
+        android:layout_height="39dp"
+        android:background="#FBD34C"
         android:text="Back"
+        android:textSize="13sp"
         android:textColor="@color/black"
         android:textStyle="bold"
-        android:background="@drawable/yellow_logo_colour"
+        android:layout_margin="5sp"
+        android:fontFamily="@font/chango_regular"
         app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="@+id/tvWelcome"
         app:layout_constraintHorizontal_bias="0.047"
