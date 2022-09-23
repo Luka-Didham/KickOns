@@ -13,15 +13,6 @@ abstract class CardSwipeGesture(context: Context): GestureDetector.SimpleOnGestu
     var difX: Float = 0.0f
     var difY: Float = 0.0f
 
-    override fun onFling(
-        e1: MotionEvent,
-        e2: MotionEvent,
-        velocityX: Float,
-        velocityY: Float
-    ): Boolean {
-        Log.d("M Event", e1?.x.toString())
-        return true
-    }
 
     fun drawChild() {
 
