@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">KickOns</string>
     <string name="selected_item">Selected item:</string>
+    <string name="Edit">Edit</string>
 
     <string-array name="CardTypes">
         <item>Standard</item>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="10dp">
+    android:padding="5dp">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -35,7 +35,7 @@
                 app:srcCompat="@drawable/logo_simple" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="230dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
@@ -48,7 +48,7 @@
                     android:text="TextView"
                     android:textColor="#FBD34C"
                     android:textFontWeight="900"
-                    android:textSize="32sp" />
+                    android:textSize="24sp" />
 
                 <TextView
                     android:id="@+id/deck_sub"
@@ -60,6 +60,17 @@
                     android:textColor="#FBD34C" />
 
             </LinearLayout>
+
+            <Button
+                android:id="@+id/editBtn"
+                android:layout_width="10dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:contentDescription="@string/Edit"
+                app:icon="@drawable/edit_icon"
+                app:iconSize="30dp"
+                app:srcCompat="@drawable/edit_icon" />
 
 
         </LinearLayout>

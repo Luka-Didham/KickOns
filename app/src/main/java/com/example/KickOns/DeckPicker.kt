@@ -2,6 +2,7 @@ package com.example.KickOns
 
 import android.content.Intent
 import android.os.Bundle
+import android.provider.Settings
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.ItemTouchHelper
@@ -10,10 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.KickOns.databinding.DeckPickerBinding
 import kotlinx.coroutines.*
 
-class DeckPicker() : AppCompatActivity(), DeckClickListener,BtnListener {
-
-    private var playWithDefaultDeck: AddPlayer? = null
-    private var confirmName: CardCreation? = null
+class DeckPicker() : AppCompatActivity(), DeckClickListener {
     private lateinit var db: CardDB
     private lateinit var binding: DeckPickerBinding
     private lateinit var deckDao: DeckDAO
@@ -23,6 +21,7 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener,BtnListener {
         binding = DeckPickerBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //Elements
         val mainActivity = this
         val recyclerView = binding.recyclerView
         val btnCreateDeckFromChoose = findViewById<Button>(R.id.btnCreateDeckFromChoose)
@@ -71,13 +70,14 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener,BtnListener {
         }
     }
 
-     override fun btnClick(deck: DeckItem) {
-         val pos: Int = deckList.indexOf(deck)
-         deckList.remove(deck)
-         binding.recyclerView.adapter?.notifyItemRemoved(pos)
-         GlobalScope.launch {
-             deckDao.deleteDeck(deck.id)
-         }
+     override fun edit(deck: DeckItem) {
+         val intent = Intent(this, EditDeck::class.java)
+            GlobalScope.launch {
+                getCards(deck.id)
+                withContext(Dispatchers.Main){
+                    startActivity(intent)
+                }
+            }
 
      }
 
@@ -111,6 +111,11 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener,BtnListener {
         for(deck in deckDao.getAll()){
             deckList.add(deck)
         }
+    }
+
+    private fun editDeck(d: DeckItem){
+        val intent = Intent(this, EditDeck::class.java)
+
     }
 
 }
