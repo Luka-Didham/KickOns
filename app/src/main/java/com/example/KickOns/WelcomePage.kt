@@ -50,10 +50,10 @@ class WelcomePage : AppCompatActivity() {
             startActivity(intent)
         }
 
-        btnHelp.setOnClickListener {
-            val intent = Intent(this, HelpPage::class.java)
-            startActivity(intent)
-        }
+      btnHelp.setOnClickListener {
+          val intent = Intent(this, HelpPage::class.java)
+       startActivity(intent)
+    }
 
     }
 

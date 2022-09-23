@@ -57,7 +57,7 @@ class CardCreation : AppCompatActivity(){
 
         btnNextCardType.setOnClickListener {
             clicked += 1
-            if (clicked > 4) {
+            if (clicked > 3) {
                 clicked = 0
             }
             text.text.clear()
@@ -67,7 +67,7 @@ class CardCreation : AppCompatActivity(){
         btnPrevCardType.setOnClickListener {
             clicked -= 1
             if (clicked < 0) {
-                clicked = 4
+                clicked = 3
             }
             text.text.clear()
             changeCard(clicked)
@@ -90,7 +90,7 @@ class CardCreation : AppCompatActivity(){
 
     private fun pCheck(text: String): Boolean {
         var newPrompt = text.lowercase()
-        var regex = Regex("(#player)\\w+")
+        var regex = Regex("(@player[1-9])\\w+")
         val matches = regex.findAll(newPrompt)
 
         for (m in matches) {
@@ -111,7 +111,7 @@ class CardCreation : AppCompatActivity(){
             ivCardTypeHandicap.visibility = View.INVISIBLE
             ivCardTypeLaw.visibility = View.INVISIBLE
             editCardDetails.hint =
-                "#Player, howl at the moon 3 times with #player2 or take a penalty"
+                "@Player1, howl at the moon 3 times with @player2 or take a penalty"
             screenView.background = resources.getDrawable(R.drawable.standard, theme)
 
         }
@@ -121,7 +121,7 @@ class CardCreation : AppCompatActivity(){
             ivCardTypeHandicap.visibility = View.INVISIBLE
             ivCardTypeLaw.visibility = View.INVISIBLE
             editCardDetails.hint =
-                "#Player, if any player makes eye contact with you, they take a penalty."
+                "@Player1, if any player makes eye contact with you, they take a penalty."
             screenView.background = resources.getDrawable(R.drawable.powerup, theme)
         }
         //law card
@@ -137,7 +137,7 @@ class CardCreation : AppCompatActivity(){
             ivCardTypeHandicap.visibility = View.VISIBLE
             ivCardTypeLaw.visibility = View.INVISIBLE
             ivCardTypePowerUp.visibility = View.INVISIBLE
-            editCardDetails.hint = "#Player, you now have to play the next 12 rounds on all fours."
+            editCardDetails.hint = "@Player1, you now have to play the next 12 rounds on all fours."
             screenView.background = resources.getDrawable(R.drawable.handicap, theme)
         }
     }

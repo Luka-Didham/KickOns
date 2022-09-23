@@ -95,6 +95,7 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener {
                 startActivity(intent)
             }
         }
+
     }
 
 
