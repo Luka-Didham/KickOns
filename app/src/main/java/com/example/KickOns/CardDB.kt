@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 //TODO("get this working without having to increment version number after schema change")
-@Database(entities = [CardItem::class, DeckItem::class], version = 17, exportSchema = false)
+@Database(entities = [CardItem::class, DeckItem::class], version = 18, exportSchema = false)
 abstract class CardDB : RoomDatabase() {
     abstract fun cardDAO(): CardDAO
     abstract fun deckDAO(): DeckDAO
