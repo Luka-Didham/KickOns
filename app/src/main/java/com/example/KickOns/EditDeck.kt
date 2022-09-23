@@ -70,8 +70,11 @@ class EditDeck(): AppCompatActivity(){
                 distanceY: Float
             ): Boolean {
                 if(swiped) return true
-                val dX = e1.rawX - e2.rawX
-                val dY = e1.rawY - e2.rawY
+                val snsty = 0.2F
+                var dX = e1.rawX - e2.rawX
+                var dY = e1.rawY - e2.rawY
+                dX *= snsty
+                dY *= snsty
 
                 editCrd.x -= dX
                 editCrd.y -= dY
@@ -89,7 +92,6 @@ class EditDeck(): AppCompatActivity(){
         editCrd.setOnTouchListener { _, e ->
             when(e.action){
                 MotionEvent.ACTION_UP -> {
-                   //TODO("add sliding animation")
                     snapCard()
                 }
                 else -> {
@@ -167,6 +169,11 @@ class EditDeck(): AppCompatActivity(){
         }
     }
 
+    private fun sThresh(dX:Float, dY:Float): Boolean{
+        if (dX * dY > 5000) return true
+        return false
+    }
+
     private fun replaceCard(){
         //Set Swiped to false
         //SnapCard Back into place//
@@ -180,7 +187,7 @@ class EditDeck(): AppCompatActivity(){
 
     private fun resetCard(){
         editCrd.x = (editDeck.width/2 - editCrd.width/2).toFloat()
-        editCrd.y = (editDeck.height/2 - editCrd.height/2 -80).toFloat()
+        editCrd.y = (editDeck.height/2 - editCrd.height/2-100).toFloat()
         editCrd.rotation = 0F
     }
     private fun snapCard(){
