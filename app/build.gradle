@@ -110,7 +110,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics-ktx:21.1.1'
     implementation 'com.google.firebase:firebase-firestore-ktx:24.3.1'
     implementation 'com.google.firebase:firebase-database-ktx:20.0.6'
-    dokkaHtmlPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.7.10")
+    dokkaHtmlPlugin("org.jetbrains.dokka:kotli  n-as-java-plugin:1.7.10")
 
     def dynamicanimation_version = '1.0.0'
     implementation "androidx.dynamicanimation:dynamicanimation:$dynamicanimation_version"
