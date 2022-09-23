@@ -9,8 +9,8 @@ class PopulateDecks(ctx: Context) {
     val deckDao = db.deckDAO()
     val cardDao = db.cardDAO()
 
-    //val d = DeckItem(1,"Andrew Starter Deck")
-    val d = DeckItem(1,"NSFW Starter Deck")
+    val d = DeckItem(1,"Starter Deck")
+    //val d = DeckItem(1,"NSFW Starter Deck")
     //Cards for the deck
     /*
     0 = standard card
@@ -143,7 +143,7 @@ class PopulateDecks(ctx: Context) {
     )
 
     fun insert(){
-        for (t in aList){
+        for (t in tList){
             addCards(t.get(1) as Int, t.get(0) as String)
         }
     }
