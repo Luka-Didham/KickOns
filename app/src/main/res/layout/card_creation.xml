@@ -69,7 +69,7 @@
             android:id="@+id/editCardDetails"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="\@Player, howl at the moon 3 times with \@player or take a penalty"
+            android:hint="\@Player1, howl at the moon 3 times with \@player2 or take a penalty"
             android:textStyle="bold"
             android:textColor="#FFFFFF"
             android:fontFamily="@font/fonts"
