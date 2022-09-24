@@ -14,7 +14,11 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
-
+/**
+ * The Screen that is displayed immediately after the splash screen,
+ * shows the buttons to start the game, and help.
+ *
+ */
 class WelcomePage : AppCompatActivity() {
     private lateinit var analytics: FirebaseAnalytics
     override fun onCreate(savedInstanceState: Bundle?) {

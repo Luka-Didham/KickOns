@@ -74,8 +74,16 @@ class AddPlayer : AppCompatActivity() {
     refresh()
     }
 
-
-
+    /**
+     * Onclick function that removes a player view item from the main view.
+     *
+     * @param v The current view in the app
+     * @param p The player that was clicked
+     *
+     * @see com.example.KickOns.Player
+     * @see com.example.KickOns.AddPlayerAdapter
+     * @see com.example.KickOns.PlayerViewHolder
+     */
     private fun onClick(v: View?, p: Player) {
         playerList.remove(p)
         cG.removeView(v)
