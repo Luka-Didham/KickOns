@@ -36,7 +36,7 @@ class AddPlayer : AppCompatActivity() {
         setContentView(R.layout.add_player)
         val binding = AddPlayerBinding.inflate(layoutInflater)
         val view = binding.root
-        cG = findViewById<ChipGroup>(R.id.chipGroup)
+        cG = findViewById(R.id.chipGroup)
 
         var editText = findViewById<EditText>(R.id.textInputEditText)
         var MAX_PLAYERS = 30
