@@ -7,7 +7,7 @@ plugins {
 
 apply plugin: "org.jetbrains.dokka"
 apply plugin: 'jacoco'
-//apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android-extensions'
 
 jacoco {
     toolVersion = "$jacocoVersion"
