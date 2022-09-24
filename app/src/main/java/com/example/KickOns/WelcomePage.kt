@@ -31,7 +31,7 @@ class WelcomePage : AppCompatActivity() {
         val db = Firebase.firestore
         // Create a new user with a first and last name
 
-        db.collection("Decks/  ")
+        db.collection("Decks")
             .get()
             .addOnSuccessListener { result ->
                 for (document in result) {
