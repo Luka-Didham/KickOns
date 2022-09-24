@@ -7,7 +7,7 @@ plugins {
 
 apply plugin: "org.jetbrains.dokka"
 apply plugin: 'jacoco'
-//apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android-extensions'
 
 jacoco {
     toolVersion = "$jacocoVersion"
@@ -113,7 +113,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-database-ktx:20.0.6'
     implementation 'com.google.firebase:firebase-perf:20.1.1'
     testImplementation 'org.junit.jupiter:junit-jupiter'
-    dokkaHtmlPlugin("org.jetbrains.dokka:kotli  n-as-java-plugin:1.7.10")
+    dokkaHtmlPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.7.10")
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
