@@ -45,23 +45,18 @@
 
         <Button
             android:id="@+id/btnPrevCardType"
-            android:layout_width="50sp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:layout_marginLeft="15dp"
-            android:background="@drawable/btn_shape_triangle"
-            android:rotation="-45"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:background="@drawable/btn_prev"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/btnNextCardType"
-            android:layout_width="50sp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:layout_marginRight="15dp"
-            android:background="@drawable/btn_shape_triangle"
-            android:rotation="135"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:background="@drawable/btn_prev"
+            android:rotation="180"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

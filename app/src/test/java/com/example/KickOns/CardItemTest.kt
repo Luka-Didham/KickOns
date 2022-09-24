@@ -1,58 +1,93 @@
 package com.example.KickOns
 
+import org.hamcrest.MatcherAssert.assertThat
+import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.BeforeEach
+import java.io.IOException
+import java.util.ArrayList
+import org.hamcrest.MatcherAssert.assertThat
+import org.hamcrest.Matchers.hasItems
+import org.hamcrest.Matchers.`is`
+import org.hamcrest.Matchers.samePropertyValuesAs
+import org.junit.jupiter.api.Test
 
 internal class CardItemTest {
 
-    @org.junit.jupiter.api.Test
-    fun getId() {
+    private val deck1: DeckItem? = null
+    private val deck2: DeckItem? = null
+
+    private val card1: CardItem? = null
+    private val card2: CardItem? = null
+    private val card3: CardItem? = null
+    private val card4: CardItem? = null
+
+    @BeforeEach
+    @Throws(IOException::class)
+    fun setUp() {
+        deck1?.id = 0
+        deck1?.name = "Test deck 1"
+
+        deck2?.id = 1
+        deck1?.name = "Test deck 2"
+
+        card1?.id = 0
+        card1?.cardType = 0
+        card1?.challenge = "Test normal challenge card"
+        card1?.deckId = 0
+
+        card2?.id = 1
+        card2?.cardType = 1
+        card2?.challenge = "Test power-up card"
+        card2?.deckId = 0
+
+        card3?.id = 2
+        card3?.cardType = 2
+        card3?.challenge = "Test law card"
+        card3?.deckId = 1
+
+        card4?.id = 3
+        card4?.cardType = 3
+        card4?.challenge = "Test handicap card"
+        card4?.deckId = 1
+
     }
 
-    @org.junit.jupiter.api.Test
-    fun getCardType() {
+    @AfterEach
+    @Throws(IOException::class)
+    fun cleanUp() {
+
+
     }
 
-    @org.junit.jupiter.api.Test
-    fun getChallenge() {
+    @Test
+    @Throws(IOException::class)
+    fun testAddDeck() {
+
     }
 
-    @org.junit.jupiter.api.Test
-    fun setChallenge() {
+    @Test
+    @Throws(IOException::class)
+    fun testAddCard() {
+
     }
 
-    @org.junit.jupiter.api.Test
-    fun getDeckId() {
+    @Test
+    @Throws(IOException::class)
+    fun testDeleteCard() {
+
     }
 
-    @org.junit.jupiter.api.Test
-    operator fun component1() {
+    @Test
+    @Throws(IOException::class)
+    fun testGetCard() {
+
     }
 
-    @org.junit.jupiter.api.Test
-    operator fun component2() {
+    @Test
+    @Throws(IOException::class)
+    fun testUpdateCard() {
+
     }
 
-    @org.junit.jupiter.api.Test
-    operator fun component3() {
-    }
-
-    @org.junit.jupiter.api.Test
-    operator fun component4() {
-    }
-
-    @org.junit.jupiter.api.Test
-    fun copy() {
-    }
-
-    @org.junit.jupiter.api.Test
-    fun testToString() {
-    }
-
-    @org.junit.jupiter.api.Test
-    fun testHashCode() {
-    }
-
-    @org.junit.jupiter.api.Test
-    fun testEquals() {
-    }
 }
