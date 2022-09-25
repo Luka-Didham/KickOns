@@ -7,7 +7,7 @@ var deckList = mutableListOf<DeckItem>()
 @Entity(tableName = "deck_table")
 data class DeckItem(
     @PrimaryKey(autoGenerate = true)
-    val id: Int?,
-    val name: String
+    var id: Int?,
+    var name: String
     //val description: String
 )

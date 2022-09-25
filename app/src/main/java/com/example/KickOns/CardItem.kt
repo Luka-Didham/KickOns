@@ -8,8 +8,8 @@ var cardList = mutableListOf<CardItem>()
 @Entity(tableName = "card_table")
 data class CardItem (
     @PrimaryKey(autoGenerate = true)
-    val id: Int?,
-    val cardType: Int,
+    var id: Int?,
+    var cardType: Int,
     var challenge: String,
-    val deckId: Int?
+    var deckId: Int?
 )
