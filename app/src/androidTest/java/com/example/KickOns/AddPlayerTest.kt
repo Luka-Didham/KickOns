@@ -6,13 +6,13 @@ import androidx.test.espresso.action.ViewActions.typeText
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import junit.framework.Assert.assertTrue
-import kotlinx.android.synthetic.main.add_player.*
+
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.junit.Assert.*
 
 @RunWith(AndroidJUnit4::class)
 class AddPlayerTest{
@@ -34,7 +34,7 @@ class AddPlayerTest{
     fun testAddPlayer(){
         activityRule.scenario.onActivity {
             onView(withId(R.id.textInputEditText)).perform(typeText("Joe"))
-            onView(withId(R.id.btnAddPlayer)).perform(click());
+            onView(withId(R.id.btnAddPlayer)).perform(click())
 
             assertTrue(playerList.size > 1)
         }

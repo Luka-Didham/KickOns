@@ -2,12 +2,11 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
-
+    id 'com.google.firebase.firebase-perf'
 }
 
 apply plugin: "org.jetbrains.dokka"
 apply plugin: 'jacoco'
-apply plugin: 'kotlin-android-extensions'
 
 jacoco {
     toolVersion = "$jacocoVersion"
@@ -23,8 +22,8 @@ task jacocoCombinedTestReports(type: JacocoReport, dependsOn: ['testDebugUnitTes
     group = "Verification"
     description = "Creates JaCoCo test coverage report for Unit and Instrumented Tests (combined) on the Debug build"
     reports {
-        xml.enabled = true
-        html.enabled = true
+        xml.required = true
+        html.required = true
     }
 
     // Files to exclude:
@@ -91,7 +90,7 @@ android {
         jvmTarget = '1.8'
     }
     buildFeatures {
-      viewBinding true
+        viewBinding true
     }
 
     testOptions {
@@ -111,11 +110,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics-ktx:21.1.1'
     implementation 'com.google.firebase:firebase-firestore-ktx:24.3.1'
     implementation 'com.google.firebase:firebase-database-ktx:20.0.6'
-
     testImplementation 'org.junit.jupiter:junit-jupiter'
-    testImplementation 'org.junit.jupiter:junit-jupiter'
-    androidTestImplementation 'org.junit.jupiter:junit-jupiter'
-    androidTestImplementation 'org.junit.jupiter:junit-jupiter'
     dokkaHtmlPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.7.10")
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
@@ -125,7 +120,6 @@ dependencies {
     implementation "androidx.dynamicanimation:dynamicanimation:$dynamicanimation_version"
 
     apply plugin : "kotlin-android"
-    apply plugin : "kotlin-android-extensions"
     apply plugin: 'kotlin-kapt'
     implementation 'androidx.core:core-ktx:1.9.0'
 
