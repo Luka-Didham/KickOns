@@ -35,7 +35,6 @@ class AddPlayer : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.add_player)
         val binding = AddPlayerBinding.inflate(layoutInflater)
-        val view = binding.root
         cG = findViewById(R.id.chipGroup)
 
         var editText = findViewById<EditText>(R.id.textInputEditText)
