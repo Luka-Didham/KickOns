@@ -65,6 +65,12 @@ class ExampleInstrumentedTest {
         }
     }
 
+    /**
+     * Test Function for getting cards from their related
+     * deck using the CardDAO
+     * @see com.example.KickOns.CardItem
+     * @see com.example.KickOns.CardDAO
+     */
     @Test
     fun getCardsInDeck(){
         val card2 = CardItem(-2,3,"test2",-1)

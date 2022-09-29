@@ -85,9 +85,8 @@ class EditDeck(): AppCompatActivity(){
                 if (editCrd.x < -400) removeCard(dX,dY)
                 return true
             }
-
-
         }
+
         gestureDetector = GestureDetector(this,gestureListener)
         editCrd.setOnTouchListener { _, e ->
             when(e.action){
