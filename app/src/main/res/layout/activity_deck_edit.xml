@@ -111,18 +111,20 @@
 
                 <View
                     android:id="@+id/view"
-                    android:layout_width="0dp"
+                    android:layout_width="0sp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
 
                 <ImageView
                     android:layout_height="wrap_content"
+                    android:layout_width="0sp"
                     android:layout_gravity="center"
                     android:layout_marginBottom="0dp"
                     android:layout_weight="1"
                     android:src="@drawable/powerup_title" />
 
                 <FrameLayout
+                    android:layout_width="0sp"
                     android:layout_height="match_parent"
                     android:layout_weight="1">
 
@@ -139,6 +141,7 @@
             </LinearLayout>
 
             <EditText
+                android:focusable="false"
                 android:id="@+id/editCard"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"

@@ -9,10 +9,12 @@ import android.view.MotionEvent
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.animation.doOnEnd
+import androidx.core.view.isVisible
 import androidx.dynamicanimation.animation.DynamicAnimation
 import androidx.dynamicanimation.animation.SpringAnimation
 import androidx.dynamicanimation.animation.SpringForce
@@ -32,6 +34,12 @@ class EditDeck(): AppCompatActivity(){
     private lateinit var childText: EditText
     private lateinit var cardText: EditText
     private lateinit var editCrd: CardView
+
+    private lateinit var del_card: Button
+    private lateinit var sv_crd: Button
+
+    private lateinit var editButton: ImageView
+
 
     private lateinit var editDeck: View
     private lateinit var view: View
@@ -57,10 +65,16 @@ class EditDeck(): AppCompatActivity(){
         //Buttons
         val btn_next = findViewById<Button>(R.id.btn_next)
         val btn_prev = findViewById<Button>(R.id.btn_prev)
-        val del_card = findViewById<Button>(R.id.del_card)
-        val sv_crd = findViewById<Button>(R.id.sv_crd)
+        del_card = findViewById(R.id.del_card)
+        sv_crd = findViewById(R.id.sv_crd)
+        editButton = findViewById(R.id.edtBtn)
+
         del_card.visibility = View.INVISIBLE
         sv_crd.visibility = View.INVISIBLE
+
+
+        //var
+        var t = false
 
         //Snap Animation
         val gestureListener = object : CardSwipeGesture(this){
@@ -103,6 +117,7 @@ class EditDeck(): AppCompatActivity(){
 
         //Get Cards for specified deck
         cardText = findViewById(R.id.editCard)
+
         childText = findViewById(R.id.editChild)
         nextCard(pos);
 
@@ -121,10 +136,12 @@ class EditDeck(): AppCompatActivity(){
         del_card.setOnClickListener {
             GlobalScope.launch {
                 cardDao.delete(cardList[pos])
+                withContext(Dispatchers.Main){
+                    cardList.removeAt(pos)
+                    pos = posInc(pos);
+                    nextCard(pos)
+                }
             }
-            cardList.removeAt(pos)
-            pos = posInc(pos);
-            nextCard(pos)
         }
 
         sv_crd.setOnClickListener {
@@ -133,11 +150,36 @@ class EditDeck(): AppCompatActivity(){
                 cardDao.update(cardList[pos])
 
                 withContext(Dispatchers.Main) {
-                    pos = posInc(pos);
-                    nextCard(pos)
+                    t = toggleEdit(t)
                 }
             }
         }
+
+        editButton.setOnClickListener{
+            t = toggleEdit(t)
+        }
+    }
+
+
+    private fun toggleEdit(t: Boolean): Boolean{
+        //TODO Maybe make grey or display a fresh card to edit
+
+        if(t) {
+            editMode(View.INVISIBLE,false)
+            return !t
+        }
+            editMode(View.VISIBLE,true)
+        return !t
+
+    }
+
+    private fun editMode(vis: Int, focus: Boolean){
+        del_card.visibility = vis
+        sv_crd.visibility = vis
+        cardText.isFocusableInTouchMode = focus
+        cardText.isFocusable = focus
+        swiped = focus
+        lastCard()
     }
 
     private fun posDec(pos: Int) : Int {
@@ -146,7 +188,7 @@ class EditDeck(): AppCompatActivity(){
     }
 
     private fun posInc(pos : Int): Int {
-        if (pos+1 == cardList.size) return 0
+        if (pos+1 > cardList.size-1) return 0
         return pos+1
     }
 
@@ -194,7 +236,6 @@ class EditDeck(): AppCompatActivity(){
         //TODO Change multiple apply to a spring force
         if (swiped) return
 
-        val sf = SpringForce()
         editCrd.let { crd ->
             SpringAnimation(crd,DynamicAnimation.ROTATION, 0F).apply{
                 spring.dampingRatio = DAMPING_RATIO_LOW_BOUNCY
@@ -215,9 +256,18 @@ class EditDeck(): AppCompatActivity(){
         }
     }
 
+    private fun lastCard(): Boolean{
+        if(cardList.size == 1) {
+            del_card.visibility = View.INVISIBLE
+            return true
+        }
+        return false
+    }
+
     private fun nextCard(pos : Int){
-            cardText.setText(cardList[pos].challenge)
-            childText.setText(cardList[posInc(pos)].challenge)
+        if (lastCard()) return
+        cardText.setText(cardList[pos].challenge)
+        childText.setText(cardList[posInc(pos)].challenge)
     }
 
 
