@@ -59,7 +59,8 @@ class EditDeck(): AppCompatActivity(){
         val btn_prev = findViewById<Button>(R.id.btn_prev)
         val del_card = findViewById<Button>(R.id.del_card)
         val sv_crd = findViewById<Button>(R.id.sv_crd)
-
+        del_card.visibility = View.INVISIBLE
+        sv_crd.visibility = View.INVISIBLE
 
         //Snap Animation
         val gestureListener = object : CardSwipeGesture(this){
