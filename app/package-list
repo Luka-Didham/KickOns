@@ -113,6 +113,7 @@ $dokka.location:com.example.KickOns/PlayerViewHolder/bindPlayer/#com.example.Kic
 $dokka.location:com.example.KickOns/PopulateDecks///PointingToDeclaration/app/com.example.KickOns/-populate-decks/index.html
 $dokka.location:com.example.KickOns/PopulateDecks/PopulateDecks/#android.content.Context/PointingToDeclaration/app/com.example.KickOns/-populate-decks/-populate-decks.html
 $dokka.location:com.example.KickOns/PopulateDecks/addCards/#kotlin.Int#kotlin.String/PointingToDeclaration/app/com.example.KickOns/-populate-decks/add-cards.html
+$dokka.location:com.example.KickOns/PopulateDecks/clear/#/PointingToDeclaration/app/com.example.KickOns/-populate-decks/clear.html
 $dokka.location:com.example.KickOns/PopulateDecks/getAList/#/PointingToDeclaration/app/com.example.KickOns/-populate-decks/get-a-list.html
 $dokka.location:com.example.KickOns/PopulateDecks/getCardDao/#/PointingToDeclaration/app/com.example.KickOns/-populate-decks/get-card-dao.html
 $dokka.location:com.example.KickOns/PopulateDecks/getD/#/PointingToDeclaration/app/com.example.KickOns/-populate-decks/get-d.html
