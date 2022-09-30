@@ -4,10 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.17476019184652278" />
+        <entry key="..\:/Aquired/COSC345/app/src/main/res/drawable-v24/law.xml" value="0.194" />
+        <entry key="..\:/Aquired/COSC345/app/src/main/res/drawable/deckitembackground.xml" value="0.194" />
+        <entry key="..\:/Aquired/COSC345/app/src/main/res/drawable/edit_button.xml" value="0.194" />
         <entry key="..\:/Aquired/COSC345/app/src/main/res/drawable/shape.xml" value="0.188" />
-        <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/activity_deck_edit.xml" value="0.1" />
+        <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/activity_deck_edit.xml" value="0.18" />
         <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/activity_game.xml" value="0.20677083333333332" />
-        <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/activity_main.xml" value="0.12228260869565218" />
+        <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/activity_splash_screen.xml" value="0.18072916666666666" />
         <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/add_player.xml" value="0.18478260869565216" />
         <entry key="..\:/Aquired/COSC345/app/src/main/res/layout/card_creation.xml" value="0.1" />

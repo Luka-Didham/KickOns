@@ -2,6 +2,7 @@ package com.example.KickOns
 
 import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
+import android.media.Image
 import android.os.Build
 import android.os.Bundle
 import android.view.GestureDetector
@@ -34,6 +35,9 @@ class EditDeck(): AppCompatActivity(){
     private lateinit var childText: EditText
     private lateinit var cardText: EditText
     private lateinit var editCrd: CardView
+    private lateinit var editType: ImageView
+    private lateinit var childType: ImageView
+
 
     private lateinit var del_card: Button
     private lateinit var sv_crd: Button
@@ -61,6 +65,9 @@ class EditDeck(): AppCompatActivity(){
         //Elements
         editCrd = findViewById(R.id.editCrd)
         editDeck = findViewById(R.id.edit_deck)
+
+        editType = findViewById(R.id.editType)
+        childType = findViewById(R.id.childType)
 
         //Buttons
         val btn_next = findViewById<Button>(R.id.btn_next)
@@ -124,13 +131,11 @@ class EditDeck(): AppCompatActivity(){
         btn_next.setOnClickListener {
             pos = posInc(pos)
             nextCard(pos)
-
         }
 
         btn_prev.setOnClickListener {
             pos = posDec(pos)
             nextCard(pos)
-
         }
 
         del_card.setOnClickListener {
@@ -154,7 +159,6 @@ class EditDeck(): AppCompatActivity(){
                 }
             }
         }
-
         editButton.setOnClickListener{
             t = toggleEdit(t)
         }
@@ -163,7 +167,6 @@ class EditDeck(): AppCompatActivity(){
 
     private fun toggleEdit(t: Boolean): Boolean{
         //TODO Maybe make grey or display a fresh card to edit
-
         if(t) {
             editMode(View.INVISIBLE,false)
             return !t
@@ -266,10 +269,23 @@ class EditDeck(): AppCompatActivity(){
 
     private fun nextCard(pos : Int){
         if (lastCard()) return
+
+        //Set Main Card
         cardText.setText(cardList[pos].challenge)
+        editType.setImageResource(getTypeImage(cardList[pos].cardType))
+
+        //Set Child card
         childText.setText(cardList[posInc(pos)].challenge)
+        childType.setImageResource(getTypeImage(cardList[pos+1].cardType))
     }
 
-
-
+    private fun getTypeImage(x: Int): Int {
+        when(x){
+            0 -> return 0
+            1 -> return R.drawable.powerup_title
+            2 -> return R.drawable.law_title
+            3 -> return R.drawable.handicap_title
+        }
+        return 0
+    }
 }

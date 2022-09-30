@@ -32,6 +32,42 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/childView"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:id="@+id/childType"
+                    android:layout_width="0sp"
+                    android:layout_height="75sp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="0dp"
+                    android:layout_weight="1" />
+
+                <FrameLayout
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/childBtn"
+                        android:layout_width="40sp"
+                        android:layout_height="40sp"
+                        android:layout_gravity="end"
+                        android:layout_margin="20sp"
+                        app:srcCompat="@drawable/edit_icon"
+                        app:tint="@color/black" />
+                </FrameLayout>
+
+            </LinearLayout>
+
             <EditText
                 android:id="@+id/editChild"
                 android:layout_width="match_parent"
@@ -45,37 +81,6 @@
                 android:textColorHint="#78909C"
                 android:textSize="20sp"
                 android:textStyle="bold" />
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal"
-                tools:visibility="visible">
-
-                <Button
-                    android:id="@+id/child_del"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="30dp"
-                    android:text="Delete"
-                    app:cornerRadius="99dp" />
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
-
-
-                <Button
-                    android:id="@+id/child_sv"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="30dp"
-                    android:text="save"
-                    app:cornerRadius="99dp" />
-            </LinearLayout>
 
 
         </LinearLayout>
@@ -116,12 +121,13 @@
                     android:layout_weight="1" />
 
                 <ImageView
-                    android:layout_height="wrap_content"
+                    android:id="@+id/editType"
                     android:layout_width="0sp"
+                    android:layout_height="75sp"
                     android:layout_gravity="center"
                     android:layout_marginBottom="0dp"
                     android:layout_weight="1"
-                    android:src="@drawable/powerup_title" />
+                    tools:srcCompat="@drawable/handicap_title" />
 
                 <FrameLayout
                     android:layout_width="0sp"
