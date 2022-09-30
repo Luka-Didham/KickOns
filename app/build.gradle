@@ -2,7 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
-    id 'com.google.firebase.firebase-perf'
+
 }
 
 apply plugin: "org.jetbrains.dokka"
@@ -111,7 +111,6 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics-ktx:21.1.1'
     implementation 'com.google.firebase:firebase-firestore-ktx:24.3.1'
     implementation 'com.google.firebase:firebase-database-ktx:20.0.6'
-    implementation 'com.google.firebase:firebase-perf:19.0.5'
     testImplementation 'org.junit.jupiter:junit-jupiter'
     dokkaHtmlPlugin("org.jetbrains.dokka:kotli  n-as-java-plugin:1.7.10")
 
