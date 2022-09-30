@@ -50,12 +50,14 @@ class EditDeck(): AppCompatActivity(){
     private lateinit var editDeck: View
     private lateinit var view: View
 
+
     @RequiresApi(Build.VERSION_CODES.M)
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstance: Bundle?) {
 
         super.onCreate(savedInstance)
-
+        //REMOVE WHEN DONE
+        cardList.clear()
         db = CardDB.getDatabase(this)
         cardDao = db.cardDAO()
 
@@ -81,6 +83,7 @@ class EditDeck(): AppCompatActivity(){
         delBtn = findViewById(R.id.delBtn)
         svBtn = findViewById(R.id.svBtn)
         editButton = findViewById(R.id.edtBtn)
+        addBtn = findViewById(R.id.addBtn)
 
         delBtn.visibility = View.INVISIBLE
         svBtn.visibility = View.INVISIBLE
@@ -130,9 +133,8 @@ class EditDeck(): AppCompatActivity(){
 
         //Get Cards for specified deck
         cardText = findViewById(R.id.editCard)
-
         childText = findViewById(R.id.editChild)
-        nextCard(pos);
+        //nextCard(pos);
 
         delBtn.setOnClickListener {
             GlobalScope.launch {
@@ -145,15 +147,21 @@ class EditDeck(): AppCompatActivity(){
             }
         }
 
-        svBtn.setOnClickListener {
-            cardList[pos].challenge = cardText.text.toString()
-            GlobalScope.launch {
-                cardDao.update(cardList[pos])
-                withContext(Dispatchers.Main) {
-                    t = toggleEdit(t)
-                }
-            }
+        svBtn.setOnClickListener{
+            val text = cardText.text.toString()
+            cardList[pos].challenge = text
+            addCard(cardList[pos])
+            t = toggleEdit(t)
         }
+//        svBtn.setOnClickListener {
+//            cardList[pos].challenge = cardText.text.toString()
+//            GlobalScope.launch {
+//                cardDao.update(cardList[pos])
+//                withContext(Dispatchers.Main) {
+//                    t = toggleEdit(t)
+//                }
+//            }
+//        }
         editButton.setOnClickListener{
             t = toggleEdit(t)
         }
@@ -161,13 +169,38 @@ class EditDeck(): AppCompatActivity(){
         addBtn.setOnClickListener{
             //Fresh Card
             newCard()
-            //Create a new card
-            val c = CardItem(null,0,"",0)
-            cardList.add(c)
             pos = cardList.size -1
         }
+        newCard()
     }
-
+    //TO NOTE add to end of list
+    //Option 1
+    //Save btn has two modes
+    //Save and Update
+    //On update mode it just adds the card to the cardList and updates the db
+    //On save mode it adds the card to the cardList and adds to the db
+    //To set the mode there will be an input in the function
+    //
+    //Option 2
+    //There are two buttons
+    //Update and save
+    //
+    //Option 3
+    // You have 1 btn that has two different states
+    // Update or Save
+    // (Could be done with an interface)
+    // On save state run different behaviour to update state
+    //AddCards
+    //Gets a blank template ready for you to enter stuff into
+    //On Save
+    //It saves the data from the blank template into a card
+    //Adds them to a card list
+    //Saves them to a db
+    //If the card is being updated
+    //Do not add to card list
+    //Update card inside db
+    //make a system to adc cards
+    //worry about the rest latter
 
     private fun toggleEdit(t: Boolean): Boolean{
         //TODO Maybe make grey or display a fresh card to edit
@@ -263,6 +296,13 @@ class EditDeck(): AppCompatActivity(){
         }
     }
 
+    private fun addCard(c :CardItem){
+        GlobalScope.launch{
+            cardList.add(c)
+            cardDao.addCard(c)
+        }
+    }
+
     private fun lastCard(): Boolean{
         if(cardList.size == 1) {
             delBtn.visibility = View.INVISIBLE
@@ -277,6 +317,9 @@ class EditDeck(): AppCompatActivity(){
         cardText.setText("")
         editType.setImageResource(0)
         editMode(View.VISIBLE,true)
+        var c = CardItem(null,0,"",1)
+        cardList.add(c)
+        pos = cardList.size - 1
     }
 
     private fun nextCard(pos : Int){

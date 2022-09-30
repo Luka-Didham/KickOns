@@ -11,7 +11,7 @@ import androidx.room.*
  */
 @Dao
 interface CardDAO {
-    @Insert(onConflict = OnConflictStrategy.ABORT)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun addCard(card: CardItem)
 
     @Delete(entity = CardItem::class)
