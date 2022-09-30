@@ -12,6 +12,15 @@ abstract class CardDB : RoomDatabase() {
 
     companion object {
 
+        /**
+         * Initilizes the Room DB
+         *
+         * @param context the apps current context
+         * @return an instance of the DB
+         *
+         * @see com.example.KickOns.AddPlayerAdapter
+         * @see com.example.KickOns.PlayerViewHolder
+         */
         @Volatile
         private var INSTANCE: CardDB? = null
         fun getDatabase(context: Context): CardDB {

@@ -35,8 +35,7 @@ class AddPlayer : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.add_player)
         val binding = AddPlayerBinding.inflate(layoutInflater)
-        val view = binding.root
-        cG = findViewById<ChipGroup>(R.id.chipGroup)
+        cG = findViewById(R.id.chipGroup)
 
         var editText = findViewById<EditText>(R.id.textInputEditText)
         var MAX_PLAYERS = 30
@@ -74,8 +73,16 @@ class AddPlayer : AppCompatActivity() {
     refresh()
     }
 
-
-
+    /**
+     * Onclick function that removes a player view item from the main view.
+     *
+     * @param v The current view in the app
+     * @param p The player that was clicked
+     *
+     * @see com.example.KickOns.Player
+     * @see com.example.KickOns.AddPlayerAdapter
+     * @see com.example.KickOns.PlayerViewHolder
+     */
     private fun onClick(v: View?, p: Player) {
         playerList.remove(p)
         cG.removeView(v)

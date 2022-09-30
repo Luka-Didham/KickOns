@@ -3,9 +3,9 @@ package com.example.KickOns
 import android.content.Intent
 import android.os.Bundle
 import android.provider.Settings
+import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.deck_creation.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
@@ -25,7 +25,12 @@ class DeckCreation() : AppCompatActivity() {
         deckDao = db.deckDAO()
 
         val deckName = findViewById<EditText>(R.id.editDeckName)
-        val deckDesc = findViewById<EditText>(R.id.editDeckName)
+        //val deckDesc = findViewById<EditText>(R.id.editDeckDescription)
+        //Elements
+        val btnBackFromCreateDeck = findViewById<Button>(R.id.btnBackFromCreateDeck)
+        val btnSaveDeck = findViewById<Button>(R.id.btnSaveDeck)
+
+
 
         btnBackFromCreateDeck.setOnClickListener {
             val intent = Intent(this, DeckPicker::class.java)

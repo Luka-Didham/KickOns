@@ -4,9 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.provider.SyncStateContract.Helpers.insert
 import android.view.View
+import android.widget.Button
+import android.widget.ImageView
 import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.*
 import java.util.*
 import java.util.regex.Matcher
@@ -18,11 +19,27 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var db : CardDB
 
+    private lateinit var btnScreen: Button
+
+    private lateinit var img_powerup: ImageView
+    private lateinit var img_handicap: ImageView
+    private lateinit var img_law: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         db = CardDB.getDatabase(this)
         setContentView(R.layout.activity_main)
+
+        //Elements
+
+        val btnPlayerSelection = findViewById<Button>(R.id.btnPlayerSelection)
+        val btnDeckSelection = findViewById<Button>(R.id.btnDeckSelection)
+
+        btnScreen = findViewById<Button>(R.id.btnScreen)
+        img_powerup = findViewById<ImageView>(R.id.img_powerup)
+        img_handicap = findViewById<ImageView>(R.id.img_handicap)
+        img_law = findViewById<ImageView>(R.id.img_law)
+
 
         var clicked = 0
         val len = cardList.size

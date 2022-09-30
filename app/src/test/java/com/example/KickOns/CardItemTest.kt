@@ -1,58 +1,60 @@
 package com.example.KickOns
 
+import org.hamcrest.MatcherAssert.assertThat
+import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.BeforeEach
+import java.io.IOException
+import java.util.ArrayList
+import org.junit.jupiter.api.Test
 
 internal class CardItemTest {
+    private var c = CardItem(-1,2,"test",-1)
 
-    @org.junit.jupiter.api.Test
-    fun getId() {
+
+    @BeforeEach
+    @Throws(IOException::class)
+    fun setUp() {
+        cardList.clear()
     }
 
-    @org.junit.jupiter.api.Test
-    fun getCardType() {
+    @AfterEach
+    @Throws(IOException::class)
+    fun cleanUp() {
+        cardList.clear()
+
     }
 
-    @org.junit.jupiter.api.Test
-    fun getChallenge() {
+    @Test
+    @Throws(IOException::class)
+    fun testAddDeck() {
+
     }
 
-    @org.junit.jupiter.api.Test
-    fun setChallenge() {
+    @Test
+    @Throws(IOException::class)
+    fun testAddCard() {
+        assertTrue(c.challenge == "test")
+        assertTrue(c.id == -1)
+        assertTrue(c.deckId == -1)
     }
 
-    @org.junit.jupiter.api.Test
-    fun getDeckId() {
+    @Test
+    @Throws(IOException::class)
+    fun testDeleteCard() {
+
     }
 
-    @org.junit.jupiter.api.Test
-    operator fun component1() {
+    @Test
+    @Throws(IOException::class)
+    fun testGetCard() {
+
     }
 
-    @org.junit.jupiter.api.Test
-    operator fun component2() {
+    @Test
+    @Throws(IOException::class)
+    fun testUpdateCard() {
+
     }
 
-    @org.junit.jupiter.api.Test
-    operator fun component3() {
-    }
-
-    @org.junit.jupiter.api.Test
-    operator fun component4() {
-    }
-
-    @org.junit.jupiter.api.Test
-    fun copy() {
-    }
-
-    @org.junit.jupiter.api.Test
-    fun testToString() {
-    }
-
-    @org.junit.jupiter.api.Test
-    fun testHashCode() {
-    }
-
-    @org.junit.jupiter.api.Test
-    fun testEquals() {
-    }
 }

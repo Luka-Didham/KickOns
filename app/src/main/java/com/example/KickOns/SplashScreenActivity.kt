@@ -1,11 +1,12 @@
 package com.example.KickOns
 
 import android.content.Intent
+import android.media.Image
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import com.example.KickOns.R
-import kotlinx.android.synthetic.main.activity_splash_screen.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import java.lang.Thread.sleep
@@ -21,6 +22,9 @@ class SplashScreenActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash_screen)
         mediaPlayer = MediaPlayer.create(applicationContext, R.raw.mytune)
         mediaPlayer.start()
+        //Elements
+        val logo = findViewById<ImageView>(R.id.logo)
+
         logo.alpha = 0f
         //Populate decks during start
         logo.animate().setDuration(7000).alpha(1f).withEndAction {

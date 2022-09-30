@@ -26,7 +26,6 @@ class CardCreation : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         db = CardDB.getDatabase(this)
-        val cardDao = db.cardDAO()
         val deck_id: Long? = intent.extras?.getLong("deck_id")
         super.onCreate(savedInstanceState)
         var clicked = 0
@@ -78,12 +77,10 @@ class CardCreation : AppCompatActivity(){
     private fun save(id: Int, text: String, deck_id:Int?) {
         //TODO("Add alert telling the user they're arent enough players")
         if(pCheck(text)) return;
+        val c = CardItem(null, id, text, deck_id)
+        GlobalScope.launch {
+            db.cardDAO().addCard(c)
 
-        if (text != null && id != null) {
-            val c = CardItem(null, id, text, deck_id)
-            GlobalScope.launch {
-                db.cardDAO().addCard(c)
-            }
         }
     }
 

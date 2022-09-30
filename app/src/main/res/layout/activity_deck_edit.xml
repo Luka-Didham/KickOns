@@ -32,13 +32,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="100dp"
-                android:layout_marginBottom="0dp"
-                android:src="@drawable/powerup_title" />
-
             <EditText
                 android:id="@+id/editChild"
                 android:layout_width="match_parent"
@@ -111,14 +104,44 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="100dp"
-                android:layout_marginBottom="0dp"
-                android:src="@drawable/powerup_title" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:layout_height="wrap_content"
+                    android:layout_width="0sp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="0dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/powerup_title" />
+
+                <FrameLayout
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/edtBtn"
+                        android:layout_width="40sp"
+                        android:layout_height="40sp"
+                        android:layout_gravity="end"
+                        android:layout_margin="20sp"
+                        app:srcCompat="@drawable/edit_icon"
+                        app:tint="@color/black" />
+                </FrameLayout>
+
+            </LinearLayout>
 
             <EditText
+                android:focusable="false"
                 android:id="@+id/editCard"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
@@ -146,7 +169,9 @@
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="30dp"
                     android:text="Delete"
-                    app:cornerRadius="99dp" />
+                    android:textColor="#000000"
+                    app:backgroundTint="#F44336"
+                    app:cornerRadius="30sp" />
 
                 <View
                     android:layout_width="0dp"
@@ -160,7 +185,8 @@
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="30dp"
                     android:text="save"
-                    app:cornerRadius="99dp" />
+                    app:backgroundTint="#4CAF50"
+                    app:cornerRadius="30sp" />
             </LinearLayout>
 
 

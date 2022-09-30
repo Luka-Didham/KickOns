@@ -4,8 +4,6 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.KickOns.R
-import kotlinx.android.synthetic.main.help_page.*
-import kotlinx.android.synthetic.main.welcome_page.*
 
 class HelpPage : AppCompatActivity() {
     // Button button;
@@ -15,13 +13,15 @@ class HelpPage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.help_page)
 
+        //Elements
+        val btnGoBack = findViewById<Button>(R.id.btnGobacK)
 
         //  button = (Button) findViewById (R.id.btnHelp);
 
         //SHOWCASE MODE
         //  PopulateDecks(applicationContext).insert()
 
-        btnGobacK.setOnClickListener {
+        btnGoBack.setOnClickListener {
             val intent = Intent(this, WelcomePage::class.java)
             startActivity(intent)
         }

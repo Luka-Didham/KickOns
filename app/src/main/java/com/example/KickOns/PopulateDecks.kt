@@ -142,7 +142,18 @@ class PopulateDecks(ctx: Context) {
 
     )
 
+    fun clear(){
+      cardList.forEach{
+        if (it.deckId == 1){
+          GlobalScope.launch {
+            cardDao.delete(it)
+          }
+        }
+      }
+    }
+
     fun insert(){
+      cardList.clear()
         for (t in tList){
             addCards(t.get(1) as Int, t.get(0) as String)
         }
