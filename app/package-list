@@ -99,7 +99,6 @@ $dokka.location:com.example.KickOns/HelpPage///PointingToDeclaration/app/com.ex
 $dokka.location:com.example.KickOns/HelpPage/HelpPage/#/PointingToDeclaration/app/com.example.KickOns/-help-page/-help-page.html
 $dokka.location:com.example.KickOns/MainActivity///PointingToDeclaration/app/com.example.KickOns/-main-activity/index.html
 $dokka.location:com.example.KickOns/MainActivity/MainActivity/#/PointingToDeclaration/app/com.example.KickOns/-main-activity/-main-activity.html
-$dokka.location:com.example.KickOns/MainActivity/changeCard/#kotlin.Int#kotlin.String/PointingToDeclaration/app/com.example.KickOns/-main-activity/change-card.html
 $dokka.location:com.example.KickOns/MainActivity/randomPlayer/#kotlin.String/PointingToDeclaration/app/com.example.KickOns/-main-activity/random-player.html
 $dokka.location:com.example.KickOns/Player///PointingToDeclaration/app/com.example.KickOns/-player/index.html
 $dokka.location:com.example.KickOns/Player/Player/#kotlin.String?/PointingToDeclaration/app/com.example.KickOns/-player/-player.html
