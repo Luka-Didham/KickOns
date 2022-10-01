@@ -154,7 +154,7 @@ class PopulateDecks(ctx: Context) {
 
     fun insert(){
       cardList.clear()
-        for (t in tList){
+        for (t in aList){
             addCards(t.get(1) as Int, t.get(0) as String)
         }
     }
