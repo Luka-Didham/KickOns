@@ -11,6 +11,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
@@ -22,6 +23,7 @@ import androidx.dynamicanimation.animation.SpringForce
 import androidx.dynamicanimation.animation.SpringForce.*
 import com.example.KickOns.databinding.ActivityDeckEditBinding
 import kotlinx.coroutines.*
+import org.w3c.dom.Text
 import java.lang.Thread.sleep
 import kotlin.math.abs
 import kotlin.math.log
@@ -39,6 +41,8 @@ class EditDeck(): AppCompatActivity(){
     private lateinit var editCrd: CardView
     private lateinit var editType: ImageView
     private lateinit var childType: ImageView
+    private lateinit var cardPos: TextView
+    private lateinit var childPos: TextView
 
     //Buttons
     private lateinit var delBtn: ImageView
@@ -73,6 +77,8 @@ class EditDeck(): AppCompatActivity(){
         editType = findViewById(R.id.editType)
         childType = findViewById(R.id.childType)
 
+        cardPos = findViewById(R.id.cardPos)
+        childPos = findViewById(R.id.childPos)
 
         //need to pass in deck_id
 
@@ -112,7 +118,7 @@ class EditDeck(): AppCompatActivity(){
                 //editCrd.pivotX = e1.rawX
                 editCrd.pivotY = (editCrd.height * 0.75).toFloat()
                 editCrd.rotation -= dX/10
-
+                if(cardList.size < 2) return true
                 if (editCrd.x < -400) removeCard(dX,dY)
                 return true
             }
@@ -136,6 +142,8 @@ class EditDeck(): AppCompatActivity(){
         childText = findViewById(R.id.editChild)
         //nextCard(pos);
 
+
+        //TODO("Fix This")
         delBtn.setOnClickListener {
             GlobalScope.launch {
                 cardDao.delete(cardList[pos])
@@ -151,7 +159,8 @@ class EditDeck(): AppCompatActivity(){
             val text = cardText.text.toString()
             cardList[pos].challenge = text
             addCard(cardList[pos])
-            t = toggleEdit(t)
+            nextCard(pos)
+            editMode(false)
         }
 //        svBtn.setOnClickListener {
 //            cardList[pos].challenge = cardText.text.toString()
@@ -171,7 +180,8 @@ class EditDeck(): AppCompatActivity(){
             newCard()
             pos = cardList.size -1
         }
-        newCard()
+        if (cardList.size == 0) newCard();
+        updateCardPos()
     }
     //TO NOTE add to end of list
     //Option 1
@@ -204,22 +214,29 @@ class EditDeck(): AppCompatActivity(){
 
     private fun toggleEdit(t: Boolean): Boolean{
         //TODO Maybe make grey or display a fresh card to edit
-        if(t) {
-            editMode(View.INVISIBLE,false)
-            return !t
-        }
-            editMode(View.VISIBLE,true)
+        editMode(t)
         return !t
-
     }
 
-    private fun editMode(vis: Int, focus: Boolean){
-        delBtn.visibility = vis
-        svBtn.visibility = vis
+
+    private fun editMode(edit: Boolean){
+        showButtons(edit)
+        focusText(edit)
+        swiped = edit
+        lastCard()
+    }
+
+
+    private fun focusText(focus : Boolean){
         cardText.isFocusableInTouchMode = focus
         cardText.isFocusable = focus
-        swiped = focus
-        lastCard()
+    }
+
+    private fun showButtons(show: Boolean){
+        val vis = if(show) View.VISIBLE
+        else View.INVISIBLE
+        svBtn.visibility = vis
+        delBtn.visibility = vis
     }
 
     private fun posDec(pos: Int) : Int {
@@ -249,11 +266,6 @@ class EditDeck(): AppCompatActivity(){
                 replaceCard()
             }
         }
-    }
-
-    private fun sThresh(dX:Float, dY:Float): Boolean{
-        if (dX * dY > 5000) return true
-        return false
     }
 
     private fun replaceCard(){
@@ -296,11 +308,39 @@ class EditDeck(): AppCompatActivity(){
         }
     }
 
+    private fun updateCardPos(){
+        val s = cardList.size
+        cardPos.text = "${pos+1} / $s"
+        childPos.text = "${posInc(pos)+1} / $s"
+    }
+
     private fun addCard(c :CardItem){
         GlobalScope.launch{
-            cardList.add(c)
             cardDao.addCard(c)
         }
+    }
+
+    private fun newCard(){
+        //Display fresh card
+        //Set Main Card
+        cardText.setText("")
+        editType.setImageResource(0)
+        editMode(true)
+        val c = CardItem(null,0,"",1)
+        cardList.add(c)
+        pos = cardList.size - 1
+        updateCardPos()
+    }
+
+    private fun nextCard(pos : Int){
+        if (lastCard()) return
+        //Set Main Card
+        cardText.setText(cardList[pos].challenge)
+        editType.setImageResource(getTypeImage(cardList[pos].cardType))
+        //Set Child card
+        childText.setText(cardList[posInc(pos)].challenge)
+        childType.setImageResource(getTypeImage(cardList[posInc(pos)].cardType))
+        updateCardPos()
     }
 
     private fun lastCard(): Boolean{
@@ -309,29 +349,6 @@ class EditDeck(): AppCompatActivity(){
             return true
         }
         return false
-    }
-
-    private fun newCard(){
-        //Display fresh card
-        //Set Main Card
-        cardText.setText("")
-        editType.setImageResource(0)
-        editMode(View.VISIBLE,true)
-        var c = CardItem(null,0,"",1)
-        cardList.add(c)
-        pos = cardList.size - 1
-    }
-
-    private fun nextCard(pos : Int){
-        if (lastCard()) return
-
-        //Set Main Card
-        cardText.setText(cardList[pos].challenge)
-        editType.setImageResource(getTypeImage(cardList[pos].cardType))
-
-        //Set Child card
-        childText.setText(cardList[posInc(pos)].challenge)
-        childType.setImageResource(getTypeImage(cardList[pos+1].cardType))
     }
 
     private fun getTypeImage(x: Int): Int {
@@ -344,3 +361,4 @@ class EditDeck(): AppCompatActivity(){
         return 0
     }
 }
+

@@ -36,11 +36,15 @@
                 android:layout_height="88dp"
                 android:orientation="horizontal">
 
-                <View
-                    android:id="@+id/childView"
-                    android:layout_width="0sp"
+                <TextView
+                    android:id="@+id/childPos"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:padding="20dp"
+                    android:text="0/X"
+                    android:textSize="20sp"
+                    app:fontFamily="sans-serif-black" />
 
                 <ImageView
                     android:id="@+id/childType"
@@ -113,11 +117,15 @@
                 android:layout_height="88dp"
                 android:orientation="horizontal">
 
-                <View
-                    android:id="@+id/view"
-                    android:layout_width="0sp"
+                <TextView
+                    android:id="@+id/cardPos"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_width="0dp"
+                    android:padding="20dp"
+                    android:layout_weight="1"
+                    android:text="0/X"
+                    android:textSize="20sp"
+                    app:fontFamily="sans-serif-black" />
 
                 <ImageView
                     android:id="@+id/editType"
