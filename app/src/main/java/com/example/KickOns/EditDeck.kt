@@ -143,16 +143,10 @@ class EditDeck(): AppCompatActivity(){
         //nextCard(pos);
 
 
-        //TODO("Fix This")
-        delBtn.setOnClickListener {
-            GlobalScope.launch {
-                cardDao.delete(cardList[pos])
-                withContext(Dispatchers.Main){
-                    cardList.removeAt(pos)
-                    pos = posInc(pos);
-                    nextCard(pos)
-                }
-            }
+        delBtn.setOnClickListener{
+            deleteCard()
+            pos = posDec(pos)
+            nextCard(pos)
         }
 
         svBtn.setOnClickListener{
@@ -183,41 +177,11 @@ class EditDeck(): AppCompatActivity(){
         if (cardList.size == 0) newCard();
         updateCardPos()
     }
-    //TO NOTE add to end of list
-    //Option 1
-    //Save btn has two modes
-    //Save and Update
-    //On update mode it just adds the card to the cardList and updates the db
-    //On save mode it adds the card to the cardList and adds to the db
-    //To set the mode there will be an input in the function
-    //
-    //Option 2
-    //There are two buttons
-    //Update and save
-    //
-    //Option 3
-    // You have 1 btn that has two different states
-    // Update or Save
-    // (Could be done with an interface)
-    // On save state run different behaviour to update state
-    //AddCards
-    //Gets a blank template ready for you to enter stuff into
-    //On Save
-    //It saves the data from the blank template into a card
-    //Adds them to a card list
-    //Saves them to a db
-    //If the card is being updated
-    //Do not add to card list
-    //Update card inside db
-    //make a system to adc cards
-    //worry about the rest latter
 
     private fun toggleEdit(t: Boolean): Boolean{
-        //TODO Maybe make grey or display a fresh card to edit
         editMode(t)
         return !t
     }
-
 
     private fun editMode(edit: Boolean){
         showButtons(edit)
@@ -245,7 +209,7 @@ class EditDeck(): AppCompatActivity(){
     }
 
     private fun posInc(pos : Int): Int {
-        if (pos+1 > cardList.size-1) return 0
+        if (pos+1 >= cardList.size-1) return 0
         return pos+1
     }
 
@@ -330,20 +294,30 @@ class EditDeck(): AppCompatActivity(){
         cardList.add(c)
         pos = cardList.size - 1
         updateCardPos()
+        lastCard()
     }
 
+
     private fun nextCard(pos : Int){
-        if (lastCard()) return
+        lastCard()
         //Set Main Card
         cardText.setText(cardList[pos].challenge)
         editType.setImageResource(getTypeImage(cardList[pos].cardType))
         //Set Child card
-        childText.setText(cardList[posInc(pos)].challenge)
-        childType.setImageResource(getTypeImage(cardList[posInc(pos)].cardType))
+        childText.setText(cardList[0].challenge)
+        childType.setImageResource(getTypeImage(cardList[0].cardType))
         updateCardPos()
     }
 
-    private fun lastCard(): Boolean{
+    private fun deleteCard(){
+        val c = cardList[pos]
+        cardList.remove(c)
+        GlobalScope.launch{
+            cardDao.delete(c)
+        }
+    }
+
+    private fun  lastCard(): Boolean{
         if(cardList.size == 1) {
             delBtn.visibility = View.INVISIBLE
             return true
