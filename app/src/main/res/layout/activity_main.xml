@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:gravity="center"
-    android:background="@drawable/standard"
     >
 
     <Button
@@ -18,13 +17,17 @@
         android:layout_marginStart="1dp"
         android:layout_marginTop="2dp"
         android:layout_marginBottom="-1dp"
-        android:background="?android:attr/selectableItemBackground"
         android:fontFamily="@font/fonts"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
         android:padding="25sp"
         android:text="Tap to start the game!"
         android:textColor="#FFFFFF"
         android:textSize="23sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:backgroundTint="@color/transperant"
+        app:elevation="0dp"
+        app:iconTint="@color/transperant" />
 
     <Button
         android:id="@+id/btnDeckSelection"
@@ -60,31 +63,13 @@
         android:textStyle="bold" />
 
     <ImageView
-        android:id="@+id/img_handicap"
+        android:id="@+id/img_type"
         android:layout_width="354sp"
         android:layout_height="104sp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20sp"
         android:visibility="invisible"
         app:srcCompat="@drawable/handicap_title" />
-
-    <ImageView
-        android:id="@+id/img_powerup"
-        android:layout_width="354sp"
-        android:layout_height="104sp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20sp"
-        android:visibility="invisible"
-        app:srcCompat="@drawable/powerup_title" />
-
-    <ImageView
-        android:id="@+id/img_law"
-        android:layout_width="354sp"
-        android:layout_height="104sp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20sp"
-        android:visibility="invisible"
-        app:srcCompat="@drawable/law2" />
 
 
 </RelativeLayout>

@@ -2,11 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/edit_deck"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/edit_deck"
-    android:background="@drawable/standard"
-    >
+    android:background="@drawable/standard">
 
 
     <androidx.cardview.widget.CardView
@@ -32,10 +31,50 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/childPos"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="20dp"
+                    android:text="0/X"
+                    android:textSize="20sp"
+                    app:fontFamily="sans-serif-black" />
+
+                <ImageView
+                    android:id="@+id/childType"
+                    android:layout_width="0sp"
+                    android:layout_height="75sp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="0dp"
+                    android:layout_weight="1" />
+
+                <FrameLayout
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/childBtn"
+                        android:layout_width="40sp"
+                        android:layout_height="40sp"
+                        android:layout_gravity="end"
+                        android:layout_margin="20sp"
+                        app:srcCompat="@drawable/edit_icon"
+                        app:tint="@color/black" />
+                </FrameLayout>
+
+            </LinearLayout>
+
             <EditText
                 android:id="@+id/editChild"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="400sp"
                 android:layout_marginHorizontal="25sp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/fonts"
@@ -45,37 +84,6 @@
                 android:textColorHint="#78909C"
                 android:textSize="20sp"
                 android:textStyle="bold" />
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal"
-                tools:visibility="visible">
-
-                <Button
-                    android:id="@+id/child_del"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="30dp"
-                    android:text="Delete"
-                    app:cornerRadius="99dp" />
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
-
-
-                <Button
-                    android:id="@+id/child_sv"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="30dp"
-                    android:text="save"
-                    app:cornerRadius="99dp" />
-            </LinearLayout>
 
 
         </LinearLayout>
@@ -109,19 +117,24 @@
                 android:layout_height="88dp"
                 android:orientation="horizontal">
 
-                <View
-                    android:id="@+id/view"
-                    android:layout_width="0sp"
+                <TextView
+                    android:id="@+id/cardPos"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_width="0dp"
+                    android:padding="20dp"
+                    android:layout_weight="1"
+                    android:text="0/X"
+                    android:textSize="20sp"
+                    app:fontFamily="sans-serif-black" />
 
                 <ImageView
-                    android:layout_height="wrap_content"
+                    android:id="@+id/editType"
                     android:layout_width="0sp"
+                    android:layout_height="75sp"
                     android:layout_gravity="center"
                     android:layout_marginBottom="0dp"
                     android:layout_weight="1"
-                    android:src="@drawable/powerup_title" />
+                    tools:srcCompat="@drawable/handicap_title" />
 
                 <FrameLayout
                     android:layout_width="0sp"
@@ -141,12 +154,12 @@
             </LinearLayout>
 
             <EditText
-                android:focusable="false"
                 android:id="@+id/editCard"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="400sp"
                 android:layout_marginHorizontal="25sp"
                 android:layout_marginTop="10dp"
+                android:focusable="false"
                 android:fontFamily="@font/fonts"
                 android:gravity="center"
                 android:paddingBottom="10dp"
@@ -156,61 +169,43 @@
                 android:textStyle="bold" />
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal"
-                tools:visibility="visible">
-
-                <Button
-                    android:id="@+id/del_card"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="30dp"
-                    android:text="Delete"
-                    android:textColor="#000000"
-                    app:backgroundTint="#F44336"
-                    app:cornerRadius="30sp" />
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
-
-
-                <Button
-                    android:id="@+id/sv_crd"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="30dp"
-                    android:text="save"
-                    app:backgroundTint="#4CAF50"
-                    app:cornerRadius="30sp" />
-            </LinearLayout>
-
-
         </LinearLayout>
+
     </androidx.cardview.widget.CardView>
 
-    <Button
-        android:id="@+id/btn_next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="56dp"
-        android:layout_marginBottom="28dp"
-        android:text="Next"
+    <ImageView
+        android:id="@+id/delBtn"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editCrd"
+        app:srcCompat="@drawable/cancel" />
 
-    <Button
-        android:id="@+id/btn_prev"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginBottom="28dp"
-        android:text="prev"
+    <ImageView
+        android:id="@+id/addBtn"
+        android:layout_width="75sp"
+        android:layout_height="75sp"
+        android:layout_marginBottom="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/svBtn"
+        app:layout_constraintStart_toEndOf="@+id/delBtn"
+        app:layout_constraintTop_toBottomOf="@+id/childCrd"
+        app:srcCompat="@drawable/add" />
+
+    <ImageView
+        android:id="@+id/svBtn"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/childCrd"
+        app:srcCompat="@drawable/save" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

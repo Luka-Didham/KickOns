@@ -2,6 +2,7 @@ package com.example.KickOns
 
 import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
+import android.media.Image
 import android.os.Build
 import android.os.Bundle
 import android.view.GestureDetector
@@ -10,6 +11,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
@@ -21,6 +23,7 @@ import androidx.dynamicanimation.animation.SpringForce
 import androidx.dynamicanimation.animation.SpringForce.*
 import com.example.KickOns.databinding.ActivityDeckEditBinding
 import kotlinx.coroutines.*
+import org.w3c.dom.Text
 import java.lang.Thread.sleep
 import kotlin.math.abs
 import kotlin.math.log
@@ -31,25 +34,34 @@ class EditDeck(): AppCompatActivity(){
     private lateinit var db: CardDB
     private lateinit var cardDao: CardDAO
     private lateinit var gestureDetector: GestureDetector
+
+    //Card View Elements
     private lateinit var childText: EditText
     private lateinit var cardText: EditText
     private lateinit var editCrd: CardView
+    private lateinit var editType: ImageView
+    private lateinit var childType: ImageView
+    private lateinit var cardPos: TextView
+    private lateinit var childPos: TextView
 
-    private lateinit var del_card: Button
-    private lateinit var sv_crd: Button
-
+    //Buttons
+    private lateinit var delBtn: ImageView
+    private lateinit var svBtn: ImageView
     private lateinit var editButton: ImageView
+    private lateinit var addBtn: ImageView
 
-
+    //Views
     private lateinit var editDeck: View
     private lateinit var view: View
+
 
     @RequiresApi(Build.VERSION_CODES.M)
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstance: Bundle?) {
 
         super.onCreate(savedInstance)
-
+        //REMOVE WHEN DONE
+        cardList.clear()
         db = CardDB.getDatabase(this)
         cardDao = db.cardDAO()
 
@@ -62,15 +74,25 @@ class EditDeck(): AppCompatActivity(){
         editCrd = findViewById(R.id.editCrd)
         editDeck = findViewById(R.id.edit_deck)
 
-        //Buttons
-        val btn_next = findViewById<Button>(R.id.btn_next)
-        val btn_prev = findViewById<Button>(R.id.btn_prev)
-        del_card = findViewById(R.id.del_card)
-        sv_crd = findViewById(R.id.sv_crd)
-        editButton = findViewById(R.id.edtBtn)
+        editType = findViewById(R.id.editType)
+        childType = findViewById(R.id.childType)
 
-        del_card.visibility = View.INVISIBLE
-        sv_crd.visibility = View.INVISIBLE
+        cardPos = findViewById(R.id.cardPos)
+        childPos = findViewById(R.id.childPos)
+
+        //need to pass in deck_id
+
+        //Buttons
+        //val btn_next = findViewById<Button>(R.id.btn_next)
+       // val btn_prev = findViewById<Button>(R.id.btn_prev)
+
+        delBtn = findViewById(R.id.delBtn)
+        svBtn = findViewById(R.id.svBtn)
+        editButton = findViewById(R.id.edtBtn)
+        addBtn = findViewById(R.id.addBtn)
+
+        delBtn.visibility = View.INVISIBLE
+        svBtn.visibility = View.INVISIBLE
 
 
         //var
@@ -96,7 +118,7 @@ class EditDeck(): AppCompatActivity(){
                 //editCrd.pivotX = e1.rawX
                 editCrd.pivotY = (editCrd.height * 0.75).toFloat()
                 editCrd.rotation -= dX/10
-
+                if(cardList.size < 2) return true
                 if (editCrd.x < -400) removeCard(dX,dY)
                 return true
             }
@@ -117,69 +139,68 @@ class EditDeck(): AppCompatActivity(){
 
         //Get Cards for specified deck
         cardText = findViewById(R.id.editCard)
-
         childText = findViewById(R.id.editChild)
-        nextCard(pos);
+        //nextCard(pos);
 
-        btn_next.setOnClickListener {
-            pos = posInc(pos)
-            nextCard(pos)
 
-        }
-
-        btn_prev.setOnClickListener {
+        delBtn.setOnClickListener{
+            deleteCard()
             pos = posDec(pos)
             nextCard(pos)
-
         }
 
-        del_card.setOnClickListener {
-            GlobalScope.launch {
-                cardDao.delete(cardList[pos])
-                withContext(Dispatchers.Main){
-                    cardList.removeAt(pos)
-                    pos = posInc(pos);
-                    nextCard(pos)
-                }
-            }
+        svBtn.setOnClickListener{
+            val text = cardText.text.toString()
+            cardList[pos].challenge = text
+            addCard(cardList[pos])
+            nextCard(pos)
+            editMode(false)
         }
-
-        sv_crd.setOnClickListener {
-            cardList[pos].challenge = cardText.text.toString()
-            GlobalScope.launch {
-                cardDao.update(cardList[pos])
-
-                withContext(Dispatchers.Main) {
-                    t = toggleEdit(t)
-                }
-            }
-        }
-
+//        svBtn.setOnClickListener {
+//            cardList[pos].challenge = cardText.text.toString()
+//            GlobalScope.launch {
+//                cardDao.update(cardList[pos])
+//                withContext(Dispatchers.Main) {
+//                    t = toggleEdit(t)
+//                }
+//            }
+//        }
         editButton.setOnClickListener{
             t = toggleEdit(t)
         }
-    }
 
+        addBtn.setOnClickListener{
+            //Fresh Card
+            newCard()
+            pos = cardList.size -1
+        }
+        if (cardList.size == 0) newCard();
+        updateCardPos()
+    }
 
     private fun toggleEdit(t: Boolean): Boolean{
-        //TODO Maybe make grey or display a fresh card to edit
-
-        if(t) {
-            editMode(View.INVISIBLE,false)
-            return !t
-        }
-            editMode(View.VISIBLE,true)
+        editMode(t)
         return !t
-
     }
 
-    private fun editMode(vis: Int, focus: Boolean){
-        del_card.visibility = vis
-        sv_crd.visibility = vis
+    private fun editMode(edit: Boolean){
+        showButtons(edit)
+        focusText(edit)
+        swiped = edit
+        lastCard()
+    }
+
+
+    private fun focusText(focus : Boolean){
         cardText.isFocusableInTouchMode = focus
         cardText.isFocusable = focus
-        swiped = focus
-        lastCard()
+    }
+
+    private fun showButtons(show: Boolean){
+        val vis = if(show) View.VISIBLE
+        else View.INVISIBLE
+        svBtn.visibility = vis
+        delBtn.visibility = vis
     }
 
     private fun posDec(pos: Int) : Int {
@@ -188,7 +209,7 @@ class EditDeck(): AppCompatActivity(){
     }
 
     private fun posInc(pos : Int): Int {
-        if (pos+1 > cardList.size-1) return 0
+        if (pos+1 >= cardList.size-1) return 0
         return pos+1
     }
 
@@ -209,11 +230,6 @@ class EditDeck(): AppCompatActivity(){
                 replaceCard()
             }
         }
-    }
-
-    private fun sThresh(dX:Float, dY:Float): Boolean{
-        if (dX * dY > 5000) return true
-        return false
     }
 
     private fun replaceCard(){
@@ -256,20 +272,67 @@ class EditDeck(): AppCompatActivity(){
         }
     }
 
-    private fun lastCard(): Boolean{
+    private fun updateCardPos(){
+        val s = cardList.size
+        cardPos.text = "${pos+1} / $s"
+        childPos.text = "${posInc(pos)+1} / $s"
+    }
+
+    private fun addCard(c :CardItem){
+        GlobalScope.launch{
+            cardDao.addCard(c)
+        }
+    }
+
+    private fun newCard(){
+        //Display fresh card
+        //Set Main Card
+        cardText.setText("")
+        editType.setImageResource(0)
+        editMode(true)
+        val c = CardItem(null,0,"",1)
+        cardList.add(c)
+        pos = cardList.size - 1
+        updateCardPos()
+        lastCard()
+    }
+
+
+    private fun nextCard(pos : Int){
+        lastCard()
+        //Set Main Card
+        cardText.setText(cardList[pos].challenge)
+        editType.setImageResource(getTypeImage(cardList[pos].cardType))
+        //Set Child card
+        childText.setText(cardList[0].challenge)
+        childType.setImageResource(getTypeImage(cardList[0].cardType))
+        updateCardPos()
+    }
+
+    private fun deleteCard(){
+        val c = cardList[pos]
+        cardList.remove(c)
+        GlobalScope.launch{
+            cardDao.delete(c)
+        }
+    }
+
+    private fun  lastCard(): Boolean{
         if(cardList.size == 1) {
-            del_card.visibility = View.INVISIBLE
+            delBtn.visibility = View.INVISIBLE
             return true
         }
         return false
     }
 
-    private fun nextCard(pos : Int){
-        if (lastCard()) return
-        cardText.setText(cardList[pos].challenge)
-        childText.setText(cardList[posInc(pos)].challenge)
+    private fun getTypeImage(x: Int): Int {
+        when(x){
+            0 -> return 0
+            1 -> return R.drawable.powerup_title
+            2 -> return R.drawable.law_title
+            3 -> return R.drawable.handicap_title
+        }
+        return 0
     }
-
-
-
 }
+
