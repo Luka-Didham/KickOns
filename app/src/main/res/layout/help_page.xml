@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#FBD34C"
-    >
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FBD34C">
 
     <TextView
         android:id="@+id/tvWelcome"
@@ -23,74 +22,79 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/chango_regular"
-        android:text="What is KickOns?"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
+    <ScrollView
+        android:layout_width="408dp"
+        android:layout_height="654dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvWelcome"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.539">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="10sp"
-        android:fontFamily="@font/chango_regular"
-        android:scrollbars="vertical"
-        android:text="KickOns is a card-based party game app that is available for everyone to play. The game is designed to be as diverse as possible, therefore anyone from any background, age, gender etc can play! Test your knowledge from a range of different decks such as History and Geography! Or do a dare if you’re brave enough. You can even create your own personal decks and share it with friends! Get a question wrong or don’t wanna do a specific dare? Then you must take a penalty!"
-        android:textColor="@color/black"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/chango_regular"
-        android:text="How to Play"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ScrollView
-        android:layout_width="0sp"
-        android:layout_height="0dp"
-        android:layout_margin="10sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="1.0">
-
-        <TextView
-            android:id="@+id/textView6"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/chango_regular"
-            android:text="The aim of our game is to obtain the least amount of penalties. A set of cards make a deck, with each deck intended to encompass
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/chango_regular"
+                android:text="What is KickOns?"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvWelcome"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10sp"
+                android:fontFamily="@font/chango_regular"
+                android:text="KickOns is a card-based party game app that is available for everyone to play. The game is designed to be as diverse as possible, therefore anyone from any background, age, gender etc can play! Test your knowledge from a range of different decks such as History and Geography! Or do a dare if you’re brave enough. You can even create your own personal decks and share it with friends! Get a question wrong or don’t wanna do a specific dare? Then you must take a penalty!"
+                android:textColor="@color/black"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/chango_regular"
+                android:text="How to Play"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/chango_regular"
+                android:layout_margin="10sp"
+                android:text="The aim of our game is to obtain the least amount of penalties. A set of cards make a deck, with each deck intended to encompass
 a theme. There are 4 types of cards within a deck: Normal, Powerup, Law and Handicap.
 The Normal cards are common cards making up the majority of the deck that have questions, actions, or games. Failure to answer the questions or complete the challenges lands a player with penalties.
 The Handicap cards affect a single player. This is a negative persistent penalty which affects the player. Persists until the paired closing card comes several cards later.
@@ -98,44 +102,46 @@ The Powerup cards affect a single player. This is a positive persistent benefit 
 The Law cards affect all the players in the game. These cards change the paradigm of the game intended to encourage interaction between players.
 To play the game, simply click play, then on the bottom left hand corner, add in players names, once everyone's in, hit start!
 You will be shown a bunch of different decks to choose from, to play a default deck, simply tap on the deck!
-Otherwise to create a deck, tap on the create deck button, add the deck name and a description describing the nature of the deck
+Otherwise to create a deck, tap on the create deck button, add the deck name and a description describing the nature of the deck.
 Once thats done, save the deck and add cards! you can choose the card type you want to add by clicking the buttons located on the top left and right!
 Click save cards to save the cards to the deck, then select the deck and play!"
-            android:textColor="@color/black" />
+                android:textColor="@color/black" />
+        </LinearLayout>
     </ScrollView>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnGobacK"
         android:layout_width="66dp"
         android:layout_height="39dp"
-        android:background="#FBD34C"
-        android:text="Back"
-        android:textSize="13sp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
         android:layout_margin="5sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="28dp"
+        android:background="#FBD34C"
         android:fontFamily="@font/chango_regular"
-        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        android:text="Back"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tvWelcome"
         app:layout_constraintEnd_toEndOf="@+id/tvWelcome"
-        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintHorizontal_bias="0.046"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.296" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <!--    <Button-->
-<!--        android:id="@+id/btnOptions"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:background="@drawable/deckitembackground"-->
-<!--        android:fontFamily="@font/fonts"-->
-<!--        android:text="OPTIONS"-->
-<!--        android:textAlignment="center"-->
-<!--        android:textColor="#FBD34C"-->
-<!--        android:textSize="30dp"-->
-<!--        android:layout_marginTop="18dp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/btnPlay" />-->
+    <!--        android:id="@+id/btnOptions"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:background="@drawable/deckitembackground"-->
+    <!--        android:fontFamily="@font/fonts"-->
+    <!--        android:text="OPTIONS"-->
+    <!--        android:textAlignment="center"-->
+    <!--        android:textColor="#FBD34C"-->
+    <!--        android:textSize="30dp"-->
+    <!--        android:layout_marginTop="18dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/btnPlay" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
