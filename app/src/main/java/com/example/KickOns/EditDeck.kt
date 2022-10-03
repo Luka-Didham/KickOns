@@ -31,6 +31,8 @@ import kotlin.math.log
 class EditDeck(): AppCompatActivity(){
     private var swiped = false
     private var pos = 0
+    private var canCreate = true
+
     private lateinit var db: CardDB
     private lateinit var cardDao: CardDAO
     private lateinit var gestureDetector: GestureDetector
@@ -60,10 +62,11 @@ class EditDeck(): AppCompatActivity(){
     override fun onCreate(savedInstance: Bundle?) {
 
         super.onCreate(savedInstance)
-        //REMOVE WHEN DONE
-        cardList.clear()
         db = CardDB.getDatabase(this)
         cardDao = db.cardDAO()
+
+        //Intent
+        val deckId = intent.getIntExtra("id",0)
 
         //Position of card in deck
         val binding = ActivityDeckEditBinding.inflate(layoutInflater)
@@ -93,6 +96,8 @@ class EditDeck(): AppCompatActivity(){
 
         delBtn.visibility = View.INVISIBLE
         svBtn.visibility = View.INVISIBLE
+
+
 
 
         //var
@@ -146,35 +151,28 @@ class EditDeck(): AppCompatActivity(){
         delBtn.setOnClickListener{
             deleteCard()
             pos = posDec(pos)
-            nextCard(pos)
+            nextCard()
         }
 
         svBtn.setOnClickListener{
             val text = cardText.text.toString()
             cardList[pos].challenge = text
             addCard(cardList[pos])
-            nextCard(pos)
+            nextCard()
             editMode(false)
+            canCreate = true
         }
-//        svBtn.setOnClickListener {
-//            cardList[pos].challenge = cardText.text.toString()
-//            GlobalScope.launch {
-//                cardDao.update(cardList[pos])
-//                withContext(Dispatchers.Main) {
-//                    t = toggleEdit(t)
-//                }
-//            }
-//        }
+
         editButton.setOnClickListener{
             t = toggleEdit(t)
         }
 
         addBtn.setOnClickListener{
             //Fresh Card
-            newCard()
+            newCard(deckId)
             pos = cardList.size -1
         }
-        if (cardList.size == 0) newCard();
+        if (cardList.size == 0) newCard(deckId);
         updateCardPos()
     }
 
@@ -209,7 +207,7 @@ class EditDeck(): AppCompatActivity(){
     }
 
     private fun posInc(pos : Int): Int {
-        if (pos+1 >= cardList.size-1) return 0
+        if (pos+1 > cardList.size-1) return 0
         return pos+1
     }
 
@@ -239,7 +237,7 @@ class EditDeck(): AppCompatActivity(){
         resetCard()
         editCrd.visibility = View.VISIBLE
         pos = posInc(pos)
-        nextCard(pos)
+        nextCard()
         swiped = false
     }
 
@@ -284,13 +282,24 @@ class EditDeck(): AppCompatActivity(){
         }
     }
 
-    private fun newCard(){
-        //Display fresh card
-        //Set Main Card
+    private fun goToEnd(){
+        pos = cardList.size-1
+        nextCard()
+    }
+    private fun newCard(id: Int){
+        // Check that the previous new card has been saved before
+        // a new one may be created
+        if (!canCreate) {
+            goToEnd()
+            return
+        }
+
+        canCreate = false
+
         cardText.setText("")
         editType.setImageResource(0)
         editMode(true)
-        val c = CardItem(null,0,"",1)
+        val c = CardItem(null,0,"",id)
         cardList.add(c)
         pos = cardList.size - 1
         updateCardPos()
@@ -298,14 +307,14 @@ class EditDeck(): AppCompatActivity(){
     }
 
 
-    private fun nextCard(pos : Int){
+    private fun nextCard(){
         lastCard()
         //Set Main Card
         cardText.setText(cardList[pos].challenge)
         editType.setImageResource(getTypeImage(cardList[pos].cardType))
         //Set Child card
-        childText.setText(cardList[0].challenge)
-        childType.setImageResource(getTypeImage(cardList[0].cardType))
+        childText.setText(cardList[posInc(pos)].challenge)
+        childType.setImageResource(getTypeImage(cardList[posInc(pos)].cardType))
         updateCardPos()
     }
 
@@ -317,7 +326,7 @@ class EditDeck(): AppCompatActivity(){
         }
     }
 
-    private fun  lastCard(): Boolean{
+    private fun lastCard(): Boolean{
         if(cardList.size == 1) {
             delBtn.visibility = View.INVISIBLE
             return true

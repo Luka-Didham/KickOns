@@ -6,6 +6,7 @@ import android.provider.Settings
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.internal.EdgeToEdgeUtils
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
@@ -39,16 +40,26 @@ class DeckCreation() : AppCompatActivity() {
 
         btnSaveDeck.setOnClickListener {
             val d = DeckItem(null, deckName.text.toString())//, deckDesc.text.toString())
-            val intent = Intent(this, CardCreation()::class.java)
+            val intent = Intent(this, EditDeck()::class.java)
             deckList.add(d)
 
             //Saves and sends deck Id to card add screen
             GlobalScope.launch {
-                val deckId = async {   db.deckDAO().addDeck(d) }
-                intent.putExtra("deck_id", deckId.await())
+                val deckId = async { db.deckDAO().addDeck(d) }
+                val id = deckId.await().toInt()
+                getCards(id)
+                intent.putExtra("id",id)
                 startActivity(intent)
             }
         }
 
+    }
+
+    private suspend fun getCards(id: Int?) {
+        cardList.clear()
+        val cards = db.cardDAO().getByDeckId(id)
+        cards.forEach {
+            cardList.add(it)
+        }
     }
 }
