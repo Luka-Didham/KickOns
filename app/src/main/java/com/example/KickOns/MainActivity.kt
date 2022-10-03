@@ -8,6 +8,11 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
 import kotlin.text.Regex
+/**
+ *
+ *
+ *
+ */
 
 class MainActivity : AppCompatActivity() {
 
@@ -107,4 +112,4 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-}
+} // end class
