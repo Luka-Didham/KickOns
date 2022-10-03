@@ -1,0 +1,340 @@
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>plugins {\n    id 'com.android.application'\n    id 'org.jetbrains.kotlin.android'\n    id 'com.google.gms.google-services'\n    id 'com.google.firebase.firebase-perf'\n}\n\napply plugin: \"org.jetbrains.dokka\"\napply plugin: 'jacoco'\napply plugin: 'kotlin-android-extensions'\n\njacoco {\n    toolVersion = \"$jacocoVersion\"\n    reportsDirectory = file(\"$buildDir/reports/coverage\")\n}\n\ntasks.withType(Test) {\n    jacoco.includeNoLocationClasses = true\n    jacoco.excludes = ['jdk.internal.*']\n}\n\ntask jacocoCombinedTestReports(type: JacocoReport, dependsOn: ['testDebugUnitTest', 'createDebugCoverageReport']) {\n    group = \"Verification\"\n    description = \"Creates JaCoCo test coverage report for Unit and Instrumented Tests (combined) on the Debug build\"\n    reports {\n        xml.enabled = true\n        html.enabled = true\n    }\n\n    // Files to exclude:\n    // Generated classes, platform classes, etc.\n    def excludes = [\n            '**/R.class',\n            '**/R$*.class',\n            '**/BuildConfig.*',\n            '**/Manifest*.*',\n            '**/*Test*.*',\n            'android/**/*.*'\n    ]\n\n    // generated classes\n    classDirectories.from = fileTree(\n            dir: \"$buildDir/intermediates/classes/debug\",\n            excludes: excludes\n    ) + fileTree(\n            dir: \"$buildDir/tmp/kotlin-classes/debug\",\n            excludes: excludes\n    )\n    // sources\n    sourceDirectories.from = [\n            android.sourceSets.main.java.srcDirs,\n            \"src/main/kotlin\"\n    ]\n    // Output and existing data\n    // Combine Unit test and Instrumented test reports\n    executionData.from = fileTree(dir: \"$buildDir\", includes: [\n            // Unit tests coverage data\n            \"outputs/unit_test_code_coverage/debugUnitTest/testDebugUnitTest.exec\",\n            // Instrumented tests coverage data\n            \"outputs/code_coverage/debugAndroidTest/connected/*coverage.ec\"\n    ])\n}\n\nandroid {\n    compileSdk 33\n\n    defaultConfig {\n        applicationId \"com.example.KickOns\"\n        minSdk 23\n        targetSdk 34\n        versionCode 1\n        versionName \"1.0\"\n\n        testInstrumentationRunner \"androidx.test.runner.AndroidJUnitRunner\"\n    }\n\n    buildTypes {\n        debug {\n            testCoverageEnabled true // https://github.com/codecov/example-android - we need to add this extra line!!!\n        }\n        release {\n            minifyEnabled false\n            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'\n        }\n    }\n    compileOptions {\n        sourceCompatibility JavaVersion.VERSION_1_8\n        targetCompatibility JavaVersion.VERSION_1_8\n    }\n    kotlinOptions {\n        jvmTarget = '1.8'\n    }\n    buildFeatures {\n      viewBinding true\n    }\n\n    testOptions {\n        unitTests.all {\n            jacoco {\n                includeNoLocationClasses = true\n                excludes = ['jdk.internal.*']       //This line\n            }\n        }\n        unitTests.returnDefaultValues = true\n    }\n    buildToolsVersion '33.0.0'\n}\n\ndependencies {\n\n    implementation 'com.google.firebase:firebase-analytics-ktx:21.1.1'\n    implementation 'com.google.firebase:firebase-firestore-ktx:24.3.1'\n    implementation 'com.google.firebase:firebase-database-ktx:20.0.6'\n    implementation 'com.google.firebase:firebase-perf:20.1.1'\n    testImplementation 'org.junit.jupiter:junit-jupiter'\n    testImplementation 'org.junit.jupiter:junit-jupiter'\n    dokkaHtmlPlugin(\"org.jetbrains.dokka:kotlin-as-java-plugin:1.7.10\")\n\n    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'\n    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'\n\n    def dynamicanimation_version = '1.0.0'\n    implementation \"androidx.dynamicanimation:dynamicanimation:$dynamicanimation_version\"\n\n    apply plugin : \"kotlin-android\"\n    apply plugin : \"kotlin-android-extensions\"\n    apply plugin: 'kotlin-kapt'\n    implementation 'androidx.core:core-ktx:1.9.0'\n\n    implementation 'androidx.appcompat:appcompat:1.5.1'\n    implementation 'com.google.android.material:material:1.6.1'\n    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'\n    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.2'\n    implementation 'androidx.navigation:navigation-ui-ktx:2.5.2'\n    testImplementation 'junit:junit:4.13.2'\n    androidTestImplementation 'androidx.test.ext:junit:1.1.3'\n    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'\n\n    //room\n    implementation \"androidx.room:room-runtime:$room_version\"\n    implementation \"androidx.legacy:legacy-support-v4:1.0.0\"\n    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'\n    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'\n    implementation \"androidx.room:room-ktx:$room_version\"\n    kapt \"androidx.room:room-compiler:$room_version\"\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build.gradle b/app/build.gradle
+--- a/app/build.gradle	(revision 955acacc6ef27fa5e75043969ec950cd13e4a6ce)
++++ b/app/build.gradle	(date 1664003064551)
+@@ -2,7 +2,6 @@
+     id 'com.android.application'
+     id 'org.jetbrains.kotlin.android'
+     id 'com.google.gms.google-services'
+-    id 'com.google.firebase.firebase-perf'
+ }
+ 
+ apply plugin: "org.jetbrains.dokka"
+@@ -66,11 +65,10 @@
+ 
+     defaultConfig {
+         applicationId "com.example.KickOns"
+-        minSdk 23
++        minSdk 21
+         targetSdk 34
+         versionCode 1
+         versionName "1.0"
+-
+         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+     }
+ 
+@@ -111,13 +109,19 @@
+     implementation 'com.google.firebase:firebase-analytics-ktx:21.1.1'
+     implementation 'com.google.firebase:firebase-firestore-ktx:24.3.1'
+     implementation 'com.google.firebase:firebase-database-ktx:20.0.6'
+-    implementation 'com.google.firebase:firebase-perf:20.1.1'
+-    testImplementation 'org.junit.jupiter:junit-jupiter'
+-    testImplementation 'org.junit.jupiter:junit-jupiter'
+-    dokkaHtmlPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.7.10")
++    implementation 'androidx.test:core-ktx:1.4.0'
++
++    dokkaHtmlPlugin("org.jetbrains.dokka:kotli  n-as-java-plugin:1.7.10")
+ 
++    //Tests
++//    androidTestImplementation 'androidx.test:runner:1.1.0'
++//    androidTestUtil 'androidx.test:orchestrator:1.1.0'
++
+     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
++    testImplementation 'androidx.test.ext:junit-ktx:1.1.3'
++
++
+ 
+     def dynamicanimation_version = '1.0.0'
+     implementation "androidx.dynamicanimation:dynamicanimation:$dynamicanimation_version"
+Index: app/src/main/res/layout/add_player.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\n    xmlns:tools=\"http://schemas.android.com/tools\"\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\"\n    android:background=\"#FBD34C\">\n\n    <com.google.android.material.chip.ChipGroup\n        android:id=\"@+id/chipGroup\"\n        android:layout_width=\"match_parent\"\n        android:layout_height=\"wrap_content\"\n        android:layout_marginStart=\"10dp\"\n        android:layout_marginEnd=\"10dp\"\n        android:layout_marginBottom=\"5dp\"\n        app:layout_constraintBottom_toTopOf=\"@+id/btnAddPlayer\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintStart_toStartOf=\"parent\">\n\n        <!-- Chips can be declared here, or added dynamically. -->\n\n    </com.google.android.material.chip.ChipGroup>\n\n    <Button\n        android:id=\"@+id/btnAddPlayer\"\n        android:layout_width=\"wrap_content\"\n        android:layout_height=\"wrap_content\"\n        android:layout_margin=\"5sp\"\n        android:background=\"@drawable/deckitembackground\"\n        android:fontFamily=\"@font/fonts\"\n        android:text=\"Add\"\n        android:textAlignment=\"center\"\n        android:textColor=\"#E2F6DF13\"\n        android:textSize=\"15sp\"\n        app:layout_constraintBottom_toBottomOf=\"parent\"\n        app:layout_constraintStart_toEndOf=\"@+id/textInputEditText\" />\n\n\n    <TextView\n        android:id=\"@+id/tvChoosePlayersHeader\"\n        android:layout_width=\"match_parent\"\n        android:layout_height=\"wrap_content\"\n        android:background=\"#723CD3\"\n        android:fontFamily=\"@font/fonts\"\n        android:padding=\"15dp\"\n        android:text=\"ADD PLAYERS!\"\n        android:textAlignment=\"center\"\n        android:textColor=\"#FBD34C\"\n        android:textSize=\"35sp\"\n        android:textStyle=\"bold\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toTopOf=\"parent\" />\n\n\n    <Button\n        android:id=\"@+id/btnStartFromChoosePlayers\"\n        android:layout_width=\"wrap_content\"\n        android:layout_height=\"wrap_content\"\n        android:layout_margin=\"5sp\"\n        android:layout_marginStart=\"31dp\"\n        android:background=\"@drawable/deckitembackground\"\n        android:fontFamily=\"@font/fonts\"\n        android:text=\"START!\"\n        android:textAlignment=\"center\"\n        android:textColor=\"#E2F6DF13\"\n        android:textSize=\"15sp\"\n        app:layout_constraintBottom_toBottomOf=\"parent\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintStart_toEndOf=\"@+id/btnAddPlayer\" />\n\n    <com.google.android.material.textfield.TextInputEditText\n        android:id=\"@+id/textInputEditText\"\n        android:layout_width=\"168dp\"\n        android:layout_height=\"48dp\"\n        android:layout_margin=\"5sp\"\n        android:hint=\"Player Name\"\n        android:inputType=\"textPersonName\"\n        android:maxLength=\"7\"\n        android:singleLine=\"true\"\n        app:layout_constraintBottom_toBottomOf=\"parent\"\n        app:layout_constraintStart_toStartOf=\"parent\" />\n\n\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/add_player.xml b/app/src/main/res/layout/add_player.xml
+--- a/app/src/main/res/layout/add_player.xml	(revision 955acacc6ef27fa5e75043969ec950cd13e4a6ce)
++++ b/app/src/main/res/layout/add_player.xml	(date 1664003304818)
+@@ -33,7 +33,7 @@
+         android:textColor="#E2F6DF13"
+         android:textSize="15sp"
+         app:layout_constraintBottom_toBottomOf="parent"
+-        app:layout_constraintStart_toEndOf="@+id/textInputEditText" />
++        app:layout_constraintStart_toEndOf="@+id/editPlayerText" />
+ 
+ 
+     <TextView
+@@ -70,7 +70,7 @@
+         app:layout_constraintStart_toEndOf="@+id/btnAddPlayer" />
+ 
+     <com.google.android.material.textfield.TextInputEditText
+-        android:id="@+id/textInputEditText"
++        android:id="@+id/editPlayerText"
+         android:layout_width="168dp"
+         android:layout_height="48dp"
+         android:layout_margin="5sp"
+Index: gradle.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># Project-wide Gradle settings.\n# IDE (e.g. Android Studio) users:\n# Gradle settings configured through the IDE *will override*\n# any settings specified in this file.\n# For more details on how to configure your build environment visit\n# http://www.gradle.org/docs/current/userguide/build_environment.html\n# Specifies the JVM arguments used for the daemon process.\n# The setting is particularly useful for tweaking memory settings.\norg.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8\n# When configured, Gradle will run in incubating parallel mode.\n# This option should only be used with decoupled projects. More details, visit\n# http://www.gradle.org/docs/current/userguide/multi_project_builds.html#sec:decoupled_projects\n# org.gradle.parallel=true\n# AndroidX package structure to make it clearer which packages are bundled with the\n# Android operating system, and which are packaged with your app\"s APK\n# https://developer.android.com/topic/libraries/support-library/androidx-rn\nandroid.useAndroidX=true\n# Kotlin code style for this project: \"official\" or \"obsolete\":\nkotlin.code.style=official\n# Enables namespacing of each library's R class so that its R class includes only the\n# resources declared in the library itself and none from the library's dependencies,\n# thereby reducing the size of the R class for that library\nandroid.nonTransitiveRClass=true
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/gradle.properties b/gradle.properties
+--- a/gradle.properties	(revision 955acacc6ef27fa5e75043969ec950cd13e4a6ce)
++++ b/gradle.properties	(date 1664001974064)
+@@ -20,4 +20,6 @@
+ # Enables namespacing of each library's R class so that its R class includes only the
+ # resources declared in the library itself and none from the library's dependencies,
+ # thereby reducing the size of the R class for that library
+-android.nonTransitiveRClass=true
+\ No newline at end of file
++android.nonTransitiveRClass=true
++
++
+Index: app/src/main/java/com/example/KickOns/DeckDAO.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.KickOns\n\nimport androidx.room.*\n\n@Dao\ninterface DeckDAO {\n    @Insert(onConflict = OnConflictStrategy.IGNORE)\n    suspend fun addDeck(deck: DeckItem) : Long\n\n//    @Query(\"SELECT * FROM deck_table\")\n//    fun getAllWithCards(): List<DeckWithCards>\n\n    @Query(\"SELECT * FROM deck_table\")\n    fun getAll(): List<DeckItem>\n\n//    @Query(\"DELETE FROM deck_table where ID = :deck_id\")\n//    fun deleteById(deck_id: Int)\n\n\n    @Query(\"DELETE FROM deck_table WHERE ID = :deck_id\")\n    suspend fun deleteDeck(deck_id : Int?)\n\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/KickOns/DeckDAO.kt b/app/src/main/java/com/example/KickOns/DeckDAO.kt
+--- a/app/src/main/java/com/example/KickOns/DeckDAO.kt	(revision 955acacc6ef27fa5e75043969ec950cd13e4a6ce)
++++ b/app/src/main/java/com/example/KickOns/DeckDAO.kt	(date 1664001974068)
+@@ -13,6 +13,9 @@
+     @Query("SELECT * FROM deck_table")
+     fun getAll(): List<DeckItem>
+ 
++    @Query("SELECT * FROM DECK_TABLE WHERE ID =:deck_id")
++    suspend fun getById(deck_id: Int?): DeckItem
++
+ //    @Query("DELETE FROM deck_table where ID = :deck_id")
+ //    fun deleteById(deck_id: Int)
+ 
+Index: app/src/androidTest/java/com/example/KickOns/ExampleInstrumentedTest.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.KickOns\n\nimport android.provider.Settings\nimport androidx.room.Dao\nimport androidx.room.Room\nimport androidx.test.platform.app.InstrumentationRegistry\nimport androidx.test.ext.junit.runners.AndroidJUnit4\nimport kotlinx.coroutines.GlobalScope\nimport kotlinx.coroutines.launch\nimport org.junit.After\n\nimport org.junit.Test\nimport org.junit.runner.RunWith\n\nimport org.junit.Assert.*\nimport org.junit.Before\nimport java.io.IOException\n\n/**\n * Instrumented test, which will execute on an Android device.\n *\n * See [testing documentation](http://d.android.com/tools/testing).\n */\n@RunWith(AndroidJUnit4::class)\nclass ExampleInstrumentedTest {\n    private lateinit var cardDao: CardDAO\n    private lateinit var deckDao: DeckDAO\n    private lateinit var db: CardDB\n\n    @Before\n    fun createDB(){\n        val context = InstrumentationRegistry.getInstrumentation().targetContext\n        db = Room.inMemoryDatabaseBuilder(\n            context, CardDB::class.java).build()\n        deckDao = db.deckDAO()\n        cardDao = db.cardDAO()\n    }\n\n    @After\n    @Throws(IOException::class)\n    fun closeDb() {\n        db.close()\n    }\n\n\n//Local Deck DB TEST\n    @Test\n    @Throws(Exception::class)\n    fun writeAndReadDeckDB(){\n        val deck = DeckItem(-1,\"Test\")\n        GlobalScope.launch {\n            deckDao.addDeck(deck)\n            val get = deckDao.getAll()\n            assertTrue(get.size == 1)\n        }\n    }\n\n    @Test\n    fun writeAndReadCardDB(){\n        val card = CardItem(-1,2,\"test\",-1)\n        GlobalScope.launch {\n            cardDao.addCard(card)\n            val get = cardDao.getAll()\n            assertTrue(get.size == 1)\n        }\n    }\n\n    @Test\n    fun getCardsInDeck(){\n        val card2 = CardItem(-2,3,\"test2\",-1)\n        GlobalScope.launch {\n            cardDao.addCard(card2)\n            val cards = cardDao.getByDeckId(-1)\n            assertTrue(cards.size == 2)\n            assertTrue(cards[1] == card2)\n            assertFalse(cards[0] == card2)\n        }\n    }\n}\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/androidTest/java/com/example/KickOns/ExampleInstrumentedTest.kt b/app/src/androidTest/java/com/example/KickOns/ExampleInstrumentedTest.kt
+--- a/app/src/androidTest/java/com/example/KickOns/ExampleInstrumentedTest.kt	(revision 955acacc6ef27fa5e75043969ec950cd13e4a6ce)
++++ b/app/src/androidTest/java/com/example/KickOns/ExampleInstrumentedTest.kt	(date 1664003063681)
+@@ -21,6 +21,7 @@
+  *
+  * See [testing documentation](http://d.android.com/tools/testing).
+  */
++
+ @RunWith(AndroidJUnit4::class)
+ class ExampleInstrumentedTest {
+     private lateinit var cardDao: CardDAO
+Index: build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// Top-level build file where you can add configuration options common to all sub-projects/modules.\nbuildscript {\n    ext.jacocoVersion = '0.8.7'\n    ext.room_version = '2.4.3'\n    dependencies {\n        classpath \"org.jacoco:org.jacoco.core:$jacocoVersion\"\n        classpath 'com.google.gms:google-services:4.3.14'\n        classpath 'com.android.tools.build:gradle:3.4.0'\n        classpath 'com.google.firebase:perf-plugin:1.4.1'\n\n    }\n}\n\n\nplugins {\n    id 'com.android.application' version '7.2.2' apply false\n    id 'com.android.library' version '7.2.2' apply false\n    id 'org.jetbrains.kotlin.android' version '1.6.10' apply false\n    id 'org.jetbrains.dokka' version \"1.7.10\"\n}\n\n\ntask clean(type: Delete) {\n    delete rootProject.buildDir\n}\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/build.gradle b/build.gradle
+--- a/build.gradle	(revision 955acacc6ef27fa5e75043969ec950cd13e4a6ce)
++++ b/build.gradle	(date 1664001974074)
+@@ -6,7 +6,6 @@
+         classpath "org.jacoco:org.jacoco.core:$jacocoVersion"
+         classpath 'com.google.gms:google-services:4.3.14'
+         classpath 'com.android.tools.build:gradle:3.4.0'
+-        classpath 'com.google.firebase:perf-plugin:1.4.1'
+ 
+     }
+ }
+Index: app/src/test/java/com/example/KickOns/ExampleUnitTest.kt
+===================================================================
+diff --git a/app/src/test/java/com/example/KickOns/ExampleUnitTest.kt b/app/src/test/java/com/example/KickOns/ExampleUnitTest.kt
+deleted file mode 100644
+--- a/app/src/test/java/com/example/KickOns/ExampleUnitTest.kt	(revision 955acacc6ef27fa5e75043969ec950cd13e4a6ce)
++++ /dev/null	(revision 955acacc6ef27fa5e75043969ec950cd13e4a6ce)
+@@ -1,17 +0,0 @@
+-package com.example.KickOns
+-
+-import org.junit.Test
+-
+-import org.junit.Assert.*
+-
+-/**
+- * Example local unit test, which will execute on the development machine (host).
+- *
+- * See [testing documentation](http://d.android.com/tools/testing).
+- */
+-class ExampleUnitTest {
+-    @Test
+-    fun addition_isCorrect() {
+-        assertEquals(4, 2 + 2)
+-    }
+-}
+\ No newline at end of file
+Index: app/src/test/java/com/example/KickOns/CardItemTest.kt
+===================================================================
+diff --git a/app/src/test/java/com/example/KickOns/CardItemTest.kt b/app/src/test/java/com/example/KickOns/CardItemTest.kt
+deleted file mode 100644
+--- a/app/src/test/java/com/example/KickOns/CardItemTest.kt	(revision 955acacc6ef27fa5e75043969ec950cd13e4a6ce)
++++ /dev/null	(revision 955acacc6ef27fa5e75043969ec950cd13e4a6ce)
+@@ -1,58 +0,0 @@
+-package com.example.KickOns
+-
+-import org.junit.jupiter.api.Assertions.*
+-
+-internal class CardItemTest {
+-
+-    @org.junit.jupiter.api.Test
+-    fun getId() {
+-    }
+-
+-    @org.junit.jupiter.api.Test
+-    fun getCardType() {
+-    }
+-
+-    @org.junit.jupiter.api.Test
+-    fun getChallenge() {
+-    }
+-
+-    @org.junit.jupiter.api.Test
+-    fun setChallenge() {
+-    }
+-
+-    @org.junit.jupiter.api.Test
+-    fun getDeckId() {
+-    }
+-
+-    @org.junit.jupiter.api.Test
+-    operator fun component1() {
+-    }
+-
+-    @org.junit.jupiter.api.Test
+-    operator fun component2() {
+-    }
+-
+-    @org.junit.jupiter.api.Test
+-    operator fun component3() {
+-    }
+-
+-    @org.junit.jupiter.api.Test
+-    operator fun component4() {
+-    }
+-
+-    @org.junit.jupiter.api.Test
+-    fun copy() {
+-    }
+-
+-    @org.junit.jupiter.api.Test
+-    fun testToString() {
+-    }
+-
+-    @org.junit.jupiter.api.Test
+-    fun testHashCode() {
+-    }
+-
+-    @org.junit.jupiter.api.Test
+-    fun testEquals() {
+-    }
+-}
+\ No newline at end of file
+Index: app/src/main/java/com/example/KickOns/AddPlayer.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.KickOns\nimport android.annotation.SuppressLint\nimport android.content.Intent\nimport android.graphics.drawable.Drawable\nimport android.graphics.drawable.Icon\nimport android.media.Image\nimport android.os.Build\nimport android.os.Bundle\nimport android.util.LayoutDirection.RTL\nimport android.util.Log\nimport android.view.View\nimport android.widget.*\nimport androidx.annotation.RequiresApi\nimport androidx.appcompat.app.AppCompatActivity\nimport androidx.constraintlayout.widget.ConstraintLayout\nimport androidx.core.content.res.ResourcesCompat.getFont\nimport androidx.recyclerview.widget.GridLayoutManager\nimport androidx.recyclerview.widget.LinearLayoutManager\nimport androidx.recyclerview.widget.RecyclerView\nimport com.example.KickOns.databinding.AddPlayerBinding\nimport com.example.KickOns.databinding.AddPlayerItemBinding\nimport com.google.android.material.chip.Chip\nimport com.google.android.material.chip.ChipGroup\n\n\n/** A class that is able to add players to the game as\n * well as set restrictions on how many players can play and the minimum number of players needed.\n */\n\n\nclass AddPlayer : AppCompatActivity() {\n    private lateinit var cG: ChipGroup\n\n    override fun onCreate(savedInstanceState: Bundle?) {\n        super.onCreate(savedInstanceState)\n        setContentView(R.layout.add_player)\n        val binding = AddPlayerBinding.inflate(layoutInflater)\n        val view = binding.root\n        cG = findViewById(R.id.chipGroup)\n\n        var editText = findViewById<EditText>(R.id.textInputEditText)\n        var MAX_PLAYERS = 30\n        val btnAddPlayer = findViewById<Button>(R.id.btnAddPlayer)\n        val btnStartFromChoosePlayers = findViewById<Button>(R.id.btnStartFromChoosePlayers)\n\n        btnAddPlayer.setOnClickListener{\n            val text = editText.text.toString()\n            if(text == \"\"){\n                editText.hint = \"Please Add Name\"\n            }else{\n                if(playerList.size<MAX_PLAYERS) {\n                    editText.setText(\"\")\n                    val p = Player(text)\n                    playerList.add(p)\n                    addChip(p)\n\n                }else{\n                    editText.setText(\"\")\n                    editText.hint = \"Max 30 players\"\n                }\n            }\n        }\n\n        btnStartFromChoosePlayers.setOnClickListener{\n            if(playerList.size>1) {\n                val intent = Intent(this, DeckPicker()::class.java)\n                startActivity(intent)\n            }else{\n              editText.setText(\"\")\n              editText.hint = \"Minimum 2 players\"\n            }\n        }\n\n    refresh()\n    }\n\n\n\n    private fun onClick(v: View?, p: Player) {\n        playerList.remove(p)\n        cG.removeView(v)\n\n    }\n\n    //Creates a chip and adds it to the chip group\n    @RequiresApi(Build.VERSION_CODES.M)\n    private fun addChip(p: Player){\n        val c = Chip(this)\n        c.text = p.name.toString()\n        c.textSize = 14F\n        c.chipBackgroundColor = getColorStateList(R.color.color_accent)\n        c.setTextColor(getColor(R.color.color_primary))\n        c.chipIcon = getDrawable(R.drawable.cancel_button)\n        c.typeface = getFont(this,R.font.chango_regular)\n        c.layoutDirection = View.LAYOUT_DIRECTION_RTL\n        c.setOnClickListener{\n            onClick(c,p)\n        }\n        cG.addView(c)\n    }\n\n    private fun refresh(){\n        cG.removeAllViews()\n        playerList.forEach{\n            addChip(it)\n        }\n    }\n}\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/KickOns/AddPlayer.kt b/app/src/main/java/com/example/KickOns/AddPlayer.kt
+--- a/app/src/main/java/com/example/KickOns/AddPlayer.kt	(revision 955acacc6ef27fa5e75043969ec950cd13e4a6ce)
++++ b/app/src/main/java/com/example/KickOns/AddPlayer.kt	(date 1664003304811)
+@@ -1,24 +1,13 @@
+ package com.example.KickOns
+-import android.annotation.SuppressLint
+ import android.content.Intent
+-import android.graphics.drawable.Drawable
+-import android.graphics.drawable.Icon
+-import android.media.Image
+ import android.os.Build
+ import android.os.Bundle
+-import android.util.LayoutDirection.RTL
+-import android.util.Log
+ import android.view.View
+ import android.widget.*
+ import androidx.annotation.RequiresApi
+ import androidx.appcompat.app.AppCompatActivity
+-import androidx.constraintlayout.widget.ConstraintLayout
+ import androidx.core.content.res.ResourcesCompat.getFont
+-import androidx.recyclerview.widget.GridLayoutManager
+-import androidx.recyclerview.widget.LinearLayoutManager
+-import androidx.recyclerview.widget.RecyclerView
+ import com.example.KickOns.databinding.AddPlayerBinding
+-import com.example.KickOns.databinding.AddPlayerItemBinding
+ import com.google.android.material.chip.Chip
+ import com.google.android.material.chip.ChipGroup
+ 
+@@ -38,7 +27,7 @@
+         val view = binding.root
+         cG = findViewById(R.id.chipGroup)
+ 
+-        var editText = findViewById<EditText>(R.id.textInputEditText)
++        var editText = findViewById<EditText>(R.id.editPlayerText)
+         var MAX_PLAYERS = 30
+         val btnAddPlayer = findViewById<Button>(R.id.btnAddPlayer)
+         val btnStartFromChoosePlayers = findViewById<Button>(R.id.btnStartFromChoosePlayers)
+Index: app/src/androidTest/java/com/example/KickOns/ExampleUnitTest.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/androidTest/java/com/example/KickOns/ExampleUnitTest.kt b/app/src/androidTest/java/com/example/KickOns/ExampleUnitTest.kt
+new file mode 100644
+--- /dev/null	(date 1664003588828)
++++ b/app/src/androidTest/java/com/example/KickOns/ExampleUnitTest.kt	(date 1664003588828)
+@@ -0,0 +1,36 @@
++package com.example.KickOns
++
++import androidx.test.core.app.launchActivity
++import androidx.test.espresso.Espresso.onView
++import androidx.test.espresso.action.ViewActions.click
++import androidx.test.espresso.action.ViewActions.typeText
++import androidx.test.espresso.matcher.ViewMatchers.withId
++import androidx.test.ext.junit.runners.AndroidJUnit4
++import org.junit.Test
++
++import org.junit.Assert.*
++import org.junit.runner.RunWith
++
++/**
++ * Example local unit test, which will execute on the development machine (host).
++ *
++ * See [testing documentation](http://d.android.com/tools/testing).
++ */
++
++@RunWith(AndroidJUnit4::class)
++class ExampleUnitTest {
++
++    @Test
++    fun testAddPlayer() {
++        val text = "Test"
++        launchActivity<AddPlayer>().use {
++            val playerText = onView(withId(R.id.editPlayerText))
++            playerText.perform(click())
++            playerText.perform(typeText(text))
++            onView(withId(R.id.btnAddPlayer)).perform(click())
++            assertTrue(playerList.size == 1)
++            assertFalse(playerList[0].name == text)
++        }
++        assertTrue(text == text)
++    }
++}
+\ No newline at end of file
