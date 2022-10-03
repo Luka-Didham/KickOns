@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.KickOns">
+    package="com.cosc345.kickons">
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application
         android:allowBackup="true"
@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ColorChanging">
         <activity
-            android:name="com.example.KickOns.SplashScreenActivity"
+            android:name="com.cosc345.kickons.SplashScreenActivity"
             android:theme="@style/Theme.ColorChanging"
             android:exported="true">
 
@@ -21,29 +21,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.KickOns.MainActivity"
+            android:name="com.cosc345.kickons.MainActivity"
             android:exported="true">
         </activity>
         <activity
-            android:name="com.example.KickOns.OnlineDeckPicker"
+            android:name="com.cosc345.kickons.OnlineDeckPicker"
             android:exported="true">
-        </activity>
-
-
-        <activity
-            android:name="com.example.KickOns.CardCreation"
-            android:exported="true">
-
-            <intent-filter>
-                <action android:name="android.intent.action.EDIT" />
-
-                <category android:name="android.intent.category.ALTERNATIVE" />
-            </intent-filter>
         </activity>
 
 
         <activity
-            android:name="com.example.KickOns.DeckCreation"
+            android:name="com.cosc345.kickons.CardCreation"
             android:exported="true">
 
             <intent-filter>
@@ -53,8 +41,9 @@
             </intent-filter>
         </activity>
 
+
         <activity
-            android:name="com.example.KickOns.EditDeck"
+            android:name="com.cosc345.kickons.DeckCreation"
             android:exported="true">
 
             <intent-filter>
@@ -65,7 +54,7 @@
         </activity>
 
         <activity
-            android:name="com.example.KickOns.DeckPicker"
+            android:name="com.cosc345.kickons.EditDeck"
             android:exported="true">
 
             <intent-filter>
@@ -76,12 +65,7 @@
         </activity>
 
         <activity
-            android:name="com.example.KickOns.DeckCards"
-            android:exported="true">
-        </activity>
-
-        <activity
-            android:name="com.example.KickOns.AddPlayer"
+            android:name="com.cosc345.kickons.DeckPicker"
             android:exported="true">
 
             <intent-filter>
@@ -92,7 +76,12 @@
         </activity>
 
         <activity
-            android:name="com.example.KickOns.WelcomePage"
+            android:name="com.cosc345.kickons.DeckCards"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name="com.cosc345.kickons.AddPlayer"
             android:exported="true">
 
             <intent-filter>
@@ -103,7 +92,18 @@
         </activity>
 
         <activity
-            android:name="com.example.KickOns.HelpPage"
+            android:name="com.cosc345.kickons.WelcomePage"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.EDIT" />
+
+                <category android:name="android.intent.category.ALTERNATIVE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.cosc345.kickons.HelpPage"
             android:exported="true">
 
             <intent-filter>
