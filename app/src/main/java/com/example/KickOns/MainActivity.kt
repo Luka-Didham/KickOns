@@ -9,11 +9,10 @@ import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
 import kotlin.text.Regex
 /**
- *
+ * This MainActivity class is
  *
  *
  */
-
 class MainActivity : AppCompatActivity() {
 
     private lateinit var db : CardDB
@@ -52,11 +51,13 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        // button to select and add players
         btnPlayerSelection.setOnClickListener {
             val intent = Intent(this, AddPlayer()::class.java)
             startActivity(intent)
         }
 
+        // button to select the decks
         btnDeckSelection.setOnClickListener {
             val intent = Intent(this, DeckPicker()::class.java)
             startActivity(intent)
