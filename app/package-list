@@ -89,17 +89,24 @@ $dokka.location:com.example.KickOns/DeckPicker///PointingToDeclaration/app/com.
 $dokka.location:com.example.KickOns/DeckPicker/DeckPicker/#/PointingToDeclaration/app/com.example.KickOns/-deck-picker/-deck-picker.html
 $dokka.location:com.example.KickOns/DeckPicker/delete/#com.example.KickOns.DeckItem#kotlin.Int/PointingToDeclaration/app/com.example.KickOns/-deck-picker/delete.html
 $dokka.location:com.example.KickOns/DeckPicker/edit/#com.example.KickOns.DeckItem/PointingToDeclaration/app/com.example.KickOns/-deck-picker/edit.html
+$dokka.location:com.example.KickOns/DeckPicker/getDecks/#com.example.KickOns.FirebaseCallback/PointingToDeclaration/app/com.example.KickOns/-deck-picker/get-decks.html
 $dokka.location:com.example.KickOns/DeckPicker/onClick/#com.example.KickOns.DeckItem/PointingToDeclaration/app/com.example.KickOns/-deck-picker/on-click.html
 $dokka.location:com.example.KickOns/DeckViewHolder///PointingToDeclaration/app/com.example.KickOns/-deck-view-holder/index.html
 $dokka.location:com.example.KickOns/DeckViewHolder/DeckViewHolder/#[Error type: Unresolved type for DeckItemBinding]#com.example.KickOns.DeckClickListener/PointingToDeclaration/app/com.example.KickOns/-deck-view-holder/-deck-view-holder.html
 $dokka.location:com.example.KickOns/DeckViewHolder/bindDeck/#com.example.KickOns.DeckItem/PointingToDeclaration/app/com.example.KickOns/-deck-view-holder/bind-deck.html
 $dokka.location:com.example.KickOns/EditDeck///PointingToDeclaration/app/com.example.KickOns/-edit-deck/index.html
 $dokka.location:com.example.KickOns/EditDeck/EditDeck/#/PointingToDeclaration/app/com.example.KickOns/-edit-deck/-edit-deck.html
+$dokka.location:com.example.KickOns/FirebaseCallback///PointingToDeclaration/app/com.example.KickOns/-firebase-callback/index.html
+$dokka.location:com.example.KickOns/FirebaseCallback/onResponse/#kotlin.collections.MutableList[com.example.KickOns.DeckItem]/PointingToDeclaration/app/com.example.KickOns/-firebase-callback/on-response.html
 $dokka.location:com.example.KickOns/HelpPage///PointingToDeclaration/app/com.example.KickOns/-help-page/index.html
 $dokka.location:com.example.KickOns/HelpPage/HelpPage/#/PointingToDeclaration/app/com.example.KickOns/-help-page/-help-page.html
 $dokka.location:com.example.KickOns/MainActivity///PointingToDeclaration/app/com.example.KickOns/-main-activity/index.html
 $dokka.location:com.example.KickOns/MainActivity/MainActivity/#/PointingToDeclaration/app/com.example.KickOns/-main-activity/-main-activity.html
 $dokka.location:com.example.KickOns/MainActivity/randomPlayer/#kotlin.String/PointingToDeclaration/app/com.example.KickOns/-main-activity/random-player.html
+$dokka.location:com.example.KickOns/OnlineDeckPicker///PointingToDeclaration/app/com.example.KickOns/-online-deck-picker/index.html
+$dokka.location:com.example.KickOns/OnlineDeckPicker/OnlineDeckPicker/#/PointingToDeclaration/app/com.example.KickOns/-online-deck-picker/-online-deck-picker.html
+$dokka.location:com.example.KickOns/OnlineDeckPicker/getDb/#/PointingToDeclaration/app/com.example.KickOns/-online-deck-picker/get-db.html
+$dokka.location:com.example.KickOns/OnlineDeckPicker/getDecks/#com.example.KickOns.FirebaseCallback/PointingToDeclaration/app/com.example.KickOns/-online-deck-picker/get-decks.html
 $dokka.location:com.example.KickOns/Player///PointingToDeclaration/app/com.example.KickOns/-player/index.html
 $dokka.location:com.example.KickOns/Player/Player/#kotlin.String?/PointingToDeclaration/app/com.example.KickOns/-player/-player.html
 $dokka.location:com.example.KickOns/Player/getName/#/PointingToDeclaration/app/com.example.KickOns/-player/get-name.html
