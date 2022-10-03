@@ -14,10 +14,10 @@ import kotlinx.coroutines.launch
  */
 class PopulateDecks(ctx: Context) {
   val db = CardDB.getDatabase(ctx)
-  private val deckDao = db.deckDAO()
+  val deckDao = db.deckDAO()
   val cardDao = db.cardDAO()
 
-  private val d = DeckItem(1,"Starter Deck")
+  val d = DeckItem(1,"Starter Deck")
 
   //val d = DeckItem(1,"NSFW Starter Deck")
   //Cards for the deck
