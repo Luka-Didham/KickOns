@@ -16,8 +16,8 @@ import com.google.firebase.ktx.Firebase
 import java.util.*
 
 /**
- * The Screen that is displayed immediately after the splash screen,
- * shows the buttons to start the game, and help.
+ * This screen is displayed immediately after the splash screen,
+ * shows the buttons to start the game, and also a help button.
  *
  */
 class WelcomePage : AppCompatActivity() {
@@ -62,11 +62,13 @@ class WelcomePage : AppCompatActivity() {
         PopulateDecks(applicationContext).clearDeck()
         PopulateDecks(applicationContext).insert()
 
+      // when the player clicks on the the play button it goes to the AddPlayer class
         btnPlay.setOnClickListener {
             val intent = Intent(this, AddPlayer::class.java)
             startActivity(intent)
         }
 
+        // when the player clicks on the the help button it goes to the help page class
       btnHelp.setOnClickListener {
           val intent = Intent(this, HelpPage::class.java)
        startActivity(intent)
@@ -74,4 +76,4 @@ class WelcomePage : AppCompatActivity() {
 
     }
 
-}
+} // end class
