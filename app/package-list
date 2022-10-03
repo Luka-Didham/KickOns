@@ -76,7 +76,7 @@ $dokka.location:com.example.KickOns/DeckCreation///PointingToDeclaration/app/co
 $dokka.location:com.example.KickOns/DeckCreation/DeckCreation/#/PointingToDeclaration/app/com.example.KickOns/-deck-creation/-deck-creation.html
 $dokka.location:com.example.KickOns/DeckDAO///PointingToDeclaration/app/com.example.KickOns/-deck-d-a-o/index.html
 $dokka.location:com.example.KickOns/DeckDAO/addDeck/#com.example.KickOns.DeckItem/PointingToDeclaration/app/com.example.KickOns/-deck-d-a-o/add-deck.html
-$dokka.location:com.example.KickOns/DeckDAO/deleteDeck/#kotlin.Int?/PointingToDeclaration/app/com.example.KickOns/-deck-d-a-o/delete-deck.html
+$dokka.location:com.example.KickOns/DeckDAO/delete/#com.example.KickOns.DeckItem/PointingToDeclaration/app/com.example.KickOns/-deck-d-a-o/delete.html
 $dokka.location:com.example.KickOns/DeckDAO/getAll/#/PointingToDeclaration/app/com.example.KickOns/-deck-d-a-o/get-all.html
 $dokka.location:com.example.KickOns/DeckItem///PointingToDeclaration/app/com.example.KickOns/-deck-item/index.html
 $dokka.location:com.example.KickOns/DeckItem/DeckItem/#kotlin.Int?#kotlin.String/PointingToDeclaration/app/com.example.KickOns/-deck-item/-deck-item.html
