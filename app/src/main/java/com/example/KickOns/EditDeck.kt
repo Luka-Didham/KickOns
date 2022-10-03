@@ -41,6 +41,7 @@ class EditDeck(): AppCompatActivity(){
     private lateinit var childText: EditText
     private lateinit var cardText: EditText
     private lateinit var editCrd: CardView
+    private lateinit var childCrd: CardView
     private lateinit var editType: ImageView
     private lateinit var childType: ImageView
     private lateinit var cardPos: TextView
@@ -74,6 +75,7 @@ class EditDeck(): AppCompatActivity(){
         setContentView(R.layout.activity_deck_edit)
 
         //Elements
+        childCrd = findViewById(R.id.childCrd)
         editCrd = findViewById(R.id.editCrd)
         editDeck = findViewById(R.id.edit_deck)
 
@@ -88,6 +90,8 @@ class EditDeck(): AppCompatActivity(){
         //Buttons
         //val btn_next = findViewById<Button>(R.id.btn_next)
        // val btn_prev = findViewById<Button>(R.id.btn_prev)
+        val btnDone = findViewById<Button>(R.id.btnDone)
+        val btnExit = findViewById<Button>(R.id.btnExitEdit)
 
         delBtn = findViewById(R.id.delBtn)
         svBtn = findViewById(R.id.svBtn)
@@ -147,6 +151,9 @@ class EditDeck(): AppCompatActivity(){
         childText = findViewById(R.id.editChild)
         //nextCard(pos);
 
+        btnDone.setOnClickListener {
+
+        }
 
         delBtn.setOnClickListener{
             deleteCard()
@@ -239,11 +246,14 @@ class EditDeck(): AppCompatActivity(){
         pos = posInc(pos)
         nextCard()
         swiped = false
+        snapCard()
     }
 
     private fun resetCard(){
-        editCrd.x = (editDeck.width/2 - editCrd.width/2).toFloat()
-        editCrd.y = (editDeck.height/2 - editCrd.height/2-100).toFloat()
+        editCrd.x = childCrd.x
+        editCrd.y = childCrd.y
+//        editCrd.x = (editDeck.width/2 - editCrd.width/2).toFloat()
+//        editCrd.y = (editDeck.height/2 - editCrd.height/2).toFloat()
         editCrd.rotation = 0F
     }
     private fun snapCard(){
