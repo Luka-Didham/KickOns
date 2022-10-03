@@ -2,6 +2,7 @@ package com.example.KickOns
 
 import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.media.Image
 import android.os.Build
 import android.os.Bundle
@@ -151,8 +152,10 @@ class EditDeck(): AppCompatActivity(){
         childText = findViewById(R.id.editChild)
         //nextCard(pos);
 
+        //Done button
         btnDone.setOnClickListener {
-
+            val intent = Intent(this, DeckPicker::class.java)
+            startActivity(intent)
         }
 
         delBtn.setOnClickListener{

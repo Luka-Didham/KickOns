@@ -66,7 +66,7 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener {
         deckList.remove(deck)
         binding.recyclerView.adapter?.notifyItemRemoved(pos)
         GlobalScope.launch {
-            deckDao.deleteDeck(deck.id)
+            deckDao.delete(deck)
         }
     }
 
