@@ -15,6 +15,8 @@ class DeckViewHolder(
         fun bindDeck(deck: DeckItem){
             deckCell.deckTitle.text = deck.name
 
+            //TODO(Add deck subtitle)
+
             deckCell.editBtn.setOnClickListener{
                 clickListener.edit(deck)
             }

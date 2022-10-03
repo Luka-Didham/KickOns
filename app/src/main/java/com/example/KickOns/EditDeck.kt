@@ -48,11 +48,14 @@ class EditDeck(): AppCompatActivity(){
     private lateinit var cardPos: TextView
     private lateinit var childPos: TextView
 
+
     //Buttons
     private lateinit var delBtn: ImageView
     private lateinit var svBtn: ImageView
     private lateinit var editButton: ImageView
     private lateinit var addBtn: ImageView
+    private lateinit var btnPrev: ImageView
+    private lateinit var btnNext: ImageView
 
     //Views
     private lateinit var editDeck: View
@@ -93,7 +96,8 @@ class EditDeck(): AppCompatActivity(){
        // val btn_prev = findViewById<Button>(R.id.btn_prev)
         val btnDone = findViewById<Button>(R.id.btnDone)
         val btnExit = findViewById<Button>(R.id.btnExitEdit)
-
+        btnPrev = findViewById(R.id.btnPrev)
+        btnNext = findViewById(R.id.btnNext)
         delBtn = findViewById(R.id.delBtn)
         svBtn = findViewById(R.id.svBtn)
         editButton = findViewById(R.id.edtBtn)
@@ -158,10 +162,21 @@ class EditDeck(): AppCompatActivity(){
             startActivity(intent)
         }
 
+        btnNext.setOnClickListener{
+            pos = posInc(pos)
+            nextCard()
+        }
+
+        btnPrev.setOnClickListener{
+            pos = posDec(pos)
+            nextCard()
+        }
+
         delBtn.setOnClickListener{
             deleteCard()
             pos = posDec(pos)
             nextCard()
+            canCreate = true
         }
 
         svBtn.setOnClickListener{
@@ -183,7 +198,9 @@ class EditDeck(): AppCompatActivity(){
             pos = cardList.size -1
         }
         if (cardList.size == 0) newCard(deckId);
+        nextCard()
         updateCardPos()
+        t = toggleEdit(t)
     }
 
     private fun toggleEdit(t: Boolean): Boolean{
@@ -192,7 +209,8 @@ class EditDeck(): AppCompatActivity(){
     }
 
     private fun editMode(edit: Boolean){
-        showButtons(edit)
+        showDirButtons(edit)
+        showEditButtons(edit)
         focusText(edit)
         swiped = edit
         lastCard()
@@ -204,11 +222,19 @@ class EditDeck(): AppCompatActivity(){
         cardText.isFocusable = focus
     }
 
-    private fun showButtons(show: Boolean){
+    private fun showEditButtons(show: Boolean){
         val vis = if(show) View.VISIBLE
         else View.INVISIBLE
         svBtn.visibility = vis
         delBtn.visibility = vis
+
+    }
+
+    private fun showDirButtons(show: Boolean){
+        val vis = if(!show) View.VISIBLE
+        else View.INVISIBLE
+        btnPrev.visibility = vis
+        btnNext.visibility = vis
     }
 
     private fun posDec(pos: Int) : Int {
@@ -302,6 +328,7 @@ class EditDeck(): AppCompatActivity(){
     private fun newCard(id: Int){
         // Check that the previous new card has been saved before
         // a new one may be created
+        //TODO This is super messy find a better fix
         if (!canCreate) {
             goToEnd()
             return
@@ -351,7 +378,7 @@ class EditDeck(): AppCompatActivity(){
         when(x){
             0 -> return 0
             1 -> return R.drawable.powerup_title
-            2 -> return R.drawable.law_title
+            2 -> return R.drawable.law2
             3 -> return R.drawable.handicap_title
         }
         return 0

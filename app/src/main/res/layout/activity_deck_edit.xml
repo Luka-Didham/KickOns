@@ -67,6 +67,7 @@
                         android:layout_margin="20sp"
                         app:srcCompat="@drawable/edit_icon"
                         app:tint="@color/black" />
+
                 </FrameLayout>
 
             </LinearLayout>
@@ -141,14 +142,19 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1">
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/edtBtn"
                         android:layout_width="40sp"
                         android:layout_height="40sp"
                         android:layout_gravity="end"
                         android:layout_margin="20sp"
+                        android:background="@drawable/btn_background"
+                        android:padding="10sp"
+                        android:radius="10sp"
+                        android:scaleType="fitCenter"
                         app:srcCompat="@drawable/edit_icon"
-                        app:tint="@color/black" />
+                        app:tint="@color/color_primary" />
+
                 </FrameLayout>
 
             </LinearLayout>
@@ -162,6 +168,7 @@
                 android:focusable="false"
                 android:fontFamily="@font/fonts"
                 android:gravity="center"
+                android:hint="\@Player1, howl at the moon 3 times with \@player2 or take a penalty"
                 android:paddingBottom="10dp"
                 android:textColor="@color/black"
                 android:textColorHint="#78909C"
@@ -238,5 +245,26 @@
         app:layout_constraintBottom_toTopOf="@+id/childCrd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnDone" />
+
+    <ImageView
+        android:id="@+id/btnPrev"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/btn_prev" />
+
+    <ImageView
+        android:id="@+id/btnNext"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="30dp"
+        android:rotationY="180"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/btn_prev" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
