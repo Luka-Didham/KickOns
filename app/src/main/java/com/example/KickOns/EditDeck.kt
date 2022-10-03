@@ -48,11 +48,14 @@ class EditDeck(): AppCompatActivity(){
     private lateinit var cardPos: TextView
     private lateinit var childPos: TextView
 
+
     //Buttons
     private lateinit var delBtn: ImageView
     private lateinit var svBtn: ImageView
     private lateinit var editButton: ImageView
     private lateinit var addBtn: ImageView
+    private lateinit var btnPrev: ImageView
+    private lateinit var btnNext: ImageView
 
     //Views
     private lateinit var editDeck: View
@@ -93,7 +96,8 @@ class EditDeck(): AppCompatActivity(){
        // val btn_prev = findViewById<Button>(R.id.btn_prev)
         val btnDone = findViewById<Button>(R.id.btnDone)
         val btnExit = findViewById<Button>(R.id.btnExitEdit)
-
+        btnPrev = findViewById(R.id.btnPrev)
+        btnNext = findViewById(R.id.btnNext)
         delBtn = findViewById(R.id.delBtn)
         svBtn = findViewById(R.id.svBtn)
         editButton = findViewById(R.id.edtBtn)
@@ -158,6 +162,16 @@ class EditDeck(): AppCompatActivity(){
             startActivity(intent)
         }
 
+        btnNext.setOnClickListener{
+            pos = posInc(pos)
+            nextCard()
+        }
+
+        btnPrev.setOnClickListener{
+            pos = posDec(pos)
+            nextCard()
+        }
+
         delBtn.setOnClickListener{
             deleteCard()
             pos = posDec(pos)
@@ -185,6 +199,7 @@ class EditDeck(): AppCompatActivity(){
         if (cardList.size == 0) newCard(deckId);
         nextCard()
         updateCardPos()
+        t = toggleEdit(t)
     }
 
     private fun toggleEdit(t: Boolean): Boolean{
@@ -193,7 +208,8 @@ class EditDeck(): AppCompatActivity(){
     }
 
     private fun editMode(edit: Boolean){
-        showButtons(edit)
+        showDirButtons(edit)
+        showEditButtons(edit)
         focusText(edit)
         swiped = edit
         lastCard()
@@ -205,11 +221,19 @@ class EditDeck(): AppCompatActivity(){
         cardText.isFocusable = focus
     }
 
-    private fun showButtons(show: Boolean){
+    private fun showEditButtons(show: Boolean){
         val vis = if(show) View.VISIBLE
         else View.INVISIBLE
         svBtn.visibility = vis
         delBtn.visibility = vis
+
+    }
+
+    private fun showDirButtons(show: Boolean){
+        val vis = if(!show) View.VISIBLE
+        else View.INVISIBLE
+        btnPrev.visibility = vis
+        btnNext.visibility = vis
     }
 
     private fun posDec(pos: Int) : Int {
