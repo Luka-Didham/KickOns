@@ -1,24 +1,10 @@
 package com.example.KickOns
-import android.annotation.SuppressLint
 import android.content.Intent
-import android.graphics.drawable.Drawable
-import android.graphics.drawable.Icon
-import android.media.Image
-import android.os.Build
 import android.os.Bundle
-import android.util.LayoutDirection.RTL
-import android.util.Log
 import android.view.View
 import android.widget.*
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.res.ResourcesCompat.getFont
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.KickOns.databinding.AddPlayerBinding
-import com.example.KickOns.databinding.AddPlayerItemBinding
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 
@@ -26,19 +12,16 @@ import com.google.android.material.chip.ChipGroup
 /** A class that is able to add players to the game as
  * well as set restrictions on how many players can play and the minimum number of players needed.
  */
-
-
 class AddPlayer : AppCompatActivity() {
     private lateinit var cG: ChipGroup
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.add_player)
-        val binding = AddPlayerBinding.inflate(layoutInflater)
         cG = findViewById(R.id.chipGroup)
 
-        var editText = findViewById<EditText>(R.id.textInputEditText)
-        var MAX_PLAYERS = 30
+        val editText = findViewById<EditText>(R.id.textInputEditText)
+        val MAX_PLAYERS = 30
         val btnAddPlayer = findViewById<Button>(R.id.btnAddPlayer)
         val btnStartFromChoosePlayers = findViewById<Button>(R.id.btnStartFromChoosePlayers)
 
@@ -90,7 +73,7 @@ class AddPlayer : AppCompatActivity() {
     }
 
     //Creates a chip and adds it to the chip group
-    @RequiresApi(Build.VERSION_CODES.M)
+    // @RequiresApi(Build.VERSION_CODES.M)
     private fun addChip(p: Player){
         val c = Chip(this)
         c.text = p.name.toString()
