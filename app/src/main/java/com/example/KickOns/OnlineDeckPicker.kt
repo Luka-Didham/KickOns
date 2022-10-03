@@ -3,9 +3,14 @@ package com.example.KickOns
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import com.example.KickOns.databinding.DeckPickerBinding
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class OnlineDeckPicker: DeckPicker() {
     val db = Firebase.firestore
@@ -31,4 +36,22 @@ class OnlineDeckPicker: DeckPicker() {
             }
 
     }
+    override fun onClick(deck: DeckItem) {
+        val intent = Intent(this, MainActivity::class.java)
+        val d = deck.id
+        GlobalScope.launch{
+            //Querry db and wait for response
+            getCards(deck.id)
+            //On main launch next page
+            withContext(Dispatchers.Main){
+                intent.putExtra("id",deck.id)
+                startActivity(intent)
+            }
+        }
+    }
+    override suspend fun getCards(id: Int?) {
+        cardList.clear()
+        //TODO get the cards from the db related to the id you pressed
+    }
+
 }

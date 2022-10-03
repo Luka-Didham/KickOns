@@ -19,8 +19,6 @@ open class DeckPicker() : AppCompatActivity(), DeckClickListener {
     private lateinit var db: CardDB
     private lateinit var binding: DeckPickerBinding
     private lateinit var deckDao: DeckDAO
-    private var fdb = Firebase.firestore
-    private lateinit var da: DeckAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +29,7 @@ open class DeckPicker() : AppCompatActivity(), DeckClickListener {
         val mainActivity = this
         val recyclerView = binding.recyclerView
         val btnCreateDeckFromChoose = findViewById<Button>(R.id.btnCreateDeckFromChoose)
+
         val btnOnline = findViewById<Button>(R.id.btnOnline)
         //Speed at which items are deleted
 
@@ -55,12 +54,12 @@ open class DeckPicker() : AppCompatActivity(), DeckClickListener {
         GlobalScope.launch {
             getDecks(object: FirebaseCallback{
                 override fun onResponse(response: MutableList<DeckItem>) {
-                    Log.d("d", response.size.toString())
+                  deckList = response
                     binding.recyclerView.apply {
                         layoutManager =
                             LinearLayoutManager(applicationContext, LinearLayoutManager.VERTICAL, false)
-                        Log.d("dl", response.size.toString())
-                        adapter = DeckAdapter(response,mainActivity)
+                        Log.d("dl", deckList.size.toString())
+                        adapter = DeckAdapter(deckList,mainActivity)
                     }
                 }
 
@@ -116,10 +115,9 @@ open class DeckPicker() : AppCompatActivity(), DeckClickListener {
                 startActivity(intent)
             }
         }
-
     }
 
-    private suspend fun getCards(id: Int?) {
+    open suspend fun getCards(id: Int?) {
         cardList.clear()
         val cards = db.cardDAO().getByDeckId(id)
         cards.forEach {
