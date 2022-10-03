@@ -13,6 +13,7 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import java.util.*
 
 /**
  * This screen is displayed immediately after the splash screen,
@@ -38,13 +39,23 @@ class WelcomePage : AppCompatActivity() {
         db.collection("Decks")
             .get()
             .addOnSuccessListener { result ->
+                val deckIdList = mutableListOf<String>()
+                val decks = mutableListOf<DeckItem>()
                 for (document in result) {
                     Log.d("TAG", "${document.id} => ${document.data}")
+                    deckIdList.add(document.id)
+                    val d = DeckItem(null,document.data["name"].toString())
+                    decks.add(d)
                 }
+                val deckSets: Array<MutableList<out Any>> = arrayOf(deckIdList, decks)
+                Log.d("d", deckSets.get(0).toString())
+                Log.d("d", deckSets.get(1).toString())
             }
             .addOnFailureListener { exception ->
                 Log.w("TAG", "Error getting documents.", exception)
             }
+
+
 
         //SHOWCASE MODE
         //TODO "make sure cards arent added twice to example deck"

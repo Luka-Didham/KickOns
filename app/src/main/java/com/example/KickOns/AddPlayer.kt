@@ -1,5 +1,6 @@
 package com.example.KickOns
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.*
@@ -13,6 +14,7 @@ import com.google.android.material.chip.ChipGroup
  * well as set restrictions on how many players can play and the minimum number of players needed.
  */
 class AddPlayer : AppCompatActivity() {
+//    chip group for where the players' names would be displayed
     private lateinit var cG: ChipGroup
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,6 +44,7 @@ class AddPlayer : AppCompatActivity() {
                 }
             }
         }
+//        val customers: Map<String, Customer> = HashMap()
 
         btnStartFromChoosePlayers.setOnClickListener{
             if(playerList.size>1) {
