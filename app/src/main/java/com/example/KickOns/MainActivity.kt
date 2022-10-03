@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         db = CardDB.getDatabase(this)
         setContentView(R.layout.activity_main)
         view = findViewById(R.id.layout)
+        view.setBackgroundResource(getBackGround(0))
         //Elements
 
         val btnPlayerSelection = findViewById<Button>(R.id.btnPlayerSelection)
@@ -79,12 +80,22 @@ class MainActivity : AppCompatActivity() {
         return 0
     }
 
+    private fun getMax(it: Sequence<MatchResult>): Int{
+        var m = 0
+        it.forEach {
+            val v = it.value.last().digitToInt()
+            if (v > m) m = v
+        }
+        return m
+    }
+
     fun randomPlayer(prompt: String): String{
         val sList = playerList.shuffled()
         var newPrompt = prompt.lowercase()
         var regex =  Regex("@player\\w+")
         val matches = regex.findAll(newPrompt)
-        if(matches.count()>sList.count()){
+
+        if(getMax(matches) > sList.count()){
             return "Not enough players added for card"
         }
         for(m in matches){

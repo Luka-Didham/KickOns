@@ -72,7 +72,8 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener {
 
      override fun edit(deck: DeckItem) {
          val intent = Intent(this, EditDeck::class.java)
-            GlobalScope.launch {
+            intent.putExtra("id",deck.id)
+         GlobalScope.launch {
                 getCards(deck.id)
                 withContext(Dispatchers.Main){
                     startActivity(intent)

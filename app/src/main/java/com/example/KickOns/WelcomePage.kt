@@ -48,7 +48,7 @@ class WelcomePage : AppCompatActivity() {
 
         //SHOWCASE MODE
         //TODO "make sure cards arent added twice to example deck"
-        PopulateDecks(applicationContext).clear()
+        PopulateDecks(applicationContext).clearDeck()
         PopulateDecks(applicationContext).insert()
 
         btnPlay.setOnClickListener {

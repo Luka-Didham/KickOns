@@ -183,6 +183,7 @@ class EditDeck(): AppCompatActivity(){
             pos = cardList.size -1
         }
         if (cardList.size == 0) newCard(deckId);
+        nextCard()
         updateCardPos()
     }
 

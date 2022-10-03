@@ -1,6 +1,7 @@
 package com.example.KickOns
 
 import android.content.Context
+import android.provider.Settings
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
@@ -10,6 +11,7 @@ class PopulateDecks(ctx: Context) {
     val cardDao = db.cardDAO()
 
     val d = DeckItem(1,"Starter Deck")
+
     //val d = DeckItem(1,"NSFW Starter Deck")
     //Cards for the deck
     /*
@@ -142,6 +144,12 @@ class PopulateDecks(ctx: Context) {
 
     )
 
+    fun clearDeck(){
+      GlobalScope.launch {
+        deckDao.delete(d)
+      }
+    }
+
     fun clear(){
       cardList.forEach{
         if (it.deckId == 1){
@@ -154,9 +162,9 @@ class PopulateDecks(ctx: Context) {
 
     fun insert(){
       cardList.clear()
-        for (t in tList){
-            addCards(t.get(1) as Int, t.get(0) as String)
-        }
+      for (t in tList){
+        addCards(t[1] as Int, t[0] as String)
+      }
     }
 
     fun addCards(type: Int, text: String){

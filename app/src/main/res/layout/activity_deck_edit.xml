@@ -160,6 +160,7 @@
                 android:layout_marginHorizontal="25sp"
                 android:layout_marginTop="10dp"
                 android:focusable="false"
+                android:hint="\@Player1, howl at the moon 3 times with \@player2 or take a penalty"
                 android:fontFamily="@font/fonts"
                 android:gravity="center"
                 android:paddingBottom="10dp"
