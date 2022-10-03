@@ -1,0 +1,18 @@
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"DesignSurface\">\r\n    <option name=\"filePathToZoomLevelMap\">\r\n      <map>\r\n        <entry key=\"..\\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/drawable/ani_design1.xml\" value=\"0.124\" />\r\n        <entry key=\"..\\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/drawable/background_ani.xml\" value=\"0.102\" />\r\n        <entry key=\"..\\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/drawable/ic_launcher_background.xml\" value=\"0.124\" />\r\n        <entry key=\"app/src/main/res/drawable-v24/ic_launcher_foreground.xml\" value=\"0.1185\" />\r\n        <entry key=\"app/src/main/res/drawable-v24/law.xml\" value=\"0.113\" />\r\n        <entry key=\"app/src/main/res/drawable-v24/powerup.xml\" value=\"0.1\" />\r\n        <entry key=\"app/src/main/res/drawable-v24/standard.xml\" value=\"0.1\" />\r\n        <entry key=\"app/src/main/res/drawable/handicap.xml\" value=\"0.1185\" />\r\n        <entry key=\"app/src/main/res/drawable/ic_launcher_background.xml\" value=\"0.1185\" />\r\n        <entry key=\"app/src/main/res/font/fonts.xml\" value=\"0.21944444444444444\" />\r\n        <entry key=\"app/src/main/res/layout/activity_main.xml\" value=\"0.12462006079027356\" />\r\n        <entry key=\"app/src/main/res/layout/activity_splash_screen.xml\" value=\"0.3098958333333333\" />\r\n        <entry key=\"app/src/main/res/layout/add_player.xml\" value=\"0.22443450927734376\" />\r\n        <entry key=\"app/src/main/res/layout/card_creation.xml\" value=\"0.3098958333333333\" />\r\n        <entry key=\"app/src/main/res/layout/card_row.xml\" value=\"0.3098958333333333\" />\r\n        <entry key=\"app/src/main/res/layout/deck_creation.xml\" value=\"0.3098958333333333\" />\r\n        <entry key=\"app/src/main/res/layout/welcome.xml\" value=\"0.12436676798378926\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" default=\"true\" project-jdk-name=\"11\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n  <component name=\"VisualizationToolProject\">\r\n    <option name=\"state\">\r\n      <ProjectState>\r\n        <option name=\"scale\" value=\"0.3098958333333333\" />\r\n      </ProjectState>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	
++++ b/.idea/misc.xml	
+@@ -6,6 +6,7 @@
+         <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/drawable/ani_design1.xml" value="0.124" />
+         <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/drawable/background_ani.xml" value="0.102" />
+         <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/drawable/ic_launcher_background.xml" value="0.124" />
++        <entry key="..\:/Users/aksha/Desktop/COSC345-ANDROIDSTUDIO/COSC345/app/src/main/res/layout/activity_main.xml" value="0.12360688956433637" />
+         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1185" />
+         <entry key="app/src/main/res/drawable-v24/law.xml" value="0.113" />
+         <entry key="app/src/main/res/drawable-v24/powerup.xml" value="0.1" />

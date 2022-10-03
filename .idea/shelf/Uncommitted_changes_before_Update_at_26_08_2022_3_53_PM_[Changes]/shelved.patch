@@ -1,0 +1,28 @@
+Index: app/src/main/java/com/example/KickOns/AddPlayer.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.KickOns\r\n\r\nimport android.content.Intent\r\nimport android.os.Bundle\r\nimport android.view.View\r\nimport android.widget.*\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport androidx.constraintlayout.widget.ConstraintLayout\r\nimport androidx.recyclerview.widget.RecyclerView\r\nimport kotlinx.android.synthetic.main.activity_main.*\r\nimport kotlinx.android.synthetic.main.add_player.*\r\nimport kotlinx.android.synthetic.main.card_creation.*\r\nimport kotlinx.android.synthetic.main.welcome_page.*\r\n\r\n\r\nvar players = mutableListOf<Button>()\r\n\r\nclass AddPlayer : AppCompatActivity() {\r\n\r\n    private var startGame: MainActivity? = null\r\n\r\n\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n\r\n        super.onCreate(savedInstanceState)\r\n        setContentView(R.layout.add_player)\r\n\r\n        var editText = textInputEditText\r\n        var MAX_PLAYERS = 30\r\n        var positionCount = 1\r\n        if(!players.isEmpty()) {\r\n            for (player in players) {\r\n\r\n                val buttonID = player.id\r\n                var btn = findViewById<Button>(buttonID)\r\n                btn.text = player.text\r\n                btn.visibility = View.VISIBLE\r\n                btn.setOnClickListener {\r\n                    players.remove(btn)\r\n                    btn.visibility = View.INVISIBLE\r\n                }\r\n\r\n            }\r\n\r\n        }\r\n        btnAddPlayer.setOnClickListener{\r\n            var text = editText.getText().toString()\r\n            print(text)\r\n            if(text == \"\"){\r\n                editText.hint = \"Please Add Name\"\r\n                }else{\r\n                if(players.size<MAX_PLAYERS) {\r\n                    editText.setText(\"\")\r\n                    val num = players.size+1\r\n                    val idString = \"btnPlayer$num\"\r\n                    val buttonID = resources.getIdentifier(idString, \"id\", packageName)\r\n                    players.add(findViewById(buttonID))\r\n                    var btn = players[players.size-1]\r\n                    btn.text = text\r\n                    btn.visibility = View.VISIBLE\r\n                    btn.setOnClickListener {\r\n                        if (players.contains(btn)) {\r\n                            players.remove(btn)\r\n                            btn.visibility = View.INVISIBLE\r\n                        }\r\n                    }\r\n                }else{\r\n                    editText.hint = \"Max 30 players\"\r\n                }\r\n\r\n        }\r\n        }\r\n        btnStartFromChoosePlayers.setOnClickListener{\r\n            if(players.size>1) {\r\n                val intent = Intent(this, DeckPicker()::class.java)\r\n                startActivity(intent)\r\n            }else{\r\n                editText.hint = \"Minimum 1 player\"\r\n            }\r\n        }\r\n\r\n\r\n\r\n    }}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/KickOns/AddPlayer.kt b/app/src/main/java/com/example/KickOns/AddPlayer.kt
+--- a/app/src/main/java/com/example/KickOns/AddPlayer.kt	
++++ b/app/src/main/java/com/example/KickOns/AddPlayer.kt	
+@@ -49,12 +49,14 @@
+             if(text == ""){
+                 editText.hint = "Please Add Name"
+                 }else{
+-                if(players.size<MAX_PLAYERS) {
++                if(playerList.size<MAX_PLAYERS) {
++                    val p: Player = Player(text)
++                    playerList.add(p)
+                     editText.setText("")
+-                    val num = players.size+1
++                    val num = playerList.size+1
+                     val idString = "btnPlayer$num"
+                     val buttonID = resources.getIdentifier(idString, "id", packageName)
+-                    players.add(findViewById(buttonID))
++
+                     var btn = players[players.size-1]
+                     btn.text = text
+                     btn.visibility = View.VISIBLE
