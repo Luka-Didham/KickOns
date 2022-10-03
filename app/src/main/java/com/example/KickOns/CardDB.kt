@@ -5,13 +5,22 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 //TODO("get this working without having to increment version number after schema change")
-@Database(entities = [CardItem::class, DeckItem::class], version = 18, exportSchema = false)
+@Database(entities = [CardItem::class, DeckItem::class], version = 19, exportSchema = false)
 abstract class CardDB : RoomDatabase() {
     abstract fun cardDAO(): CardDAO
     abstract fun deckDAO(): DeckDAO
 
     companion object {
 
+        /**
+         * Initilizes the Room DB
+         *
+         * @param context the apps current context
+         * @return an instance of the DB
+         *
+         * @see com.example.KickOns.AddPlayerAdapter
+         * @see com.example.KickOns.PlayerViewHolder
+         */
         @Volatile
         private var INSTANCE: CardDB? = null
         fun getDatabase(context: Context): CardDB {

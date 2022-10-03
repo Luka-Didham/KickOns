@@ -25,6 +25,11 @@ class AddPlayerAdapter(
 
     }
 
+    /**
+     * A getter function that returns the number of players registered to play.
+     *
+     * @return The number of player items in the player list.
+     */
     override fun getItemCount(): Int {
         return playerList.size
     }

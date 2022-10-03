@@ -16,8 +16,9 @@ interface DeckDAO {
 //    @Query("DELETE FROM deck_table where ID = :deck_id")
 //    fun deleteById(deck_id: Int)
 
+    @Delete
+    suspend fun delete(deckItem: DeckItem)
 
-    @Query("DELETE FROM deck_table WHERE ID = :deck_id")
-    suspend fun deleteDeck(deck_id : Int?)
-
+//    @Query("DELETE FROM deck_table WHERE ID = :deck_id")
+//    suspend fun deleteDeck(deck_id : Int?)
 }

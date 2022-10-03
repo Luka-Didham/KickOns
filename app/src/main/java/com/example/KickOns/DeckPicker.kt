@@ -66,13 +66,14 @@ class DeckPicker() : AppCompatActivity(), DeckClickListener {
         deckList.remove(deck)
         binding.recyclerView.adapter?.notifyItemRemoved(pos)
         GlobalScope.launch {
-            deckDao.deleteDeck(deck.id)
+            deckDao.delete(deck)
         }
     }
 
      override fun edit(deck: DeckItem) {
          val intent = Intent(this, EditDeck::class.java)
-            GlobalScope.launch {
+            intent.putExtra("id",deck.id)
+         GlobalScope.launch {
                 getCards(deck.id)
                 withContext(Dispatchers.Main){
                     startActivity(intent)

@@ -2,6 +2,8 @@ package com.example.KickOns
 
 import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
+import android.content.Intent
+import android.media.Image
 import android.os.Build
 import android.os.Bundle
 import android.view.GestureDetector
@@ -9,16 +11,20 @@ import android.view.MotionEvent
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.animation.doOnEnd
+import androidx.core.view.isVisible
 import androidx.dynamicanimation.animation.DynamicAnimation
 import androidx.dynamicanimation.animation.SpringAnimation
 import androidx.dynamicanimation.animation.SpringForce
 import androidx.dynamicanimation.animation.SpringForce.*
 import com.example.KickOns.databinding.ActivityDeckEditBinding
 import kotlinx.coroutines.*
+import org.w3c.dom.Text
 import java.lang.Thread.sleep
 import kotlin.math.abs
 import kotlin.math.log
@@ -26,24 +32,43 @@ import kotlin.math.log
 class EditDeck(): AppCompatActivity(){
     private var swiped = false
     private var pos = 0
+    private var canCreate = true
+
     private lateinit var db: CardDB
     private lateinit var cardDao: CardDAO
     private lateinit var gestureDetector: GestureDetector
+
+    //Card View Elements
     private lateinit var childText: EditText
     private lateinit var cardText: EditText
     private lateinit var editCrd: CardView
+    private lateinit var childCrd: CardView
+    private lateinit var editType: ImageView
+    private lateinit var childType: ImageView
+    private lateinit var cardPos: TextView
+    private lateinit var childPos: TextView
 
+    //Buttons
+    private lateinit var delBtn: ImageView
+    private lateinit var svBtn: ImageView
+    private lateinit var editButton: ImageView
+    private lateinit var addBtn: ImageView
+
+    //Views
     private lateinit var editDeck: View
     private lateinit var view: View
+
 
     @RequiresApi(Build.VERSION_CODES.M)
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstance: Bundle?) {
 
         super.onCreate(savedInstance)
-
         db = CardDB.getDatabase(this)
         cardDao = db.cardDAO()
+
+        //Intent
+        val deckId = intent.getIntExtra("id",0)
 
         //Position of card in deck
         val binding = ActivityDeckEditBinding.inflate(layoutInflater)
@@ -51,15 +76,37 @@ class EditDeck(): AppCompatActivity(){
         setContentView(R.layout.activity_deck_edit)
 
         //Elements
+        childCrd = findViewById(R.id.childCrd)
         editCrd = findViewById(R.id.editCrd)
         editDeck = findViewById(R.id.edit_deck)
 
-        //Buttons
-        val btn_next = findViewById<Button>(R.id.btn_next)
-        val btn_prev = findViewById<Button>(R.id.btn_prev)
-        val del_card = findViewById<Button>(R.id.del_card)
-        val sv_crd = findViewById<Button>(R.id.sv_crd)
+        editType = findViewById(R.id.editType)
+        childType = findViewById(R.id.childType)
 
+        cardPos = findViewById(R.id.cardPos)
+        childPos = findViewById(R.id.childPos)
+
+        //need to pass in deck_id
+
+        //Buttons
+        //val btn_next = findViewById<Button>(R.id.btn_next)
+       // val btn_prev = findViewById<Button>(R.id.btn_prev)
+        val btnDone = findViewById<Button>(R.id.btnDone)
+        val btnExit = findViewById<Button>(R.id.btnExitEdit)
+
+        delBtn = findViewById(R.id.delBtn)
+        svBtn = findViewById(R.id.svBtn)
+        editButton = findViewById(R.id.edtBtn)
+        addBtn = findViewById(R.id.addBtn)
+
+        delBtn.visibility = View.INVISIBLE
+        svBtn.visibility = View.INVISIBLE
+
+
+
+
+        //var
+        var t = false
 
         //Snap Animation
         val gestureListener = object : CardSwipeGesture(this){
@@ -81,13 +128,12 @@ class EditDeck(): AppCompatActivity(){
                 //editCrd.pivotX = e1.rawX
                 editCrd.pivotY = (editCrd.height * 0.75).toFloat()
                 editCrd.rotation -= dX/10
-
+                if(cardList.size < 2) return true
                 if (editCrd.x < -400) removeCard(dX,dY)
                 return true
             }
-
-
         }
+
         gestureDetector = GestureDetector(this,gestureListener)
         editCrd.setOnTouchListener { _, e ->
             when(e.action){
@@ -104,40 +150,66 @@ class EditDeck(): AppCompatActivity(){
         //Get Cards for specified deck
         cardText = findViewById(R.id.editCard)
         childText = findViewById(R.id.editChild)
-        nextCard(pos);
+        //nextCard(pos);
 
-        btn_next.setOnClickListener {
-            pos = posInc(pos)
-            nextCard(pos)
-
+        //Done button
+        btnDone.setOnClickListener {
+            val intent = Intent(this, DeckPicker::class.java)
+            startActivity(intent)
         }
 
-        btn_prev.setOnClickListener {
+        delBtn.setOnClickListener{
+            deleteCard()
             pos = posDec(pos)
-            nextCard(pos)
-
+            nextCard()
         }
 
-        del_card.setOnClickListener {
-            GlobalScope.launch {
-                cardDao.delete(cardList[pos])
-            }
-            cardList.removeAt(pos)
-            pos = posInc(pos);
-            nextCard(pos)
+        svBtn.setOnClickListener{
+            val text = cardText.text.toString()
+            cardList[pos].challenge = text
+            addCard(cardList[pos])
+            nextCard()
+            editMode(false)
+            canCreate = true
         }
 
-        sv_crd.setOnClickListener {
-            cardList[pos].challenge = cardText.text.toString()
-            GlobalScope.launch {
-                cardDao.update(cardList[pos])
-
-                withContext(Dispatchers.Main) {
-                    pos = posInc(pos);
-                    nextCard(pos)
-                }
-            }
+        editButton.setOnClickListener{
+            t = toggleEdit(t)
         }
+
+        addBtn.setOnClickListener{
+            //Fresh Card
+            newCard(deckId)
+            pos = cardList.size -1
+        }
+        if (cardList.size == 0) newCard(deckId);
+        nextCard()
+        updateCardPos()
+    }
+
+    private fun toggleEdit(t: Boolean): Boolean{
+        editMode(t)
+        return !t
+    }
+
+    private fun editMode(edit: Boolean){
+        showButtons(edit)
+        focusText(edit)
+        swiped = edit
+        lastCard()
+    }
+
+
+    private fun focusText(focus : Boolean){
+        cardText.isFocusableInTouchMode = focus
+        cardText.isFocusable = focus
+    }
+
+    private fun showButtons(show: Boolean){
+        val vis = if(show) View.VISIBLE
+        else View.INVISIBLE
+        svBtn.visibility = vis
+        delBtn.visibility = vis
     }
 
     private fun posDec(pos: Int) : Int {
@@ -146,7 +218,7 @@ class EditDeck(): AppCompatActivity(){
     }
 
     private fun posInc(pos : Int): Int {
-        if (pos+1 == cardList.size) return 0
+        if (pos+1 > cardList.size-1) return 0
         return pos+1
     }
 
@@ -169,11 +241,6 @@ class EditDeck(): AppCompatActivity(){
         }
     }
 
-    private fun sThresh(dX:Float, dY:Float): Boolean{
-        if (dX * dY > 5000) return true
-        return false
-    }
-
     private fun replaceCard(){
         //Set Swiped to false
         //SnapCard Back into place//
@@ -181,20 +248,22 @@ class EditDeck(): AppCompatActivity(){
         resetCard()
         editCrd.visibility = View.VISIBLE
         pos = posInc(pos)
-        nextCard(pos)
+        nextCard()
         swiped = false
+        snapCard()
     }
 
     private fun resetCard(){
-        editCrd.x = (editDeck.width/2 - editCrd.width/2).toFloat()
-        editCrd.y = (editDeck.height/2 - editCrd.height/2-100).toFloat()
+        editCrd.x = childCrd.x
+        editCrd.y = childCrd.y
+//        editCrd.x = (editDeck.width/2 - editCrd.width/2).toFloat()
+//        editCrd.y = (editDeck.height/2 - editCrd.height/2).toFloat()
         editCrd.rotation = 0F
     }
     private fun snapCard(){
         //TODO Change multiple apply to a spring force
         if (swiped) return
 
-        val sf = SpringForce()
         editCrd.let { crd ->
             SpringAnimation(crd,DynamicAnimation.ROTATION, 0F).apply{
                 spring.dampingRatio = DAMPING_RATIO_LOW_BOUNCY
@@ -215,11 +284,78 @@ class EditDeck(): AppCompatActivity(){
         }
     }
 
-    private fun nextCard(pos : Int){
-            cardText.setText(cardList[pos].challenge)
-            childText.setText(cardList[posInc(pos)].challenge)
+    private fun updateCardPos(){
+        val s = cardList.size
+        cardPos.text = "${pos+1} / $s"
+        childPos.text = "${posInc(pos)+1} / $s"
+    }
+
+    private fun addCard(c :CardItem){
+        GlobalScope.launch{
+            cardDao.addCard(c)
+        }
+    }
+
+    private fun goToEnd(){
+        pos = cardList.size-1
+        nextCard()
+    }
+    private fun newCard(id: Int){
+        // Check that the previous new card has been saved before
+        // a new one may be created
+        if (!canCreate) {
+            goToEnd()
+            return
+        }
+
+        canCreate = false
+
+        cardText.setText("")
+        editType.setImageResource(0)
+        editMode(true)
+        val c = CardItem(null,0,"",id)
+        cardList.add(c)
+        pos = cardList.size - 1
+        updateCardPos()
+        lastCard()
     }
 
 
+    private fun nextCard(){
+        lastCard()
+        //Set Main Card
+        cardText.setText(cardList[pos].challenge)
+        editType.setImageResource(getTypeImage(cardList[pos].cardType))
+        //Set Child card
+        childText.setText(cardList[posInc(pos)].challenge)
+        childType.setImageResource(getTypeImage(cardList[posInc(pos)].cardType))
+        updateCardPos()
+    }
 
+    private fun deleteCard(){
+        val c = cardList[pos]
+        cardList.remove(c)
+        GlobalScope.launch{
+            cardDao.delete(c)
+        }
+    }
+
+    private fun lastCard(): Boolean{
+        if(cardList.size == 1) {
+            delBtn.visibility = View.INVISIBLE
+            return true
+        }
+        return false
+    }
+
+    private fun getTypeImage(x: Int): Int {
+        when(x){
+            0 -> return 0
+            1 -> return R.drawable.powerup_title
+            2 -> return R.drawable.law_title
+            3 -> return R.drawable.handicap_title
+        }
+        return 0
+    }
 }
+

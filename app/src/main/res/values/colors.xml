@@ -12,4 +12,5 @@
     <color name="color_primary_dark">#B9FBD34C</color>
     <color name="color_accent">#723CD3</color>
     <color name="color_accent_dark">#9F723CD3</color>
+    <color name="transperant">#00FFFFFF</color>
 </resources>

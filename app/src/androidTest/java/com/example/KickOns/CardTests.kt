@@ -17,14 +17,13 @@ import org.junit.Before
 import java.io.IOException
 
 /**
- * Instrumented test, which will execute on an Android device.
+ * Tests for cardDAO
  *
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 @RunWith(AndroidJUnit4::class)
-class ExampleInstrumentedTest {
+class CardTests {
     private lateinit var cardDao: CardDAO
-    private lateinit var deckDao: DeckDAO
     private lateinit var db: CardDB
 
     @Before
@@ -32,7 +31,6 @@ class ExampleInstrumentedTest {
         val context = InstrumentationRegistry.getInstrumentation().targetContext
         db = Room.inMemoryDatabaseBuilder(
             context, CardDB::class.java).build()
-        deckDao = db.deckDAO()
         cardDao = db.cardDAO()
     }
 
@@ -43,44 +41,38 @@ class ExampleInstrumentedTest {
     }
 
 
-//Local Deck DB TEST
-    @Test
-    @Throws(Exception::class)
-    fun writeAndReadDeckDB(){
-        val deck = DeckItem(-1,"Test")
-        GlobalScope.launch {
-            deckDao.addDeck(deck)
-            val get = deckDao.getAll()
-            assertTrue(get.size == 1)
-        }
-    }
-
-    @Test
-    fun writeAndReadCardDB(){
-        val card = CardItem(-1,2,"test",-1)
-        GlobalScope.launch {
-            cardDao.addCard(card)
-            val get = cardDao.getAll()
-            assertTrue(get.size == 1)
-        }
-    }
-
     /**
-     * Test Function for getting cards from their related
-     * deck using the CardDAO
+     * Tests to see if cards are updated when
+     * a new card with the same id is added
      * @see com.example.KickOns.CardItem
      * @see com.example.KickOns.CardDAO
      */
     @Test
-    fun getCardsInDeck(){
-        val card2 = CardItem(-2,3,"test2",-1)
+    @Throws(Exception::class)
+    fun insertOrReplace(){
+        val c = CardItem(1,1,"Card 1",-1)
+        val c2 = CardItem(1,3,"Card 2", -1)
+        val c3 = CardItem(2,3,"Card 2", -1)
         GlobalScope.launch {
-            cardDao.addCard(card2)
-            val cards = cardDao.getByDeckId(-1)
-            assertTrue(cards.size == 2)
-            assertTrue(cards[1] == card2)
-            assertFalse(cards[0] == card2)
+            cardDao.addCard(c)
+            assertTrue(cardDao.getAll().size == 1)
+            cardDao.addCard(c2)
+            assertTrue(cardDao.getAll().size == 1)
+            assertTrue(cardDao.getAll()[0].challenge == "Card 2")
+            cardDao.addCard(c3)
+            assertFalse(cardDao.getAll().size == 2)
         }
     }
+
+    @Test
+    fun testAutoID(){
+        val c = CardItem(null,2,"test",-1)
+        GlobalScope.launch {
+            cardDao.addCard(c)
+            assertTrue(cardDao.getAll().size == 1)
+            assertTrue(cardDao.getAll()[0].id != null)
+        }
+    }
+
 }
 
