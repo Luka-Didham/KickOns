@@ -1,5 +1,6 @@
 package com.example.KickOns
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import com.example.KickOns.databinding.DeckPickerBinding
@@ -9,7 +10,11 @@ import com.google.firebase.ktx.Firebase
 class OnlineDeckPicker: DeckPicker() {
     val db = Firebase.firestore
 
-    override fun getDecks(myCallback: FirebaseCallback) {
+    override fun switchDeck(){
+        val intent = Intent(this,DeckPicker::class.java)
+        startActivity(intent)
+    }
+    override suspend fun getDecks(myCallback: FirebaseCallback) {
         db.collection("Decks")
             .get()
             .addOnSuccessListener { result ->

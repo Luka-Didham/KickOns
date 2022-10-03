@@ -63,12 +63,13 @@ open class DeckPicker() : AppCompatActivity(), DeckClickListener {
                         adapter = DeckAdapter(response,mainActivity)
                     }
                 }
+
             })
+
         }
 
         btnOnline.setOnClickListener{
-            val intent = Intent(this,OnlineDeckPicker::class.java)
-            startActivity(intent)
+            switchDeck()
         }
 
         btnCreateDeckFromChoose.setOnClickListener {
@@ -84,6 +85,11 @@ open class DeckPicker() : AppCompatActivity(), DeckClickListener {
         GlobalScope.launch {
             deckDao.delete(deck)
         }
+    }
+
+    open fun switchDeck(){
+        val intent = Intent(this,OnlineDeckPicker::class.java)
+        startActivity(intent)
     }
 
      override fun edit(deck: DeckItem) {
@@ -121,7 +127,7 @@ open class DeckPicker() : AppCompatActivity(), DeckClickListener {
         }
     }
 
-    open fun getDecks(myCallback: FirebaseCallback){
+    open suspend fun getDecks(myCallback: FirebaseCallback){
         deckList.clear()
         val decks = mutableListOf<DeckItem>()
         for(deck in deckDao.getAll()){
