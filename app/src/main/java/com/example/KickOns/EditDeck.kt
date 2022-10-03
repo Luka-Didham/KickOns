@@ -176,6 +176,7 @@ class EditDeck(): AppCompatActivity(){
             deleteCard()
             pos = posDec(pos)
             nextCard()
+            canCreate = true
         }
 
         svBtn.setOnClickListener{
@@ -327,6 +328,7 @@ class EditDeck(): AppCompatActivity(){
     private fun newCard(id: Int){
         // Check that the previous new card has been saved before
         // a new one may be created
+        //TODO This is super messy find a better fix
         if (!canCreate) {
             goToEnd()
             return
@@ -376,7 +378,7 @@ class EditDeck(): AppCompatActivity(){
         when(x){
             0 -> return 0
             1 -> return R.drawable.powerup_title
-            2 -> return R.drawable.law_title
+            2 -> return R.drawable.law2
             3 -> return R.drawable.handicap_title
         }
         return 0
