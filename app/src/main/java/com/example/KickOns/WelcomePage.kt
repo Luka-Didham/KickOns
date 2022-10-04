@@ -48,8 +48,10 @@ class WelcomePage : AppCompatActivity() {
                     decks.add(d)
                 }
                 val deckSets: Array<MutableList<out Any>> = arrayOf(deckIdList, decks)
-                Log.d("d", deckSets.get(0).toString())
-                Log.d("d", deckSets.get(1).toString())
+                Log.d("d", deckSets[0][0].toString())
+                Log.d("d", deckSets[0][1].toString())
+                Log.d("d", deckSets[1][0].toString())
+                Log.d("d", deckSets[1][1].toString())
             }
             .addOnFailureListener { exception ->
                 Log.w("TAG", "Error getting documents.", exception)
@@ -64,7 +66,7 @@ class WelcomePage : AppCompatActivity() {
 
       // when the player clicks on the the play button it goes to the AddPlayer class
         btnPlay.setOnClickListener {
-            val intent = Intent(this, AddPlayer::class.java)
+            val intent = Intent(this, OnlineDeckPicker::class.java)
             startActivity(intent)
         }
 

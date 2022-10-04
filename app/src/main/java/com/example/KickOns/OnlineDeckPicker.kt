@@ -14,6 +14,7 @@ import kotlinx.coroutines.withContext
 
 class OnlineDeckPicker: DeckPicker() {
     val db = Firebase.firestore
+    private lateinit var deckSets: Array<MutableList<out Any>>
 
     override fun switchDeck(){
         val intent = Intent(this,DeckPicker::class.java)
@@ -23,13 +24,19 @@ class OnlineDeckPicker: DeckPicker() {
         db.collection("Decks")
             .get()
             .addOnSuccessListener { result ->
+                val deckIdList = mutableListOf<String>()
                 val decks = mutableListOf<DeckItem>()
+                deckSets = emptyArray()
+
                 for (document in result) {
                     val d = DeckItem(null,document.get("name").toString())
                     decks.add(d)
+                    deckIdList.add(document.id)
                     Log.d("TAG", "${document.id} => ${document.data}")
                 }
-                myCallback.onResponse(decks)
+                deckSets = arrayOf(deckIdList, decks)
+                Log.d("asf", deckSets[0][0].toString())
+                myCallback.onResponse(deckSets)
             }
             .addOnFailureListener { exception ->
                 Log.w("TAG", "Error getting documents.", exception)
@@ -37,21 +44,35 @@ class OnlineDeckPicker: DeckPicker() {
 
     }
     override fun onClick(deck: DeckItem) {
-        val intent = Intent(this, MainActivity::class.java)
-        val d = deck.id
+        val id = getDeckSetsID(deck)
+        Log.d("f", deck.name)
+        Log.d("f", deck.id.toString())
+        Log.d("f", id)
         GlobalScope.launch{
             //Querry db and wait for response
-            getCards(deck.id)
-            //On main launch next page
-            withContext(Dispatchers.Main){
-                intent.putExtra("id",deck.id)
-                startActivity(intent)
-            }
+            getCards(id)
         }
     }
-    override suspend fun getCards(id: Int?) {
+    override suspend fun getCards(id: String) {
         cardList.clear()
-        //TODO get the cards from the db related to the id you pressed
+        val intent = Intent(this, MainActivity::class.java)
+        db.collection("Decks/$id/Cards")
+            .get()
+            .addOnSuccessListener { result ->
+                for (document in result) {
+                    Log.d("TAG", "${document.id} => ${document.data}")
+                    val c = CardItem(null, 0, document.data["Challenge"].toString(), -1)
+                    cardList.add(c)
+
+                }
+
+                startActivity(intent)
+            }
+            .addOnFailureListener { exception ->
+                Log.w("TAG", "Error getting documents.", exception)
+            }
+
+
     }
 
 }
