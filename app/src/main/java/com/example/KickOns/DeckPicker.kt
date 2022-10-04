@@ -19,6 +19,7 @@ open class DeckPicker() : AppCompatActivity(), DeckClickListener {
     private lateinit var db: CardDB
     private lateinit var binding: DeckPickerBinding
     private lateinit var deckDao: DeckDAO
+    private lateinit var deckSets: Array<MutableList<out Any>>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,8 +54,9 @@ open class DeckPicker() : AppCompatActivity(), DeckClickListener {
 
         GlobalScope.launch {
             getDecks(object: FirebaseCallback{
-                override fun onResponse(response: MutableList<DeckItem>) {
-                  deckList = response
+                override fun onResponse(response: Array<MutableList<out Any>>) {
+                deckSets = response
+                  deckList = response[1] as MutableList<DeckItem>
                     binding.recyclerView.apply {
                         layoutManager =
                             LinearLayoutManager(applicationContext, LinearLayoutManager.VERTICAL, false)
@@ -79,7 +81,9 @@ open class DeckPicker() : AppCompatActivity(), DeckClickListener {
 
     }
     fun delete(deck: DeckItem, pos : Int){
+        var position = deckSets[1].indexOf(deck)
         deckList.remove(deck)
+        deckSets[0].removeAt(position)
         binding.recyclerView.adapter?.notifyItemRemoved(pos)
         GlobalScope.launch {
             deckDao.delete(deck)
@@ -94,8 +98,10 @@ open class DeckPicker() : AppCompatActivity(), DeckClickListener {
      override fun edit(deck: DeckItem) {
          val intent = Intent(this, EditDeck::class.java)
             intent.putExtra("id",deck.id)
+         val pos = deckSets[1].indexOf(deck)
+         val id = deckSets[0][pos]
          GlobalScope.launch {
-                getCards(deck.id)
+                getCards(id.toString())
                 withContext(Dispatchers.Main){
                     startActivity(intent)
                 }
@@ -105,10 +111,21 @@ open class DeckPicker() : AppCompatActivity(), DeckClickListener {
 
     override fun onClick(deck: DeckItem) {
        val intent = Intent(this, MainActivity::class.java)
-        val d = deck.id
+        val pos = deckSets[1].indexOf(deck)
+        val id = deckSets[0][pos]
+//        Log.d("f", deck.name)
+//        Log.d("f", deck.id.toString() + "deck.id")
+//        Log.d("f", id.toString() + "id id")
+//        Log.d("f", pos.toString() + "pos")
+        Log.d("f", deckSets[0].toString())
+        Log.d("f", deckSets[1].toString())
+        Log.d("f", pos.toString() + "pos")
+
+
+
         GlobalScope.launch{
             //Querry db and wait for response
-            getCards(deck.id)
+            getCards(id.toString())
             //On main launch next page
             withContext(Dispatchers.Main){
                 intent.putExtra("id",deck.id)
@@ -117,9 +134,9 @@ open class DeckPicker() : AppCompatActivity(), DeckClickListener {
         }
     }
 
-    open suspend fun getCards(id: Int?) {
+    open suspend fun getCards(id: String) {
         cardList.clear()
-        val cards = db.cardDAO().getByDeckId(id)
+        val cards = db.cardDAO().getByDeckId(id.toInt())
         cards.forEach {
             cardList.add(it)
         }
@@ -127,16 +144,26 @@ open class DeckPicker() : AppCompatActivity(), DeckClickListener {
 
     open suspend fun getDecks(myCallback: FirebaseCallback){
         deckList.clear()
+        deckSets = emptyArray()
+        val deckIdList = mutableListOf<String>()
         val decks = mutableListOf<DeckItem>()
         for(deck in deckDao.getAll()){
             decks.add(deck)
+            deckIdList.add(deck.id.toString())
         }
-        myCallback.onResponse(decks)
+        val deckSets: Array<MutableList<out Any>> = arrayOf(deckIdList, decks)
+        myCallback.onResponse(deckSets)
     }
 
     private fun editDeck(d: DeckItem){
         val intent = Intent(this, EditDeck::class.java)
 
+    }
+
+    open fun getDeckSetsID(deck: DeckItem):String {
+        val pos = deckSets[1].indexOf(deck)
+        val id = deckSets[0][pos]
+        return id.toString()
     }
 
 }
