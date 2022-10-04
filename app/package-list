@@ -89,7 +89,8 @@ $dokka.location:com.example.KickOns/DeckPicker///PointingToDeclaration/app/com.
 $dokka.location:com.example.KickOns/DeckPicker/DeckPicker/#/PointingToDeclaration/app/com.example.KickOns/-deck-picker/-deck-picker.html
 $dokka.location:com.example.KickOns/DeckPicker/delete/#com.example.KickOns.DeckItem#kotlin.Int/PointingToDeclaration/app/com.example.KickOns/-deck-picker/delete.html
 $dokka.location:com.example.KickOns/DeckPicker/edit/#com.example.KickOns.DeckItem/PointingToDeclaration/app/com.example.KickOns/-deck-picker/edit.html
-$dokka.location:com.example.KickOns/DeckPicker/getCards/#kotlin.Int?/PointingToDeclaration/app/com.example.KickOns/-deck-picker/get-cards.html
+$dokka.location:com.example.KickOns/DeckPicker/getCards/#kotlin.String/PointingToDeclaration/app/com.example.KickOns/-deck-picker/get-cards.html
+$dokka.location:com.example.KickOns/DeckPicker/getDeckSetsID/#com.example.KickOns.DeckItem/PointingToDeclaration/app/com.example.KickOns/-deck-picker/get-deck-sets-i-d.html
 $dokka.location:com.example.KickOns/DeckPicker/getDecks/#com.example.KickOns.FirebaseCallback/PointingToDeclaration/app/com.example.KickOns/-deck-picker/get-decks.html
 $dokka.location:com.example.KickOns/DeckPicker/onClick/#com.example.KickOns.DeckItem/PointingToDeclaration/app/com.example.KickOns/-deck-picker/on-click.html
 $dokka.location:com.example.KickOns/DeckPicker/switchDeck/#/PointingToDeclaration/app/com.example.KickOns/-deck-picker/switch-deck.html
@@ -99,7 +100,7 @@ $dokka.location:com.example.KickOns/DeckViewHolder/bindDeck/#com.example.KickOns
 $dokka.location:com.example.KickOns/EditDeck///PointingToDeclaration/app/com.example.KickOns/-edit-deck/index.html
 $dokka.location:com.example.KickOns/EditDeck/EditDeck/#/PointingToDeclaration/app/com.example.KickOns/-edit-deck/-edit-deck.html
 $dokka.location:com.example.KickOns/FirebaseCallback///PointingToDeclaration/app/com.example.KickOns/-firebase-callback/index.html
-$dokka.location:com.example.KickOns/FirebaseCallback/onResponse/#kotlin.collections.MutableList[com.example.KickOns.DeckItem]/PointingToDeclaration/app/com.example.KickOns/-firebase-callback/on-response.html
+$dokka.location:com.example.KickOns/FirebaseCallback/onResponse/#kotlin.Array[kotlin.collections.MutableList[kotlin.Any]]/PointingToDeclaration/app/com.example.KickOns/-firebase-callback/on-response.html
 $dokka.location:com.example.KickOns/HelpPage///PointingToDeclaration/app/com.example.KickOns/-help-page/index.html
 $dokka.location:com.example.KickOns/HelpPage/HelpPage/#/PointingToDeclaration/app/com.example.KickOns/-help-page/-help-page.html
 $dokka.location:com.example.KickOns/MainActivity///PointingToDeclaration/app/com.example.KickOns/-main-activity/index.html
@@ -107,7 +108,7 @@ $dokka.location:com.example.KickOns/MainActivity/MainActivity/#/PointingToDeclar
 $dokka.location:com.example.KickOns/MainActivity/randomPlayer/#kotlin.String/PointingToDeclaration/app/com.example.KickOns/-main-activity/random-player.html
 $dokka.location:com.example.KickOns/OnlineDeckPicker///PointingToDeclaration/app/com.example.KickOns/-online-deck-picker/index.html
 $dokka.location:com.example.KickOns/OnlineDeckPicker/OnlineDeckPicker/#/PointingToDeclaration/app/com.example.KickOns/-online-deck-picker/-online-deck-picker.html
-$dokka.location:com.example.KickOns/OnlineDeckPicker/getCards/#kotlin.Int?/PointingToDeclaration/app/com.example.KickOns/-online-deck-picker/get-cards.html
+$dokka.location:com.example.KickOns/OnlineDeckPicker/getCards/#kotlin.String/PointingToDeclaration/app/com.example.KickOns/-online-deck-picker/get-cards.html
 $dokka.location:com.example.KickOns/OnlineDeckPicker/getDb/#/PointingToDeclaration/app/com.example.KickOns/-online-deck-picker/get-db.html
 $dokka.location:com.example.KickOns/OnlineDeckPicker/getDecks/#com.example.KickOns.FirebaseCallback/PointingToDeclaration/app/com.example.KickOns/-online-deck-picker/get-decks.html
 $dokka.location:com.example.KickOns/OnlineDeckPicker/onClick/#com.example.KickOns.DeckItem/PointingToDeclaration/app/com.example.KickOns/-online-deck-picker/on-click.html
