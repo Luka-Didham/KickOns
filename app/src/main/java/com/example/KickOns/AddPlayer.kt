@@ -4,10 +4,8 @@ import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.*
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat.getFont
-import com.example.KickOns.databinding.AddPlayerBinding
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 
@@ -22,11 +20,10 @@ class AddPlayer : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.add_player)
-        val binding = AddPlayerBinding.inflate(layoutInflater)
         cG = findViewById(R.id.chipGroup)
 
-        var editText = findViewById<EditText>(R.id.textInputEditText)
-        var MAX_PLAYERS = 30
+        val editText = findViewById<EditText>(R.id.textInputEditText)
+        val MAX_PLAYERS = 30
         val btnAddPlayer = findViewById<Button>(R.id.btnAddPlayer)
         val btnStartFromChoosePlayers = findViewById<Button>(R.id.btnStartFromChoosePlayers)
 
@@ -79,7 +76,7 @@ class AddPlayer : AppCompatActivity() {
     }
 
     //Creates a chip and adds it to the chip group
-    @RequiresApi(Build.VERSION_CODES.M)
+    // @RequiresApi(Build.VERSION_CODES.M)
     private fun addChip(p: Player){
         val c = Chip(this)
         c.text = p.name.toString()
