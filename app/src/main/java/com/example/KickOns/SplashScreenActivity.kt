@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 import java.lang.Thread.sleep
 
 /** The Splash Screen is the first page that is displayed when the app is launched
- * it shows the apps logo as well as it plays music.
+ * it shows the apps logo as well as plays music.
  */
 
 class SplashScreenActivity : AppCompatActivity() {
@@ -21,7 +21,7 @@ class SplashScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
         mediaPlayer = MediaPlayer.create(applicationContext, R.raw.mytune)
-        mediaPlayer.start()
+        mediaPlayer.start() // starts the sound
         //Elements
         val logo = findViewById<ImageView>(R.id.logo)
 
