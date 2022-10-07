@@ -3,6 +3,7 @@ package com.cosc345.kickons
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.ItemTouchHelper
@@ -18,11 +19,12 @@ open class DeckPicker() : AppCompatActivity(), DeckClickListener {
     private lateinit var deckDao: DeckDAO
     private lateinit var deckSets: Array<MutableList<out Any>>
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setOnline()
         binding = DeckPickerBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         //Elements
         val mainActivity = this
         val recyclerView = binding.recyclerView
@@ -96,7 +98,7 @@ open class DeckPicker() : AppCompatActivity(), DeckClickListener {
 
      override fun edit(deck: DeckItem) {
          val intent = Intent(this, EditDeck::class.java)
-            intent.putExtra("id",deck.id)
+         intent.putExtra("id",deck.id)
          val pos = deckSets[1].indexOf(deck)
          val id = deckSets[0][pos]
          GlobalScope.launch {
@@ -107,6 +109,10 @@ open class DeckPicker() : AppCompatActivity(), DeckClickListener {
             }
 
      }
+
+    open fun setOnline(){
+        online = true
+    }
 
     override fun onClick(deck: DeckItem) {
        val intent = Intent(this, MainActivity::class.java)

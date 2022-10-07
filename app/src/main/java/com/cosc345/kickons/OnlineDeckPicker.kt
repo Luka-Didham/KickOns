@@ -2,6 +2,7 @@ package com.cosc345.kickons
 
 import android.content.Intent
 import android.util.Log
+import android.widget.Button
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.Dispatchers
@@ -53,6 +54,10 @@ class OnlineDeckPicker: DeckPicker(), DeckClickListener {
             // Save an online deck locally
         }
 
+    }
+
+    override fun setOnline(){
+        online = true
     }
 
     private fun saveCards(id: String, deckId: Int) {
