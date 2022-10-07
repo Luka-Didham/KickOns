@@ -1,4 +1,4 @@
-package com.example.KickOns
+package com.cosc345.kickons
 
 import android.content.Intent
 import android.os.Bundle
