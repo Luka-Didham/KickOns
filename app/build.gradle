@@ -63,7 +63,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.KickOns"
+        applicationId "com.cosc345.kickons"
         minSdk 23
         targetSdk 34
         versionCode 1
