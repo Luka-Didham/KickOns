@@ -18,17 +18,16 @@ class DeckViewHolder(
 
             //TODO(Add deck subtitle)
             if(!online){
-                deckCell.editBtn.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.edit_icon,0,0,0)
-                deckCell.editBtn.visibility = View.INVISIBLE
+                deckCell.editBtn.setImageResource(R.drawable.edit_icon)
             } else {
-                deckCell.editBtn.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.add,0,0,0)
+                deckCell.editBtn.setImageResource(R.drawable.download)
             }
             deckCell.editBtn.setOnClickListener{
                 clickListener.edit(deck)
+                deckCell.editBtn.visibility = View.INVISIBLE
             }
             deckCell.cardView.setOnClickListener {
                 clickListener.onClick(deck)
-
             }
         }
 }

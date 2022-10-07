@@ -111,7 +111,7 @@ open class DeckPicker() : AppCompatActivity(), DeckClickListener {
      }
 
     open fun setOnline(){
-        online = true
+        online = false
     }
 
     override fun onClick(deck: DeckItem) {
