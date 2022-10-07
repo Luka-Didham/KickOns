@@ -39,6 +39,7 @@ $dokka.location:com.cosc345.kickons/CardItem/getChallenge/#/PointingToDeclaratio
 $dokka.location:com.cosc345.kickons/CardItem/getDeckId/#/PointingToDeclaration/app/com.cosc345.kickons/-card-item/get-deck-id.html
 $dokka.location:com.cosc345.kickons/CardItem/getId/#/PointingToDeclaration/app/com.cosc345.kickons/-card-item/get-id.html
 $dokka.location:com.cosc345.kickons/CardItem/setChallenge/#kotlin.String/PointingToDeclaration/app/com.cosc345.kickons/-card-item/set-challenge.html
+$dokka.location:com.cosc345.kickons/CardItem/setDeckId/#kotlin.Int?/PointingToDeclaration/app/com.cosc345.kickons/-card-item/set-deck-id.html
 $dokka.location:com.cosc345.kickons/CardItemKt///PointingToDeclaration/app/com.cosc345.kickons/-card-item-kt/index.html
 $dokka.location:com.cosc345.kickons/CardItemKt/getCardList/#/PointingToDeclaration/app/com.cosc345.kickons/-card-item-kt/get-card-list.html
 $dokka.location:com.cosc345.kickons/CardItemKt/setCardList/#kotlin.collections.MutableList[com.cosc345.kickons.CardItem]/PointingToDeclaration/app/com.cosc345.kickons/-card-item-kt/set-card-list.html
@@ -93,6 +94,8 @@ $dokka.location:com.cosc345.kickons/DeckPicker/getCards/#kotlin.String/PointingT
 $dokka.location:com.cosc345.kickons/DeckPicker/getDeckSetsID/#com.cosc345.kickons.DeckItem/PointingToDeclaration/app/com.cosc345.kickons/-deck-picker/get-deck-sets-i-d.html
 $dokka.location:com.cosc345.kickons/DeckPicker/getDecks/#com.cosc345.kickons.FirebaseCallback/PointingToDeclaration/app/com.cosc345.kickons/-deck-picker/get-decks.html
 $dokka.location:com.cosc345.kickons/DeckPicker/onClick/#com.cosc345.kickons.DeckItem/PointingToDeclaration/app/com.cosc345.kickons/-deck-picker/on-click.html
+$dokka.location:com.cosc345.kickons/DeckPicker/saveCards/#com.cosc345.kickons.CardItem/PointingToDeclaration/app/com.cosc345.kickons/-deck-picker/save-cards.html
+$dokka.location:com.cosc345.kickons/DeckPicker/saveDeck/#com.cosc345.kickons.DeckItem/PointingToDeclaration/app/com.cosc345.kickons/-deck-picker/save-deck.html
 $dokka.location:com.cosc345.kickons/DeckViewHolder///PointingToDeclaration/app/com.cosc345.kickons/-deck-view-holder/index.html
 $dokka.location:com.cosc345.kickons/DeckViewHolder/DeckViewHolder/#[Error type: Unresolved type for DeckItemBinding]#com.cosc345.kickons.DeckClickListener/PointingToDeclaration/app/com.cosc345.kickons/-deck-view-holder/-deck-view-holder.html
 $dokka.location:com.cosc345.kickons/DeckViewHolder/bindDeck/#com.cosc345.kickons.DeckItem/PointingToDeclaration/app/com.cosc345.kickons/-deck-view-holder/bind-deck.html
@@ -107,6 +110,7 @@ $dokka.location:com.cosc345.kickons/MainActivity/MainActivity/#/PointingToDeclar
 $dokka.location:com.cosc345.kickons/MainActivity/randomPlayer/#kotlin.String/PointingToDeclaration/app/com.cosc345.kickons/-main-activity/random-player.html
 $dokka.location:com.cosc345.kickons/OnlineDeckPicker///PointingToDeclaration/app/com.cosc345.kickons/-online-deck-picker/index.html
 $dokka.location:com.cosc345.kickons/OnlineDeckPicker/OnlineDeckPicker/#/PointingToDeclaration/app/com.cosc345.kickons/-online-deck-picker/-online-deck-picker.html
+$dokka.location:com.cosc345.kickons/OnlineDeckPicker/edit/#com.cosc345.kickons.DeckItem/PointingToDeclaration/app/com.cosc345.kickons/-online-deck-picker/edit.html
 $dokka.location:com.cosc345.kickons/OnlineDeckPicker/getCards/#kotlin.String/PointingToDeclaration/app/com.cosc345.kickons/-online-deck-picker/get-cards.html
 $dokka.location:com.cosc345.kickons/OnlineDeckPicker/getDb/#/PointingToDeclaration/app/com.cosc345.kickons/-online-deck-picker/get-db.html
 $dokka.location:com.cosc345.kickons/OnlineDeckPicker/getDecks/#com.cosc345.kickons.FirebaseCallback/PointingToDeclaration/app/com.cosc345.kickons/-online-deck-picker/get-decks.html
