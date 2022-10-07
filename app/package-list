@@ -85,6 +85,14 @@ $dokka.location:com.cosc345.kickons/DeckItem/getName/#/PointingToDeclaration/ap
 $dokka.location:com.cosc345.kickons/DeckItemKt///PointingToDeclaration/app/com.cosc345.kickons/-deck-item-kt/index.html
 $dokka.location:com.cosc345.kickons/DeckItemKt/getDeckList/#/PointingToDeclaration/app/com.cosc345.kickons/-deck-item-kt/get-deck-list.html
 $dokka.location:com.cosc345.kickons/DeckItemKt/setDeckList/#kotlin.collections.MutableList[com.cosc345.kickons.DeckItem]/PointingToDeclaration/app/com.cosc345.kickons/-deck-item-kt/set-deck-list.html
+$dokka.location:com.cosc345.kickons/DeckPicker///PointingToDeclaration/app/com.cosc345.kickons/-deck-picker/index.html
+$dokka.location:com.cosc345.kickons/DeckPicker/DeckPicker/#/PointingToDeclaration/app/com.cosc345.kickons/-deck-picker/-deck-picker.html
+$dokka.location:com.cosc345.kickons/DeckPicker/delete/#com.cosc345.kickons.DeckItem#kotlin.Int/PointingToDeclaration/app/com.cosc345.kickons/-deck-picker/delete.html
+$dokka.location:com.cosc345.kickons/DeckPicker/edit/#com.cosc345.kickons.DeckItem/PointingToDeclaration/app/com.cosc345.kickons/-deck-picker/edit.html
+$dokka.location:com.cosc345.kickons/DeckPicker/getCards/#kotlin.String/PointingToDeclaration/app/com.cosc345.kickons/-deck-picker/get-cards.html
+$dokka.location:com.cosc345.kickons/DeckPicker/getDeckSetsID/#com.cosc345.kickons.DeckItem/PointingToDeclaration/app/com.cosc345.kickons/-deck-picker/get-deck-sets-i-d.html
+$dokka.location:com.cosc345.kickons/DeckPicker/getDecks/#com.cosc345.kickons.FirebaseCallback/PointingToDeclaration/app/com.cosc345.kickons/-deck-picker/get-decks.html
+$dokka.location:com.cosc345.kickons/DeckPicker/onClick/#com.cosc345.kickons.DeckItem/PointingToDeclaration/app/com.cosc345.kickons/-deck-picker/on-click.html
 $dokka.location:com.cosc345.kickons/DeckViewHolder///PointingToDeclaration/app/com.cosc345.kickons/-deck-view-holder/index.html
 $dokka.location:com.cosc345.kickons/DeckViewHolder/DeckViewHolder/#[Error type: Unresolved type for DeckItemBinding]#com.cosc345.kickons.DeckClickListener/PointingToDeclaration/app/com.cosc345.kickons/-deck-view-holder/-deck-view-holder.html
 $dokka.location:com.cosc345.kickons/DeckViewHolder/bindDeck/#com.cosc345.kickons.DeckItem/PointingToDeclaration/app/com.cosc345.kickons/-deck-view-holder/bind-deck.html
@@ -135,15 +143,5 @@ $dokka.location:com.cosc345.kickons/SwipeGesture/onChildDrawOver/#android.graphi
 $dokka.location:com.cosc345.kickons/SwipeGesture/onMove/#androidx.recyclerview.widget.RecyclerView#androidx.recyclerview.widget.RecyclerView.ViewHolder#androidx.recyclerview.widget.RecyclerView.ViewHolder/PointingToDeclaration/app/com.cosc345.kickons/-swipe-gesture/on-move.html
 $dokka.location:com.cosc345.kickons/WelcomePage///PointingToDeclaration/app/com.cosc345.kickons/-welcome-page/index.html
 $dokka.location:com.cosc345.kickons/WelcomePage/WelcomePage/#/PointingToDeclaration/app/com.cosc345.kickons/-welcome-page/-welcome-page.html
-$dokka.location:com.example.KickOns////PointingToDeclaration/app/com.example.KickOns/index.html
-$dokka.location:com.example.KickOns/DeckPicker///PointingToDeclaration/app/com.example.KickOns/-deck-picker/index.html
-$dokka.location:com.example.KickOns/DeckPicker/DeckPicker/#/PointingToDeclaration/app/com.example.KickOns/-deck-picker/-deck-picker.html
-$dokka.location:com.example.KickOns/DeckPicker/delete/#[Error type: Unresolved type for DeckItem]#kotlin.Int/PointingToDeclaration/app/com.example.KickOns/-deck-picker/delete.html
-$dokka.location:com.example.KickOns/DeckPicker/edit/#[Error type: Unresolved type for DeckItem]/PointingToDeclaration/app/com.example.KickOns/-deck-picker/edit.html
-$dokka.location:com.example.KickOns/DeckPicker/getCards/#kotlin.String/PointingToDeclaration/app/com.example.KickOns/-deck-picker/get-cards.html
-$dokka.location:com.example.KickOns/DeckPicker/getDeckSetsID/#[Error type: Unresolved type for DeckItem]/PointingToDeclaration/app/com.example.KickOns/-deck-picker/get-deck-sets-i-d.html
-$dokka.location:com.example.KickOns/DeckPicker/getDecks/#[Error type: Unresolved type for FirebaseCallback]/PointingToDeclaration/app/com.example.KickOns/-deck-picker/get-decks.html
-$dokka.location:com.example.KickOns/DeckPicker/onClick/#[Error type: Unresolved type for DeckItem]/PointingToDeclaration/app/com.example.KickOns/-deck-picker/on-click.html
 com.cosc345.kickons
-com.example.KickOns
 
