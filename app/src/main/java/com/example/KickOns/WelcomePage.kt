@@ -30,11 +30,10 @@ class WelcomePage : AppCompatActivity() {
         //Buttons
         val btnHelp = findViewById<Button>(R.id.btnHelp)
         val btnPlay = findViewById<Button>(R.id.btnPlay)
+        val btnOnline = findViewById<Button>(R.id.btnOnline)
 
         analytics = Firebase.analytics
-        // Write a message to the database
         val db = Firebase.firestore
-        // Create a new user with a first and last name
 
         db.collection("Decks")
             .get()
@@ -48,10 +47,6 @@ class WelcomePage : AppCompatActivity() {
                     decks.add(d)
                 }
                 val deckSets: Array<MutableList<out Any>> = arrayOf(deckIdList, decks)
-                Log.d("d", deckSets[0][0].toString())
-                Log.d("d", deckSets[0][1].toString())
-                Log.d("d", deckSets[1][0].toString())
-                Log.d("d", deckSets[1][1].toString())
             }
             .addOnFailureListener { exception ->
                 Log.w("TAG", "Error getting documents.", exception)
@@ -60,7 +55,6 @@ class WelcomePage : AppCompatActivity() {
 
 
         //SHOWCASE MODE
-        //TODO "make sure cards arent added twice to example deck"
         PopulateDecks(applicationContext).clearDeck()
         PopulateDecks(applicationContext).insert()
 
@@ -71,11 +65,14 @@ class WelcomePage : AppCompatActivity() {
         }
 
         // when the player clicks on the the help button it goes to the help page class
-      btnHelp.setOnClickListener {
-          val intent = Intent(this, HelpPage::class.java)
-       startActivity(intent)
-    }
-
+        btnHelp.setOnClickListener {
+            val intent = Intent(this, HelpPage::class.java)
+            startActivity(intent)
+        }
+        btnOnline.setOnClickListener{
+            val intent = Intent(this, OnlineDeckPicker::class.java)
+            startActivity(intent)
+        }
     }
 
 } // end class

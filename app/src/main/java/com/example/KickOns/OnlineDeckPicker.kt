@@ -16,10 +16,6 @@ class OnlineDeckPicker: DeckPicker() {
     val db = Firebase.firestore
     private lateinit var deckSets: Array<MutableList<out Any>>
 
-    override fun switchDeck(){
-        val intent = Intent(this,DeckPicker::class.java)
-        startActivity(intent)
-    }
     override suspend fun getDecks(myCallback: FirebaseCallback) {
         db.collection("Decks")
             .get()
@@ -32,22 +28,16 @@ class OnlineDeckPicker: DeckPicker() {
                     val d = DeckItem(null,document.get("name").toString())
                     decks.add(d)
                     deckIdList.add(document.id)
-                    Log.d("TAG", "${document.id} => ${document.data}")
                 }
                 deckSets = arrayOf(deckIdList, decks)
-                Log.d("asf", deckSets[0][0].toString())
                 myCallback.onResponse(deckSets)
             }
             .addOnFailureListener { exception ->
-                Log.w("TAG", "Error getting documents.", exception)
             }
 
     }
     override fun onClick(deck: DeckItem) {
         val id = getDeckSetsID(deck)
-        Log.d("f", deck.name)
-        Log.d("f", deck.id.toString())
-        Log.d("f", id)
         GlobalScope.launch{
             //Querry db and wait for response
             getCards(id)
@@ -65,7 +55,6 @@ class OnlineDeckPicker: DeckPicker() {
                     cardList.add(c)
 
                 }
-
                 startActivity(intent)
             }
             .addOnFailureListener { exception ->

@@ -226,25 +226,9 @@
         app:backgroundTint="@color/color_accent"
         app:cornerRadius="99dp"
         app:layout_constraintBottom_toTopOf="@+id/childCrd"
-        app:layout_constraintEnd_toStartOf="@+id/btnExitEdit"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/btnExitEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="107dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="17dp"
-        android:text="Back"
-        app:backgroundTint="@color/color_accent"
-        app:cornerRadius="99dp"
-        app:iconTint="#9C27B0"
-        app:layout_constraintBottom_toTopOf="@+id/childCrd"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnDone" />
 
     <ImageView
         android:id="@+id/btnPrev"
