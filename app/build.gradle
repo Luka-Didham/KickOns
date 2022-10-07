@@ -5,6 +5,7 @@ plugins {
 }
 
 apply plugin: "org.jetbrains.dokka"
+apply plugin: 'kotlin-android'
 apply plugin: 'jacoco'
 
 jacoco {
@@ -138,4 +139,10 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
     implementation "androidx.room:room-ktx:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.core:core-ktx:+"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
 }

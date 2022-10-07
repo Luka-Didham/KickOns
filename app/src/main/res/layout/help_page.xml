@@ -113,12 +113,12 @@ Click save cards to save the cards to the deck, then select the deck and play!"
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnGobacK"
+        android:background="@drawable/btn_background_yellow"
         android:layout_width="66dp"
         android:layout_height="39dp"
         android:layout_margin="5sp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="28dp"
-        android:background="#FBD34C"
         android:fontFamily="@font/chango_regular"
         android:text="Back"
         android:textColor="@color/black"
