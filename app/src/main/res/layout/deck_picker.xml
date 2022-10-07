@@ -31,7 +31,7 @@
         android:layout_margin="15dp"
         android:background="@drawable/deckitembackground"
         android:fontFamily="@font/fonts"
-        android:text="Online Decks"
+        android:text="Home"
         android:textColor="#FBD34C"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

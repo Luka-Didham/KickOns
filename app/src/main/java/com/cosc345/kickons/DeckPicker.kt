@@ -1,4 +1,4 @@
-package com.cosc345.kickons
+package com.example.KickOns
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.cosc345.kickons.databinding.DeckPickerBinding
+import com.example.KickOns.databinding.DeckPickerBinding
 import kotlinx.coroutines.*
 
 open class DeckPicker() : AppCompatActivity(), DeckClickListener {
@@ -27,7 +27,8 @@ open class DeckPicker() : AppCompatActivity(), DeckClickListener {
         val recyclerView = binding.recyclerView
         val btnCreateDeckFromChoose = findViewById<Button>(R.id.btnCreateDeckFromChoose)
 
-        val btnOnline = findViewById<Button>(R.id.btnOnline)
+        val btnHome = findViewById<Button>(R.id.btnOnline)
+
         //Speed at which items are deleted
 
         recyclerView.itemAnimator?.removeDuration = 5
@@ -65,8 +66,8 @@ open class DeckPicker() : AppCompatActivity(), DeckClickListener {
 
         }
 
-        btnOnline.setOnClickListener{
-            switchDeck()
+        btnHome.setOnClickListener{
+            home()
         }
 
         btnCreateDeckFromChoose.setOnClickListener {
@@ -86,8 +87,8 @@ open class DeckPicker() : AppCompatActivity(), DeckClickListener {
         }
     }
 
-    open fun switchDeck(){
-        val intent = Intent(this,OnlineDeckPicker::class.java)
+    private fun home(){
+        val intent = Intent(this,WelcomePage::class.java)
         startActivity(intent)
     }
 
@@ -109,15 +110,6 @@ open class DeckPicker() : AppCompatActivity(), DeckClickListener {
        val intent = Intent(this, MainActivity::class.java)
         val pos = deckSets[1].indexOf(deck)
         val id = deckSets[0][pos]
-//        Log.d("f", deck.name)
-//        Log.d("f", deck.id.toString() + "deck.id")
-//        Log.d("f", id.toString() + "id id")
-//        Log.d("f", pos.toString() + "pos")
-        Log.d("f", deckSets[0].toString())
-        Log.d("f", deckSets[1].toString())
-        Log.d("f", pos.toString() + "pos")
-
-
 
         GlobalScope.launch{
             //Querry db and wait for response
@@ -151,10 +143,7 @@ open class DeckPicker() : AppCompatActivity(), DeckClickListener {
         myCallback.onResponse(deckSets)
     }
 
-    private fun editDeck(d: DeckItem){
-        val intent = Intent(this, EditDeck::class.java)
 
-    }
 
     open fun getDeckSetsID(deck: DeckItem):String {
         val pos = deckSets[1].indexOf(deck)

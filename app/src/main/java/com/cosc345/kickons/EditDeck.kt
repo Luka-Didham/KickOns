@@ -88,7 +88,7 @@ class EditDeck(): AppCompatActivity(){
         //val btn_next = findViewById<Button>(R.id.btn_next)
        // val btn_prev = findViewById<Button>(R.id.btn_prev)
         val btnDone = findViewById<Button>(R.id.btnDone)
-        val btnExit = findViewById<Button>(R.id.btnExitEdit)
+
         btnPrev = findViewById(R.id.btnPrev)
         btnNext = findViewById(R.id.btnNext)
         delBtn = findViewById(R.id.delBtn)
