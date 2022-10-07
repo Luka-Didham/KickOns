@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.KickOns.databinding.DeckPickerBinding
+import com.cosc345.kickons.databinding.DeckPickerBinding
 import kotlinx.coroutines.*
 
 open class DeckPicker() : AppCompatActivity(), DeckClickListener {
