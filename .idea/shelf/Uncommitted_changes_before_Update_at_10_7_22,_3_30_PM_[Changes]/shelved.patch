@@ -1,0 +1,74 @@
+Index: app/src/main/java/com/example/KickOns/DeckItem.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.KickOns\n\nimport androidx.room.Entity\nimport androidx.room.PrimaryKey\n\nvar deckList = mutableListOf<DeckItem>()\n@Entity(tableName = \"deck_table\")\ndata class DeckItem(\n    @PrimaryKey(autoGenerate = true)\n    val id: Int?,\n    val name: String\n    //val description: String\n)
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/KickOns/DeckItem.kt b/app/src/main/java/com/example/KickOns/DeckItem.kt
+--- a/app/src/main/java/com/example/KickOns/DeckItem.kt	(revision 09af90d3b073ef99615cf58defaa0163b78efeac)
++++ b/app/src/main/java/com/example/KickOns/DeckItem.kt	(date 1664835548236)
+@@ -8,6 +8,6 @@
+ data class DeckItem(
+     @PrimaryKey(autoGenerate = true)
+     val id: Int?,
+-    val name: String
++    val name: String,
+     //val description: String
+ )
+\ No newline at end of file
+Index: app/src/main/java/com/example/KickOns/WelcomePage.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.KickOns\n\nimport android.content.Intent\nimport android.os.Bundle\nimport android.util.Log\nimport android.widget.Button\nimport androidx.appcompat.app.AppCompatActivity\nimport com.example.KickOns.R\nimport com.google.firebase.analytics.FirebaseAnalytics\nimport com.google.firebase.analytics.ktx.analytics\nimport com.google.firebase.database.FirebaseDatabase\nimport com.google.firebase.database.ktx.database\nimport com.google.firebase.firestore.FirebaseFirestore\nimport com.google.firebase.firestore.ktx.firestore\nimport com.google.firebase.ktx.Firebase\n\n/**\n * The Screen that is displayed immediately after the splash screen,\n * shows the buttons to start the game, and help.\n *\n */\nclass WelcomePage : AppCompatActivity() {\n    private lateinit var analytics: FirebaseAnalytics\n    override fun onCreate(savedInstanceState: Bundle?) {\n\n        super.onCreate(savedInstanceState)\n        setContentView(R.layout.welcome_page)\n\n        //Buttons\n        val btnHelp = findViewById<Button>(R.id.btnHelp)\n        val btnPlay = findViewById<Button>(R.id.btnPlay)\n\n        analytics = Firebase.analytics\n        // Write a message to the database\n        val db = Firebase.firestore\n        // Create a new user with a first and last name\n\n        db.collection(\"Decks\")\n            .get()\n            .addOnSuccessListener { result ->\n                for (document in result) {\n                    Log.d(\"TAG\", \"${document.id} => ${document.data}\")\n                }\n            }\n            .addOnFailureListener { exception ->\n                Log.w(\"TAG\", \"Error getting documents.\", exception)\n            }\n\n        //SHOWCASE MODE\n        //TODO \"make sure cards arent added twice to example deck\"\n        PopulateDecks(applicationContext).clearDeck()\n        PopulateDecks(applicationContext).insert()\n\n        btnPlay.setOnClickListener {\n            val intent = Intent(this, AddPlayer::class.java)\n            startActivity(intent)\n        }\n\n      btnHelp.setOnClickListener {\n          val intent = Intent(this, HelpPage::class.java)\n       startActivity(intent)\n    }\n\n    }\n\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/KickOns/WelcomePage.kt b/app/src/main/java/com/example/KickOns/WelcomePage.kt
+--- a/app/src/main/java/com/example/KickOns/WelcomePage.kt	(revision 09af90d3b073ef99615cf58defaa0163b78efeac)
++++ b/app/src/main/java/com/example/KickOns/WelcomePage.kt	(date 1664834802970)
+@@ -35,7 +35,7 @@
+         val db = Firebase.firestore
+         // Create a new user with a first and last name
+ 
+-        db.collection("Decks")
++        db.collection("Decks/X2ZPoY1CpTOVJe6bVhP5/Cards")
+             .get()
+             .addOnSuccessListener { result ->
+                 for (document in result) {
+Index: app/src/main/java/com/example/KickOns/OnlineDeckPicker.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.KickOns\n\nimport android.content.Intent\nimport android.os.Bundle\nimport android.util.Log\nimport android.widget.Button\nimport com.example.KickOns.databinding.DeckPickerBinding\nimport com.google.firebase.firestore.ktx.firestore\nimport com.google.firebase.ktx.Firebase\nimport kotlinx.coroutines.Dispatchers\nimport kotlinx.coroutines.GlobalScope\nimport kotlinx.coroutines.launch\nimport kotlinx.coroutines.withContext\n\nclass OnlineDeckPicker: DeckPicker() {\n    val db = Firebase.firestore\n\n    override fun switchDeck(){\n        val intent = Intent(this,DeckPicker::class.java)\n        startActivity(intent)\n    }\n    override suspend fun getDecks(myCallback: FirebaseCallback) {\n        db.collection(\"Decks\")\n            .get()\n            .addOnSuccessListener { result ->\n                val decks = mutableListOf<DeckItem>()\n                for (document in result) {\n                    val d = DeckItem(null,document.get(\"name\").toString())\n                    decks.add(d)\n                    Log.d(\"TAG\", \"${document.id} => ${document.data}\")\n                }\n                myCallback.onResponse(decks)\n            }\n            .addOnFailureListener { exception ->\n                Log.w(\"TAG\", \"Error getting documents.\", exception)\n            }\n\n    }\n    override fun onClick(deck: DeckItem) {\n        val intent = Intent(this, MainActivity::class.java)\n        val d = deck.id\n        GlobalScope.launch{\n            //Querry db and wait for response\n            getCards(deck.id)\n            //On main launch next page\n            withContext(Dispatchers.Main){\n                intent.putExtra(\"id\",deck.id)\n                startActivity(intent)\n            }\n        }\n    }\n    override suspend fun getCards(id: Int?) {\n        cardList.clear()\n        //TODO get the cards from the db related to the id you pressed\n    }\n\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/KickOns/OnlineDeckPicker.kt b/app/src/main/java/com/example/KickOns/OnlineDeckPicker.kt
+--- a/app/src/main/java/com/example/KickOns/OnlineDeckPicker.kt	(revision 09af90d3b073ef99615cf58defaa0163b78efeac)
++++ b/app/src/main/java/com/example/KickOns/OnlineDeckPicker.kt	(date 1664839923773)
+@@ -24,10 +24,11 @@
+             .get()
+             .addOnSuccessListener { result ->
+                 val decks = mutableListOf<DeckItem>()
++
+                 for (document in result) {
+                     val d = DeckItem(null,document.get("name").toString())
+                     decks.add(d)
+-                    Log.d("TAG", "${document.id} => ${document.data}")
++                    Log.d("TAG", "${document.id} => ${document.data["name"]}")
+                 }
+                 myCallback.onResponse(decks)
+             }
+@@ -49,9 +50,9 @@
+             }
+         }
+     }
++
+     override suspend fun getCards(id: Int?) {
+-        cardList.clear()
+-        //TODO get the cards from the db related to the id you pressed
++
+     }
+ 
+ }
+\ No newline at end of file
