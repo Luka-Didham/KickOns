@@ -25,19 +25,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnEditDeckFromChoose"
+        android:id="@+id/btnOnline"
         android:layout_width="176dp"
         android:layout_height="52dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
+        android:layout_margin="15dp"
         android:background="@drawable/deckitembackground"
         android:fontFamily="@font/fonts"
-        android:padding="25px"
-        android:text="Edit Deck"
+        android:text="Home"
         android:textColor="#FBD34C"
-        android:textSize="15sp"
         android:textStyle="bold"
-        android:layout_margin="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnCreateDeckFromChoose"
         app:layout_constraintStart_toStartOf="parent" />
@@ -49,7 +45,7 @@
         android:layout_height="52sp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_margin="15sp"
+        android:layout_margin="15dp"
         android:background="@drawable/deckitembackground"
         android:fontFamily="@font/fonts"
         android:padding="25px"
@@ -63,20 +59,13 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="0sp"
-        android:padding="5sp"
+        android:layout_height="0dp"
+        android:padding="5dp"
         app:layout_constraintBottom_toTopOf="@+id/btnCreateDeckFromChoose"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvChooseDeck"
         >
-
-<!--        <ImageButton-->
-<!--            android:id="@+id/btnDeleteDeck"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:src="@drawable/ic_delete"-->
-<!--            />-->
 
 
     </androidx.recyclerview.widget.RecyclerView>

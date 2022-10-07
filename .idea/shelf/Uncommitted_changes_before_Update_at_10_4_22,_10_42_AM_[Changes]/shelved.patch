@@ -1,0 +1,266 @@
+Index: app/src/main/res/layout/add_player.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\n    xmlns:tools=\"http://schemas.android.com/tools\"\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\"\n    android:background=\"#FBD34C\">\n\n    <com.google.android.material.chip.ChipGroup\n        android:id=\"@+id/chipGroup\"\n        android:layout_width=\"match_parent\"\n        android:layout_height=\"wrap_content\"\n        android:layout_marginStart=\"10dp\"\n        android:layout_marginEnd=\"10dp\"\n        android:layout_marginBottom=\"5dp\"\n        app:layout_constraintBottom_toTopOf=\"@+id/btnAddPlayer\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintStart_toStartOf=\"parent\">\n\n        <!-- Chips can be declared here, or added dynamically. -->\n\n    </com.google.android.material.chip.ChipGroup>\n\n    <Button\n        android:id=\"@+id/btnAddPlayer\"\n        android:layout_width=\"wrap_content\"\n        android:layout_height=\"wrap_content\"\n        android:layout_margin=\"5sp\"\n        android:background=\"@drawable/deckitembackground\"\n        android:fontFamily=\"@font/fonts\"\n        android:text=\"Add\"\n        android:textAlignment=\"center\"\n        android:textColor=\"#E2F6DF13\"\n        android:textSize=\"15sp\"\n        app:layout_constraintBottom_toBottomOf=\"parent\"\n        app:layout_constraintStart_toEndOf=\"@+id/textInputEditText\" />\n\n\n    <TextView\n        android:id=\"@+id/tvChoosePlayersHeader\"\n        android:layout_width=\"match_parent\"\n        android:layout_height=\"wrap_content\"\n        android:background=\"#723CD3\"\n        android:fontFamily=\"@font/fonts\"\n        android:padding=\"15dp\"\n        android:text=\"ADD PLAYERS!\"\n        android:textAlignment=\"center\"\n        android:textColor=\"#FBD34C\"\n        android:textSize=\"35sp\"\n        android:textStyle=\"bold\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toTopOf=\"parent\" />\n\n\n    <Button\n        android:id=\"@+id/btnStartFromChoosePlayers\"\n        android:layout_width=\"wrap_content\"\n        android:layout_height=\"wrap_content\"\n        android:layout_margin=\"5sp\"\n        android:layout_marginStart=\"31dp\"\n        android:background=\"@drawable/deckitembackground\"\n        android:fontFamily=\"@font/fonts\"\n        android:text=\"START!\"\n        android:textAlignment=\"center\"\n        android:textColor=\"#E2F6DF13\"\n        android:textSize=\"15sp\"\n        app:layout_constraintBottom_toBottomOf=\"parent\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintStart_toEndOf=\"@+id/btnAddPlayer\" />\n\n    <com.google.android.material.textfield.TextInputEditText\n        android:id=\"@+id/textInputEditText\"\n        android:layout_width=\"168dp\"\n        android:layout_height=\"48dp\"\n        android:layout_margin=\"5sp\"\n        android:hint=\"Player Name\"\n        android:inputType=\"textPersonName\"\n        android:maxLength=\"7\"\n        android:singleLine=\"true\"\n        app:layout_constraintBottom_toBottomOf=\"parent\"\n        app:layout_constraintStart_toStartOf=\"parent\" />\n\n\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/add_player.xml b/app/src/main/res/layout/add_player.xml
+--- a/app/src/main/res/layout/add_player.xml	(revision 172a379e766a88a471e172296f190368756e13ed)
++++ b/app/src/main/res/layout/add_player.xml	(date 1664831918890)
+@@ -33,7 +33,7 @@
+         android:textColor="#E2F6DF13"
+         android:textSize="15sp"
+         app:layout_constraintBottom_toBottomOf="parent"
+-        app:layout_constraintStart_toEndOf="@+id/textInputEditText" />
++        app:layout_constraintStart_toEndOf="@+id/editPlayerText" />
+ 
+ 
+     <TextView
+@@ -70,7 +70,7 @@
+         app:layout_constraintStart_toEndOf="@+id/btnAddPlayer" />
+ 
+     <com.google.android.material.textfield.TextInputEditText
+-        android:id="@+id/textInputEditText"
++        android:id="@+id/editPlayerText"
+         android:layout_width="168dp"
+         android:layout_height="48dp"
+         android:layout_margin="5sp"
+Index: app/src/main/java/com/example/KickOns/DeckDAO.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.KickOns\n\nimport androidx.room.*\n\n@Dao\ninterface DeckDAO {\n    @Insert(onConflict = OnConflictStrategy.IGNORE)\n    suspend fun addDeck(deck: DeckItem) : Long\n\n//    @Query(\"SELECT * FROM deck_table\")\n//    fun getAllWithCards(): List<DeckWithCards>\n\n    @Query(\"SELECT * FROM deck_table\")\n    fun getAll(): List<DeckItem>\n\n//    @Query(\"DELETE FROM deck_table where ID = :deck_id\")\n//    fun deleteById(deck_id: Int)\n\n    @Delete\n    suspend fun delete(deckItem: DeckItem)\n\n//    @Query(\"DELETE FROM deck_table WHERE ID = :deck_id\")\n//    suspend fun deleteDeck(deck_id : Int?)\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/KickOns/DeckDAO.kt b/app/src/main/java/com/example/KickOns/DeckDAO.kt
+--- a/app/src/main/java/com/example/KickOns/DeckDAO.kt	(revision 172a379e766a88a471e172296f190368756e13ed)
++++ b/app/src/main/java/com/example/KickOns/DeckDAO.kt	(date 1664831918910)
+@@ -13,6 +13,9 @@
+     @Query("SELECT * FROM deck_table")
+     fun getAll(): List<DeckItem>
+ 
++    @Query("SELECT * FROM DECK_TABLE WHERE ID =:deck_id")
++    suspend fun getById(deck_id: Int?): DeckItem
++
+ //    @Query("DELETE FROM deck_table where ID = :deck_id")
+ //    fun deleteById(deck_id: Int)
+ 
+Index: app/src/androidTest/java/com/example/KickOns/ExampleInstrumentedTest.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.KickOns\n\nimport android.provider.Settings\nimport androidx.room.Dao\nimport androidx.room.Room\nimport androidx.test.platform.app.InstrumentationRegistry\nimport androidx.test.ext.junit.runners.AndroidJUnit4\nimport kotlinx.coroutines.GlobalScope\nimport kotlinx.coroutines.launch\nimport org.junit.After\n\nimport org.junit.Test\nimport org.junit.runner.RunWith\n\nimport org.junit.Assert.*\nimport org.junit.Before\nimport java.io.IOException\n\n/**\n * Instrumented test, which will execute on an Android device.\n *\n * See [testing documentation](http://d.android.com/tools/testing).\n */\n@RunWith(AndroidJUnit4::class)\nclass ExampleInstrumentedTest {\n    private lateinit var cardDao: CardDAO\n    private lateinit var deckDao: DeckDAO\n    private lateinit var db: CardDB\n\n    @Before\n    fun createDB(){\n        val context = InstrumentationRegistry.getInstrumentation().targetContext\n        db = Room.inMemoryDatabaseBuilder(\n            context, CardDB::class.java).build()\n        deckDao = db.deckDAO()\n        cardDao = db.cardDAO()\n    }\n\n    @After\n    @Throws(IOException::class)\n    fun closeDb() {\n        db.close()\n    }\n\n\n//Local Deck DB TEST\n    @Test\n    @Throws(Exception::class)\n    fun writeAndReadDeckDB(){\n        val deck = DeckItem(-1,\"Test\")\n        GlobalScope.launch {\n            deckDao.addDeck(deck)\n            val get = deckDao.getAll()\n            assertTrue(get.size == 1)\n        }\n    }\n\n    @Test\n    fun writeAndReadCardDB(){\n        val card = CardItem(-1,2,\"test\",-1)\n        GlobalScope.launch {\n            cardDao.addCard(card)\n            val get = cardDao.getAll()\n            assertTrue(get.size == 1)\n        }\n    }\n\n    /**\n     * Test Function for getting cards from their related\n     * deck using the CardDAO\n     * @see com.example.KickOns.CardItem\n     * @see com.example.KickOns.CardDAO\n     */\n    @Test\n    fun getCardsInDeck(){\n        val card2 = CardItem(-2,3,\"test2\",-1)\n        GlobalScope.launch {\n            cardDao.addCard(card2)\n            val cards = cardDao.getByDeckId(-1)\n            assertTrue(cards.size == 2)\n            assertTrue(cards[1] == card2)\n            assertFalse(cards[0] == card2)\n        }\n    }\n}\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/androidTest/java/com/example/KickOns/ExampleInstrumentedTest.kt b/app/src/androidTest/java/com/example/KickOns/ExampleInstrumentedTest.kt
+--- a/app/src/androidTest/java/com/example/KickOns/ExampleInstrumentedTest.kt	(revision 172a379e766a88a471e172296f190368756e13ed)
++++ b/app/src/androidTest/java/com/example/KickOns/ExampleInstrumentedTest.kt	(date 1664831918920)
+@@ -21,6 +21,7 @@
+  *
+  * See [testing documentation](http://d.android.com/tools/testing).
+  */
++
+ @RunWith(AndroidJUnit4::class)
+ class ExampleInstrumentedTest {
+     private lateinit var cardDao: CardDAO
+Index: app/src/test/java/com/example/KickOns/ExampleUnitTest.kt
+===================================================================
+diff --git a/app/src/test/java/com/example/KickOns/ExampleUnitTest.kt b/app/src/test/java/com/example/KickOns/ExampleUnitTest.kt
+deleted file mode 100644
+--- a/app/src/test/java/com/example/KickOns/ExampleUnitTest.kt	(revision 172a379e766a88a471e172296f190368756e13ed)
++++ /dev/null	(revision 172a379e766a88a471e172296f190368756e13ed)
+@@ -1,17 +0,0 @@
+-package com.example.KickOns
+-
+-import org.junit.Test
+-
+-import org.junit.Assert.*
+-
+-/**
+- * Example local unit test, which will execute on the development machine (host).
+- *
+- * See [testing documentation](http://d.android.com/tools/testing).
+- */
+-class ExampleUnitTest {
+-    @Test
+-    fun addition_isCorrect() {
+-        assertEquals(4, 2 + 2)
+-    }
+-}
+\ No newline at end of file
+Index: app/src/test/java/com/example/KickOns/CardItemTest.kt
+===================================================================
+diff --git a/app/src/test/java/com/example/KickOns/CardItemTest.kt b/app/src/test/java/com/example/KickOns/CardItemTest.kt
+deleted file mode 100644
+--- a/app/src/test/java/com/example/KickOns/CardItemTest.kt	(revision 172a379e766a88a471e172296f190368756e13ed)
++++ /dev/null	(revision 172a379e766a88a471e172296f190368756e13ed)
+@@ -1,60 +0,0 @@
+-package com.example.KickOns
+-
+-import org.hamcrest.MatcherAssert.assertThat
+-import org.junit.jupiter.api.AfterEach
+-import org.junit.jupiter.api.Assertions.*
+-import org.junit.jupiter.api.BeforeEach
+-import java.io.IOException
+-import java.util.ArrayList
+-import org.junit.jupiter.api.Test
+-
+-internal class CardItemTest {
+-    private var c = CardItem(-1,2,"test",-1)
+-
+-
+-    @BeforeEach
+-    @Throws(IOException::class)
+-    fun setUp() {
+-        cardList.clear()
+-    }
+-
+-    @AfterEach
+-    @Throws(IOException::class)
+-    fun cleanUp() {
+-        cardList.clear()
+-
+-    }
+-
+-    @Test
+-    @Throws(IOException::class)
+-    fun testAddDeck() {
+-
+-    }
+-
+-    @Test
+-    @Throws(IOException::class)
+-    fun testAddCard() {
+-        assertTrue(c.challenge == "test")
+-        assertTrue(c.id == -1)
+-        assertTrue(c.deckId == -1)
+-    }
+-
+-    @Test
+-    @Throws(IOException::class)
+-    fun testDeleteCard() {
+-
+-    }
+-
+-    @Test
+-    @Throws(IOException::class)
+-    fun testGetCard() {
+-
+-    }
+-
+-    @Test
+-    @Throws(IOException::class)
+-    fun testUpdateCard() {
+-
+-    }
+-
+-}
+\ No newline at end of file
+Index: app/src/androidTest/java/com/example/KickOns/ExampleUnitTest.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/androidTest/java/com/example/KickOns/ExampleUnitTest.kt b/app/src/androidTest/java/com/example/KickOns/ExampleUnitTest.kt
+new file mode 100644
+--- /dev/null	(date 1664831918960)
++++ b/app/src/androidTest/java/com/example/KickOns/ExampleUnitTest.kt	(date 1664831918960)
+@@ -0,0 +1,36 @@
++package com.example.KickOns
++
++import androidx.test.core.app.launchActivity
++import androidx.test.espresso.Espresso.onView
++import androidx.test.espresso.action.ViewActions.click
++import androidx.test.espresso.action.ViewActions.typeText
++import androidx.test.espresso.matcher.ViewMatchers.withId
++import androidx.test.ext.junit.runners.AndroidJUnit4
++import org.junit.Test
++
++import org.junit.Assert.*
++import org.junit.runner.RunWith
++
++/**
++ * Example local unit test, which will execute on the development machine (host).
++ *
++ * See [testing documentation](http://d.android.com/tools/testing).
++ */
++
++@RunWith(AndroidJUnit4::class)
++class ExampleUnitTest {
++
++    @Test
++    fun testAddPlayer() {
++        val text = "Test"
++        launchActivity<AddPlayer>().use {
++            val playerText = onView(withId(R.id.editPlayerText))
++            playerText.perform(click())
++            playerText.perform(typeText(text))
++            onView(withId(R.id.btnAddPlayer)).perform(click())
++            assertTrue(playerList.size == 1)
++            assertFalse(playerList[0].name == text)
++        }
++        assertTrue(text == text)
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/KickOns/AddPlayer.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.KickOns\nimport android.annotation.SuppressLint\nimport android.content.Intent\nimport android.graphics.drawable.Drawable\nimport android.graphics.drawable.Icon\nimport android.media.Image\nimport android.os.Build\nimport android.os.Bundle\nimport android.util.LayoutDirection.RTL\nimport android.util.Log\nimport android.view.View\nimport android.widget.*\nimport androidx.annotation.RequiresApi\nimport androidx.appcompat.app.AppCompatActivity\nimport androidx.constraintlayout.widget.ConstraintLayout\nimport androidx.core.content.res.ResourcesCompat.getFont\nimport androidx.recyclerview.widget.GridLayoutManager\nimport androidx.recyclerview.widget.LinearLayoutManager\nimport androidx.recyclerview.widget.RecyclerView\nimport com.example.KickOns.databinding.AddPlayerBinding\nimport com.example.KickOns.databinding.AddPlayerItemBinding\nimport com.google.android.material.chip.Chip\nimport com.google.android.material.chip.ChipGroup\n\n\n/** A class that is able to add players to the game as\n * well as set restrictions on how many players can play and the minimum number of players needed.\n */\n\n\nclass AddPlayer : AppCompatActivity() {\n    private lateinit var cG: ChipGroup\n\n    override fun onCreate(savedInstanceState: Bundle?) {\n        super.onCreate(savedInstanceState)\n        setContentView(R.layout.add_player)\n        val binding = AddPlayerBinding.inflate(layoutInflater)\n        cG = findViewById(R.id.chipGroup)\n\n        var editText = findViewById<EditText>(R.id.textInputEditText)\n        var MAX_PLAYERS = 30\n        val btnAddPlayer = findViewById<Button>(R.id.btnAddPlayer)\n        val btnStartFromChoosePlayers = findViewById<Button>(R.id.btnStartFromChoosePlayers)\n\n        btnAddPlayer.setOnClickListener{\n            val text = editText.text.toString()\n            if(text == \"\"){\n                editText.hint = \"Please Add Name\"\n            }else{\n                if(playerList.size<MAX_PLAYERS) {\n                    editText.setText(\"\")\n                    val p = Player(text)\n                    playerList.add(p)\n                    addChip(p)\n\n                }else{\n                    editText.setText(\"\")\n                    editText.hint = \"Max 30 players\"\n                }\n            }\n        }\n\n        btnStartFromChoosePlayers.setOnClickListener{\n            if(playerList.size>1) {\n                val intent = Intent(this, DeckPicker()::class.java)\n                startActivity(intent)\n            }else{\n              editText.setText(\"\")\n              editText.hint = \"Minimum 2 players\"\n            }\n        }\n\n    refresh()\n    }\n\n    /**\n     * Onclick function that removes a player view item from the main view.\n     *\n     * @param v The current view in the app\n     * @param p The player that was clicked\n     *\n     * @see com.example.KickOns.Player\n     * @see com.example.KickOns.AddPlayerAdapter\n     * @see com.example.KickOns.PlayerViewHolder\n     */\n    private fun onClick(v: View?, p: Player) {\n        playerList.remove(p)\n        cG.removeView(v)\n\n    }\n\n    //Creates a chip and adds it to the chip group\n    @RequiresApi(Build.VERSION_CODES.M)\n    private fun addChip(p: Player){\n        val c = Chip(this)\n        c.text = p.name.toString()\n        c.textSize = 14F\n        c.chipBackgroundColor = getColorStateList(R.color.color_accent)\n        c.setTextColor(getColor(R.color.color_primary))\n        c.chipIcon = getDrawable(R.drawable.cancel_button)\n        c.typeface = getFont(this,R.font.chango_regular)\n        c.layoutDirection = View.LAYOUT_DIRECTION_RTL\n        c.setOnClickListener{\n            onClick(c,p)\n        }\n        cG.addView(c)\n    }\n\n    private fun refresh(){\n        cG.removeAllViews()\n        playerList.forEach{\n            addChip(it)\n        }\n    }\n}\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/KickOns/AddPlayer.kt b/app/src/main/java/com/example/KickOns/AddPlayer.kt
+--- a/app/src/main/java/com/example/KickOns/AddPlayer.kt	(revision 172a379e766a88a471e172296f190368756e13ed)
++++ b/app/src/main/java/com/example/KickOns/AddPlayer.kt	(date 1664831918947)
+@@ -1,24 +1,13 @@
+ package com.example.KickOns
+-import android.annotation.SuppressLint
+ import android.content.Intent
+-import android.graphics.drawable.Drawable
+-import android.graphics.drawable.Icon
+-import android.media.Image
+ import android.os.Build
+ import android.os.Bundle
+-import android.util.LayoutDirection.RTL
+-import android.util.Log
+ import android.view.View
+ import android.widget.*
+ import androidx.annotation.RequiresApi
+ import androidx.appcompat.app.AppCompatActivity
+-import androidx.constraintlayout.widget.ConstraintLayout
+ import androidx.core.content.res.ResourcesCompat.getFont
+-import androidx.recyclerview.widget.GridLayoutManager
+-import androidx.recyclerview.widget.LinearLayoutManager
+-import androidx.recyclerview.widget.RecyclerView
+ import com.example.KickOns.databinding.AddPlayerBinding
+-import com.example.KickOns.databinding.AddPlayerItemBinding
+ import com.google.android.material.chip.Chip
+ import com.google.android.material.chip.ChipGroup
+ 
+@@ -37,7 +26,7 @@
+         val binding = AddPlayerBinding.inflate(layoutInflater)
+         cG = findViewById(R.id.chipGroup)
+ 
+-        var editText = findViewById<EditText>(R.id.textInputEditText)
++        var editText = findViewById<EditText>(R.id.editPlayerText)
+         var MAX_PLAYERS = 30
+         val btnAddPlayer = findViewById<Button>(R.id.btnAddPlayer)
+         val btnStartFromChoosePlayers = findViewById<Button>(R.id.btnStartFromChoosePlayers)
+Index: gradle.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># Project-wide Gradle settings.\n# IDE (e.g. Android Studio) users:\n# Gradle settings configured through the IDE *will override*\n# any settings specified in this file.\n# For more details on how to configure your build environment visit\n# http://www.gradle.org/docs/current/userguide/build_environment.html\n# Specifies the JVM arguments used for the daemon process.\n# The setting is particularly useful for tweaking memory settings.\norg.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8\n# When configured, Gradle will run in incubating parallel mode.\n# This option should only be used with decoupled projects. More details, visit\n# http://www.gradle.org/docs/current/userguide/multi_project_builds.html#sec:decoupled_projects\n# org.gradle.parallel=true\n# AndroidX package structure to make it clearer which packages are bundled with the\n# Android operating system, and which are packaged with your app\"s APK\n# https://developer.android.com/topic/libraries/support-library/androidx-rn\nandroid.useAndroidX=true\n# Kotlin code style for this project: \"official\" or \"obsolete\":\nkotlin.code.style=official\n# Enables namespacing of each library's R class so that its R class includes only the\n# resources declared in the library itself and none from the library's dependencies,\n# thereby reducing the size of the R class for that library\nandroid.nonTransitiveRClass=true\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/gradle.properties b/gradle.properties
+--- a/gradle.properties	(revision 172a379e766a88a471e172296f190368756e13ed)
++++ b/gradle.properties	(date 1664831918900)
+@@ -21,3 +21,5 @@
+ # resources declared in the library itself and none from the library's dependencies,
+ # thereby reducing the size of the R class for that library
+ android.nonTransitiveRClass=true
++
++

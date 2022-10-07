@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:209172254016:android:843f213e0dea9e59c13ea5",
         "android_client_info": {
-          "package_name": "com.example.KickOns"
+          "package_name": "com.cosc345.kickons"
         }
       },
       "oauth_client": [

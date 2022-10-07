@@ -61,17 +61,19 @@
 
             </LinearLayout>
 
-            <Button
+            <ImageButton
                 android:id="@+id/editBtn"
-                android:layout_width="10dp"
+                android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_weight="1"
+                android:background="@color/transparent"
                 android:contentDescription="@string/Edit"
+                android:scaleType="centerInside"
                 app:icon="@drawable/edit_icon"
                 app:iconSize="30dp"
-                app:srcCompat="@drawable/edit_icon" />
-
+                app:srcCompat="@drawable/edit_icon"
+                app:tint="@color/color_primary" />
 
         </LinearLayout>
 

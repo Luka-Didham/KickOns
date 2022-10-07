@@ -25,9 +25,9 @@
         android:textColor="#FFFFFF"
         android:textSize="23sp"
         android:textStyle="bold"
-        app:backgroundTint="@color/transperant"
+        app:backgroundTint="@color/transparent"
         app:elevation="0dp"
-        app:iconTint="@color/transperant" />
+        app:iconTint="@color/transparent" />
 
     <Button
         android:id="@+id/btnDeckSelection"

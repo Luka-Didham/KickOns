@@ -14,7 +14,7 @@
         android:layout_height="match_parent"
         android:layout_marginHorizontal="10dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="75dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="110dp"
 
@@ -67,6 +67,7 @@
                         android:layout_margin="20sp"
                         app:srcCompat="@drawable/edit_icon"
                         app:tint="@color/black" />
+
                 </FrameLayout>
 
             </LinearLayout>
@@ -95,7 +96,7 @@
         android:layout_height="match_parent"
         android:layout_marginHorizontal="10dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="75dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="110dp"
 
@@ -119,10 +120,10 @@
 
                 <TextView
                     android:id="@+id/cardPos"
-                    android:layout_height="wrap_content"
                     android:layout_width="0dp"
-                    android:padding="20dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:padding="20dp"
                     android:text="0/X"
                     android:textSize="20sp"
                     app:fontFamily="sans-serif-black" />
@@ -141,14 +142,19 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1">
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/edtBtn"
                         android:layout_width="40sp"
                         android:layout_height="40sp"
                         android:layout_gravity="end"
                         android:layout_margin="20sp"
+                        android:background="@drawable/btn_background"
+                        android:padding="10sp"
+                        android:radius="10sp"
+                        android:scaleType="fitCenter"
                         app:srcCompat="@drawable/edit_icon"
-                        app:tint="@color/black" />
+                        app:tint="@color/color_primary" />
+
                 </FrameLayout>
 
             </LinearLayout>
@@ -162,6 +168,7 @@
                 android:focusable="false"
                 android:fontFamily="@font/fonts"
                 android:gravity="center"
+                android:hint="\@Player1, howl at the moon 3 times with \@player2 or take a penalty"
                 android:paddingBottom="10dp"
                 android:textColor="@color/black"
                 android:textColorHint="#78909C"
@@ -207,5 +214,41 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/childCrd"
         app:srcCompat="@drawable/save" />
+
+    <Button
+        android:id="@+id/btnDone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="DONE"
+        app:backgroundTint="@color/color_accent"
+        app:cornerRadius="99dp"
+        app:layout_constraintBottom_toTopOf="@+id/childCrd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/btnPrev"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/btn_prev" />
+
+    <ImageView
+        android:id="@+id/btnNext"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="30dp"
+        android:rotationY="180"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/btn_prev" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
