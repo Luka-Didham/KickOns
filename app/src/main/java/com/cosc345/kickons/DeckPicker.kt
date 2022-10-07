@@ -14,6 +14,7 @@ import kotlinx.coroutines.*
 open class DeckPicker() : AppCompatActivity(), DeckClickListener {
     private lateinit var db: CardDB
     private lateinit var binding: DeckPickerBinding
+    private lateinit var cardDao: CardDAO
     private lateinit var deckDao: DeckDAO
     private lateinit var deckSets: Array<MutableList<out Any>>
 
@@ -48,18 +49,19 @@ open class DeckPicker() : AppCompatActivity(), DeckClickListener {
 
         db = CardDB.getDatabase(this)
         deckDao = db.deckDAO()
+        cardDao = db.cardDAO()
 
         GlobalScope.launch {
             getDecks(object: FirebaseCallback{
                 override fun onResponse(response: Array<MutableList<out Any>>) {
                 deckSets = response
-                  deckList = response[1] as MutableList<DeckItem>
-                    binding.recyclerView.apply {
-                        layoutManager =
-                            LinearLayoutManager(applicationContext, LinearLayoutManager.VERTICAL, false)
-                        Log.d("dl", deckList.size.toString())
-                        adapter = DeckAdapter(deckList,mainActivity)
-                    }
+                deckList = response[1] as MutableList<DeckItem>
+                binding.recyclerView.apply {
+                    layoutManager =
+                        LinearLayoutManager(applicationContext, LinearLayoutManager.VERTICAL, false)
+                    Log.d("dl", deckList.size.toString())
+                    adapter = DeckAdapter(deckList,mainActivity)
+                }
                 }
 
             })
@@ -112,7 +114,7 @@ open class DeckPicker() : AppCompatActivity(), DeckClickListener {
         val id = deckSets[0][pos]
 
         GlobalScope.launch{
-            //Querry db and wait for response
+            //Query db and wait for response
             getCards(id.toString())
             //On main launch next page
             withContext(Dispatchers.Main){
@@ -128,6 +130,16 @@ open class DeckPicker() : AppCompatActivity(), DeckClickListener {
         cards.forEach {
             cardList.add(it)
         }
+    }
+
+    fun saveCards(cardItem: CardItem){
+        GlobalScope.launch{
+            cardDao.addCard(cardItem)
+        }
+    }
+    suspend fun saveDeck(deck: DeckItem): Int {
+        return deckDao.addDeck(deck).toInt()
+
     }
 
     open suspend fun getDecks(myCallback: FirebaseCallback){

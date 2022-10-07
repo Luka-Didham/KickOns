@@ -9,7 +9,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class OnlineDeckPicker: DeckPicker() {
+class OnlineDeckPicker: DeckPicker(), DeckClickListener {
     val db = Firebase.firestore
     private lateinit var deckSets: Array<MutableList<out Any>>
 
@@ -36,10 +36,43 @@ class OnlineDeckPicker: DeckPicker() {
     override fun onClick(deck: DeckItem) {
         val id = getDeckSetsID(deck)
         GlobalScope.launch{
-            //Querry db and wait for response
+            //Query db and wait for response
             getCards(id)
         }
     }
+
+    override fun edit(deck: DeckItem) {
+//        val intent = Intent(this, MainActivity::class.java)
+//        startActivity(intent)
+        val id = getDeckSetsID(deck)
+        GlobalScope.launch {
+            val deckId = saveDeck(deck)
+
+            saveCards(id,deckId)
+
+            // Save an online deck locally
+        }
+
+    }
+
+    private fun saveCards(id: String, deckId: Int) {
+        db.collection("Decks/$id/Cards")
+            .get()
+            .addOnSuccessListener { result ->
+                for (document in result) {
+                    Log.d("TAG", "${document.id} => ${document.data}")
+                    val c = CardItem(null, 0, document.data["Challenge"].toString(), deckId)
+                    saveCards(c)
+
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.w("TAG", "Error getting documents.", exception)
+            }
+
+
+    }
+
     override suspend fun getCards(id: String) {
         cardList.clear()
         val intent = Intent(this, MainActivity::class.java)

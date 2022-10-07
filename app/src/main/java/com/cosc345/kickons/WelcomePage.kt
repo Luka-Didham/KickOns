@@ -29,7 +29,7 @@ class WelcomePage : AppCompatActivity() {
         val btnOnline = findViewById<Button>(R.id.btnOnline)
 
         analytics = Firebase.analytics
-        val db = Firebase.firestore
+        /*val db = Firebase.firestore
 
         db.collection("Decks")
             .get()
@@ -46,7 +46,7 @@ class WelcomePage : AppCompatActivity() {
             }
             .addOnFailureListener { exception ->
                 Log.w("TAG", "Error getting documents.", exception)
-            }
+            }*/
 
 
 
@@ -56,7 +56,7 @@ class WelcomePage : AppCompatActivity() {
 
       // when the player clicks on the the play button it goes to the AddPlayer class
         btnPlay.setOnClickListener {
-            val intent = Intent(this, OnlineDeckPicker::class.java)
+            val intent = Intent(this, DeckPicker::class.java)
             startActivity(intent)
         }
 

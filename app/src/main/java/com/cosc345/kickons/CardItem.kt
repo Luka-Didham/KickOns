@@ -18,5 +18,5 @@ data class CardItem (
     val id: Int?,
     val cardType: Int,
     var challenge: String,
-    val deckId: Int?
+    var deckId: Int?
 )
