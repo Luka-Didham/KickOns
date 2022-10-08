@@ -16,7 +16,7 @@ var cardList = mutableListOf<CardItem>()
 data class CardItem (
     @PrimaryKey(autoGenerate = true)
     val id: Int?,
-    val cardType: Int,
+    var cardType: Int,
     var challenge: String,
     var deckId: Int?
 )

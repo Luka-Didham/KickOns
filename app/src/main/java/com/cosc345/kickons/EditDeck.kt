@@ -88,6 +88,7 @@ class EditDeck(): AppCompatActivity(){
         //val btn_next = findViewById<Button>(R.id.btn_next)
        // val btn_prev = findViewById<Button>(R.id.btn_prev)
         val btnDone = findViewById<Button>(R.id.btnDone)
+        val editType = findViewById<ImageView>(R.id.editType)
 
         btnPrev = findViewById(R.id.btnPrev)
         btnNext = findViewById(R.id.btnNext)
@@ -104,7 +105,7 @@ class EditDeck(): AppCompatActivity(){
 
         //var
         var t = false
-
+        var tPos = 0
         //Snap Animation
         val gestureListener = object : CardSwipeGesture(this){
             override fun onScroll(
@@ -165,6 +166,9 @@ class EditDeck(): AppCompatActivity(){
             nextCard()
         }
 
+        editType.setOnClickListener {
+            changeType()
+        }
         delBtn.setOnClickListener{
             deleteCard()
             pos = posDec(pos)
@@ -209,6 +213,15 @@ class EditDeck(): AppCompatActivity(){
         lastCard()
     }
 
+    private fun changeType(){
+        val type = cardList[pos].cardType
+        cardList[pos].cardType = tPosInc(type)
+    }
+
+    private fun tPosInc(tPos: Int): Int{
+        if (tPos + 1 > 4) return 0
+        return tPos + 1
+    }
 
     private fun focusText(focus : Boolean){
         cardText.isFocusableInTouchMode = focus
