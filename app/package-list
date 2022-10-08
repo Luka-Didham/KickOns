@@ -38,6 +38,7 @@ $dokka.location:com.cosc345.kickons/CardItem/getCardType/#/PointingToDeclaration
 $dokka.location:com.cosc345.kickons/CardItem/getChallenge/#/PointingToDeclaration/app/com.cosc345.kickons/-card-item/get-challenge.html
 $dokka.location:com.cosc345.kickons/CardItem/getDeckId/#/PointingToDeclaration/app/com.cosc345.kickons/-card-item/get-deck-id.html
 $dokka.location:com.cosc345.kickons/CardItem/getId/#/PointingToDeclaration/app/com.cosc345.kickons/-card-item/get-id.html
+$dokka.location:com.cosc345.kickons/CardItem/setCardType/#kotlin.Int/PointingToDeclaration/app/com.cosc345.kickons/-card-item/set-card-type.html
 $dokka.location:com.cosc345.kickons/CardItem/setChallenge/#kotlin.String/PointingToDeclaration/app/com.cosc345.kickons/-card-item/set-challenge.html
 $dokka.location:com.cosc345.kickons/CardItem/setDeckId/#kotlin.Int?/PointingToDeclaration/app/com.cosc345.kickons/-card-item/set-deck-id.html
 $dokka.location:com.cosc345.kickons/CardItemKt///PointingToDeclaration/app/com.cosc345.kickons/-card-item-kt/index.html
