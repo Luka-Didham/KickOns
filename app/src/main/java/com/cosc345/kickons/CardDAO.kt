@@ -11,15 +11,26 @@ import androidx.room.*
  */
 @Dao
 interface CardDAO {
+    /**
+     * Adds a card to the db
+     */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun addCard(card: CardItem)
-
+    /**
+     * Deletes card from the db
+     */
     @Delete(entity = CardItem::class)
     suspend fun delete(card: CardItem)
 
+    /**
+     * Updates card from the db
+     */
     @Update
     suspend fun update(card: CardItem)
 
+    /**
+     * Returns all cards from the db
+     */
     @Query("SELECT * FROM card_table")
     suspend fun getAll(): List<CardItem>
 

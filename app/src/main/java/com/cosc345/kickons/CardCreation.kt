@@ -15,8 +15,6 @@ import kotlinx.coroutines.launch
  */
 @Suppress
 class CardCreation : AppCompatActivity(){
-
-    private var backToMain: MainActivity? = null
     private lateinit var db : CardDB
     private lateinit var ivCardTypePowerUp : ImageView
     private lateinit var ivCardTypeHandicap : ImageView

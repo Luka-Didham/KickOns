@@ -24,7 +24,9 @@ class ExampleInstrumentedTest {
     private lateinit var cardDao: CardDAO
     private lateinit var deckDao: DeckDAO
     private lateinit var db: CardDB
-
+    /**
+     * Creates a mock db for testing
+     */
     @Before
     fun createDB(){
         val context = InstrumentationRegistry.getInstrumentation().targetContext
@@ -33,7 +35,9 @@ class ExampleInstrumentedTest {
         deckDao = db.deckDAO()
         cardDao = db.cardDAO()
     }
-
+    /**
+     * Closes the db after testing
+     */
     @After
     @Throws(IOException::class)
     fun closeDb() {
@@ -41,11 +45,13 @@ class ExampleInstrumentedTest {
     }
 
 
-//Local Deck DB TEST
+    /**
+     * tests reads and writes from the db
+     */
     @Test
     @Throws(Exception::class)
     fun writeAndReadDeckDB(){
-        val deck = DeckItem(-1,"Test")
+        val deck = DeckItem(-1,"Test", "test")
         GlobalScope.launch {
             deckDao.addDeck(deck)
             val get = deckDao.getAll()

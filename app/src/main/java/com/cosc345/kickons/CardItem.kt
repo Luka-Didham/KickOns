@@ -13,6 +13,13 @@ var cardList = mutableListOf<CardItem>()
     childColumns = arrayOf("deckId"),
     onDelete = ForeignKey.CASCADE
 )])
+/**
+ * Data class for cards
+ * @param id the cards id
+ * @param cardType the type of card i.e challenge,law,etc..
+ * @param challenge The text on the card
+ * @param deckId the deck the id leads to
+ */
 data class CardItem (
     @PrimaryKey(autoGenerate = true)
     val id: Int?,
