@@ -19,7 +19,7 @@ On welcome screen can either press "play" which wil take you to locally saved de
 2. Select a deck or an online deck to get started or go to deck creation to create/edit your own. 
 3. Move through the cards attempting to aquire the least amount of penalties and following prompts on cards.
 
-![Screen Shots](screenshots.png)
+![Screen Shots](sceenshots.png)
 
 
 ### Deck Creation
