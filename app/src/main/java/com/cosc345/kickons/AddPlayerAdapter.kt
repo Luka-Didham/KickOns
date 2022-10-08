@@ -6,7 +6,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.cosc345.kickons.databinding.AddPlayerItemBinding
 
 
-
+/**
+ * Addapter adding for addding players to the chipgorup
+ */
 class AddPlayerAdapter(
     var players: List<Player>
 ): RecyclerView.Adapter<PlayerViewHolder>(){

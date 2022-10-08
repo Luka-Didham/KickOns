@@ -23,7 +23,9 @@ import java.io.IOException
 class CardTests {
     private lateinit var cardDao: com.cosc345.kickons.CardDAO
     private lateinit var db: com.cosc345.kickons.CardDB
-
+    /**
+     * Creates the db
+     */
     @Before
     fun createDB(){
         val context = InstrumentationRegistry.getInstrumentation().targetContext
@@ -32,6 +34,9 @@ class CardTests {
         cardDao = db.cardDAO()
     }
 
+    /**
+     * Closes the db after testing
+     */
     @After
     @Throws(IOException::class)
     fun closeDb() {
@@ -61,7 +66,9 @@ class CardTests {
             assertFalse(cardDao.getAll().size == 2)
         }
     }
-
+    /**
+     * Tests to see if the auto ids are generated
+     */
     @Test
     fun testAutoID(){
         val c = com.cosc345.kickons.CardItem(null, 2, "test", -1)
