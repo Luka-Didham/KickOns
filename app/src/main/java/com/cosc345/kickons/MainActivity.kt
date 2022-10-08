@@ -75,14 +75,12 @@ class MainActivity : AppCompatActivity() {
     3 = handicap card
      */
     /**
-     * Changes card
+     * Changes card and updates text
      *
-     * @param v The current view in the app
-     * @param p The player that was clicked
+     * @param cardType the cards type i.e Law,Standard,Handicap
+     * @param prompt The text contained on the card
      *
-     * @see com.cosc345.kickons.Player
-     * @see com.cosc345.kickons.AddPlayerAdapter
-     * @see com.cosc345.kickons.PlayerViewHolder
+     * @see com.cosc345.kickons.Card
      */
     private fun changeCard(cardType:Int, prompt:String){
         view.setBackgroundResource(getBackGround(cardType))
@@ -132,14 +130,15 @@ class MainActivity : AppCompatActivity() {
         return m
     }
     /**
-     * Takes a prompt as an input
+     * Takes a prompt as an input and inserts players by
+     * using a regex function to scrape the @players#'s
+     * the prompt is then returned with the newly inserted players
      *
      * @param v The current view in the app
      * @param p The player that was clicked
+     * @return the prommpt with players inserted in
      *
      * @see com.cosc345.kickons.Player
-     * @see com.cosc345.kickons.AddPlayerAdapter
-     * @see com.cosc345.kickons.PlayerViewHolder
      */
     fun randomPlayer(prompt: String): String{
         val sList = playerList.shuffled()

@@ -19,6 +19,7 @@
         android:layout_marginBottom="110dp"
 
         android:background="@drawable/law"
+        app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -101,6 +102,7 @@
         android:layout_marginBottom="110dp"
 
         android:background="@drawable/law"
+        app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

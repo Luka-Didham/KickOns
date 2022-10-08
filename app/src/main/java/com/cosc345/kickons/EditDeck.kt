@@ -206,7 +206,11 @@ class EditDeck(): AppCompatActivity(){
         editMode(t)
         return !t
     }
-
+    /**
+     * Sets weather the cards can be edited
+     *
+     * @param edit bool value to deicde if the cards can be edited
+     */
     private fun editMode(edit: Boolean){
         isEdit = edit
         showDirButtons(edit)
@@ -216,8 +220,16 @@ class EditDeck(): AppCompatActivity(){
         lastCard()
     }
 
+    /**
+     * Onclick function that removes a player view item from the main view.
+     *
+     * @param deck_id (Int?) of the deck
+     * @return The list of card items contained inside the deck
+     * i.e card items with matching deck_ids
+     *
+     * @see com.cosc345.kickons.CardItem
+     */
     private fun changeType(){
-        Log.d("deez", "yoza")
         val type = cardList[pos].cardType
         cardList[pos].cardType = tPosInc(type)
         nextCard()
@@ -296,6 +308,10 @@ class EditDeck(): AppCompatActivity(){
 //        editCrd.y = (editDeck.height/2 - editCrd.height/2).toFloat()
         editCrd.rotation = 0F
     }
+    /**
+     * Returns card back into place with animation after finger is released
+     * @see com.cosc345.kickons.CardItem
+     */
     private fun snapCard(){
         //TODO Change multiple apply to a spring force
         if (swiped) return
@@ -357,7 +373,11 @@ class EditDeck(): AppCompatActivity(){
         lastCard()
     }
 
-
+    /**
+     * Checks to see if the card is the last card then refreshes the cards data
+     * aswell as updating the child card
+     * @see com.cosc345.kickons.CardItem
+     */
     private fun nextCard(){
         lastCard()
         //Set Main Card
@@ -384,6 +404,7 @@ class EditDeck(): AppCompatActivity(){
         }
         return false
     }
+
 
     private fun getTypeImage(x: Int): Int {
         when(x){
