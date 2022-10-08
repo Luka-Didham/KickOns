@@ -20,7 +20,7 @@ class AddPlayer : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.add_player)
         cG = findViewById(R.id.chipGroup)
-
+        val mode = intent.getBooleanExtra("mode",true)
         val editText = findViewById<EditText>(R.id.textInputEditText)
         val MAX_PLAYERS = 30
         val btnAddPlayer = findViewById<Button>(R.id.btnAddPlayer)
@@ -47,7 +47,7 @@ class AddPlayer : AppCompatActivity() {
 
         btnStartFromChoosePlayers.setOnClickListener{
             if(playerList.size>1) {
-                val intent = Intent(this, DeckPicker()::class.java)
+                val intent = start(mode)
                 startActivity(intent)
             }else{
               editText.setText("")
@@ -73,7 +73,10 @@ class AddPlayer : AppCompatActivity() {
         cG.removeView(v)
 
     }
-
+    private fun start(mode: Boolean): Intent{
+        if(mode) return Intent(this, DeckPicker()::class.java)
+        return Intent(this, OnlineDeckPicker()::class.java)
+    }
     //Creates a chip and adds it to the chip group
     // @RequiresApi(Build.VERSION_CODES.M)
     private fun addChip(p: Player){
