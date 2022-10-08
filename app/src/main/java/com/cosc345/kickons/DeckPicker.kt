@@ -56,14 +56,16 @@ open class DeckPicker() : AppCompatActivity(), DeckClickListener {
         GlobalScope.launch {
             getDecks(object: FirebaseCallback{
                 override fun onResponse(response: Array<MutableList<out Any>>) {
-                deckSets = response
-                deckList = response[1] as MutableList<DeckItem>
-                binding.recyclerView.apply {
-                    layoutManager =
-                        LinearLayoutManager(applicationContext, LinearLayoutManager.VERTICAL, false)
-                    Log.d("dl", deckList.size.toString())
-                    adapter = DeckAdapter(deckList,mainActivity)
-                }
+                    deckSets = response
+                    deckList = response[1] as MutableList<DeckItem>
+
+                    GlobalScope.launch(Dispatchers.Main){binding.recyclerView.apply {
+                        layoutManager =
+                            LinearLayoutManager(applicationContext, LinearLayoutManager.VERTICAL, false)
+                        Log.d("dl", deckList.size.toString())
+                        adapter = DeckAdapter(deckList,mainActivity)
+                    }
+                    }
                 }
 
             })
