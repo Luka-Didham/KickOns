@@ -15,6 +15,7 @@ class DeckViewHolder(
 
         fun bindDeck(deck: DeckItem){
             deckCell.deckTitle.text = deck.name
+            deckCell.deckSub.text = deck.description
 
             //TODO(Add deck subtitle)
             if(!online){

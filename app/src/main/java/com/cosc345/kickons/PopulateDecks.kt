@@ -17,7 +17,7 @@ class PopulateDecks(ctx: Context) {
   val deckDao = db.deckDAO()
   val cardDao = db.cardDAO()
 
-  val d = DeckItem(1,"Starter Deck")
+  val d = DeckItem(1,"Starter Deck", "Default Deck")
 
   //val d = DeckItem(1,"NSFW Starter Deck")
   //Cards for the deck

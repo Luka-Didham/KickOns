@@ -24,6 +24,7 @@ class DeckCreation() : AppCompatActivity() {
         deckDao = db.deckDAO()
 
         val deckName = findViewById<EditText>(R.id.editDeckName)
+        val deckDesc = findViewById<EditText>(R.id.editDeckDescription)
         //val deckDesc = findViewById<EditText>(R.id.editDeckDescription)
         //Elements
         val btnBackFromCreateDeck = findViewById<Button>(R.id.btnBackFromCreateDeck)
@@ -37,7 +38,7 @@ class DeckCreation() : AppCompatActivity() {
         }
 
         btnSaveDeck.setOnClickListener {
-            val d = DeckItem(null, deckName.text.toString())//, deckDesc.text.toString())
+            val d = DeckItem(null, deckName.text.toString(), deckDesc.text.toString())//, deckDesc.text.toString())
             val intent = Intent(this, EditDeck()::class.java)
             deckList.add(d)
 

@@ -23,7 +23,7 @@ class OnlineDeckPicker: DeckPicker(), DeckClickListener {
                 deckSets = emptyArray()
 
                 for (document in result) {
-                    val d = DeckItem(null,document.get("name").toString())
+                    val d = DeckItem(null,document.get("name").toString(),null)
                     decks.add(d)
                     deckIdList.add(document.id)
                 }

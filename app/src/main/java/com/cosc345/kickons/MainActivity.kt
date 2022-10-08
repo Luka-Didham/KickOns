@@ -2,6 +2,7 @@ package com.cosc345.kickons
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
@@ -43,13 +44,14 @@ class MainActivity : AppCompatActivity() {
         val cardListShuffled = cardList.shuffled()
 
         btnScreen.setOnClickListener {
-            if(clicked<len) {
-                changeCard(cardListShuffled.get(clicked).cardType, randomPlayer(cardListShuffled.get(clicked).challenge))
+            if(clicked<len-1) {
                 clicked++
+                changeCard(cardListShuffled.get(clicked).cardType, randomPlayer(cardListShuffled.get(clicked).challenge))
             }else {
                 clicked = 0
                 changeCard(cardListShuffled.get(clicked).cardType, randomPlayer(cardListShuffled.get(clicked).challenge))
             }
+            Log.d("Clicked", clicked.toString())
         }
 
         // button to select and add players

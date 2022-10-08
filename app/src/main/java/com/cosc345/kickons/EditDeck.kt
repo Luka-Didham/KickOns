@@ -5,6 +5,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.View
@@ -23,6 +24,7 @@ import com.cosc345.kickons.databinding.ActivityDeckEditBinding
 import kotlinx.coroutines.*
 
 class EditDeck(): AppCompatActivity(){
+    var isEdit = false
     private var swiped = false
     private var pos = 0
     private var canCreate = true
@@ -167,7 +169,7 @@ class EditDeck(): AppCompatActivity(){
         }
 
         editType.setOnClickListener {
-            changeType()
+            if(isEdit) changeType()
         }
         delBtn.setOnClickListener{
             deleteCard()
@@ -206,6 +208,7 @@ class EditDeck(): AppCompatActivity(){
     }
 
     private fun editMode(edit: Boolean){
+        isEdit = edit
         showDirButtons(edit)
         showEditButtons(edit)
         focusText(edit)
@@ -214,12 +217,14 @@ class EditDeck(): AppCompatActivity(){
     }
 
     private fun changeType(){
+        Log.d("deez", "yoza")
         val type = cardList[pos].cardType
         cardList[pos].cardType = tPosInc(type)
+        nextCard()
     }
 
     private fun tPosInc(tPos: Int): Int{
-        if (tPos + 1 > 4) return 0
+        if (tPos + 1 >= 4) return 0
         return tPos + 1
     }
 
@@ -382,7 +387,7 @@ class EditDeck(): AppCompatActivity(){
 
     private fun getTypeImage(x: Int): Int {
         when(x){
-            0 -> return 0
+            0 -> return R.drawable.title_standard
             1 -> return R.drawable.powerup_title
             2 -> return R.drawable.law2
             3 -> return R.drawable.handicap_title
