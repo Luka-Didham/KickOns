@@ -10,10 +10,21 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+/**
+ * An extension class to DeckPicker.kt which overrides some functionality with firebase database specific
+ * functionality.
+ *
+ */
 class OnlineDeckPicker: DeckPicker(), DeckClickListener {
     val db = Firebase.firestore
     private lateinit var deckSets: Array<MutableList<out Any>>
 
+  /**
+   * Method which fetches decks from Firebase database
+   *
+   * @param myCallback Firebase callback
+   *
+   */
     override fun getDecks(myCallback: FirebaseCallback) {
         db.collection("Decks")
             .get()
@@ -34,6 +45,11 @@ class OnlineDeckPicker: DeckPicker(), DeckClickListener {
             }
 
     }
+  /**
+   * Method which registers when a deck element is pressed.
+   *
+   * @param deck specific DeckItem object pressed
+   */
     override fun onClick(deck: DeckItem) {
         val id = getDeckSetsID(deck)
         GlobalScope.launch{
@@ -42,6 +58,11 @@ class OnlineDeckPicker: DeckPicker(), DeckClickListener {
         }
     }
 
+  /**
+   * Method overrides so a standard user cant update online decks
+   *
+   * @param deck specific DeckItem
+   */
     override fun edit(deck: DeckItem) {
 //        val intent = Intent(this, MainActivity::class.java)
 //        startActivity(intent)
@@ -60,6 +81,12 @@ class OnlineDeckPicker: DeckPicker(), DeckClickListener {
         online = true
     }
 
+  /**
+   * Method which saves cards
+   *
+   * @param id id of deck saved
+   * @param deckId int version of id
+   */
     private fun saveCards(id: String, deckId: Int) {
         db.collection("Decks/$id/Cards")
             .get()
@@ -78,6 +105,11 @@ class OnlineDeckPicker: DeckPicker(), DeckClickListener {
 
     }
 
+  /**
+   * Method which gets cards
+   *
+   * @param id id of deck saved
+   */
     override suspend fun getCards(id: String) {
         cardList.clear()
         val intent = Intent(this, MainActivity::class.java)
