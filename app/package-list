@@ -11,7 +11,6 @@ $dokka.location:com.cosc345.kickons/AddPlayerAdapter/onBindViewHolder/#com.cosc3
 $dokka.location:com.cosc345.kickons/AddPlayerAdapter/onCreateViewHolder/#android.view.ViewGroup#kotlin.Int/PointingToDeclaration/app/com.cosc345.kickons/-add-player-adapter/on-create-view-holder.html
 $dokka.location:com.cosc345.kickons/AddPlayerAdapter/setPlayers/#kotlin.collections.List[com.cosc345.kickons.Player]/PointingToDeclaration/app/com.cosc345.kickons/-add-player-adapter/set-players.html
 $dokka.location:com.cosc345.kickons/BtnListener///PointingToDeclaration/app/com.cosc345.kickons/-btn-listener/index.html
-$dokka.location:com.cosc345.kickons/BtnListener/btnClick/#com.cosc345.kickons.DeckItem/PointingToDeclaration/app/com.cosc345.kickons/-btn-listener/btn-click.html
 $dokka.location:com.cosc345.kickons/BtnListener/edit/#com.cosc345.kickons.DeckItem/PointingToDeclaration/app/com.cosc345.kickons/-btn-listener/edit.html
 $dokka.location:com.cosc345.kickons/CardAdapter///PointingToDeclaration/app/com.cosc345.kickons/-card-adapter/index.html
 $dokka.location:com.cosc345.kickons/CardAdapter/CardAdapter/#kotlin.collections.List[com.cosc345.kickons.CardItem]/PointingToDeclaration/app/com.cosc345.kickons/-card-adapter/-card-adapter.html
@@ -52,7 +51,6 @@ $dokka.location:com.cosc345.kickons/CardSwipe/onChildDraw/#android.graphics.Canv
 $dokka.location:com.cosc345.kickons/CardSwipe/onMove/#androidx.recyclerview.widget.RecyclerView#androidx.recyclerview.widget.RecyclerView.ViewHolder#androidx.recyclerview.widget.RecyclerView.ViewHolder/PointingToDeclaration/app/com.cosc345.kickons/-card-swipe/on-move.html
 $dokka.location:com.cosc345.kickons/CardSwipeGesture///PointingToDeclaration/app/com.cosc345.kickons/-card-swipe-gesture/index.html
 $dokka.location:com.cosc345.kickons/CardSwipeGesture/CardSwipeGesture/#android.content.Context/PointingToDeclaration/app/com.cosc345.kickons/-card-swipe-gesture/-card-swipe-gesture.html
-$dokka.location:com.cosc345.kickons/CardSwipeGesture/drawChild/#/PointingToDeclaration/app/com.cosc345.kickons/-card-swipe-gesture/draw-child.html
 $dokka.location:com.cosc345.kickons/CardSwipeGesture/getDifX/#/PointingToDeclaration/app/com.cosc345.kickons/-card-swipe-gesture/get-dif-x.html
 $dokka.location:com.cosc345.kickons/CardSwipeGesture/getDifY/#/PointingToDeclaration/app/com.cosc345.kickons/-card-swipe-gesture/get-dif-y.html
 $dokka.location:com.cosc345.kickons/CardSwipeGesture/setDifX/#kotlin.Float/PointingToDeclaration/app/com.cosc345.kickons/-card-swipe-gesture/set-dif-x.html
