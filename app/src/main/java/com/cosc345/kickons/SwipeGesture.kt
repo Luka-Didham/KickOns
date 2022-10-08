@@ -11,8 +11,10 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 
 /**
- * This class is used for..
+ * This class is used for when editing a deck allows user to swipe to nect card with gesture aswell as press
+ * move buttons
  *
+ * @param current context
  */
 
 abstract class SwipeGesture(val context: Context): ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {

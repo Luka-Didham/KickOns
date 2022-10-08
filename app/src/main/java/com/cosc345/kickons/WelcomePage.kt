@@ -53,8 +53,12 @@ class WelcomePage : AppCompatActivity() {
         }
     }
 
+  /**
+   * Method check if players have been set before allowing user to proceed.
+   *
+   */
     private fun checkPlayers(intent: Intent): Intent{
         if (playerList.isEmpty()) return Intent(this, AddPlayer::class.java)
         return intent
     }
-} // end class
+}
