@@ -6,7 +6,8 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 /**
- * A class to add default decks to the local deck database
+ * A class to add default decks to the local deck database so all apps are booted with
+ * and itial game for quick game play.
  *
  * @see com.cosc345.kickons.DeckDAO
  * @see com.cosc345.kickons.CardDAO
