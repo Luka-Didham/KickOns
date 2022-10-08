@@ -22,6 +22,9 @@ import androidx.dynamicanimation.animation.SpringAnimation
 import androidx.dynamicanimation.animation.SpringForce.*
 import com.cosc345.kickons.databinding.ActivityDeckEditBinding
 import kotlinx.coroutines.*
+/**
+ * Class which handles all editing of decks. Allows user to edit text and type of cards within the deck
+ */
 
 class EditDeck(): AppCompatActivity(){
     var isEdit = false
@@ -59,6 +62,10 @@ class EditDeck(): AppCompatActivity(){
 
     @RequiresApi(Build.VERSION_CODES.M)
     @SuppressLint("ClickableViewAccessibility")
+
+    /**
+     * Method which constructs edit screen
+     */
     override fun onCreate(savedInstance: Bundle?) {
 
         super.onCreate(savedInstance)
@@ -207,7 +214,7 @@ class EditDeck(): AppCompatActivity(){
         return !t
     }
     /**
-     * Sets weather the cards can be edited
+     * Sets whether the cards can be edited
      *
      * @param edit bool value to deicde if the cards can be edited
      */
@@ -221,13 +228,8 @@ class EditDeck(): AppCompatActivity(){
     }
 
     /**
-     * Onclick function that removes a player view item from the main view.
+     * Method which changes type of card e.g powerup, law, normal etc
      *
-     * @param deck_id (Int?) of the deck
-     * @return The list of card items contained inside the deck
-     * i.e card items with matching deck_ids
-     *
-     * @see com.cosc345.kickons.CardItem
      */
     private fun changeType(){
         val type = cardList[pos].cardType
@@ -235,16 +237,31 @@ class EditDeck(): AppCompatActivity(){
         nextCard()
     }
 
+  /**
+   * Counter with loop for amount of card types e.g powerup, law, normal etc
+   *
+   * @param tPos current position
+   */
     private fun tPosInc(tPos: Int): Int{
         if (tPos + 1 >= 4) return 0
         return tPos + 1
     }
 
+  /**
+   * Method which focuses text
+   *
+   * @param focus if focused or not
+   */
     private fun focusText(focus : Boolean){
         cardText.isFocusableInTouchMode = focus
         cardText.isFocusable = focus
     }
 
+  /**
+   * Method which toggles edit buttons
+   *
+   * @param show edit buttons when true
+   */
     private fun showEditButtons(show: Boolean){
         val vis = if(show) View.VISIBLE
         else View.INVISIBLE
