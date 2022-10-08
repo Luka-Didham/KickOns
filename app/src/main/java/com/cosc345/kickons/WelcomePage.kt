@@ -57,6 +57,7 @@ class WelcomePage : AppCompatActivity() {
       // when the player clicks on the the play button it goes to the AddPlayer class
         btnPlay.setOnClickListener {
             val intent = Intent(this, AddPlayer::class.java)
+            intent.putExtra("mode", true);
             startActivity(intent)
         }
 
@@ -66,7 +67,8 @@ class WelcomePage : AppCompatActivity() {
             startActivity(intent)
         }
         btnOnline.setOnClickListener{
-            val intent = Intent(this, OnlineDeckPicker::class.java)
+            val intent = Intent(this, AddPlayer::class.java)
+            intent.putExtra("mode", false);
             startActivity(intent)
         }
     }
