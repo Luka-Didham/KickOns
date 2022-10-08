@@ -20,7 +20,6 @@
         android:fontFamily="@font/fonts"
         android:insetTop="0dp"
         android:insetBottom="0dp"
-        android:padding="25sp"
         android:text="Tap to start the game!"
         android:textColor="#FFFFFF"
         android:textSize="23sp"
@@ -64,12 +63,12 @@
 
     <ImageView
         android:id="@+id/img_type"
-        android:layout_width="354sp"
-        android:layout_height="104sp"
+        android:layout_width="280dp"
+        android:layout_height="100dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20sp"
-        android:visibility="invisible"
-        app:srcCompat="@drawable/handicap_title" />
+        android:visibility="invisible" />
+
 
 
 </RelativeLayout>

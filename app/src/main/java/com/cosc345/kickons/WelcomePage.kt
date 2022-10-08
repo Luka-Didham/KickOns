@@ -13,7 +13,7 @@ import com.google.firebase.ktx.Firebase
 
 /**
  * This screen is displayed immediately after the splash screen,
- * shows the buttons to start the game, and also a help button.
+ * shows the buttons to start the game, help button, and online deck downloader.
  *
  */
 class WelcomePage : AppCompatActivity() {
@@ -56,7 +56,7 @@ class WelcomePage : AppCompatActivity() {
 
       // when the player clicks on the the play button it goes to the AddPlayer class
         btnPlay.setOnClickListener {
-            val intent = Intent(this, DeckPicker::class.java)
+            val intent = Intent(this, AddPlayer::class.java)
             startActivity(intent)
         }
 

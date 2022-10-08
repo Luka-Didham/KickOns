@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:background="#723CD3"
         android:fontFamily="@font/fonts"
-        android:padding="15dp"
+        android:padding="30sp"
         android:text="Help!!!"
         android:textAlignment="center"
         android:textColor="#FBD34C"
@@ -20,16 +20,18 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <ScrollView
         android:layout_width="408dp"
         android:layout_height="654dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvWelcome"
-        app:layout_constraintVertical_bias="0.539">
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -47,6 +49,7 @@
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
+
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"
@@ -60,6 +63,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="10sp"
                 android:fontFamily="@font/chango_regular"
+                android:padding="20sp"
                 android:text="KickOns is a card-based party game app that is available for everyone to play. The game is designed to be as diverse as possible, therefore anyone from any background, age, gender etc can play! Test your knowledge from a range of different decks such as History and Geography! Or do a dare if you’re brave enough. You can even create your own personal decks and share it with friends! Get a question wrong or don’t wanna do a specific dare? Then you must take a penalty!"
                 android:textColor="@color/black"
 
@@ -92,8 +96,9 @@
                 android:id="@+id/textView6"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:fontFamily="@font/chango_regular"
                 android:layout_margin="10sp"
+                android:fontFamily="@font/chango_regular"
+                android:padding="20sp"
                 android:text="The aim of our game is to obtain the least amount of penalties. A set of cards make a deck, with each deck intended to encompass
 a theme. There are 4 types of cards within a deck: Normal, Powerup, Law and Handicap.
 The Normal cards are common cards making up the majority of the deck that have questions, actions, or games. Failure to answer the questions or complete the challenges lands a player with penalties.
@@ -111,12 +116,12 @@ Click save cards to save the cards to the deck, then select the deck and play!"
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnGobacK"
+        android:background="@drawable/btn_background_yellow"
         android:layout_width="66dp"
         android:layout_height="39dp"
         android:layout_margin="5sp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="28dp"
-        android:background="#FBD34C"
         android:fontFamily="@font/chango_regular"
         android:text="Back"
         android:textColor="@color/black"

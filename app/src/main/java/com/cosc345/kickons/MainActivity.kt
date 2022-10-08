@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import kotlin.text.Regex
 /**
  * This MainActivity class is
@@ -17,7 +18,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var db : CardDB
 
     private lateinit var btnScreen: Button
-
     private lateinit var imgType: ImageView
     private lateinit var view: View
 
@@ -73,6 +73,24 @@ class MainActivity : AppCompatActivity() {
     private fun changeCard(cardType:Int, prompt:String){
         view.setBackgroundResource(getBackGround(cardType))
         btnScreen.text = prompt
+
+        if(cardType==0){
+            imgType.isVisible = false;
+        }
+        if(cardType==1){
+            imgType.setBackgroundResource(R.drawable.powerup_title)
+            imgType.isVisible = true;
+        }
+        if(cardType==2){
+            imgType.setBackgroundResource(R.drawable.law2)
+            imgType.isVisible = true;
+        }
+        if(cardType==3){
+            imgType.setBackgroundResource(R.drawable.handicap_title)
+            imgType.isVisible = true;
+        }
+
+
     }
 
     private fun getBackGround(x: Int): Int{

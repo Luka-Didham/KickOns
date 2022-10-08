@@ -24,9 +24,9 @@ On welcome screen can either press "play" which wil take you to locally saved de
 2. Enter in a name, and optionally a description
 3. This will bring you to the card creation screen
 4. Select a type and enter the challenge for each card
-5. Placing a # in front of the word player e.g. #player1, #player2, will insert a player from the list you have entered previously
+5. Placing a @ in front of the word player e.g. @player1, @player2, will insert a player from the list you have entered previously
 
-i.e. "#player1 has to dance with #player2" -> "James has to dance Sam"
+i.e. "@player1 has to dance with @player2" -> "James has to dance Sam"
 
 # Android CI
 [![Android CI](https://github.com/Luka-Didham/COSC345/actions/workflows/android.yml/badge.svg)](https://github.com/Luka-Didham/COSC345/actions/workflows/android.yml)
