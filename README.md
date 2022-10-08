@@ -9,16 +9,15 @@ To install clone the repository to your computer
 git clone https://github.com/Luka-Didham/COSC345.git
 ```
 
-## Usage
-To run the app open android studio and create a new virtual device running API 29+. 
-
-Once you've selected you're chosen emulator press the green play button to start the app
-
-When the app has loaded press play to begin
+### Usage
+To run the app open android studio and create a new virtual device or upload to a physical android device running API 29+ . Once you've selected your chosen emulator press the green play button to start the app in Android studio. 
 
 ### Game
-1. Add at least two players and press start
-2. Select sample deck or an online deck to get started or go to deck creation to create your on. 
+On welcome screen can either press "play" which wil take you to locally saved decks. Or you can press the "help" menu taking you to a page with gameplay information or you can press on the "online decks" which will take you to a centralised deck server where other users have uploaded decks. Once a deck is selected gameplay follows as 
+
+1. Add at least two players and press start (Can be modified any time)
+2. Select a deck or an online deck to get started or go to deck creation to create/edit your own. 
+3. Move through the cards attempting to aquire the least amount of penalties and following prompts on cards. 
 
 ### Deck Creation
 1. After entering players select create deck
