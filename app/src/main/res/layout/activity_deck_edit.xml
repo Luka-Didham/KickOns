@@ -128,6 +128,7 @@
                     android:padding="20dp"
                     android:text="0/X"
                     android:textSize="20sp"
+                    app:drawableTint="#80000000"
                     app:fontFamily="sans-serif-black" />
 
                 <ImageView
