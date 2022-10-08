@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.cosc345.kickons.databinding.AddPlayerItemBinding
 
 
+
 class AddPlayerAdapter(
     var players: List<Player>
 ): RecyclerView.Adapter<PlayerViewHolder>(){
@@ -19,8 +20,6 @@ class AddPlayerAdapter(
 
     override fun onBindViewHolder(holder: PlayerViewHolder, position: Int) {
         holder.bindPlayer(players[position])
-
-
     }
 
     /**

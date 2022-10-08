@@ -148,7 +148,7 @@ open class DeckPicker() : AppCompatActivity(), DeckClickListener {
 
     }
 
-    open suspend fun getDecks(myCallback: FirebaseCallback){
+    open fun getDecks(myCallback: FirebaseCallback){
         deckList.clear()
         deckSets = emptyArray()
         val deckIdList = mutableListOf<String>()

@@ -14,7 +14,7 @@ class OnlineDeckPicker: DeckPicker(), DeckClickListener {
     val db = Firebase.firestore
     private lateinit var deckSets: Array<MutableList<out Any>>
 
-    override suspend fun getDecks(myCallback: FirebaseCallback) {
+    override fun getDecks(myCallback: FirebaseCallback) {
         db.collection("Decks")
             .get()
             .addOnSuccessListener { result ->
