@@ -81,7 +81,8 @@ $dokka.location:com.cosc345.kickons/DeckDAO/addDeck/#com.cosc345.kickons.DeckIte
 $dokka.location:com.cosc345.kickons/DeckDAO/delete/#com.cosc345.kickons.DeckItem/PointingToDeclaration/app/com.cosc345.kickons/-deck-d-a-o/delete.html
 $dokka.location:com.cosc345.kickons/DeckDAO/getAll/#/PointingToDeclaration/app/com.cosc345.kickons/-deck-d-a-o/get-all.html
 $dokka.location:com.cosc345.kickons/DeckItem///PointingToDeclaration/app/com.cosc345.kickons/-deck-item/index.html
-$dokka.location:com.cosc345.kickons/DeckItem/DeckItem/#kotlin.Int?#kotlin.String/PointingToDeclaration/app/com.cosc345.kickons/-deck-item/-deck-item.html
+$dokka.location:com.cosc345.kickons/DeckItem/DeckItem/#kotlin.Int?#kotlin.String#kotlin.String?/PointingToDeclaration/app/com.cosc345.kickons/-deck-item/-deck-item.html
+$dokka.location:com.cosc345.kickons/DeckItem/getDescription/#/PointingToDeclaration/app/com.cosc345.kickons/-deck-item/get-description.html
 $dokka.location:com.cosc345.kickons/DeckItem/getId/#/PointingToDeclaration/app/com.cosc345.kickons/-deck-item/get-id.html
 $dokka.location:com.cosc345.kickons/DeckItem/getName/#/PointingToDeclaration/app/com.cosc345.kickons/-deck-item/get-name.html
 $dokka.location:com.cosc345.kickons/DeckItemKt///PointingToDeclaration/app/com.cosc345.kickons/-deck-item-kt/index.html
@@ -106,6 +107,8 @@ $dokka.location:com.cosc345.kickons/DeckViewHolderKt/getOnline/#/PointingToDecla
 $dokka.location:com.cosc345.kickons/DeckViewHolderKt/setOnline/#kotlin.Boolean/PointingToDeclaration/app/com.cosc345.kickons/-deck-view-holder-kt/set-online.html
 $dokka.location:com.cosc345.kickons/EditDeck///PointingToDeclaration/app/com.cosc345.kickons/-edit-deck/index.html
 $dokka.location:com.cosc345.kickons/EditDeck/EditDeck/#/PointingToDeclaration/app/com.cosc345.kickons/-edit-deck/-edit-deck.html
+$dokka.location:com.cosc345.kickons/EditDeck/isEdit/#/PointingToDeclaration/app/com.cosc345.kickons/-edit-deck/is-edit.html
+$dokka.location:com.cosc345.kickons/EditDeck/setEdit/#kotlin.Boolean/PointingToDeclaration/app/com.cosc345.kickons/-edit-deck/set-edit.html
 $dokka.location:com.cosc345.kickons/FirebaseCallback///PointingToDeclaration/app/com.cosc345.kickons/-firebase-callback/index.html
 $dokka.location:com.cosc345.kickons/FirebaseCallback/onResponse/#kotlin.Array[kotlin.collections.MutableList[kotlin.Any]]/PointingToDeclaration/app/com.cosc345.kickons/-firebase-callback/on-response.html
 $dokka.location:com.cosc345.kickons/HelpPage///PointingToDeclaration/app/com.cosc345.kickons/-help-page/index.html
