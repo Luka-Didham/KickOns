@@ -64,7 +64,7 @@
     <ImageView
         android:id="@+id/img_type"
         android:layout_width="280dp"
-        android:layout_height="100dp"
+        android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20sp"
         android:visibility="invisible" />
